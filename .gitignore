@@ -5,3 +5,8 @@
 out/
 work/
 cache/
+*.glb
+*.fbx
+*.obj
+*.blend
+*.blend1
