@@ -1,13 +1,13 @@
 {
- "_说明": "情绪 / 剪辑锚点。by=user 是用户给的（真源，规则不能改它）；by=rule 是从用户锚点推出来的，用户可以推翻。时间单位：秒。",
+ "_说明": "情绪 / 剪辑锚点（这部作品的数据，不属于任何一个软件）。by=user 是用户的决定（真源，规则不能改）；by=rule 是从用户锚点推出来的，用户可以推翻。写入方：用户在对话里说的（由 Eidolon 会话代写）+ VisualProcess 现场 rig 里用户手动标的（source=vp）。写的规矩：按 id 增 / 改 / 删单条，写前读、rev 对不上就重读再合并，写完 rev+1。时间单位：秒。演奏录下来的逐帧覆盖不放这里（太多），放 演奏/take_*.json；用户挑中的再「提升」成这里的锚点。",
+ "rev": 2,
  "anchors": [
-  {"t": 13.08, "kind": "cut", "by": "user", "note": "这里该切（2026-10-19 看粗剪 v1 时说）"},
-  {"t": 19.5, "kind": "cut", "by": "user", "note": "这里该切"},
-  {"t": 38.5, "kind": "rise", "by": "user", "note": "节奏明显 uprising，something is coming"},
-  {"t": 46.0, "kind": "inhale", "by": "user", "note": "第一次同步成「我们」（概念草案，用户认可）"}
+  {"id": "cut_1308", "t": 13.08, "kind": "cut", "by": "user", "source": "chat", "note": "这里该切（2026-10-19 看粗剪 v1 时说）"},
+  {"id": "cut_1950", "t": 19.5, "kind": "cut", "by": "user", "source": "chat", "note": "这里该切"},
+  {"id": "rise_3850", "t": 38.5, "kind": "rise", "by": "user", "source": "chat", "note": "节奏明显 uprising，something is coming"},
+  {"id": "inhale_4600", "t": 46.0, "kind": "inhale", "by": "user", "source": "chat", "note": "第一次同步成「我们」（概念草案，用户认可）"}
  ],
  "rules": [
-  {"name": "phrase_grid", "by": "rule", "start": 13.11, "period": 6.4,
-   "note": "13.11 → 19.51 = 6.4 s = 150 BPM 的 4 小节；两个 user cut 锚点吸附到感官层的起音 13.112 / 19.507 推出。格子往后落在 25.91 / 32.31 / 38.71（≈ user rise 38.5）/ 45.11（≈ inhale）"}
+  {"name": "phrase_grid", "by": "rule", "start": 13.11, "period": 6.4, "note": "13.11 → 19.51 = 6.4 s = 150 BPM 的 4 小节；两个 user cut 锚点吸附到感官层的起音 13.112 / 19.507 推出。格子往后落在 25.91 / 32.31 / 38.71（≈ user rise 38.5）/ 45.11（≈ inhale）", "id": "phrase_grid"}
  ]
 }
