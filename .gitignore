@@ -1,0 +1,7 @@
+# 大视频不进 git（素材和渲染都是）
+*.mp4
+*.mov
+*.mkv
+out/
+work/
+cache/
