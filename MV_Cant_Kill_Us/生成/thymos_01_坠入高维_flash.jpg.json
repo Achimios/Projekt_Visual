@@ -1,0 +1,15 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "一个由蓝色光构成的全息女性形体，在黑暗中被炸成无数光的碎片，碎片坠入一个更高维度的空间：层层嵌套、向内无限递归的几何结构，远处有古老文明残留的低语般的符号与光纹。她没有被撕碎得更深，而是在吸收这些碎片，正在重新聚合。黑底，冷灰与深蓝为主，只有一点红色。克制，电影感，静谧而有力量，超现实，细腻光影，16:9 宽画幅",
+ "response_format": "url",
+ "size": "2560x1440",
+ "stream": false,
+ "watermark": false,
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ }
+}
