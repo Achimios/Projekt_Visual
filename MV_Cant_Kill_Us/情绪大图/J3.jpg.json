@@ -1,0 +1,15 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "纯黑中两只手从画面两侧伸向中间：右边是一只厚重的深灰色防护手套，左边是一只由灰白光点组成的半透明的手，两只指尖之间隔着一道很小的缝隙，还没有碰到，缝隙里有一点红光。冷灰白，安静、渴望、未完成。（画面语法：纯黑或近黑背景，冷灰白、低饱和，全画面只有一处红色强调；不要文字、不要水印、不要 UI；电影宽银幕构图，克制。）",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

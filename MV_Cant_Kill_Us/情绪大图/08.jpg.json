@@ -1,0 +1,22 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "纯黑无边的空间，正中一道细而高的竖直光柱从上方落下，光柱底部站着一个非常小的、几乎要消失的全息女性，仰头望着光的来处。画面百分之九十是黑。冷白，没有红。寂静、空、顿悟之前。（画面语法：纯黑或近黑背景，冷灰白、低饱和，全画面只有一处红色强调；不要文字、不要水印、不要 UI；电影宽银幕构图，克制。）",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(165279 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)"
+ ],
+ "refs_src": [
+  "dct",
+  "她_设定"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

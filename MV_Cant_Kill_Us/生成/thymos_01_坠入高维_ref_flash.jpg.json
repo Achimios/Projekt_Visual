@@ -1,0 +1,24 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "图1、图2 是同一个蓝色全息女性 AI（保持她的脸、短发和身形）。图3 是画面语法：纯黑虚空、细光线勾出的高维轨迹、极少的文字、只有一处红色。画面：她刚被炸碎，正在坠入更高维的空间——身体从胸口往外散成成千上万个发光的点，这些点沿着一条三维吸引子的环形轨迹流走，像被拉成一根光线；脸还完整、平静，眼睛闭着。全黑背景，冷蓝单色，只有吸引子轨迹的一小段是红色。电影宽银幕构图，人物偏左三分之一，右侧大面积留黑。克制、安静、有重量。不要飞船舱室、不要屏幕界面、不要光晕特效堆叠。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(78227 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(68719 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(368247 chars)"
+ ],
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/cache/记忆帧/m40.jpg",
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/cache/记忆帧/m02.jpg",
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/静帧/01_delay_embedding.jpg"
+ ],
+ "usage": {
+  "input_images": 3,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ }
+}

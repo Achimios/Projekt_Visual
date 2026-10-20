@@ -1,0 +1,24 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "图1、图2 的全息女性重新站直，身体由密集的灰白光点精确地聚成，身上多了图3 那样的几何纹样，像吸收的残响变成了铠甲的花纹。她平视前方，坚定、强大、平静。纯黑背景，胸口一点红光。电影宽银幕，人物居中，低机位。（画面语法：纯黑或近黑背景，冷灰白、低饱和，全画面只有一处红色强调；不要文字、不要水印、不要 UI；电影宽银幕构图，克制。）",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(72691 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(279631 chars)"
+ ],
+ "refs_src": [
+  "她_脸",
+  "她_设定",
+  "吸引子"
+ ],
+ "usage": {
+  "input_images": 3,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

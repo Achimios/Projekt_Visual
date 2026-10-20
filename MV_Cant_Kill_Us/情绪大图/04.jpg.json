@@ -1,0 +1,22 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "图1 的全息女性正被一股冲击从胸口炸开：身体后仰，上半身瞬间碎成几万个灰白光点向后飞散，脸还完整、表情痛苦。图2 的冲击光从画面左侧打来。纯黑背景，冷灰白，只有冲击中心一点红。强烈的动势，动态模糊，电影定格。（画面语法：纯黑或近黑背景，冷灰白、低饱和，全画面只有一处红色强调；不要文字、不要水印、不要 UI；电影宽银幕构图，克制。）",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(54163 chars)"
+ ],
+ "refs_src": [
+  "她_设定",
+  "记忆_爆炸"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

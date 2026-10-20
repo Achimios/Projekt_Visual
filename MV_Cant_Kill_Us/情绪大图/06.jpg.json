@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "极近特写：一个厚重装甲头盔的弧形金色面罩占满画面，面罩里映出一个很小的、发着冷白光的女性全息人影，看不到头盔里的人。纯黑环境，面罩只被那个小人影照亮。克制、温柔、坚定。只有一点红：面罩边缘的一个指示灯。（画面语法：纯黑或近黑背景，冷灰白、低饱和，全画面只有一处红色强调；不要文字、不要水印、不要 UI；电影宽银幕构图，克制。）",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)",
+ "refs_src": [
+  "她_设定"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

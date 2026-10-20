@@ -1,0 +1,22 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "图1、图2 是同一个全息女性 AI。特写：她慢慢抬起头，眼睛刚睁开，望向画面上方一道看不见的光，脸上是平静中带一点惊讶。灰白低饱和的全息质感，细扫描线，纯黑背景，顶光，脸的下半部分隐入黑暗。没有任何特效、文字、粒子。（画面语法：纯黑或近黑背景，冷灰白、低饱和，全画面只有一处红色强调；不要文字、不要水印、不要 UI；电影宽银幕构图，克制。）",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(72691 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)"
+ ],
+ "refs_src": [
+  "她_脸",
+  "她_设定"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

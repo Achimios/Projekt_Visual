@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "极长的对称走廊，地面和墙由冷白的细光线构成，纵深一点透视，走廊尽头很远处一个穿厚重装甲的高大士兵背影正在走远，只看到背影和头盔轮廓，看不到脸。纯黑环境，冷灰白，没有彩色，只有走廊尽头一点红光。孤独、渴望、克制。（画面语法：纯黑或近黑背景，冷灰白、低饱和，全画面只有一处红色强调；不要文字、不要水印、不要 UI；电影宽银幕构图，克制。）",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(48883 chars)",
+ "refs_src": [
+  "记忆_走廊"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

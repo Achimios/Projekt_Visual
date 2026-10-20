@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "无限递归的对数螺旋，像一条往里卷的贝壳隧道，每一圈的墙上都映着同一个全息女性的侧影，越往中心越小，像坠入她自己的内部。图1 的人物，灰白全息质感。纯黑背景，螺旋中心一点红光。平静、深邃、明白。（画面语法：纯黑或近黑背景，冷灰白、低饱和，全画面只有一处红色强调；不要文字、不要水印、不要 UI；电影宽银幕构图，克制。）",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)",
+ "refs_src": [
+  "她_设定"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

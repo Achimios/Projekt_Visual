@@ -1,0 +1,22 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "纯黑宇宙里一道由灰白光点组成的彗星般的轨迹划过画面，轨迹是优美的吸引子曲线，轨迹的头部是一个小小的发光女性人影；画面右下远处一个穿装甲士兵的背影站着等。冷灰白，轨迹头部一点红。失重、温柔、归途。（画面语法：纯黑或近黑背景，冷灰白、低饱和，全画面只有一处红色强调；不要文字、不要水印、不要 UI；电影宽银幕构图，克制。）",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(279631 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)"
+ ],
+ "refs_src": [
+  "吸引子",
+  "她_设定"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

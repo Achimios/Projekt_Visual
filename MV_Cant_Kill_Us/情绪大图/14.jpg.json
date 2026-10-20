@@ -1,0 +1,15 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "极近特写：一只厚重的装甲手套从画面下方伸入，掌心向上张开，一粒很小的冷白光点正轻轻落进掌心，照亮手套的纹理。其余全黑。只有光点中心有一点点红。温柔、承诺、结束。（画面语法：纯黑或近黑背景，冷灰白、低饱和，全画面只有一处红色强调；不要文字、不要水印、不要 UI；电影宽银幕构图，克制。）",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

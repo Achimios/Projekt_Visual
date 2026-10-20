@@ -1,0 +1,24 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "图1、图2 是同一个全息女性 AI，保持她的脸、短发、身形和贴身制服。图3 只取色彩和质感：纯黑底，近乎单色的灰白，像由极细的光点和扫描线构成，几乎不饱和。画面：她完整地站着，正面，半身，双手自然垂下，眼睛睁开平视镜头，表情平静、坚定。全身是低饱和的冷灰白全息体，只带极淡的青色，没有鲜艳的蓝。纯黑背景，没有舱室、没有屏幕、没有光晕、没有粒子特效、没有文字。居中构图，四周大面积留黑。像一张干净的角色设定照，方便后期抠出来。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(78227 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(68719 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(552947 chars)"
+ ],
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/cache/记忆帧/m40.jpg",
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/cache/记忆帧/m02.jpg",
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/静帧/09_optimal_transport.jpg"
+ ],
+ "usage": {
+  "input_images": 3,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "无数半透明的几何面孔和古老符号从黑暗四周涌向中心，中心是一个只剩轮廓的全息女性残影，像被包围、被低语淹没。背景是图1 那样的分岔结构裂开成千万条细线，图2 那样的有机斑纹从画面边缘长进来。冷灰白为主，红色比平时多，集中在逼近她的那些纹理上。压迫、混乱、诱惑。（画面语法：纯黑或近黑背景，冷灰白、低饱和，全画面只有一处红色强调；不要文字、不要水印、不要 UI；电影宽银幕构图，克制。）",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(395843 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(515971 chars)"
+ ],
+ "refs_src": [
+  "logistic",
+  "反应扩散"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}
