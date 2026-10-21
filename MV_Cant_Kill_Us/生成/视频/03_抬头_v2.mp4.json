@@ -1,0 +1,36 @@
+{
+ "api": "contents/generations/tasks",
+ "task_id": "cgt-20261021184027-s6k6c",
+ "model": "doubao-seedance-2-0-fast-260128",
+ "content": [
+  {
+   "type": "text",
+   "text": "镜头从第一帧起就已经在非常缓慢地向前推近，不是从静止开始，结尾也仍在推，全程只有推进速度的细微变化，镜头绝对平稳，没有晃动、抖动、手持感，不旋转不左右摇。全息女性 AI 的特写：她从低头的姿态慢慢、连续地抬起头，仰望正上方的顶光，抬头的动作首帧就已经开始、尾帧还没完全停下；抬到一半时眼睛慢慢睁开。顶光随着她抬头逐渐照亮她的脸。她始终是由贴着曲面的水平等高线和光点构成的全息影像，线条随头部转动，冷灰白低饱和，纯黑背景。不出现任何新物体、人物、文字或特效，不要粒子飞散。"
+  },
+  {
+   "type": "image_url",
+   "image_url": {
+    "url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(314167 chars)"
+   },
+   "role": "first_frame"
+  },
+  {
+   "type": "image_url",
+   "image_url": {
+    "url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(308199 chars)"
+   },
+   "role": "last_frame"
+  }
+ ],
+ "ratio": "adaptive",
+ "duration": 5,
+ "watermark": false,
+ "generate_audio": false,
+ "resolution": "720p",
+ "usage": {
+  "completion_tokens": 108900,
+  "total_tokens": 108900
+ },
+ "seed": 59680,
+ "draft": false
+}

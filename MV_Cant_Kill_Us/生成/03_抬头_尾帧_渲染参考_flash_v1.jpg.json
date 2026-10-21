@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "以图1 的构图、镜头距离、头部姿态（仰起头，脸朝上望向正上方的光）和顶光为准，不要改姿态。她是图2 这个短发女性 AI 的全息影像（发型和脸型参考图2）。眼睛刚刚睁开，望向上方看不见的光，平静里带一点惊讶；顶光照亮额头、眼睛、鼻梁和嘴唇，下巴以下暗下去。她明显是 CG 全息投影，绝不是真人照片：脸、头发和肩膀由图1 那样贴着曲面的细密水平等高线和发光点云构成，线与线之间是半透明的暗部，能看出数字扫描结构；皮肤没有毛孔、没有真实肤色和妆容；肩膀和脖子下部碎成稀疏的光点、隐入黑暗。冷灰白、低饱和，带一点点冷蓝，纯黑背景，唯一光源是正上方的顶光。电影特写，16:9，安静、克制。没有文字、没有新物体。",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": [
+  "data:image/png;base64,iVBORw0KGgoAAAANSU…(498330 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)"
+ ],
+ "refs_src": [
+  "生成\\视频\\03_抬头_渲染运动_v1_帧\\f119.png",
+  "生成\\角色_她_正面_灰_pro.jpg"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}
