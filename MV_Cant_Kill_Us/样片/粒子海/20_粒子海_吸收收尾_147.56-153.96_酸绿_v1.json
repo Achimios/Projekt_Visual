@@ -1,0 +1,1600 @@
+{
+ "tool": "tools/particle_sea.py",
+ "t0": 147.56,
+ "t1": 153.96,
+ "size": [
+  1920,
+  1080
+ ],
+ "fps": 24,
+ "preset": "finale",
+ "palettes": {
+  "bwr": {
+   "bg": [
+    0.012,
+    0.012,
+    0.012
+   ],
+   "sea": [
+    0.909,
+    0.966,
+    1.0
+   ],
+   "ring": [
+    0.909,
+    0.966,
+    1.0
+   ],
+   "fly": [
+    0.909,
+    0.966,
+    1.0
+   ],
+   "body": [
+    0.909,
+    0.966,
+    1.0
+   ],
+   "heart": [
+    1.05,
+    0.168,
+    0.21
+   ]
+  },
+  "acid": {
+   "bg": [
+    0.008,
+    0.01,
+    0.009
+   ],
+   "sea": [
+    0.5,
+    0.56,
+    0.58
+   ],
+   "ring": [
+    0.62,
+    1.0,
+    0.1
+   ],
+   "fly": [
+    0.7,
+    1.0,
+    0.16
+   ],
+   "body": [
+    0.96,
+    0.97,
+    0.93
+   ],
+   "heart": [
+    1.0,
+    0.95,
+    0.12
+   ]
+  }
+ },
+ "outputs": {
+  "bwr": "20_粒子海_吸收收尾_147.56-153.96_黑白红_v1.mp4",
+  "acid": "20_粒子海_吸收收尾_147.56-153.96_酸绿_v1.mp4"
+ },
+ "params": {
+  "Hs": 10.0,
+  "Tp": 12.0,
+  "gamma": 3.3,
+  "wind_deg": -20.0,
+  "spread_s": 6.0,
+  "L": 512.0,
+  "grid": 256,
+  "chop": 1.2,
+  "sea_seed": 7,
+  "N_sea": 220000,
+  "d0": 30.0,
+  "sea_xmax": 420.0,
+  "sea_zmax": 520.0,
+  "fog": 260.0,
+  "dash_m": 0.7,
+  "w_sea": 1.1,
+  "body": 1,
+  "center": "0,0,0",
+  "mesh": "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\3D\\N4D_蜷缩抱膝_无材质_100万面.glb",
+  "body_h": 36.0,
+  "body_yaw": -15.0,
+  "body_pitch": 8.0,
+  "body_y": -9.0,
+  "line_n": 70,
+  "line_eps": 0.13,
+  "n_surf": 500000,
+  "n_depth": 160000,
+  "w_body": 0.6,
+  "body_seed": 3,
+  "R_src": 4.0,
+  "w_src": 0.2,
+  "w_flight": 0.35,
+  "pre_absorbed": 0.8,
+  "end_frac": 1.0,
+  "trickle": 0.05,
+  "thr_pow": 3.0,
+  "omega": 7.0,
+  "v_up": 26.0,
+  "order_noise": 0.25,
+  "ring_A": 3.0,
+  "ring_b": 6.0,
+  "ring_decay": 3.0,
+  "ring_min_threat": 0.08,
+  "ring_scatter": 0.0,
+  "ring_kind": "impulse",
+  "ring_tau": 0.6,
+  "cam_from": "95,3.0,-92",
+  "cam_to": "38,14,-98",
+  "v_frac": 0.75,
+  "tau": 0.9,
+  "look": "14,13,0",
+  "look_lag": 0.35,
+  "hfov": 52.0,
+  "roll_deg": 3.0,
+  "shutter": 0.5,
+  "K": 6,
+  "trail_s": 0.25,
+  "trail_n": 10,
+  "trail_gain": 0.7,
+  "gain": 1.3,
+  "bloom": 0.18,
+  "bg": 0.012,
+  "hud": 1
+ },
+ "body": {
+  "scale_m_per_unit": 18.0,
+  "line_spacing_m": 0.5142857142857142,
+  "n_lines": 121329
+ },
+ "schedule": {
+  "events": [
+   [
+    147.945,
+    0.35,
+    224
+   ],
+   [
+    148.344,
+    0.685,
+    1684
+   ],
+   [
+    149.352,
+    0.602,
+    1143
+   ],
+   [
+    149.861,
+    0.5,
+    655
+   ],
+   [
+    149.951,
+    0.5,
+    655
+   ],
+   [
+    150.549,
+    0.417,
+    380
+   ],
+   [
+    151.348,
+    0.837,
+    3073
+   ],
+   [
+    151.547,
+    0.818,
+    2868
+   ],
+   [
+    151.946,
+    0.936,
+    4297
+   ],
+   [
+    152.545,
+    0.807,
+    2754
+   ],
+   [
+    152.944,
+    0.693,
+    1744
+   ],
+   [
+    153.144,
+    0.88,
+    3571
+   ]
+  ],
+  "n_pre": 97063,
+  "n_end": 121329,
+  "n_trickle": 1218,
+  "red_hit": 151.946,
+  "red_arrive": 152.36
+ },
+ "N_total": 341329,
+ "per_frame": [
+  {
+   "t": 147.56,
+   "sea": 244266,
+   "flight": 0,
+   "body": 97063,
+   "cam_speed": 50.954,
+   "heart": null
+  },
+  {
+   "t": 147.6017,
+   "sea": 244260,
+   "flight": 6,
+   "body": 97063,
+   "cam_speed": 48.752,
+   "heart": null
+  },
+  {
+   "t": 147.6433,
+   "sea": 244247,
+   "flight": 19,
+   "body": 97063,
+   "cam_speed": 46.649,
+   "heart": null
+  },
+  {
+   "t": 147.685,
+   "sea": 244241,
+   "flight": 25,
+   "body": 97063,
+   "cam_speed": 44.642,
+   "heart": null
+  },
+  {
+   "t": 147.7267,
+   "sea": 244234,
+   "flight": 32,
+   "body": 97063,
+   "cam_speed": 42.725,
+   "heart": null
+  },
+  {
+   "t": 147.7683,
+   "sea": 244225,
+   "flight": 41,
+   "body": 97063,
+   "cam_speed": 40.895,
+   "heart": null
+  },
+  {
+   "t": 147.81,
+   "sea": 244213,
+   "flight": 53,
+   "body": 97063,
+   "cam_speed": 39.148,
+   "heart": null
+  },
+  {
+   "t": 147.8517,
+   "sea": 244207,
+   "flight": 59,
+   "body": 97063,
+   "cam_speed": 37.48,
+   "heart": null
+  },
+  {
+   "t": 147.8933,
+   "sea": 244201,
+   "flight": 65,
+   "body": 97063,
+   "cam_speed": 35.888,
+   "heart": null
+  },
+  {
+   "t": 147.935,
+   "sea": 244191,
+   "flight": 75,
+   "body": 97063,
+   "cam_speed": 34.367,
+   "heart": null
+  },
+  {
+   "t": 147.9767,
+   "sea": 244021,
+   "flight": 245,
+   "body": 97063,
+   "cam_speed": 32.916,
+   "heart": null
+  },
+  {
+   "t": 148.0183,
+   "sea": 243949,
+   "flight": 317,
+   "body": 97063,
+   "cam_speed": 31.53,
+   "heart": null
+  },
+  {
+   "t": 148.06,
+   "sea": 243936,
+   "flight": 330,
+   "body": 97063,
+   "cam_speed": 30.207,
+   "heart": null
+  },
+  {
+   "t": 148.1017,
+   "sea": 243931,
+   "flight": 335,
+   "body": 97063,
+   "cam_speed": 28.943,
+   "heart": null
+  },
+  {
+   "t": 148.1433,
+   "sea": 243922,
+   "flight": 344,
+   "body": 97063,
+   "cam_speed": 27.737,
+   "heart": null
+  },
+  {
+   "t": 148.185,
+   "sea": 243913,
+   "flight": 353,
+   "body": 97063,
+   "cam_speed": 26.585,
+   "heart": null
+  },
+  {
+   "t": 148.2267,
+   "sea": 243903,
+   "flight": 363,
+   "body": 97063,
+   "cam_speed": 25.485,
+   "heart": null
+  },
+  {
+   "t": 148.2683,
+   "sea": 243898,
+   "flight": 368,
+   "body": 97063,
+   "cam_speed": 24.436,
+   "heart": null
+  },
+  {
+   "t": 148.31,
+   "sea": 243889,
+   "flight": 377,
+   "body": 97063,
+   "cam_speed": 23.433,
+   "heart": null
+  },
+  {
+   "t": 148.3517,
+   "sea": 243561,
+   "flight": 705,
+   "body": 97063,
+   "cam_speed": 22.476,
+   "heart": null
+  },
+  {
+   "t": 148.3933,
+   "sea": 242372,
+   "flight": 1894,
+   "body": 97063,
+   "cam_speed": 21.563,
+   "heart": null
+  },
+  {
+   "t": 148.435,
+   "sea": 242188,
+   "flight": 2072,
+   "body": 97069,
+   "cam_speed": 20.69,
+   "heart": null
+  },
+  {
+   "t": 148.4767,
+   "sea": 242173,
+   "flight": 2074,
+   "body": 97082,
+   "cam_speed": 19.857,
+   "heart": null
+  },
+  {
+   "t": 148.5183,
+   "sea": 242164,
+   "flight": 2077,
+   "body": 97088,
+   "cam_speed": 19.062,
+   "heart": null
+  },
+  {
+   "t": 148.56,
+   "sea": 242158,
+   "flight": 2076,
+   "body": 97095,
+   "cam_speed": 18.303,
+   "heart": null
+  },
+  {
+   "t": 148.6017,
+   "sea": 242150,
+   "flight": 2075,
+   "body": 97104,
+   "cam_speed": 17.578,
+   "heart": null
+  },
+  {
+   "t": 148.6433,
+   "sea": 242142,
+   "flight": 2071,
+   "body": 97116,
+   "cam_speed": 16.886,
+   "heart": null
+  },
+  {
+   "t": 148.685,
+   "sea": 242134,
+   "flight": 2073,
+   "body": 97122,
+   "cam_speed": 16.225,
+   "heart": null
+  },
+  {
+   "t": 148.7267,
+   "sea": 242123,
+   "flight": 2078,
+   "body": 97128,
+   "cam_speed": 15.594,
+   "heart": null
+  },
+  {
+   "t": 148.7683,
+   "sea": 242112,
+   "flight": 2081,
+   "body": 97136,
+   "cam_speed": 14.992,
+   "heart": null
+  },
+  {
+   "t": 148.81,
+   "sea": 242108,
+   "flight": 1918,
+   "body": 97303,
+   "cam_speed": 14.417,
+   "heart": null
+  },
+  {
+   "t": 148.8517,
+   "sea": 242102,
+   "flight": 1848,
+   "body": 97379,
+   "cam_speed": 13.868,
+   "heart": null
+  },
+  {
+   "t": 148.8933,
+   "sea": 242094,
+   "flight": 1842,
+   "body": 97393,
+   "cam_speed": 13.343,
+   "heart": null
+  },
+  {
+   "t": 148.935,
+   "sea": 242086,
+   "flight": 1845,
+   "body": 97398,
+   "cam_speed": 12.843,
+   "heart": null
+  },
+  {
+   "t": 148.9767,
+   "sea": 242078,
+   "flight": 1845,
+   "body": 97406,
+   "cam_speed": 12.365,
+   "heart": null
+  },
+  {
+   "t": 149.0183,
+   "sea": 242071,
+   "flight": 1842,
+   "body": 97416,
+   "cam_speed": 11.909,
+   "heart": null
+  },
+  {
+   "t": 149.06,
+   "sea": 242059,
+   "flight": 1844,
+   "body": 97426,
+   "cam_speed": 11.473,
+   "heart": null
+  },
+  {
+   "t": 149.1017,
+   "sea": 242048,
+   "flight": 1850,
+   "body": 97431,
+   "cam_speed": 11.057,
+   "heart": null
+  },
+  {
+   "t": 149.1433,
+   "sea": 242038,
+   "flight": 1851,
+   "body": 97440,
+   "cam_speed": 10.66,
+   "heart": null
+  },
+  {
+   "t": 149.185,
+   "sea": 242033,
+   "flight": 1568,
+   "body": 97728,
+   "cam_speed": 10.281,
+   "heart": null
+  },
+  {
+   "t": 149.2267,
+   "sea": 242027,
+   "flight": 358,
+   "body": 98944,
+   "cam_speed": 9.919,
+   "heart": null
+  },
+  {
+   "t": 149.2683,
+   "sea": 242018,
+   "flight": 170,
+   "body": 99141,
+   "cam_speed": 9.573,
+   "heart": null
+  },
+  {
+   "t": 149.31,
+   "sea": 242011,
+   "flight": 162,
+   "body": 99156,
+   "cam_speed": 9.243,
+   "heart": null
+  },
+  {
+   "t": 149.3517,
+   "sea": 242001,
+   "flight": 163,
+   "body": 99165,
+   "cam_speed": 8.928,
+   "heart": null
+  },
+  {
+   "t": 149.3933,
+   "sea": 241036,
+   "flight": 1122,
+   "body": 99171,
+   "cam_speed": 8.628,
+   "heart": null
+  },
+  {
+   "t": 149.435,
+   "sea": 240847,
+   "flight": 1303,
+   "body": 99179,
+   "cam_speed": 8.34,
+   "heart": null
+  },
+  {
+   "t": 149.4767,
+   "sea": 240834,
+   "flight": 1308,
+   "body": 99187,
+   "cam_speed": 8.066,
+   "heart": null
+  },
+  {
+   "t": 149.5183,
+   "sea": 240827,
+   "flight": 1307,
+   "body": 99195,
+   "cam_speed": 7.804,
+   "heart": null
+  },
+  {
+   "t": 149.56,
+   "sea": 240818,
+   "flight": 1305,
+   "body": 99206,
+   "cam_speed": 7.554,
+   "heart": null
+  },
+  {
+   "t": 149.6017,
+   "sea": 240807,
+   "flight": 1305,
+   "body": 99217,
+   "cam_speed": 7.316,
+   "heart": null
+  },
+  {
+   "t": 149.6433,
+   "sea": 240793,
+   "flight": 1315,
+   "body": 99221,
+   "cam_speed": 7.088,
+   "heart": null
+  },
+  {
+   "t": 149.685,
+   "sea": 240781,
+   "flight": 1321,
+   "body": 99227,
+   "cam_speed": 6.87,
+   "heart": null
+  },
+  {
+   "t": 149.7267,
+   "sea": 240769,
+   "flight": 1325,
+   "body": 99235,
+   "cam_speed": 6.663,
+   "heart": null
+  },
+  {
+   "t": 149.7683,
+   "sea": 240756,
+   "flight": 1330,
+   "body": 99243,
+   "cam_speed": 6.464,
+   "heart": null
+  },
+  {
+   "t": 149.81,
+   "sea": 240748,
+   "flight": 1330,
+   "body": 99251,
+   "cam_speed": 6.275,
+   "heart": null
+  },
+  {
+   "t": 149.8517,
+   "sea": 240742,
+   "flight": 1329,
+   "body": 99258,
+   "cam_speed": 6.094,
+   "heart": null
+  },
+  {
+   "t": 149.8933,
+   "sea": 240265,
+   "flight": 1795,
+   "body": 99269,
+   "cam_speed": 5.922,
+   "heart": null
+  },
+  {
+   "t": 149.935,
+   "sea": 240077,
+   "flight": 1971,
+   "body": 99281,
+   "cam_speed": 5.757,
+   "heart": null
+  },
+  {
+   "t": 149.9767,
+   "sea": 239655,
+   "flight": 2383,
+   "body": 99291,
+   "cam_speed": 5.6,
+   "heart": null
+  },
+  {
+   "t": 150.0183,
+   "sea": 239414,
+   "flight": 2619,
+   "body": 99296,
+   "cam_speed": 5.449,
+   "heart": null
+  },
+  {
+   "t": 150.06,
+   "sea": 239382,
+   "flight": 2645,
+   "body": 99302,
+   "cam_speed": 5.306,
+   "heart": null
+  },
+  {
+   "t": 150.1017,
+   "sea": 239374,
+   "flight": 2644,
+   "body": 99311,
+   "cam_speed": 5.169,
+   "heart": null
+  },
+  {
+   "t": 150.1433,
+   "sea": 239363,
+   "flight": 2648,
+   "body": 99318,
+   "cam_speed": 5.038,
+   "heart": null
+  },
+  {
+   "t": 150.185,
+   "sea": 239357,
+   "flight": 2644,
+   "body": 99328,
+   "cam_speed": 4.914,
+   "heart": null
+  },
+  {
+   "t": 150.2267,
+   "sea": 239350,
+   "flight": 1699,
+   "body": 100280,
+   "cam_speed": 4.794,
+   "heart": null
+  },
+  {
+   "t": 150.2683,
+   "sea": 239329,
+   "flight": 1518,
+   "body": 100482,
+   "cam_speed": 4.681,
+   "heart": null
+  },
+  {
+   "t": 150.31,
+   "sea": 239319,
+   "flight": 1515,
+   "body": 100495,
+   "cam_speed": 4.572,
+   "heart": null
+  },
+  {
+   "t": 150.3517,
+   "sea": 239315,
+   "flight": 1512,
+   "body": 100502,
+   "cam_speed": 4.468,
+   "heart": null
+  },
+  {
+   "t": 150.3933,
+   "sea": 239301,
+   "flight": 1517,
+   "body": 100511,
+   "cam_speed": 4.369,
+   "heart": null
+  },
+  {
+   "t": 150.435,
+   "sea": 239291,
+   "flight": 1516,
+   "body": 100522,
+   "cam_speed": 4.275,
+   "heart": null
+  },
+  {
+   "t": 150.4767,
+   "sea": 239280,
+   "flight": 1513,
+   "body": 100536,
+   "cam_speed": 4.185,
+   "heart": null
+  },
+  {
+   "t": 150.5183,
+   "sea": 239275,
+   "flight": 1506,
+   "body": 100548,
+   "cam_speed": 4.098,
+   "heart": null
+  },
+  {
+   "t": 150.56,
+   "sea": 239155,
+   "flight": 1615,
+   "body": 100559,
+   "cam_speed": 4.016,
+   "heart": null
+  },
+  {
+   "t": 150.6017,
+   "sea": 238905,
+   "flight": 1851,
+   "body": 100573,
+   "cam_speed": 3.938,
+   "heart": null
+  },
+  {
+   "t": 150.6433,
+   "sea": 238869,
+   "flight": 1880,
+   "body": 100580,
+   "cam_speed": 3.863,
+   "heart": null
+  },
+  {
+   "t": 150.685,
+   "sea": 238858,
+   "flight": 1884,
+   "body": 100587,
+   "cam_speed": 3.791,
+   "heart": null
+  },
+  {
+   "t": 150.7267,
+   "sea": 238855,
+   "flight": 1421,
+   "body": 101053,
+   "cam_speed": 3.723,
+   "heart": null
+  },
+  {
+   "t": 150.7683,
+   "sea": 238849,
+   "flight": 1229,
+   "body": 101251,
+   "cam_speed": 3.657,
+   "heart": null
+  },
+  {
+   "t": 150.81,
+   "sea": 238842,
+   "flight": 831,
+   "body": 101656,
+   "cam_speed": 3.595,
+   "heart": null
+  },
+  {
+   "t": 150.8517,
+   "sea": 238832,
+   "flight": 583,
+   "body": 101914,
+   "cam_speed": 3.535,
+   "heart": null
+  },
+  {
+   "t": 150.8933,
+   "sea": 238826,
+   "flight": 557,
+   "body": 101946,
+   "cam_speed": 3.479,
+   "heart": null
+  },
+  {
+   "t": 150.935,
+   "sea": 238820,
+   "flight": 554,
+   "body": 101955,
+   "cam_speed": 3.424,
+   "heart": null
+  },
+  {
+   "t": 150.9767,
+   "sea": 238810,
+   "flight": 553,
+   "body": 101966,
+   "cam_speed": 3.373,
+   "heart": null
+  },
+  {
+   "t": 151.0183,
+   "sea": 238801,
+   "flight": 556,
+   "body": 101972,
+   "cam_speed": 3.323,
+   "heart": null
+  },
+  {
+   "t": 151.06,
+   "sea": 238792,
+   "flight": 558,
+   "body": 101979,
+   "cam_speed": 3.276,
+   "heart": null
+  },
+  {
+   "t": 151.1017,
+   "sea": 238787,
+   "flight": 543,
+   "body": 101999,
+   "cam_speed": 3.231,
+   "heart": null
+  },
+  {
+   "t": 151.1433,
+   "sea": 238782,
+   "flight": 537,
+   "body": 102010,
+   "cam_speed": 3.188,
+   "heart": null
+  },
+  {
+   "t": 151.185,
+   "sea": 238770,
+   "flight": 545,
+   "body": 102014,
+   "cam_speed": 3.147,
+   "heart": null
+  },
+  {
+   "t": 151.2267,
+   "sea": 238759,
+   "flight": 542,
+   "body": 102028,
+   "cam_speed": 3.108,
+   "heart": null
+  },
+  {
+   "t": 151.2683,
+   "sea": 238751,
+   "flight": 540,
+   "body": 102038,
+   "cam_speed": 3.07,
+   "heart": null
+  },
+  {
+   "t": 151.31,
+   "sea": 238738,
+   "flight": 543,
+   "body": 102048,
+   "cam_speed": 3.034,
+   "heart": null
+  },
+  {
+   "t": 151.3517,
+   "sea": 238427,
+   "flight": 848,
+   "body": 102054,
+   "cam_speed": 3.0,
+   "heart": null
+  },
+  {
+   "t": 151.3933,
+   "sea": 236035,
+   "flight": 3127,
+   "body": 102167,
+   "cam_speed": 2.968,
+   "heart": null
+  },
+  {
+   "t": 151.435,
+   "sea": 235652,
+   "flight": 3257,
+   "body": 102420,
+   "cam_speed": 2.936,
+   "heart": null
+  },
+  {
+   "t": 151.4767,
+   "sea": 235630,
+   "flight": 3239,
+   "body": 102460,
+   "cam_speed": 2.907,
+   "heart": null
+  },
+  {
+   "t": 151.5183,
+   "sea": 235620,
+   "flight": 3238,
+   "body": 102471,
+   "cam_speed": 2.878,
+   "heart": null
+  },
+  {
+   "t": 151.56,
+   "sea": 234663,
+   "flight": 4192,
+   "body": 102474,
+   "cam_speed": 2.851,
+   "heart": null
+  },
+  {
+   "t": 151.6017,
+   "sea": 232938,
+   "flight": 5912,
+   "body": 102479,
+   "cam_speed": 2.825,
+   "heart": null
+  },
+  {
+   "t": 151.6433,
+   "sea": 232736,
+   "flight": 6106,
+   "body": 102487,
+   "cam_speed": 2.801,
+   "heart": null
+  },
+  {
+   "t": 151.685,
+   "sea": 232720,
+   "flight": 6112,
+   "body": 102497,
+   "cam_speed": 2.777,
+   "heart": null
+  },
+  {
+   "t": 151.7267,
+   "sea": 232713,
+   "flight": 6113,
+   "body": 102503,
+   "cam_speed": 2.755,
+   "heart": null
+  },
+  {
+   "t": 151.7683,
+   "sea": 232706,
+   "flight": 6114,
+   "body": 102509,
+   "cam_speed": 2.733,
+   "heart": null
+  },
+  {
+   "t": 151.81,
+   "sea": 232698,
+   "flight": 6112,
+   "body": 102519,
+   "cam_speed": 2.713,
+   "heart": null
+  },
+  {
+   "t": 151.8517,
+   "sea": 232691,
+   "flight": 6110,
+   "body": 102528,
+   "cam_speed": 2.693,
+   "heart": null
+  },
+  {
+   "t": 151.8933,
+   "sea": 232683,
+   "flight": 6109,
+   "body": 102537,
+   "cam_speed": 2.674,
+   "heart": null
+  },
+  {
+   "t": 151.935,
+   "sea": 232669,
+   "flight": 6118,
+   "body": 102542,
+   "cam_speed": 2.657,
+   "heart": null
+  },
+  {
+   "t": 151.9767,
+   "sea": 229656,
+   "flight": 9126,
+   "body": 102547,
+   "cam_speed": 2.64,
+   "heart": [
+    696.0,
+    767.7
+   ]
+  },
+  {
+   "t": 152.0183,
+   "sea": 228412,
+   "flight": 10358,
+   "body": 102559,
+   "cam_speed": 2.623,
+   "heart": [
+    676.9,
+    707.4
+   ]
+  },
+  {
+   "t": 152.06,
+   "sea": 228336,
+   "flight": 10424,
+   "body": 102569,
+   "cam_speed": 2.608,
+   "heart": [
+    657.5,
+    650.9
+   ]
+  },
+  {
+   "t": 152.1017,
+   "sea": 228323,
+   "flight": 10428,
+   "body": 102578,
+   "cam_speed": 2.593,
+   "heart": [
+    641.9,
+    607.0
+   ]
+  },
+  {
+   "t": 152.1433,
+   "sea": 228314,
+   "flight": 10425,
+   "body": 102590,
+   "cam_speed": 2.579,
+   "heart": [
+    630.6,
+    575.6
+   ]
+  },
+  {
+   "t": 152.185,
+   "sea": 228304,
+   "flight": 10201,
+   "body": 102824,
+   "cam_speed": 2.565,
+   "heart": [
+    622.9,
+    554.3
+   ]
+  },
+  {
+   "t": 152.2267,
+   "sea": 228300,
+   "flight": 7764,
+   "body": 105265,
+   "cam_speed": 2.552,
+   "heart": [
+    617.7,
+    540.2
+   ]
+  },
+  {
+   "t": 152.2683,
+   "sea": 228290,
+   "flight": 7364,
+   "body": 105675,
+   "cam_speed": 2.54,
+   "heart": [
+    614.4,
+    531.2
+   ]
+  },
+  {
+   "t": 152.31,
+   "sea": 228282,
+   "flight": 7348,
+   "body": 105699,
+   "cam_speed": 2.528,
+   "heart": [
+    612.2,
+    525.4
+   ]
+  },
+  {
+   "t": 152.3517,
+   "sea": 228272,
+   "flight": 7349,
+   "body": 105708,
+   "cam_speed": 2.517,
+   "heart": [
+    610.8,
+    521.8
+   ]
+  },
+  {
+   "t": 152.3933,
+   "sea": 228263,
+   "flight": 6464,
+   "body": 106602,
+   "cam_speed": 2.506,
+   "heart": [
+    609.9,
+    519.6
+   ]
+  },
+  {
+   "t": 152.435,
+   "sea": 228259,
+   "flight": 4700,
+   "body": 108370,
+   "cam_speed": 2.496,
+   "heart": [
+    609.3,
+    518.3
+   ]
+  },
+  {
+   "t": 152.4767,
+   "sea": 228251,
+   "flight": 4486,
+   "body": 108592,
+   "cam_speed": 2.486,
+   "heart": [
+    608.9,
+    517.4
+   ]
+  },
+  {
+   "t": 152.5183,
+   "sea": 228245,
+   "flight": 4474,
+   "body": 108610,
+   "cam_speed": 2.477,
+   "heart": [
+    608.6,
+    516.9
+   ]
+  },
+  {
+   "t": 152.56,
+   "sea": 227195,
+   "flight": 5517,
+   "body": 108617,
+   "cam_speed": 2.468,
+   "heart": [
+    608.4,
+    516.6
+   ]
+  },
+  {
+   "t": 152.6017,
+   "sea": 225624,
+   "flight": 7081,
+   "body": 108624,
+   "cam_speed": 2.459,
+   "heart": [
+    608.2,
+    516.4
+   ]
+  },
+  {
+   "t": 152.6433,
+   "sea": 225465,
+   "flight": 7232,
+   "body": 108632,
+   "cam_speed": 2.451,
+   "heart": [
+    608.0,
+    516.3
+   ]
+  },
+  {
+   "t": 152.685,
+   "sea": 225457,
+   "flight": 7233,
+   "body": 108639,
+   "cam_speed": 2.443,
+   "heart": [
+    607.9,
+    516.2
+   ]
+  },
+  {
+   "t": 152.7267,
+   "sea": 225453,
+   "flight": 7230,
+   "body": 108646,
+   "cam_speed": 2.436,
+   "heart": [
+    607.8,
+    516.2
+   ]
+  },
+  {
+   "t": 152.7683,
+   "sea": 225444,
+   "flight": 7225,
+   "body": 108660,
+   "cam_speed": 2.429,
+   "heart": [
+    607.7,
+    516.2
+   ]
+  },
+  {
+   "t": 152.81,
+   "sea": 225435,
+   "flight": 4304,
+   "body": 111590,
+   "cam_speed": 2.422,
+   "heart": [
+    607.5,
+    516.2
+   ]
+  },
+  {
+   "t": 152.8517,
+   "sea": 225429,
+   "flight": 2989,
+   "body": 112911,
+   "cam_speed": 2.416,
+   "heart": [
+    607.4,
+    516.1
+   ]
+  },
+  {
+   "t": 152.8933,
+   "sea": 225420,
+   "flight": 2916,
+   "body": 112993,
+   "cam_speed": 2.41,
+   "heart": [
+    607.3,
+    516.1
+   ]
+  },
+  {
+   "t": 152.935,
+   "sea": 225412,
+   "flight": 2911,
+   "body": 113006,
+   "cam_speed": 2.404,
+   "heart": [
+    607.2,
+    516.1
+   ]
+  },
+  {
+   "t": 152.9767,
+   "sea": 224138,
+   "flight": 4176,
+   "body": 113015,
+   "cam_speed": 2.398,
+   "heart": [
+    607.1,
+    516.1
+   ]
+  },
+  {
+   "t": 153.0183,
+   "sea": 223675,
+   "flight": 4630,
+   "body": 113024,
+   "cam_speed": 2.393,
+   "heart": [
+    607.0,
+    516.1
+   ]
+  },
+  {
+   "t": 153.06,
+   "sea": 223642,
+   "flight": 4658,
+   "body": 113029,
+   "cam_speed": 2.388,
+   "heart": [
+    606.9,
+    516.1
+   ]
+  },
+  {
+   "t": 153.1017,
+   "sea": 223624,
+   "flight": 4666,
+   "body": 113039,
+   "cam_speed": 2.383,
+   "heart": [
+    606.8,
+    516.1
+   ]
+  },
+  {
+   "t": 153.1433,
+   "sea": 223614,
+   "flight": 4670,
+   "body": 113045,
+   "cam_speed": 2.378,
+   "heart": [
+    606.7,
+    516.1
+   ]
+  },
+  {
+   "t": 153.185,
+   "sea": 220647,
+   "flight": 7625,
+   "body": 113057,
+   "cam_speed": 2.374,
+   "heart": [
+    606.6,
+    516.1
+   ]
+  },
+  {
+   "t": 153.2267,
+   "sea": 220051,
+   "flight": 8212,
+   "body": 113066,
+   "cam_speed": 2.369,
+   "heart": [
+    606.5,
+    516.1
+   ]
+  },
+  {
+   "t": 153.2683,
+   "sea": 220020,
+   "flight": 8239,
+   "body": 113070,
+   "cam_speed": 2.365,
+   "heart": [
+    606.4,
+    516.1
+   ]
+  },
+  {
+   "t": 153.31,
+   "sea": 220011,
+   "flight": 8240,
+   "body": 113078,
+   "cam_speed": 2.362,
+   "heart": [
+    606.3,
+    516.1
+   ]
+  },
+  {
+   "t": 153.3517,
+   "sea": 220001,
+   "flight": 8245,
+   "body": 113083,
+   "cam_speed": 2.358,
+   "heart": [
+    606.2,
+    516.1
+   ]
+  },
+  {
+   "t": 153.3933,
+   "sea": 220000,
+   "flight": 7251,
+   "body": 114078,
+   "cam_speed": 2.354,
+   "heart": [
+    606.1,
+    516.1
+   ]
+  },
+  {
+   "t": 153.435,
+   "sea": 220000,
+   "flight": 5636,
+   "body": 115693,
+   "cam_speed": 2.351,
+   "heart": [
+    606.0,
+    516.1
+   ]
+  },
+  {
+   "t": 153.4767,
+   "sea": 220000,
+   "flight": 5465,
+   "body": 115864,
+   "cam_speed": 2.348,
+   "heart": [
+    606.0,
+    516.1
+   ]
+  },
+  {
+   "t": 153.5183,
+   "sea": 220000,
+   "flight": 5457,
+   "body": 115872,
+   "cam_speed": 2.345,
+   "heart": [
+    605.9,
+    516.1
+   ]
+  },
+  {
+   "t": 153.56,
+   "sea": 220000,
+   "flight": 5454,
+   "body": 115875,
+   "cam_speed": 2.342,
+   "heart": [
+    605.8,
+    516.1
+   ]
+  },
+  {
+   "t": 153.6017,
+   "sea": 220000,
+   "flight": 5444,
+   "body": 115885,
+   "cam_speed": 2.339,
+   "heart": [
+    605.7,
+    516.1
+   ]
+  },
+  {
+   "t": 153.6433,
+   "sea": 220000,
+   "flight": 5435,
+   "body": 115894,
+   "cam_speed": 2.336,
+   "heart": [
+    605.6,
+    516.1
+   ]
+  },
+  {
+   "t": 153.685,
+   "sea": 220000,
+   "flight": 5429,
+   "body": 115900,
+   "cam_speed": 2.334,
+   "heart": [
+    605.5,
+    516.1
+   ]
+  },
+  {
+   "t": 153.7267,
+   "sea": 220000,
+   "flight": 5420,
+   "body": 115909,
+   "cam_speed": 2.331,
+   "heart": [
+    605.4,
+    516.1
+   ]
+  },
+  {
+   "t": 153.7683,
+   "sea": 220000,
+   "flight": 5413,
+   "body": 115916,
+   "cam_speed": 2.329,
+   "heart": [
+    605.3,
+    516.1
+   ]
+  },
+  {
+   "t": 153.81,
+   "sea": 220000,
+   "flight": 4166,
+   "body": 117163,
+   "cam_speed": 2.327,
+   "heart": [
+    605.3,
+    516.1
+   ]
+  },
+  {
+   "t": 153.8517,
+   "sea": 220000,
+   "flight": 3675,
+   "body": 117654,
+   "cam_speed": 2.325,
+   "heart": [
+    605.2,
+    516.1
+   ]
+  },
+  {
+   "t": 153.8933,
+   "sea": 220000,
+   "flight": 3642,
+   "body": 117687,
+   "cam_speed": 2.322,
+   "heart": [
+    605.1,
+    516.1
+   ]
+  },
+  {
+   "t": 153.935,
+   "sea": 220000,
+   "flight": 3626,
+   "body": 117703,
+   "cam_speed": 2.321,
+   "heart": [
+    605.0,
+    516.1
+   ]
+  }
+ ],
+ "render_s": 855.4
+}
