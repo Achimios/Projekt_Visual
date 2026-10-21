@@ -1,0 +1,29 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "图3的女性躯干晶格骨架（细节参考图4），不包塑料膜，裸露悬挂在黑暗的冷雾中，一道冷白侧光从左侧掠过胸廓网格，在雾里拉出光束；脊柱下端一个很小的红色指示灯亮着，是唯一的暖色。像实验室深夜里被遗忘的样本。材质语言参考图2的雾。横幅16:9电影画面，低调布光，大面积纯黑，暗部压死，只有一道窄的侧逆光勾边，浅景深，轻微胶片颗粒，克制、安静。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(588075 chars)",
+  "data:image/webp;base64,UklGRmZ2AQBXRUJQV…(127831 chars)",
+  "data:image/webp;base64,iVBORw0KGgoAAAANS…(260187 chars)",
+  "data:image/webp;base64,UklGRjy7AgBXRUJQV…(238707 chars)"
+ ],
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\生成\\风格渲染\\B_躯体核心_真空塑封_冷雾.jpg",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\_参考库\\2026-10-21_用户给的\\风格2_塑料包裹_雾.webp",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\3D\\躯体核心.glb.preview.webp",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\_参考库\\2026-10-21_用户给的\\躯体核心结构_参考.webp"
+ ],
+ "usage": {
+  "input_images": 4,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "based_on": "B_躯体核心_真空塑封_冷雾.jpg",
+ "note": "👤选中后的暗调重做：不强制亚克力，压暗，16:9"
+}

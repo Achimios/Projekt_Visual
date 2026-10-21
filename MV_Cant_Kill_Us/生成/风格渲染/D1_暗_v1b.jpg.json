@@ -1,0 +1,29 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "黑暗中一位全息女性（面容按图3，体型参考图4）的胸像侧面四分之三，身体由悬浮的薄片切面构成，靠近镜头的切片清晰，向后逐层变稀、散成扫描线和光点；冷白光为主，阴影里残留一点图1式的暗绿，一个红色光点停在她胸口。没有夹具和箱体。横幅16:9电影画面，低调布光，大面积纯黑，暗部压死，只有一道窄的侧逆光勾边，浅景深，轻微胶片颗粒，克制、安静。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(909663 chars)",
+  "data:image/webp;base64,UklGRnQgAwBXRUJQV…(273255 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)",
+  "data:image/webp;base64,iVBORw0KGgoAAAANS…(132579 chars)"
+ ],
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\生成\\风格渲染\\D1_全息头像_亚克力层叠_霓虹忠实.jpg",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\_参考库\\2026-10-21_用户给的\\风格1_亚克力层叠_霓虹绿红.webp",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\生成\\角色_她_正面_灰_pro.jpg",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\3D\\她.glb.preview.webp"
+ ],
+ "usage": {
+  "input_images": 4,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "based_on": "D1_全息头像_亚克力层叠_霓虹忠实.jpg",
+ "note": "👤选中后的暗调重做：不强制亚克力，压暗，16:9"
+}

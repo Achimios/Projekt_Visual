@@ -1,0 +1,27 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "保留图1的构图与物件：放大成雕塑尺寸的硅基MEMS梳齿谐振器（结构按图3：中央梭体、交错梳齿、折叠梁），钢夹具、螺栓、散乱黑线缆。不必用亚克力板，可以只剩一片薄玻璃或直接裸露在黑暗里。图1的荧光绿与霓虹红光雾收成很暗的余辉，只在梳齿缝隙里透出一点绿，一条红导线发光。横幅16:9电影画面，低调布光，大面积纯黑，暗部压死，只有一道窄的侧逆光勾边，浅景深，轻微胶片颗粒，克制、安静。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(689083 chars)",
+  "data:image/webp;base64,UklGRnQgAwBXRUJQV…(273255 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(287359 chars)"
+ ],
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\生成\\风格渲染\\A1_MEMS梳齿_亚克力层叠_霓虹忠实.jpg",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\_参考库\\2026-10-21_用户给的\\风格1_亚克力层叠_霓虹绿红.webp",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\静帧\\13_mems.jpg"
+ ],
+ "usage": {
+  "input_images": 3,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "based_on": "A1_MEMS梳齿_亚克力层叠_霓虹忠实.jpg",
+ "note": "👤选中后的暗调重做：不强制亚克力，压暗，16:9"
+}
