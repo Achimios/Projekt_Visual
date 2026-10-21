@@ -1,0 +1,33 @@
+{
+ "api": "contents/generations/tasks",
+ "task_id": "cgt-20261022003208-5e9k9",
+ "model": "doubao-seedance-2-5-260628",
+ "content": [
+  {
+   "type": "text",
+   "text": "镜头一开始就在向下移动并略推近，像和她一起下坠。全息女性保持站立、平静，眼睛慢慢闭上；她下半身的扫描线一层层脱离身体、向上飘走（因为她在往下掉），从脚往上逐层蔓延到腰部；胸口那条红线闪一下。背景深处有极细的冷白网格线从下往上掠过，提示下坠的速度，网格掠过时镜头再加速一次。全息质感，暗绿余辉很淡。机位稳定，没有任何晃动或抖动；镜头从第一帧起就已经在运动，到最后一帧也没有停下，只有速度变化（突然加速 2-3 帧，然后缓慢减速但不归零）。纯黑背景，冷灰银白，全画面只有一个红点。无文字、无字幕、无界面。"
+  },
+  {
+   "type": "image_url",
+   "image_url": {
+    "url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(461699 chars)"
+   },
+   "role": "first_frame"
+  }
+ ],
+ "ratio": "adaptive",
+ "duration": 5,
+ "watermark": false,
+ "generate_audio": false,
+ "draft": true,
+ "usage": {
+  "completion_tokens": 48437,
+  "total_tokens": 48437
+ },
+ "seed": 92650,
+ "resolution": "480p",
+ "shot": "S2",
+ "first_frame_src": "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\生成\\风格渲染\\D1_暗_v1a.jpg",
+ "draft_task_id": "cgt-20261022003208-5e9k9",
+ "note": "seedance 批次1 草稿（480p）。正式版：content=[{type:draft_task, draft_task:{id: draft_task_id}}]，7 天内有效"
+}

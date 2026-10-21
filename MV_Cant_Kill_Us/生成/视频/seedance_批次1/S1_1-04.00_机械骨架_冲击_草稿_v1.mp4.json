@@ -1,0 +1,33 @@
+{
+ "api": "contents/generations/tasks",
+ "task_id": "cgt-20261022003208-yvx11",
+ "model": "doubao-seedance-2-5-260628",
+ "content": [
+  {
+   "type": "text",
+   "text": "镜头一开始就在缓慢向左环绕并略推近。胸骨处的红色LED猛地一亮，冲击从胸骨传开：半透明塑料膜被一股看不见的力向画面右侧撕开、拉成细条水平飘走；肋骨上的金属零件从胸骨开始沿着肋骨一根接一根依次松脱、向右水平飞散（冲击沿骨架结构传播，不是同时散开），脊柱里的排线被拉直、绷紧。冲击那一刻镜头加速，随后减速但继续环绕。无血肉。机位稳定，没有任何晃动或抖动；镜头从第一帧起就已经在运动，到最后一帧也没有停下，只有速度变化（突然加速 2-3 帧，然后缓慢减速但不归零）。纯黑背景，冷灰银白，全画面只有一个红点。无文字、无字幕、无界面。"
+  },
+  {
+   "type": "image_url",
+   "image_url": {
+    "url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(648967 chars)"
+   },
+   "role": "first_frame"
+  }
+ ],
+ "ratio": "adaptive",
+ "duration": 5,
+ "watermark": false,
+ "generate_audio": false,
+ "draft": true,
+ "usage": {
+  "completion_tokens": 48437,
+  "total_tokens": 48437
+ },
+ "seed": 8071,
+ "resolution": "480p",
+ "shot": "S1",
+ "first_frame_src": "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\生成\\风格渲染\\B_暗_机械_v2c.jpg",
+ "draft_task_id": "cgt-20261022003208-yvx11",
+ "note": "seedance 批次1 草稿（480p）。正式版：content=[{type:draft_task, draft_task:{id: draft_task_id}}]，7 天内有效"
+}

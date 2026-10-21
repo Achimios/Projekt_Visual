@@ -1,0 +1,21 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "保留图1的极近特写构图：半张脸由竖直薄片切开，右侧切片散成扫描线和光点。她必须一眼看出是CG全息体而不是真人照片：没有皮肤纹理、没有毛孔、没有真实发丝，脸是低多边形的三角面片网格，面片边缘是发光细线，半透明磨砂玻璃质感，眼睛是平面冷光，没有睫毛和皮肤。一条红色细线横穿眼睛高度。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(752603 chars)",
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\生成\\风格渲染\\D3_暗_v1b.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S5",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

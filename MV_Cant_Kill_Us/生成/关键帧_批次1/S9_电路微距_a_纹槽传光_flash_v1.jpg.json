@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "微距特写：一块古老金属石材表面刻满六边形网格和直角电路纹槽，极浅景深，只有一小片清楚。一道冷白的光正沿着纹槽一格一格地传过来，经过的纹槽被点亮；光的最前端是一个红点。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S9",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

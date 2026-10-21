@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "仰视一片巨大的远古外星文明建筑：无数六棱柱从黑暗中拔起，高到看不见顶，表面刻着精密的几何电路纹槽，纹槽里透出很淡的冷白光；柱林向远处消失在冷雾里。尺度极大，人类不存在。只有一根柱子上的一个符文是红色。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S6",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

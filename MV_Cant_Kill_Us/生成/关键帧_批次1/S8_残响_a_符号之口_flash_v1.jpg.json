@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "黑暗中一张巨大的抽象几何面孔侧影，由刻满古老几何符号的石质切面构成，没有皮肤。它的口部张开，从口中一圈圈同心圆的极细光环向外扩散，光环由微小的几何符号排成。光环扩散到画面右侧一个小小的灰白全息残影身上。只有一个符号是红的。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S8",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

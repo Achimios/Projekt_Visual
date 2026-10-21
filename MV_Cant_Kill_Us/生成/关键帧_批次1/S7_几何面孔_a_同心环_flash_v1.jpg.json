@@ -1,0 +1,21 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "参考图1的构图：中央一个只剩轮廓的灰白全息人形残影（看不清五官）。她四周是几百张抽象的几何面具，由多面体切面和细线构成，像石刻又像线框，没有皮肤、没有真实五官，只有几何的眉骨和闭着的眼缝，一圈一圈同心环地围向中心，越近越大。去掉图1的斑纹。只有一张面具的眼缝是红的。压迫、低语。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(571511 chars)",
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\情绪大图\\05.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S7",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

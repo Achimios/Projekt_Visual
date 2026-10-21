@@ -1,0 +1,21 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "保留图1的构图、侧面四分之三的胸像姿态和向后散开的切片。她必须一眼看出是CG全息体而不是真人照片：没有皮肤纹理、没有毛孔、没有真实发丝，脸和身体由三角面片拼成的低多边形网格，面片边缘是极细的发光线，表面像半透明磨砂玻璃，头发是成束的几何薄片，眼睛是两块平面的冷光。像引擎里的全息投影。胸口一个红点。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(478719 chars)",
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\生成\\风格渲染\\D1_暗_v1b.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S3",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

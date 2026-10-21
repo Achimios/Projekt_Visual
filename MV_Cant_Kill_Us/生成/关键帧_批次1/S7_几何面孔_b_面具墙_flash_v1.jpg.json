@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "一整面黑暗中的墙，嵌满了几百张大小不一的抽象几何面具：多面体切面、线框、石质，没有皮肤、没有真实五官，只有几何化的眉骨、鼻梁和眼缝，全部朝向画面中心；中心是一个很小的灰白全息人形剪影。只有一张面具的眼缝是红的。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S7",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

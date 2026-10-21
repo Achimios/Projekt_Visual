@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "无数线框构成的抽象几何面孔（只有轮廓线和三角面，像被简化到极点的头部模型）从黑暗深处朝镜头涌来，近大远小，层层叠叠，画面边缘的面孔几乎贴到镜头。它们的口部张开成几何的缝。只有最近的一张面孔的口缝里一个红点。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S7",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

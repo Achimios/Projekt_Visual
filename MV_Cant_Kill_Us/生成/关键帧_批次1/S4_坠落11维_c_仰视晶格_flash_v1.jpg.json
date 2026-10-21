@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "从下往上仰视：极深的立方晶格（无数细光线组成的立方体网格，透视向上无限延伸），晶格的棱是冷白细线，越远越密成一片灰雾。晶格中央一个由光点组成的小小人形张开手臂向下（朝镜头）坠落，她周围的棱被照亮。只有她胸口一个红点。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S4",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

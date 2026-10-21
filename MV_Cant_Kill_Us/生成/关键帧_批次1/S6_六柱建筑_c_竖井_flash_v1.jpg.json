@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "从一口巨大的六边形竖井上方往下看，井壁由层层六边形环构成，每一圈环上刻着发着微光的几何电路符号，一圈比一圈小，向下无限延伸到黑暗。井的最深处一个红点。远古、肃穆、非人。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S6",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

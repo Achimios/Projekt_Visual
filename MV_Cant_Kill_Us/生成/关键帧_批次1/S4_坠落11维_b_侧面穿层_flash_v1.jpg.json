@@ -1,0 +1,21 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "图1的线框结构做成一层层水平的透明格子平面，从画面上方到下方排成很深的纵深。画面：侧面看，一个灰白光点组成的人形身体舒展、头朝下坠落，正穿过其中一层格子，格子被她穿过的地方泛起一圈涟漪般的亮线，沿棱向外传播。只有她胸口一个红点。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(574459 chars)",
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\静帧\\19_calabi_yau_11d.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S4",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

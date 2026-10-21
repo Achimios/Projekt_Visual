@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "正面看一堵望不到边的六边形蜂巢墙，每一格都是深深凹进的六棱孔，孔壁上刻着电路般的直角纹路，纹路像血管一样从四周汇向画面中央的一个孔，那个孔深处是一个红点。冷灰金属、石质，极古老。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S6",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}

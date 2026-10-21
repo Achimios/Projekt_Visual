@@ -1,0 +1,4 @@
+first_frame=C:\Users\Administrator\Desktop\Projekt_Visual\MV_Cant_Kill_Us\生成\风格渲染\D1_暗_v1b.jpg
+prompt=镜头一开始就在缓慢向右环绕她的侧脸。她身体由悬浮的薄切片构成，靠后的切片一片接一片向后脱离、散成水平的扫描线流走（从后往前沿切片顺序传播），靠近镜头的切片和脸保持完整；胸口红点稳定发光。切片脱离的那一刻镜头加速。机位稳定，没有任何晃动或抖动；镜头从第一帧起就已经在运动，到最后一帧也没有停下，只有速度变化（突然加速 2-3 帧，然后缓慢减速但不归零）。纯黑背景，冷灰银白，全画面只有一个红点。无文字、无字幕、无界面。
+
+Ark POST /contents/generations/tasks -> HTTP 400: {"error":{"code":"InputImageSensitiveContentDetected.PrivacyInformation","message":"The request failed because the input image 'content[1]' may contain real person. Request id: 021792600327841ed0e184fb98d17720dee9f0ee33ee7e134c4a4","param":"content[1]","type":"BadRequest"}}

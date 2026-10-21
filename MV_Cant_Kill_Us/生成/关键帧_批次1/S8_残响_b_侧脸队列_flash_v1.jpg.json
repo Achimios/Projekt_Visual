@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "一排抽象的几何侧脸面具从近到远排成纵深，全是多面体切面，没有皮肤和真实五官；每张面具的口缝前有一条极细的声波光线，从最远一张传向最近一张，像低语沿着队列传过来。最近那张面具的口缝里一个红点。横幅16:9电影画面，纯黑背景，冷灰与银白，大面积留黑，暗部压死，一道窄的冷白侧逆光勾边，轻微胶片颗粒，克制、安静。全画面只有一个红点。没有任何文字、标志、界面。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "shot": "S8",
+ "note": "seedance 批次1 关键帧候选（先挑后做）"
+}
