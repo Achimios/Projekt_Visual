@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "保持图1 的构图、姿态、顶光和纯黑背景完全不变，但把她彻底变成明显非真人的全息投影：脸和身体由半透明的冷蓝灰光构成，皮肤没有真实毛孔和肤色，能透过脸隐约看到后面的黑暗；粗而明显的水平扫描线贯穿全身，边缘有轻微的数字错位和像素化；整体更暗，脸的下半部分和颈部隐入黑暗，只有额头、眼睛和鼻梁被顶光照亮。像科幻游戏里的 AI 全息影像，风格化，不像照片。没有粒子、没有文字、没有新物体。16:9 电影画面。",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(289019 chars)",
+ "refs_src": [
+  "情绪大图/03.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

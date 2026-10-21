@@ -1,0 +1,29 @@
+{
+ "api": "contents/generations/tasks",
+ "task_id": "cgt-20261021181729-9sdz5",
+ "model": "doubao-seedance-2-0-fast-260128",
+ "content": [
+  {
+   "type": "text",
+   "text": "以图片为首帧。镜头从第一帧起就已经在匀速向前推进，沿着走廊中轴线平稳前移，不是从静止开始；全程只有推进速度变化：前段匀速，最后一秒略微加速往前推。镜头绝对平稳，没有晃动、抖动、手持感，不旋转不左右摇。穿装甲的高大士兵背对镜头，持续向走廊深处走远，始终只看到背影。冷灰白色调，纯黑环境，走廊尽头保留那一点红光。不出现任何新物体、人物、文字或特效。"
+  },
+  {
+   "type": "image_url",
+   "image_url": {
+    "url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(262691 chars)"
+   },
+   "role": "first_frame"
+  }
+ ],
+ "ratio": "16:9",
+ "duration": 6,
+ "watermark": false,
+ "generate_audio": false,
+ "resolution": "480p",
+ "usage": {
+  "completion_tokens": 60682,
+  "total_tokens": 60682
+ },
+ "seed": 86584,
+ "draft": false
+}
