@@ -1,0 +1,8 @@
+#!/bin/sh
+# 单张 > 2 MB 的图片不进 git（👤2026-10-22）。启用：git config core.hooksPath .githooks
+big=$(git diff --cached --name-only -z --diff-filter=AM | python -c "
+import sys,os
+fs=sys.stdin.buffer.read().decode('utf-8').split('\0')
+ext=('.jpg','.jpeg','.png','.webp','.gif','.tif','.tiff','.exr','.bmp')
+print('\n'.join(f for f in fs if f.lower().endswith(ext) and os.path.isfile(f) and os.path.getsize(f)>2_000_000))")
+if [ -n "$big" ]; then echo "这些图 > 2 MB，不进 git（加进 .gitignore 或 git reset 掉）："; echo "$big"; exit 1; fi
