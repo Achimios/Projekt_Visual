@@ -1,0 +1,4833 @@
+{
+"tool": "tools/geo_symbols.py",
+"kind": "sieve",
+"ver": "v1",
+"palette": "acid",
+"fps": 24,
+"size": [
+1280,
+720
+],
+"params": {
+"N": 169,
+"bpm": 120.0,
+"primes_p": [
+2,
+3,
+5,
+7,
+11,
+13
+],
+"pass_starts": [
+1.0,
+3.0,
+5.0,
+7.0,
+9.0,
+11.0
+],
+"outro": 13.0,
+"T": 16.0,
+"pi_N": 39,
+"ease2": {
+"tau1_frames": 3,
+"tau2_frames": 9,
+"a": 0.6
+}
+},
+"events": [
+{
+"t": 1.25,
+"n": 4,
+"p": 2
+},
+{
+"t": 1.2681,
+"n": 6,
+"p": 2
+},
+{
+"t": 1.2861,
+"n": 8,
+"p": 2
+},
+{
+"t": 1.3042,
+"n": 10,
+"p": 2
+},
+{
+"t": 1.3223,
+"n": 12,
+"p": 2
+},
+{
+"t": 1.3404,
+"n": 14,
+"p": 2
+},
+{
+"t": 1.3584,
+"n": 16,
+"p": 2
+},
+{
+"t": 1.3765,
+"n": 18,
+"p": 2
+},
+{
+"t": 1.3946,
+"n": 20,
+"p": 2
+},
+{
+"t": 1.4127,
+"n": 22,
+"p": 2
+},
+{
+"t": 1.4307,
+"n": 24,
+"p": 2
+},
+{
+"t": 1.4488,
+"n": 26,
+"p": 2
+},
+{
+"t": 1.4669,
+"n": 28,
+"p": 2
+},
+{
+"t": 1.4849,
+"n": 30,
+"p": 2
+},
+{
+"t": 1.503,
+"n": 32,
+"p": 2
+},
+{
+"t": 1.5211,
+"n": 34,
+"p": 2
+},
+{
+"t": 1.5392,
+"n": 36,
+"p": 2
+},
+{
+"t": 1.5572,
+"n": 38,
+"p": 2
+},
+{
+"t": 1.5753,
+"n": 40,
+"p": 2
+},
+{
+"t": 1.5934,
+"n": 42,
+"p": 2
+},
+{
+"t": 1.6114,
+"n": 44,
+"p": 2
+},
+{
+"t": 1.6295,
+"n": 46,
+"p": 2
+},
+{
+"t": 1.6476,
+"n": 48,
+"p": 2
+},
+{
+"t": 1.6657,
+"n": 50,
+"p": 2
+},
+{
+"t": 1.6837,
+"n": 52,
+"p": 2
+},
+{
+"t": 1.7018,
+"n": 54,
+"p": 2
+},
+{
+"t": 1.7199,
+"n": 56,
+"p": 2
+},
+{
+"t": 1.738,
+"n": 58,
+"p": 2
+},
+{
+"t": 1.756,
+"n": 60,
+"p": 2
+},
+{
+"t": 1.7741,
+"n": 62,
+"p": 2
+},
+{
+"t": 1.7922,
+"n": 64,
+"p": 2
+},
+{
+"t": 1.8102,
+"n": 66,
+"p": 2
+},
+{
+"t": 1.8283,
+"n": 68,
+"p": 2
+},
+{
+"t": 1.8464,
+"n": 70,
+"p": 2
+},
+{
+"t": 1.8645,
+"n": 72,
+"p": 2
+},
+{
+"t": 1.8825,
+"n": 74,
+"p": 2
+},
+{
+"t": 1.9006,
+"n": 76,
+"p": 2
+},
+{
+"t": 1.9187,
+"n": 78,
+"p": 2
+},
+{
+"t": 1.9367,
+"n": 80,
+"p": 2
+},
+{
+"t": 1.9548,
+"n": 82,
+"p": 2
+},
+{
+"t": 1.9729,
+"n": 84,
+"p": 2
+},
+{
+"t": 1.991,
+"n": 86,
+"p": 2
+},
+{
+"t": 2.009,
+"n": 88,
+"p": 2
+},
+{
+"t": 2.0271,
+"n": 90,
+"p": 2
+},
+{
+"t": 2.0452,
+"n": 92,
+"p": 2
+},
+{
+"t": 2.0633,
+"n": 94,
+"p": 2
+},
+{
+"t": 2.0813,
+"n": 96,
+"p": 2
+},
+{
+"t": 2.0994,
+"n": 98,
+"p": 2
+},
+{
+"t": 2.1175,
+"n": 100,
+"p": 2
+},
+{
+"t": 2.1355,
+"n": 102,
+"p": 2
+},
+{
+"t": 2.1536,
+"n": 104,
+"p": 2
+},
+{
+"t": 2.1717,
+"n": 106,
+"p": 2
+},
+{
+"t": 2.1898,
+"n": 108,
+"p": 2
+},
+{
+"t": 2.2078,
+"n": 110,
+"p": 2
+},
+{
+"t": 2.2259,
+"n": 112,
+"p": 2
+},
+{
+"t": 2.244,
+"n": 114,
+"p": 2
+},
+{
+"t": 2.262,
+"n": 116,
+"p": 2
+},
+{
+"t": 2.2801,
+"n": 118,
+"p": 2
+},
+{
+"t": 2.2982,
+"n": 120,
+"p": 2
+},
+{
+"t": 2.3163,
+"n": 122,
+"p": 2
+},
+{
+"t": 2.3343,
+"n": 124,
+"p": 2
+},
+{
+"t": 2.3524,
+"n": 126,
+"p": 2
+},
+{
+"t": 2.3705,
+"n": 128,
+"p": 2
+},
+{
+"t": 2.3886,
+"n": 130,
+"p": 2
+},
+{
+"t": 2.4066,
+"n": 132,
+"p": 2
+},
+{
+"t": 2.4247,
+"n": 134,
+"p": 2
+},
+{
+"t": 2.4428,
+"n": 136,
+"p": 2
+},
+{
+"t": 2.4608,
+"n": 138,
+"p": 2
+},
+{
+"t": 2.4789,
+"n": 140,
+"p": 2
+},
+{
+"t": 2.497,
+"n": 142,
+"p": 2
+},
+{
+"t": 2.5151,
+"n": 144,
+"p": 2
+},
+{
+"t": 2.5331,
+"n": 146,
+"p": 2
+},
+{
+"t": 2.5512,
+"n": 148,
+"p": 2
+},
+{
+"t": 2.5693,
+"n": 150,
+"p": 2
+},
+{
+"t": 2.5873,
+"n": 152,
+"p": 2
+},
+{
+"t": 2.6054,
+"n": 154,
+"p": 2
+},
+{
+"t": 2.6235,
+"n": 156,
+"p": 2
+},
+{
+"t": 2.6416,
+"n": 158,
+"p": 2
+},
+{
+"t": 2.6596,
+"n": 160,
+"p": 2
+},
+{
+"t": 2.6777,
+"n": 162,
+"p": 2
+},
+{
+"t": 2.6958,
+"n": 164,
+"p": 2
+},
+{
+"t": 2.7139,
+"n": 166,
+"p": 2
+},
+{
+"t": 2.7319,
+"n": 168,
+"p": 2
+},
+{
+"t": 3.25,
+"n": 9,
+"p": 3
+},
+{
+"t": 3.2778,
+"n": 12,
+"p": 3
+},
+{
+"t": 3.3056,
+"n": 15,
+"p": 3
+},
+{
+"t": 3.3333,
+"n": 18,
+"p": 3
+},
+{
+"t": 3.3611,
+"n": 21,
+"p": 3
+},
+{
+"t": 3.3889,
+"n": 24,
+"p": 3
+},
+{
+"t": 3.4167,
+"n": 27,
+"p": 3
+},
+{
+"t": 3.4444,
+"n": 30,
+"p": 3
+},
+{
+"t": 3.4722,
+"n": 33,
+"p": 3
+},
+{
+"t": 3.5,
+"n": 36,
+"p": 3
+},
+{
+"t": 3.5278,
+"n": 39,
+"p": 3
+},
+{
+"t": 3.5556,
+"n": 42,
+"p": 3
+},
+{
+"t": 3.5833,
+"n": 45,
+"p": 3
+},
+{
+"t": 3.6111,
+"n": 48,
+"p": 3
+},
+{
+"t": 3.6389,
+"n": 51,
+"p": 3
+},
+{
+"t": 3.6667,
+"n": 54,
+"p": 3
+},
+{
+"t": 3.6944,
+"n": 57,
+"p": 3
+},
+{
+"t": 3.7222,
+"n": 60,
+"p": 3
+},
+{
+"t": 3.75,
+"n": 63,
+"p": 3
+},
+{
+"t": 3.7778,
+"n": 66,
+"p": 3
+},
+{
+"t": 3.8056,
+"n": 69,
+"p": 3
+},
+{
+"t": 3.8333,
+"n": 72,
+"p": 3
+},
+{
+"t": 3.8611,
+"n": 75,
+"p": 3
+},
+{
+"t": 3.8889,
+"n": 78,
+"p": 3
+},
+{
+"t": 3.9167,
+"n": 81,
+"p": 3
+},
+{
+"t": 3.9444,
+"n": 84,
+"p": 3
+},
+{
+"t": 3.9722,
+"n": 87,
+"p": 3
+},
+{
+"t": 4.0,
+"n": 90,
+"p": 3
+},
+{
+"t": 4.0278,
+"n": 93,
+"p": 3
+},
+{
+"t": 4.0556,
+"n": 96,
+"p": 3
+},
+{
+"t": 4.0833,
+"n": 99,
+"p": 3
+},
+{
+"t": 4.1111,
+"n": 102,
+"p": 3
+},
+{
+"t": 4.1389,
+"n": 105,
+"p": 3
+},
+{
+"t": 4.1667,
+"n": 108,
+"p": 3
+},
+{
+"t": 4.1944,
+"n": 111,
+"p": 3
+},
+{
+"t": 4.2222,
+"n": 114,
+"p": 3
+},
+{
+"t": 4.25,
+"n": 117,
+"p": 3
+},
+{
+"t": 4.2778,
+"n": 120,
+"p": 3
+},
+{
+"t": 4.3056,
+"n": 123,
+"p": 3
+},
+{
+"t": 4.3333,
+"n": 126,
+"p": 3
+},
+{
+"t": 4.3611,
+"n": 129,
+"p": 3
+},
+{
+"t": 4.3889,
+"n": 132,
+"p": 3
+},
+{
+"t": 4.4167,
+"n": 135,
+"p": 3
+},
+{
+"t": 4.4444,
+"n": 138,
+"p": 3
+},
+{
+"t": 4.4722,
+"n": 141,
+"p": 3
+},
+{
+"t": 4.5,
+"n": 144,
+"p": 3
+},
+{
+"t": 4.5278,
+"n": 147,
+"p": 3
+},
+{
+"t": 4.5556,
+"n": 150,
+"p": 3
+},
+{
+"t": 4.5833,
+"n": 153,
+"p": 3
+},
+{
+"t": 4.6111,
+"n": 156,
+"p": 3
+},
+{
+"t": 4.6389,
+"n": 159,
+"p": 3
+},
+{
+"t": 4.6667,
+"n": 162,
+"p": 3
+},
+{
+"t": 4.6944,
+"n": 165,
+"p": 3
+},
+{
+"t": 4.7222,
+"n": 168,
+"p": 3
+},
+{
+"t": 5.25,
+"n": 25,
+"p": 5
+},
+{
+"t": 5.3017,
+"n": 30,
+"p": 5
+},
+{
+"t": 5.3534,
+"n": 35,
+"p": 5
+},
+{
+"t": 5.4052,
+"n": 40,
+"p": 5
+},
+{
+"t": 5.4569,
+"n": 45,
+"p": 5
+},
+{
+"t": 5.5086,
+"n": 50,
+"p": 5
+},
+{
+"t": 5.5603,
+"n": 55,
+"p": 5
+},
+{
+"t": 5.6121,
+"n": 60,
+"p": 5
+},
+{
+"t": 5.6638,
+"n": 65,
+"p": 5
+},
+{
+"t": 5.7155,
+"n": 70,
+"p": 5
+},
+{
+"t": 5.7672,
+"n": 75,
+"p": 5
+},
+{
+"t": 5.819,
+"n": 80,
+"p": 5
+},
+{
+"t": 5.8707,
+"n": 85,
+"p": 5
+},
+{
+"t": 5.9224,
+"n": 90,
+"p": 5
+},
+{
+"t": 5.9741,
+"n": 95,
+"p": 5
+},
+{
+"t": 6.0259,
+"n": 100,
+"p": 5
+},
+{
+"t": 6.0776,
+"n": 105,
+"p": 5
+},
+{
+"t": 6.1293,
+"n": 110,
+"p": 5
+},
+{
+"t": 6.181,
+"n": 115,
+"p": 5
+},
+{
+"t": 6.2328,
+"n": 120,
+"p": 5
+},
+{
+"t": 6.2845,
+"n": 125,
+"p": 5
+},
+{
+"t": 6.3362,
+"n": 130,
+"p": 5
+},
+{
+"t": 6.3879,
+"n": 135,
+"p": 5
+},
+{
+"t": 6.4397,
+"n": 140,
+"p": 5
+},
+{
+"t": 6.4914,
+"n": 145,
+"p": 5
+},
+{
+"t": 6.5431,
+"n": 150,
+"p": 5
+},
+{
+"t": 6.5948,
+"n": 155,
+"p": 5
+},
+{
+"t": 6.6466,
+"n": 160,
+"p": 5
+},
+{
+"t": 6.6983,
+"n": 165,
+"p": 5
+},
+{
+"t": 7.25,
+"n": 49,
+"p": 7
+},
+{
+"t": 7.3333,
+"n": 56,
+"p": 7
+},
+{
+"t": 7.4167,
+"n": 63,
+"p": 7
+},
+{
+"t": 7.5,
+"n": 70,
+"p": 7
+},
+{
+"t": 7.5833,
+"n": 77,
+"p": 7
+},
+{
+"t": 7.6667,
+"n": 84,
+"p": 7
+},
+{
+"t": 7.75,
+"n": 91,
+"p": 7
+},
+{
+"t": 7.8333,
+"n": 98,
+"p": 7
+},
+{
+"t": 7.9167,
+"n": 105,
+"p": 7
+},
+{
+"t": 8.0,
+"n": 112,
+"p": 7
+},
+{
+"t": 8.0833,
+"n": 119,
+"p": 7
+},
+{
+"t": 8.1667,
+"n": 126,
+"p": 7
+},
+{
+"t": 8.25,
+"n": 133,
+"p": 7
+},
+{
+"t": 8.3333,
+"n": 140,
+"p": 7
+},
+{
+"t": 8.4167,
+"n": 147,
+"p": 7
+},
+{
+"t": 8.5,
+"n": 154,
+"p": 7
+},
+{
+"t": 8.5833,
+"n": 161,
+"p": 7
+},
+{
+"t": 8.6667,
+"n": 168,
+"p": 7
+},
+{
+"t": 9.25,
+"n": 121,
+"p": 11
+},
+{
+"t": 9.55,
+"n": 132,
+"p": 11
+},
+{
+"t": 9.85,
+"n": 143,
+"p": 11
+},
+{
+"t": 10.15,
+"n": 154,
+"p": 11
+},
+{
+"t": 10.45,
+"n": 165,
+"p": 11
+},
+{
+"t": 11.25,
+"n": 169,
+"p": 13
+}
+],
+"frames": [
+{
+"f": 0,
+"t": 0.0,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0
+},
+{
+"f": 1,
+"t": 0.0417,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0005
+},
+{
+"f": 2,
+"t": 0.0833,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.001
+},
+{
+"f": 3,
+"t": 0.125,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0015
+},
+{
+"f": 4,
+"t": 0.1667,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.002
+},
+{
+"f": 5,
+"t": 0.2083,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0025
+},
+{
+"f": 6,
+"t": 0.25,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.003
+},
+{
+"f": 7,
+"t": 0.2917,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0035
+},
+{
+"f": 8,
+"t": 0.3333,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.004
+},
+{
+"f": 9,
+"t": 0.375,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0045
+},
+{
+"f": 10,
+"t": 0.4167,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.005
+},
+{
+"f": 11,
+"t": 0.4583,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0055
+},
+{
+"f": 12,
+"t": 0.5,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.006
+},
+{
+"f": 13,
+"t": 0.5417,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0065
+},
+{
+"f": 14,
+"t": 0.5833,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.007
+},
+{
+"f": 15,
+"t": 0.625,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0075
+},
+{
+"f": 16,
+"t": 0.6667,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.008
+},
+{
+"f": 17,
+"t": 0.7083,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0085
+},
+{
+"f": 18,
+"t": 0.75,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.009
+},
+{
+"f": 19,
+"t": 0.7917,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0095
+},
+{
+"f": 20,
+"t": 0.8333,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0101
+},
+{
+"f": 21,
+"t": 0.875,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0106
+},
+{
+"f": 22,
+"t": 0.9167,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0111
+},
+{
+"f": 23,
+"t": 0.9583,
+"p": null,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0116
+},
+{
+"f": 24,
+"t": 1.0,
+"p": 2,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0121
+},
+{
+"f": 25,
+"t": 1.0417,
+"p": 2,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0138
+},
+{
+"f": 26,
+"t": 1.0833,
+"p": 2,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0179
+},
+{
+"f": 27,
+"t": 1.125,
+"p": 2,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0222
+},
+{
+"f": 28,
+"t": 1.1667,
+"p": 2,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0251
+},
+{
+"f": 29,
+"t": 1.2083,
+"p": 2,
+"crossings": 0,
+"struck": 0,
+"remaining": 168,
+"primes_lit": 0,
+"cam_zoom": 1.0279
+},
+{
+"f": 30,
+"t": 1.25,
+"p": 2,
+"crossings": 1,
+"struck": 1,
+"remaining": 167,
+"primes_lit": 0,
+"cam_zoom": 1.0304
+},
+{
+"f": 31,
+"t": 1.2917,
+"p": 2,
+"crossings": 3,
+"struck": 3,
+"remaining": 165,
+"primes_lit": 0,
+"cam_zoom": 1.0327
+},
+{
+"f": 32,
+"t": 1.3333,
+"p": 2,
+"crossings": 5,
+"struck": 5,
+"remaining": 163,
+"primes_lit": 0,
+"cam_zoom": 1.0349
+},
+{
+"f": 33,
+"t": 1.375,
+"p": 2,
+"crossings": 7,
+"struck": 7,
+"remaining": 161,
+"primes_lit": 0,
+"cam_zoom": 1.037
+},
+{
+"f": 34,
+"t": 1.4167,
+"p": 2,
+"crossings": 10,
+"struck": 10,
+"remaining": 158,
+"primes_lit": 0,
+"cam_zoom": 1.0389
+},
+{
+"f": 35,
+"t": 1.4583,
+"p": 2,
+"crossings": 12,
+"struck": 12,
+"remaining": 156,
+"primes_lit": 0,
+"cam_zoom": 1.0407
+},
+{
+"f": 36,
+"t": 1.5,
+"p": 2,
+"crossings": 14,
+"struck": 14,
+"remaining": 154,
+"primes_lit": 0,
+"cam_zoom": 1.0424
+},
+{
+"f": 37,
+"t": 1.5417,
+"p": 2,
+"crossings": 17,
+"struck": 17,
+"remaining": 151,
+"primes_lit": 0,
+"cam_zoom": 1.0439
+},
+{
+"f": 38,
+"t": 1.5833,
+"p": 2,
+"crossings": 19,
+"struck": 19,
+"remaining": 149,
+"primes_lit": 0,
+"cam_zoom": 1.0454
+},
+{
+"f": 39,
+"t": 1.625,
+"p": 2,
+"crossings": 21,
+"struck": 21,
+"remaining": 147,
+"primes_lit": 0,
+"cam_zoom": 1.0468
+},
+{
+"f": 40,
+"t": 1.6667,
+"p": 2,
+"crossings": 24,
+"struck": 24,
+"remaining": 144,
+"primes_lit": 0,
+"cam_zoom": 1.0482
+},
+{
+"f": 41,
+"t": 1.7083,
+"p": 2,
+"crossings": 26,
+"struck": 26,
+"remaining": 142,
+"primes_lit": 0,
+"cam_zoom": 1.0494
+},
+{
+"f": 42,
+"t": 1.75,
+"p": 2,
+"crossings": 28,
+"struck": 28,
+"remaining": 140,
+"primes_lit": 0,
+"cam_zoom": 1.0506
+},
+{
+"f": 43,
+"t": 1.7917,
+"p": 2,
+"crossings": 30,
+"struck": 30,
+"remaining": 138,
+"primes_lit": 0,
+"cam_zoom": 1.0518
+},
+{
+"f": 44,
+"t": 1.8333,
+"p": 2,
+"crossings": 33,
+"struck": 33,
+"remaining": 135,
+"primes_lit": 0,
+"cam_zoom": 1.0529
+},
+{
+"f": 45,
+"t": 1.875,
+"p": 2,
+"crossings": 35,
+"struck": 35,
+"remaining": 133,
+"primes_lit": 0,
+"cam_zoom": 1.0539
+},
+{
+"f": 46,
+"t": 1.9167,
+"p": 2,
+"crossings": 37,
+"struck": 37,
+"remaining": 131,
+"primes_lit": 0,
+"cam_zoom": 1.0549
+},
+{
+"f": 47,
+"t": 1.9583,
+"p": 2,
+"crossings": 40,
+"struck": 40,
+"remaining": 128,
+"primes_lit": 0,
+"cam_zoom": 1.0558
+},
+{
+"f": 48,
+"t": 2.0,
+"p": 2,
+"crossings": 42,
+"struck": 42,
+"remaining": 126,
+"primes_lit": 0,
+"cam_zoom": 1.0568
+},
+{
+"f": 49,
+"t": 2.0417,
+"p": 2,
+"crossings": 44,
+"struck": 44,
+"remaining": 124,
+"primes_lit": 0,
+"cam_zoom": 1.0576
+},
+{
+"f": 50,
+"t": 2.0833,
+"p": 2,
+"crossings": 47,
+"struck": 47,
+"remaining": 121,
+"primes_lit": 0,
+"cam_zoom": 1.0585
+},
+{
+"f": 51,
+"t": 2.125,
+"p": 2,
+"crossings": 49,
+"struck": 49,
+"remaining": 119,
+"primes_lit": 0,
+"cam_zoom": 1.0593
+},
+{
+"f": 52,
+"t": 2.1667,
+"p": 2,
+"crossings": 51,
+"struck": 51,
+"remaining": 117,
+"primes_lit": 0,
+"cam_zoom": 1.0601
+},
+{
+"f": 53,
+"t": 2.2083,
+"p": 2,
+"crossings": 54,
+"struck": 54,
+"remaining": 114,
+"primes_lit": 0,
+"cam_zoom": 1.0609
+},
+{
+"f": 54,
+"t": 2.25,
+"p": 2,
+"crossings": 56,
+"struck": 56,
+"remaining": 112,
+"primes_lit": 0,
+"cam_zoom": 1.0616
+},
+{
+"f": 55,
+"t": 2.2917,
+"p": 2,
+"crossings": 58,
+"struck": 58,
+"remaining": 110,
+"primes_lit": 0,
+"cam_zoom": 1.0624
+},
+{
+"f": 56,
+"t": 2.3333,
+"p": 2,
+"crossings": 60,
+"struck": 60,
+"remaining": 108,
+"primes_lit": 0,
+"cam_zoom": 1.0631
+},
+{
+"f": 57,
+"t": 2.375,
+"p": 2,
+"crossings": 63,
+"struck": 63,
+"remaining": 105,
+"primes_lit": 0,
+"cam_zoom": 1.0638
+},
+{
+"f": 58,
+"t": 2.4167,
+"p": 2,
+"crossings": 65,
+"struck": 65,
+"remaining": 103,
+"primes_lit": 0,
+"cam_zoom": 1.0645
+},
+{
+"f": 59,
+"t": 2.4583,
+"p": 2,
+"crossings": 67,
+"struck": 67,
+"remaining": 101,
+"primes_lit": 0,
+"cam_zoom": 1.0652
+},
+{
+"f": 60,
+"t": 2.5,
+"p": 2,
+"crossings": 70,
+"struck": 70,
+"remaining": 98,
+"primes_lit": 0,
+"cam_zoom": 1.0658
+},
+{
+"f": 61,
+"t": 2.5417,
+"p": 2,
+"crossings": 72,
+"struck": 72,
+"remaining": 96,
+"primes_lit": 0,
+"cam_zoom": 1.0665
+},
+{
+"f": 62,
+"t": 2.5833,
+"p": 2,
+"crossings": 74,
+"struck": 74,
+"remaining": 94,
+"primes_lit": 0,
+"cam_zoom": 1.0671
+},
+{
+"f": 63,
+"t": 2.625,
+"p": 2,
+"crossings": 77,
+"struck": 77,
+"remaining": 91,
+"primes_lit": 0,
+"cam_zoom": 1.0678
+},
+{
+"f": 64,
+"t": 2.6667,
+"p": 2,
+"crossings": 79,
+"struck": 79,
+"remaining": 89,
+"primes_lit": 0,
+"cam_zoom": 1.0684
+},
+{
+"f": 65,
+"t": 2.7083,
+"p": 2,
+"crossings": 81,
+"struck": 81,
+"remaining": 87,
+"primes_lit": 0,
+"cam_zoom": 1.069
+},
+{
+"f": 66,
+"t": 2.75,
+"p": 2,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.0696
+},
+{
+"f": 67,
+"t": 2.7917,
+"p": 2,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.0702
+},
+{
+"f": 68,
+"t": 2.8333,
+"p": 2,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.0708
+},
+{
+"f": 69,
+"t": 2.875,
+"p": 2,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.0714
+},
+{
+"f": 70,
+"t": 2.9167,
+"p": 2,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.072
+},
+{
+"f": 71,
+"t": 2.9583,
+"p": 2,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.0726
+},
+{
+"f": 72,
+"t": 3.0,
+"p": 3,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.0731
+},
+{
+"f": 73,
+"t": 3.0417,
+"p": 3,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.075
+},
+{
+"f": 74,
+"t": 3.0833,
+"p": 3,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.0794
+},
+{
+"f": 75,
+"t": 3.125,
+"p": 3,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.084
+},
+{
+"f": 76,
+"t": 3.1667,
+"p": 3,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.0871
+},
+{
+"f": 77,
+"t": 3.2083,
+"p": 3,
+"crossings": 83,
+"struck": 83,
+"remaining": 85,
+"primes_lit": 0,
+"cam_zoom": 1.09
+},
+{
+"f": 78,
+"t": 3.25,
+"p": 3,
+"crossings": 84,
+"struck": 84,
+"remaining": 84,
+"primes_lit": 0,
+"cam_zoom": 1.0927
+},
+{
+"f": 79,
+"t": 3.2917,
+"p": 3,
+"crossings": 85,
+"struck": 84,
+"remaining": 84,
+"primes_lit": 0,
+"cam_zoom": 1.0952
+},
+{
+"f": 80,
+"t": 3.3333,
+"p": 3,
+"crossings": 87,
+"struck": 85,
+"remaining": 83,
+"primes_lit": 0,
+"cam_zoom": 1.0976
+},
+{
+"f": 81,
+"t": 3.375,
+"p": 3,
+"crossings": 88,
+"struck": 86,
+"remaining": 82,
+"primes_lit": 0,
+"cam_zoom": 1.0998
+},
+{
+"f": 82,
+"t": 3.4167,
+"p": 3,
+"crossings": 90,
+"struck": 87,
+"remaining": 81,
+"primes_lit": 0,
+"cam_zoom": 1.1018
+},
+{
+"f": 83,
+"t": 3.4583,
+"p": 3,
+"crossings": 91,
+"struck": 87,
+"remaining": 81,
+"primes_lit": 0,
+"cam_zoom": 1.1037
+},
+{
+"f": 84,
+"t": 3.5,
+"p": 3,
+"crossings": 93,
+"struck": 88,
+"remaining": 80,
+"primes_lit": 0,
+"cam_zoom": 1.1055
+},
+{
+"f": 85,
+"t": 3.5417,
+"p": 3,
+"crossings": 94,
+"struck": 89,
+"remaining": 79,
+"primes_lit": 0,
+"cam_zoom": 1.1072
+},
+{
+"f": 86,
+"t": 3.5833,
+"p": 3,
+"crossings": 96,
+"struck": 90,
+"remaining": 78,
+"primes_lit": 0,
+"cam_zoom": 1.1088
+},
+{
+"f": 87,
+"t": 3.625,
+"p": 3,
+"crossings": 97,
+"struck": 90,
+"remaining": 78,
+"primes_lit": 0,
+"cam_zoom": 1.1103
+},
+{
+"f": 88,
+"t": 3.6667,
+"p": 3,
+"crossings": 99,
+"struck": 91,
+"remaining": 77,
+"primes_lit": 0,
+"cam_zoom": 1.1118
+},
+{
+"f": 89,
+"t": 3.7083,
+"p": 3,
+"crossings": 100,
+"struck": 92,
+"remaining": 76,
+"primes_lit": 0,
+"cam_zoom": 1.1131
+},
+{
+"f": 90,
+"t": 3.75,
+"p": 3,
+"crossings": 102,
+"struck": 93,
+"remaining": 75,
+"primes_lit": 0,
+"cam_zoom": 1.1144
+},
+{
+"f": 91,
+"t": 3.7917,
+"p": 3,
+"crossings": 103,
+"struck": 93,
+"remaining": 75,
+"primes_lit": 0,
+"cam_zoom": 1.1156
+},
+{
+"f": 92,
+"t": 3.8333,
+"p": 3,
+"crossings": 105,
+"struck": 94,
+"remaining": 74,
+"primes_lit": 0,
+"cam_zoom": 1.1168
+},
+{
+"f": 93,
+"t": 3.875,
+"p": 3,
+"crossings": 106,
+"struck": 95,
+"remaining": 73,
+"primes_lit": 0,
+"cam_zoom": 1.1179
+},
+{
+"f": 94,
+"t": 3.9167,
+"p": 3,
+"crossings": 108,
+"struck": 96,
+"remaining": 72,
+"primes_lit": 0,
+"cam_zoom": 1.1189
+},
+{
+"f": 95,
+"t": 3.9583,
+"p": 3,
+"crossings": 109,
+"struck": 96,
+"remaining": 72,
+"primes_lit": 0,
+"cam_zoom": 1.12
+},
+{
+"f": 96,
+"t": 4.0,
+"p": 3,
+"crossings": 111,
+"struck": 97,
+"remaining": 71,
+"primes_lit": 0,
+"cam_zoom": 1.1209
+},
+{
+"f": 97,
+"t": 4.0417,
+"p": 3,
+"crossings": 112,
+"struck": 98,
+"remaining": 70,
+"primes_lit": 0,
+"cam_zoom": 1.1219
+},
+{
+"f": 98,
+"t": 4.0833,
+"p": 3,
+"crossings": 114,
+"struck": 99,
+"remaining": 69,
+"primes_lit": 0,
+"cam_zoom": 1.1228
+},
+{
+"f": 99,
+"t": 4.125,
+"p": 3,
+"crossings": 115,
+"struck": 99,
+"remaining": 69,
+"primes_lit": 0,
+"cam_zoom": 1.1237
+},
+{
+"f": 100,
+"t": 4.1667,
+"p": 3,
+"crossings": 117,
+"struck": 100,
+"remaining": 68,
+"primes_lit": 0,
+"cam_zoom": 1.1245
+},
+{
+"f": 101,
+"t": 4.2083,
+"p": 3,
+"crossings": 118,
+"struck": 101,
+"remaining": 67,
+"primes_lit": 0,
+"cam_zoom": 1.1253
+},
+{
+"f": 102,
+"t": 4.25,
+"p": 3,
+"crossings": 120,
+"struck": 102,
+"remaining": 66,
+"primes_lit": 0,
+"cam_zoom": 1.1261
+},
+{
+"f": 103,
+"t": 4.2917,
+"p": 3,
+"crossings": 121,
+"struck": 102,
+"remaining": 66,
+"primes_lit": 0,
+"cam_zoom": 1.1269
+},
+{
+"f": 104,
+"t": 4.3333,
+"p": 3,
+"crossings": 123,
+"struck": 103,
+"remaining": 65,
+"primes_lit": 0,
+"cam_zoom": 1.1277
+},
+{
+"f": 105,
+"t": 4.375,
+"p": 3,
+"crossings": 124,
+"struck": 104,
+"remaining": 64,
+"primes_lit": 0,
+"cam_zoom": 1.1284
+},
+{
+"f": 106,
+"t": 4.4167,
+"p": 3,
+"crossings": 126,
+"struck": 105,
+"remaining": 63,
+"primes_lit": 0,
+"cam_zoom": 1.1292
+},
+{
+"f": 107,
+"t": 4.4583,
+"p": 3,
+"crossings": 127,
+"struck": 105,
+"remaining": 63,
+"primes_lit": 0,
+"cam_zoom": 1.1299
+},
+{
+"f": 108,
+"t": 4.5,
+"p": 3,
+"crossings": 129,
+"struck": 106,
+"remaining": 62,
+"primes_lit": 0,
+"cam_zoom": 1.1306
+},
+{
+"f": 109,
+"t": 4.5417,
+"p": 3,
+"crossings": 130,
+"struck": 107,
+"remaining": 61,
+"primes_lit": 0,
+"cam_zoom": 1.1313
+},
+{
+"f": 110,
+"t": 4.5833,
+"p": 3,
+"crossings": 132,
+"struck": 108,
+"remaining": 60,
+"primes_lit": 0,
+"cam_zoom": 1.132
+},
+{
+"f": 111,
+"t": 4.625,
+"p": 3,
+"crossings": 133,
+"struck": 108,
+"remaining": 60,
+"primes_lit": 0,
+"cam_zoom": 1.1326
+},
+{
+"f": 112,
+"t": 4.6667,
+"p": 3,
+"crossings": 135,
+"struck": 109,
+"remaining": 59,
+"primes_lit": 0,
+"cam_zoom": 1.1333
+},
+{
+"f": 113,
+"t": 4.7083,
+"p": 3,
+"crossings": 136,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1339
+},
+{
+"f": 114,
+"t": 4.75,
+"p": 3,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1346
+},
+{
+"f": 115,
+"t": 4.7917,
+"p": 3,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1352
+},
+{
+"f": 116,
+"t": 4.8333,
+"p": 3,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1359
+},
+{
+"f": 117,
+"t": 4.875,
+"p": 3,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1365
+},
+{
+"f": 118,
+"t": 4.9167,
+"p": 3,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1371
+},
+{
+"f": 119,
+"t": 4.9583,
+"p": 3,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1377
+},
+{
+"f": 120,
+"t": 5.0,
+"p": 5,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1384
+},
+{
+"f": 121,
+"t": 5.0417,
+"p": 5,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1404
+},
+{
+"f": 122,
+"t": 5.0833,
+"p": 5,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.145
+},
+{
+"f": 123,
+"t": 5.125,
+"p": 5,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1499
+},
+{
+"f": 124,
+"t": 5.1667,
+"p": 5,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1532
+},
+{
+"f": 125,
+"t": 5.2083,
+"p": 5,
+"crossings": 137,
+"struck": 110,
+"remaining": 58,
+"primes_lit": 0,
+"cam_zoom": 1.1563
+},
+{
+"f": 126,
+"t": 5.25,
+"p": 5,
+"crossings": 138,
+"struck": 111,
+"remaining": 57,
+"primes_lit": 0,
+"cam_zoom": 1.1591
+},
+{
+"f": 127,
+"t": 5.2917,
+"p": 5,
+"crossings": 138,
+"struck": 111,
+"remaining": 57,
+"primes_lit": 0,
+"cam_zoom": 1.1618
+},
+{
+"f": 128,
+"t": 5.3333,
+"p": 5,
+"crossings": 139,
+"struck": 111,
+"remaining": 57,
+"primes_lit": 0,
+"cam_zoom": 1.1643
+},
+{
+"f": 129,
+"t": 5.375,
+"p": 5,
+"crossings": 140,
+"struck": 112,
+"remaining": 56,
+"primes_lit": 0,
+"cam_zoom": 1.1666
+},
+{
+"f": 130,
+"t": 5.4167,
+"p": 5,
+"crossings": 141,
+"struck": 112,
+"remaining": 56,
+"primes_lit": 0,
+"cam_zoom": 1.1688
+},
+{
+"f": 131,
+"t": 5.4583,
+"p": 5,
+"crossings": 142,
+"struck": 112,
+"remaining": 56,
+"primes_lit": 0,
+"cam_zoom": 1.1708
+},
+{
+"f": 132,
+"t": 5.5,
+"p": 5,
+"crossings": 142,
+"struck": 112,
+"remaining": 56,
+"primes_lit": 0,
+"cam_zoom": 1.1727
+},
+{
+"f": 133,
+"t": 5.5417,
+"p": 5,
+"crossings": 143,
+"struck": 112,
+"remaining": 56,
+"primes_lit": 0,
+"cam_zoom": 1.1745
+},
+{
+"f": 134,
+"t": 5.5833,
+"p": 5,
+"crossings": 144,
+"struck": 113,
+"remaining": 55,
+"primes_lit": 0,
+"cam_zoom": 1.1762
+},
+{
+"f": 135,
+"t": 5.625,
+"p": 5,
+"crossings": 145,
+"struck": 113,
+"remaining": 55,
+"primes_lit": 0,
+"cam_zoom": 1.1778
+},
+{
+"f": 136,
+"t": 5.6667,
+"p": 5,
+"crossings": 146,
+"struck": 114,
+"remaining": 54,
+"primes_lit": 0,
+"cam_zoom": 1.1793
+},
+{
+"f": 137,
+"t": 5.7083,
+"p": 5,
+"crossings": 146,
+"struck": 114,
+"remaining": 54,
+"primes_lit": 0,
+"cam_zoom": 1.1808
+},
+{
+"f": 138,
+"t": 5.75,
+"p": 5,
+"crossings": 147,
+"struck": 114,
+"remaining": 54,
+"primes_lit": 0,
+"cam_zoom": 1.1821
+},
+{
+"f": 139,
+"t": 5.7917,
+"p": 5,
+"crossings": 148,
+"struck": 114,
+"remaining": 54,
+"primes_lit": 0,
+"cam_zoom": 1.1834
+},
+{
+"f": 140,
+"t": 5.8333,
+"p": 5,
+"crossings": 149,
+"struck": 114,
+"remaining": 54,
+"primes_lit": 0,
+"cam_zoom": 1.1846
+},
+{
+"f": 141,
+"t": 5.875,
+"p": 5,
+"crossings": 150,
+"struck": 115,
+"remaining": 53,
+"primes_lit": 0,
+"cam_zoom": 1.1858
+},
+{
+"f": 142,
+"t": 5.9167,
+"p": 5,
+"crossings": 150,
+"struck": 115,
+"remaining": 53,
+"primes_lit": 0,
+"cam_zoom": 1.1869
+},
+{
+"f": 143,
+"t": 5.9583,
+"p": 5,
+"crossings": 151,
+"struck": 115,
+"remaining": 53,
+"primes_lit": 0,
+"cam_zoom": 1.188
+},
+{
+"f": 144,
+"t": 6.0,
+"p": 5,
+"crossings": 152,
+"struck": 116,
+"remaining": 52,
+"primes_lit": 0,
+"cam_zoom": 1.1891
+},
+{
+"f": 145,
+"t": 6.0417,
+"p": 5,
+"crossings": 153,
+"struck": 116,
+"remaining": 52,
+"primes_lit": 0,
+"cam_zoom": 1.1901
+},
+{
+"f": 146,
+"t": 6.0833,
+"p": 5,
+"crossings": 154,
+"struck": 116,
+"remaining": 52,
+"primes_lit": 0,
+"cam_zoom": 1.191
+},
+{
+"f": 147,
+"t": 6.125,
+"p": 5,
+"crossings": 154,
+"struck": 116,
+"remaining": 52,
+"primes_lit": 0,
+"cam_zoom": 1.192
+},
+{
+"f": 148,
+"t": 6.1667,
+"p": 5,
+"crossings": 155,
+"struck": 116,
+"remaining": 52,
+"primes_lit": 0,
+"cam_zoom": 1.1929
+},
+{
+"f": 149,
+"t": 6.2083,
+"p": 5,
+"crossings": 156,
+"struck": 117,
+"remaining": 51,
+"primes_lit": 0,
+"cam_zoom": 1.1937
+},
+{
+"f": 150,
+"t": 6.25,
+"p": 5,
+"crossings": 157,
+"struck": 117,
+"remaining": 51,
+"primes_lit": 0,
+"cam_zoom": 1.1946
+},
+{
+"f": 151,
+"t": 6.2917,
+"p": 5,
+"crossings": 158,
+"struck": 118,
+"remaining": 50,
+"primes_lit": 0,
+"cam_zoom": 1.1954
+},
+{
+"f": 152,
+"t": 6.3333,
+"p": 5,
+"crossings": 158,
+"struck": 118,
+"remaining": 50,
+"primes_lit": 0,
+"cam_zoom": 1.1962
+},
+{
+"f": 153,
+"t": 6.375,
+"p": 5,
+"crossings": 159,
+"struck": 118,
+"remaining": 50,
+"primes_lit": 0,
+"cam_zoom": 1.197
+},
+{
+"f": 154,
+"t": 6.4167,
+"p": 5,
+"crossings": 160,
+"struck": 118,
+"remaining": 50,
+"primes_lit": 0,
+"cam_zoom": 1.1978
+},
+{
+"f": 155,
+"t": 6.4583,
+"p": 5,
+"crossings": 161,
+"struck": 118,
+"remaining": 50,
+"primes_lit": 0,
+"cam_zoom": 1.1986
+},
+{
+"f": 156,
+"t": 6.5,
+"p": 5,
+"crossings": 162,
+"struck": 119,
+"remaining": 49,
+"primes_lit": 0,
+"cam_zoom": 1.1993
+},
+{
+"f": 157,
+"t": 6.5417,
+"p": 5,
+"crossings": 162,
+"struck": 119,
+"remaining": 49,
+"primes_lit": 0,
+"cam_zoom": 1.2
+},
+{
+"f": 158,
+"t": 6.5833,
+"p": 5,
+"crossings": 163,
+"struck": 119,
+"remaining": 49,
+"primes_lit": 0,
+"cam_zoom": 1.2008
+},
+{
+"f": 159,
+"t": 6.625,
+"p": 5,
+"crossings": 164,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2015
+},
+{
+"f": 160,
+"t": 6.6667,
+"p": 5,
+"crossings": 165,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2022
+},
+{
+"f": 161,
+"t": 6.7083,
+"p": 5,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2029
+},
+{
+"f": 162,
+"t": 6.75,
+"p": 5,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2035
+},
+{
+"f": 163,
+"t": 6.7917,
+"p": 5,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2042
+},
+{
+"f": 164,
+"t": 6.8333,
+"p": 5,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2049
+},
+{
+"f": 165,
+"t": 6.875,
+"p": 5,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2056
+},
+{
+"f": 166,
+"t": 6.9167,
+"p": 5,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2062
+},
+{
+"f": 167,
+"t": 6.9583,
+"p": 5,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2069
+},
+{
+"f": 168,
+"t": 7.0,
+"p": 7,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2075
+},
+{
+"f": 169,
+"t": 7.0417,
+"p": 7,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2097
+},
+{
+"f": 170,
+"t": 7.0833,
+"p": 7,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2146
+},
+{
+"f": 171,
+"t": 7.125,
+"p": 7,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2198
+},
+{
+"f": 172,
+"t": 7.1667,
+"p": 7,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2233
+},
+{
+"f": 173,
+"t": 7.2083,
+"p": 7,
+"crossings": 166,
+"struck": 120,
+"remaining": 48,
+"primes_lit": 0,
+"cam_zoom": 1.2266
+},
+{
+"f": 174,
+"t": 7.25,
+"p": 7,
+"crossings": 167,
+"struck": 121,
+"remaining": 47,
+"primes_lit": 0,
+"cam_zoom": 1.2296
+},
+{
+"f": 175,
+"t": 7.2917,
+"p": 7,
+"crossings": 167,
+"struck": 121,
+"remaining": 47,
+"primes_lit": 0,
+"cam_zoom": 1.2324
+},
+{
+"f": 176,
+"t": 7.3333,
+"p": 7,
+"crossings": 168,
+"struck": 121,
+"remaining": 47,
+"primes_lit": 0,
+"cam_zoom": 1.2351
+},
+{
+"f": 177,
+"t": 7.375,
+"p": 7,
+"crossings": 168,
+"struck": 121,
+"remaining": 47,
+"primes_lit": 0,
+"cam_zoom": 1.2375
+},
+{
+"f": 178,
+"t": 7.4167,
+"p": 7,
+"crossings": 169,
+"struck": 121,
+"remaining": 47,
+"primes_lit": 0,
+"cam_zoom": 1.2398
+},
+{
+"f": 179,
+"t": 7.4583,
+"p": 7,
+"crossings": 169,
+"struck": 121,
+"remaining": 47,
+"primes_lit": 0,
+"cam_zoom": 1.242
+},
+{
+"f": 180,
+"t": 7.5,
+"p": 7,
+"crossings": 170,
+"struck": 121,
+"remaining": 47,
+"primes_lit": 0,
+"cam_zoom": 1.244
+},
+{
+"f": 181,
+"t": 7.5417,
+"p": 7,
+"crossings": 170,
+"struck": 121,
+"remaining": 47,
+"primes_lit": 0,
+"cam_zoom": 1.2459
+},
+{
+"f": 182,
+"t": 7.5833,
+"p": 7,
+"crossings": 171,
+"struck": 122,
+"remaining": 46,
+"primes_lit": 0,
+"cam_zoom": 1.2477
+},
+{
+"f": 183,
+"t": 7.625,
+"p": 7,
+"crossings": 171,
+"struck": 122,
+"remaining": 46,
+"primes_lit": 0,
+"cam_zoom": 1.2494
+},
+{
+"f": 184,
+"t": 7.6667,
+"p": 7,
+"crossings": 172,
+"struck": 122,
+"remaining": 46,
+"primes_lit": 0,
+"cam_zoom": 1.251
+},
+{
+"f": 185,
+"t": 7.7083,
+"p": 7,
+"crossings": 172,
+"struck": 122,
+"remaining": 46,
+"primes_lit": 0,
+"cam_zoom": 1.2525
+},
+{
+"f": 186,
+"t": 7.75,
+"p": 7,
+"crossings": 173,
+"struck": 123,
+"remaining": 45,
+"primes_lit": 0,
+"cam_zoom": 1.254
+},
+{
+"f": 187,
+"t": 7.7917,
+"p": 7,
+"crossings": 173,
+"struck": 123,
+"remaining": 45,
+"primes_lit": 0,
+"cam_zoom": 1.2553
+},
+{
+"f": 188,
+"t": 7.8333,
+"p": 7,
+"crossings": 174,
+"struck": 123,
+"remaining": 45,
+"primes_lit": 0,
+"cam_zoom": 1.2566
+},
+{
+"f": 189,
+"t": 7.875,
+"p": 7,
+"crossings": 174,
+"struck": 123,
+"remaining": 45,
+"primes_lit": 0,
+"cam_zoom": 1.2579
+},
+{
+"f": 190,
+"t": 7.9167,
+"p": 7,
+"crossings": 175,
+"struck": 123,
+"remaining": 45,
+"primes_lit": 0,
+"cam_zoom": 1.2591
+},
+{
+"f": 191,
+"t": 7.9583,
+"p": 7,
+"crossings": 175,
+"struck": 123,
+"remaining": 45,
+"primes_lit": 0,
+"cam_zoom": 1.2602
+},
+{
+"f": 192,
+"t": 8.0,
+"p": 7,
+"crossings": 176,
+"struck": 123,
+"remaining": 45,
+"primes_lit": 0,
+"cam_zoom": 1.2613
+},
+{
+"f": 193,
+"t": 8.0417,
+"p": 7,
+"crossings": 176,
+"struck": 123,
+"remaining": 45,
+"primes_lit": 0,
+"cam_zoom": 1.2624
+},
+{
+"f": 194,
+"t": 8.0833,
+"p": 7,
+"crossings": 177,
+"struck": 124,
+"remaining": 44,
+"primes_lit": 0,
+"cam_zoom": 1.2634
+},
+{
+"f": 195,
+"t": 8.125,
+"p": 7,
+"crossings": 177,
+"struck": 124,
+"remaining": 44,
+"primes_lit": 0,
+"cam_zoom": 1.2644
+},
+{
+"f": 196,
+"t": 8.1667,
+"p": 7,
+"crossings": 178,
+"struck": 124,
+"remaining": 44,
+"primes_lit": 0,
+"cam_zoom": 1.2654
+},
+{
+"f": 197,
+"t": 8.2083,
+"p": 7,
+"crossings": 178,
+"struck": 124,
+"remaining": 44,
+"primes_lit": 0,
+"cam_zoom": 1.2663
+},
+{
+"f": 198,
+"t": 8.25,
+"p": 7,
+"crossings": 179,
+"struck": 125,
+"remaining": 43,
+"primes_lit": 0,
+"cam_zoom": 1.2672
+},
+{
+"f": 199,
+"t": 8.2917,
+"p": 7,
+"crossings": 179,
+"struck": 125,
+"remaining": 43,
+"primes_lit": 0,
+"cam_zoom": 1.2681
+},
+{
+"f": 200,
+"t": 8.3333,
+"p": 7,
+"crossings": 180,
+"struck": 125,
+"remaining": 43,
+"primes_lit": 0,
+"cam_zoom": 1.2689
+},
+{
+"f": 201,
+"t": 8.375,
+"p": 7,
+"crossings": 180,
+"struck": 125,
+"remaining": 43,
+"primes_lit": 0,
+"cam_zoom": 1.2698
+},
+{
+"f": 202,
+"t": 8.4167,
+"p": 7,
+"crossings": 181,
+"struck": 125,
+"remaining": 43,
+"primes_lit": 0,
+"cam_zoom": 1.2706
+},
+{
+"f": 203,
+"t": 8.4583,
+"p": 7,
+"crossings": 181,
+"struck": 125,
+"remaining": 43,
+"primes_lit": 0,
+"cam_zoom": 1.2714
+},
+{
+"f": 204,
+"t": 8.5,
+"p": 7,
+"crossings": 182,
+"struck": 125,
+"remaining": 43,
+"primes_lit": 0,
+"cam_zoom": 1.2722
+},
+{
+"f": 205,
+"t": 8.5417,
+"p": 7,
+"crossings": 182,
+"struck": 125,
+"remaining": 43,
+"primes_lit": 0,
+"cam_zoom": 1.273
+},
+{
+"f": 206,
+"t": 8.5833,
+"p": 7,
+"crossings": 183,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2737
+},
+{
+"f": 207,
+"t": 8.625,
+"p": 7,
+"crossings": 183,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2745
+},
+{
+"f": 208,
+"t": 8.6667,
+"p": 7,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2752
+},
+{
+"f": 209,
+"t": 8.7083,
+"p": 7,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.276
+},
+{
+"f": 210,
+"t": 8.75,
+"p": 7,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2767
+},
+{
+"f": 211,
+"t": 8.7917,
+"p": 7,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2774
+},
+{
+"f": 212,
+"t": 8.8333,
+"p": 7,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2781
+},
+{
+"f": 213,
+"t": 8.875,
+"p": 7,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2788
+},
+{
+"f": 214,
+"t": 8.9167,
+"p": 7,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2795
+},
+{
+"f": 215,
+"t": 8.9583,
+"p": 7,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2802
+},
+{
+"f": 216,
+"t": 9.0,
+"p": 11,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2809
+},
+{
+"f": 217,
+"t": 9.0417,
+"p": 11,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2832
+},
+{
+"f": 218,
+"t": 9.0833,
+"p": 11,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2884
+},
+{
+"f": 219,
+"t": 9.125,
+"p": 11,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2939
+},
+{
+"f": 220,
+"t": 9.1667,
+"p": 11,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.2976
+},
+{
+"f": 221,
+"t": 9.2083,
+"p": 11,
+"crossings": 184,
+"struck": 126,
+"remaining": 42,
+"primes_lit": 0,
+"cam_zoom": 1.3011
+},
+{
+"f": 222,
+"t": 9.25,
+"p": 11,
+"crossings": 185,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3043
+},
+{
+"f": 223,
+"t": 9.2917,
+"p": 11,
+"crossings": 185,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3073
+},
+{
+"f": 224,
+"t": 9.3333,
+"p": 11,
+"crossings": 185,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3101
+},
+{
+"f": 225,
+"t": 9.375,
+"p": 11,
+"crossings": 185,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3127
+},
+{
+"f": 226,
+"t": 9.4167,
+"p": 11,
+"crossings": 185,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3152
+},
+{
+"f": 227,
+"t": 9.4583,
+"p": 11,
+"crossings": 185,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3175
+},
+{
+"f": 228,
+"t": 9.5,
+"p": 11,
+"crossings": 185,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3196
+},
+{
+"f": 229,
+"t": 9.5417,
+"p": 11,
+"crossings": 185,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3216
+},
+{
+"f": 230,
+"t": 9.5833,
+"p": 11,
+"crossings": 186,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3235
+},
+{
+"f": 231,
+"t": 9.625,
+"p": 11,
+"crossings": 186,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3253
+},
+{
+"f": 232,
+"t": 9.6667,
+"p": 11,
+"crossings": 186,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.327
+},
+{
+"f": 233,
+"t": 9.7083,
+"p": 11,
+"crossings": 186,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3286
+},
+{
+"f": 234,
+"t": 9.75,
+"p": 11,
+"crossings": 186,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3302
+},
+{
+"f": 235,
+"t": 9.7917,
+"p": 11,
+"crossings": 186,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.3316
+},
+{
+"f": 236,
+"t": 9.8333,
+"p": 11,
+"crossings": 186,
+"struck": 127,
+"remaining": 41,
+"primes_lit": 0,
+"cam_zoom": 1.333
+},
+{
+"f": 237,
+"t": 9.875,
+"p": 11,
+"crossings": 187,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3343
+},
+{
+"f": 238,
+"t": 9.9167,
+"p": 11,
+"crossings": 187,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3356
+},
+{
+"f": 239,
+"t": 9.9583,
+"p": 11,
+"crossings": 187,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3368
+},
+{
+"f": 240,
+"t": 10.0,
+"p": 11,
+"crossings": 187,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.338
+},
+{
+"f": 241,
+"t": 10.0417,
+"p": 11,
+"crossings": 187,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3391
+},
+{
+"f": 242,
+"t": 10.0833,
+"p": 11,
+"crossings": 187,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3402
+},
+{
+"f": 243,
+"t": 10.125,
+"p": 11,
+"crossings": 187,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3412
+},
+{
+"f": 244,
+"t": 10.1667,
+"p": 11,
+"crossings": 188,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3423
+},
+{
+"f": 245,
+"t": 10.2083,
+"p": 11,
+"crossings": 188,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3432
+},
+{
+"f": 246,
+"t": 10.25,
+"p": 11,
+"crossings": 188,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3442
+},
+{
+"f": 247,
+"t": 10.2917,
+"p": 11,
+"crossings": 188,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3451
+},
+{
+"f": 248,
+"t": 10.3333,
+"p": 11,
+"crossings": 188,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.346
+},
+{
+"f": 249,
+"t": 10.375,
+"p": 11,
+"crossings": 188,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3469
+},
+{
+"f": 250,
+"t": 10.4167,
+"p": 11,
+"crossings": 188,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3478
+},
+{
+"f": 251,
+"t": 10.4583,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3487
+},
+{
+"f": 252,
+"t": 10.5,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3495
+},
+{
+"f": 253,
+"t": 10.5417,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3503
+},
+{
+"f": 254,
+"t": 10.5833,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3511
+},
+{
+"f": 255,
+"t": 10.625,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3519
+},
+{
+"f": 256,
+"t": 10.6667,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3527
+},
+{
+"f": 257,
+"t": 10.7083,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3535
+},
+{
+"f": 258,
+"t": 10.75,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3543
+},
+{
+"f": 259,
+"t": 10.7917,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3551
+},
+{
+"f": 260,
+"t": 10.8333,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3558
+},
+{
+"f": 261,
+"t": 10.875,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3566
+},
+{
+"f": 262,
+"t": 10.9167,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3573
+},
+{
+"f": 263,
+"t": 10.9583,
+"p": 11,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.358
+},
+{
+"f": 264,
+"t": 11.0,
+"p": 13,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3588
+},
+{
+"f": 265,
+"t": 11.0417,
+"p": 13,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3612
+},
+{
+"f": 266,
+"t": 11.0833,
+"p": 13,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3667
+},
+{
+"f": 267,
+"t": 11.125,
+"p": 13,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3726
+},
+{
+"f": 268,
+"t": 11.1667,
+"p": 13,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3765
+},
+{
+"f": 269,
+"t": 11.2083,
+"p": 13,
+"crossings": 189,
+"struck": 128,
+"remaining": 40,
+"primes_lit": 0,
+"cam_zoom": 1.3802
+},
+{
+"f": 270,
+"t": 11.25,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.3836
+},
+{
+"f": 271,
+"t": 11.2917,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.3868
+},
+{
+"f": 272,
+"t": 11.3333,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.3897
+},
+{
+"f": 273,
+"t": 11.375,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.3925
+},
+{
+"f": 274,
+"t": 11.4167,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.3951
+},
+{
+"f": 275,
+"t": 11.4583,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.3975
+},
+{
+"f": 276,
+"t": 11.5,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.3998
+},
+{
+"f": 277,
+"t": 11.5417,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.402
+},
+{
+"f": 278,
+"t": 11.5833,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.404
+},
+{
+"f": 279,
+"t": 11.625,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4059
+},
+{
+"f": 280,
+"t": 11.6667,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4077
+},
+{
+"f": 281,
+"t": 11.7083,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4094
+},
+{
+"f": 282,
+"t": 11.75,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.411
+},
+{
+"f": 283,
+"t": 11.7917,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4126
+},
+{
+"f": 284,
+"t": 11.8333,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.414
+},
+{
+"f": 285,
+"t": 11.875,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4154
+},
+{
+"f": 286,
+"t": 11.9167,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4168
+},
+{
+"f": 287,
+"t": 11.9583,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4181
+},
+{
+"f": 288,
+"t": 12.0,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4193
+},
+{
+"f": 289,
+"t": 12.0417,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4205
+},
+{
+"f": 290,
+"t": 12.0833,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4216
+},
+{
+"f": 291,
+"t": 12.125,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4228
+},
+{
+"f": 292,
+"t": 12.1667,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4238
+},
+{
+"f": 293,
+"t": 12.2083,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4249
+},
+{
+"f": 294,
+"t": 12.25,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4259
+},
+{
+"f": 295,
+"t": 12.2917,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4269
+},
+{
+"f": 296,
+"t": 12.3333,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4279
+},
+{
+"f": 297,
+"t": 12.375,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4288
+},
+{
+"f": 298,
+"t": 12.4167,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4297
+},
+{
+"f": 299,
+"t": 12.4583,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4306
+},
+{
+"f": 300,
+"t": 12.5,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4315
+},
+{
+"f": 301,
+"t": 12.5417,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4324
+},
+{
+"f": 302,
+"t": 12.5833,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4333
+},
+{
+"f": 303,
+"t": 12.625,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4341
+},
+{
+"f": 304,
+"t": 12.6667,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4349
+},
+{
+"f": 305,
+"t": 12.7083,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4358
+},
+{
+"f": 306,
+"t": 12.75,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4366
+},
+{
+"f": 307,
+"t": 12.7917,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4374
+},
+{
+"f": 308,
+"t": 12.8333,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4382
+},
+{
+"f": 309,
+"t": 12.875,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.439
+},
+{
+"f": 310,
+"t": 12.9167,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4398
+},
+{
+"f": 311,
+"t": 12.9583,
+"p": 13,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 0,
+"cam_zoom": 1.4406
+},
+{
+"f": 312,
+"t": 13.0,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 1,
+"cam_zoom": 1.4414
+},
+{
+"f": 313,
+"t": 13.0417,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 1,
+"cam_zoom": 1.4421
+},
+{
+"f": 314,
+"t": 13.0833,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 2,
+"cam_zoom": 1.4429
+},
+{
+"f": 315,
+"t": 13.125,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 3,
+"cam_zoom": 1.4437
+},
+{
+"f": 316,
+"t": 13.1667,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 4,
+"cam_zoom": 1.4444
+},
+{
+"f": 317,
+"t": 13.2083,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 5,
+"cam_zoom": 1.4452
+},
+{
+"f": 318,
+"t": 13.25,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 5,
+"cam_zoom": 1.4459
+},
+{
+"f": 319,
+"t": 13.2917,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 6,
+"cam_zoom": 1.4467
+},
+{
+"f": 320,
+"t": 13.3333,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 7,
+"cam_zoom": 1.4474
+},
+{
+"f": 321,
+"t": 13.375,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 8,
+"cam_zoom": 1.4482
+},
+{
+"f": 322,
+"t": 13.4167,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 9,
+"cam_zoom": 1.4489
+},
+{
+"f": 323,
+"t": 13.4583,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 9,
+"cam_zoom": 1.4497
+},
+{
+"f": 324,
+"t": 13.5,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 10,
+"cam_zoom": 1.4504
+},
+{
+"f": 325,
+"t": 13.5417,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 11,
+"cam_zoom": 1.4512
+},
+{
+"f": 326,
+"t": 13.5833,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 12,
+"cam_zoom": 1.4519
+},
+{
+"f": 327,
+"t": 13.625,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 13,
+"cam_zoom": 1.4527
+},
+{
+"f": 328,
+"t": 13.6667,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 13,
+"cam_zoom": 1.4534
+},
+{
+"f": 329,
+"t": 13.7083,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 14,
+"cam_zoom": 1.4541
+},
+{
+"f": 330,
+"t": 13.75,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 15,
+"cam_zoom": 1.4549
+},
+{
+"f": 331,
+"t": 13.7917,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 16,
+"cam_zoom": 1.4556
+},
+{
+"f": 332,
+"t": 13.8333,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 17,
+"cam_zoom": 1.4564
+},
+{
+"f": 333,
+"t": 13.875,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 18,
+"cam_zoom": 1.4571
+},
+{
+"f": 334,
+"t": 13.9167,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 18,
+"cam_zoom": 1.4578
+},
+{
+"f": 335,
+"t": 13.9583,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 19,
+"cam_zoom": 1.4586
+},
+{
+"f": 336,
+"t": 14.0,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 20,
+"cam_zoom": 1.4593
+},
+{
+"f": 337,
+"t": 14.0417,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 21,
+"cam_zoom": 1.46
+},
+{
+"f": 338,
+"t": 14.0833,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 22,
+"cam_zoom": 1.4608
+},
+{
+"f": 339,
+"t": 14.125,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 22,
+"cam_zoom": 1.4615
+},
+{
+"f": 340,
+"t": 14.1667,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 23,
+"cam_zoom": 1.4622
+},
+{
+"f": 341,
+"t": 14.2083,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 24,
+"cam_zoom": 1.463
+},
+{
+"f": 342,
+"t": 14.25,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 25,
+"cam_zoom": 1.4637
+},
+{
+"f": 343,
+"t": 14.2917,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 26,
+"cam_zoom": 1.4644
+},
+{
+"f": 344,
+"t": 14.3333,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 27,
+"cam_zoom": 1.4652
+},
+{
+"f": 345,
+"t": 14.375,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 27,
+"cam_zoom": 1.4659
+},
+{
+"f": 346,
+"t": 14.4167,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 28,
+"cam_zoom": 1.4667
+},
+{
+"f": 347,
+"t": 14.4583,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 29,
+"cam_zoom": 1.4674
+},
+{
+"f": 348,
+"t": 14.5,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 30,
+"cam_zoom": 1.4681
+},
+{
+"f": 349,
+"t": 14.5417,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 31,
+"cam_zoom": 1.4689
+},
+{
+"f": 350,
+"t": 14.5833,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 31,
+"cam_zoom": 1.4696
+},
+{
+"f": 351,
+"t": 14.625,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 32,
+"cam_zoom": 1.4703
+},
+{
+"f": 352,
+"t": 14.6667,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 33,
+"cam_zoom": 1.4711
+},
+{
+"f": 353,
+"t": 14.7083,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 34,
+"cam_zoom": 1.4718
+},
+{
+"f": 354,
+"t": 14.75,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 35,
+"cam_zoom": 1.4725
+},
+{
+"f": 355,
+"t": 14.7917,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 35,
+"cam_zoom": 1.4733
+},
+{
+"f": 356,
+"t": 14.8333,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 36,
+"cam_zoom": 1.474
+},
+{
+"f": 357,
+"t": 14.875,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 37,
+"cam_zoom": 1.4748
+},
+{
+"f": 358,
+"t": 14.9167,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 38,
+"cam_zoom": 1.4755
+},
+{
+"f": 359,
+"t": 14.9583,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4762
+},
+{
+"f": 360,
+"t": 15.0,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.477
+},
+{
+"f": 361,
+"t": 15.0417,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4777
+},
+{
+"f": 362,
+"t": 15.0833,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4785
+},
+{
+"f": 363,
+"t": 15.125,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4792
+},
+{
+"f": 364,
+"t": 15.1667,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4799
+},
+{
+"f": 365,
+"t": 15.2083,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4807
+},
+{
+"f": 366,
+"t": 15.25,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4814
+},
+{
+"f": 367,
+"t": 15.2917,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4822
+},
+{
+"f": 368,
+"t": 15.3333,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4829
+},
+{
+"f": 369,
+"t": 15.375,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4836
+},
+{
+"f": 370,
+"t": 15.4167,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4844
+},
+{
+"f": 371,
+"t": 15.4583,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4851
+},
+{
+"f": 372,
+"t": 15.5,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4859
+},
+{
+"f": 373,
+"t": 15.5417,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4866
+},
+{
+"f": 374,
+"t": 15.5833,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4874
+},
+{
+"f": 375,
+"t": 15.625,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4881
+},
+{
+"f": 376,
+"t": 15.6667,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4888
+},
+{
+"f": 377,
+"t": 15.7083,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4896
+},
+{
+"f": 378,
+"t": 15.75,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4903
+},
+{
+"f": 379,
+"t": 15.7917,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4911
+},
+{
+"f": 380,
+"t": 15.8333,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4918
+},
+{
+"f": 381,
+"t": 15.875,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4926
+},
+{
+"f": 382,
+"t": 15.9167,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4933
+},
+{
+"f": 383,
+"t": 15.9583,
+"p": null,
+"crossings": 190,
+"struck": 129,
+"remaining": 39,
+"primes_lit": 39,
+"cam_zoom": 1.4941
+}
+]
+}
