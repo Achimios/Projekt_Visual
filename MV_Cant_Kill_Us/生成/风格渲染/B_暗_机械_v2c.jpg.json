@@ -1,0 +1,27 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "图1的暗调与冷雾，机位更近、略低，看向胸腔与脊柱：形态按图2，所有骨骼都是机械零件——带编号刻字的金属肋骨、齿轮式肋椎关节、脊柱里穿过的成束排线与光纤、肩部的球形关节座。半透明塑料膜只裹住上半部分，下半部分裸露。一枚红色LED在胸骨处，是唯一的红点。无血肉。横幅16:9电影画面，低调布光，大面积纯黑，暗部压死，一道窄的冷白侧逆光勾边，浅景深，轻微胶片颗粒，克制、安静。全画面只有一个红点。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(451879 chars)",
+  "data:image/webp;base64,iVBORw0KGgoAAAANS…(260187 chars)",
+  "data:image/webp;base64,UklGRjy7AgBXRUJQV…(238707 chars)"
+ ],
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\生成\\风格渲染\\B_暗_v1a.jpg",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\3D\\躯体核心.glb.preview.webp",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\_参考库\\2026-10-21_用户给的\\躯体核心结构_参考.webp"
+ ],
+ "usage": {
+  "input_images": 3,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "based_on": "B_暗_v1a.jpg",
+ "note": "👤：骨架更机械（她不是血肉），暗，一个红点"
+}

@@ -1,0 +1,27 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "按图2的女性躯干骨架形态（细节参考图3），做成一件精密机械：钛灰色机加工肋骨、碳纤维胸廓网格、关节处的伺服电机与轴承、脊柱两侧的线缆束和液压执行器。不包膜，裸露悬挂在黑暗中，冷雾只在侧光里显形，金属边缘反着细细的冷光。胸腔内部一个红色指示灯。像深夜实验室里断电的原型机，不是生物。横幅16:9电影画面，低调布光，大面积纯黑，暗部压死，一道窄的冷白侧逆光勾边，浅景深，轻微胶片颗粒，克制、安静。全画面只有一个红点。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(451879 chars)",
+  "data:image/webp;base64,iVBORw0KGgoAAAANS…(260187 chars)",
+  "data:image/webp;base64,UklGRjy7AgBXRUJQV…(238707 chars)"
+ ],
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\生成\\风格渲染\\B_暗_v1a.jpg",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Cant_Kill_Us\\3D\\躯体核心.glb.preview.webp",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\_参考库\\2026-10-21_用户给的\\躯体核心结构_参考.webp"
+ ],
+ "usage": {
+  "input_images": 3,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ },
+ "based_on": "B_暗_v1a.jpg",
+ "note": "👤：骨架更机械（她不是血肉），暗，一个红点"
+}

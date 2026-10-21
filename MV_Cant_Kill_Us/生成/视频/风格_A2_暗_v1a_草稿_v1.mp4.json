@@ -1,0 +1,29 @@
+{
+ "api": "contents/generations/tasks",
+ "task_id": "cgt-20261021214135-2n4g4",
+ "model": "doubao-seedance-2-0-fast-260128",
+ "content": [
+  {
+   "type": "text",
+   "text": "镜头从顶光方向朝下推向MEMS梳齿谐振器：开头推得较快，接近梳齿端那个红点时缓下来但不停，继续极慢地推近。梳齿在冷白光里非常轻微地高频颤动，红点微微明灭。镜头绝对平稳，没有晃动、抖动、手持感，不旋转。镜头从第一帧起就已经在运动，结尾仍在运动，全程只有速度变化。不出现任何新物体、人物、文字。冷灰低饱和，纯黑背景，保持首帧的光线和色调。"
+  },
+  {
+   "type": "image_url",
+   "image_url": {
+    "url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(391311 chars)"
+   },
+   "role": "first_frame"
+  }
+ ],
+ "ratio": "adaptive",
+ "duration": 5,
+ "watermark": false,
+ "generate_audio": false,
+ "resolution": "720p",
+ "usage": {
+  "completion_tokens": 108900,
+  "total_tokens": 108900
+ },
+ "seed": 89388,
+ "draft": false
+}
