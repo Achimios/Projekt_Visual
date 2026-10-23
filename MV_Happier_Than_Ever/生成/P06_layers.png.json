@@ -1,0 +1,82 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Decompose this image into depth layers: background (walls, furniture, fully inpainted behind the person), the person as one layer, and foreground objects. Keep the image unchanged.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "layer_decomposition": true,
+ "output_format": "png",
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(415807 chars)",
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Happier_Than_Ever\\生成\\P06.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 4,
+  "output_tokens": 36864,
+  "total_tokens": 36864
+ },
+ "layers": [
+  {
+   "file": "P06_layers_layer1.png",
+   "z_index": 1,
+   "name": "Background (walls and floor lamp)",
+   "description": "The full background layer including dark textured walls, the warm glowing hanging floor lamp, and all areas fully inpainted behind the person and foreground objects, no foreground elements included.",
+   "bounding_box": {
+    "absolute": [
+     0,
+     0,
+     453,
+     1089
+    ],
+    "normalized": [
+     0,
+     0,
+     221,
+     944
+    ]
+   }
+  },
+  {
+   "file": "P06_layers_layer2.png",
+   "z_index": 2,
+   "name": "The person",
+   "description": "The full person as a single layer, including her short black hair, orange braid, cracked round glasses, dice-shaped earring, gray cardigan, black turtleneck, bare foot, and all her body parts, excluding the metal spoon she holds and the golden cup in front of her.",
+   "bounding_box": {
+    "absolute": [
+     96,
+     0,
+     2048,
+     1152
+    ],
+    "normalized": [
+     47,
+     0,
+     1000,
+     999
+    ]
+   }
+  },
+  {
+   "file": "P06_layers_layer3.png",
+   "z_index": 3,
+   "name": "Foreground objects",
+   "description": "All foreground objects including the metal spoon with dripping milk, the golden two-handled cup, the ring-shaped cereal pieces inside the cup, and all dripping milk streams.",
+   "bounding_box": {
+    "absolute": [
+     538,
+     276,
+     1252,
+     1152
+    ],
+    "normalized": [
+     263,
+     240,
+     611,
+     999
+    ]
+   }
+  }
+ ]
+}

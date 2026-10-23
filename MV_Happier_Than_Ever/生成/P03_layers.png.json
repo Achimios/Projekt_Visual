@@ -1,0 +1,102 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Decompose this image into depth layers: background (walls, furniture, fully inpainted behind the person), the person as one layer, and foreground objects. Keep the image unchanged.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "layer_decomposition": true,
+ "output_format": "png",
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(394051 chars)",
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Happier_Than_Ever\\生成\\P03.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 5,
+  "output_tokens": 45789,
+  "total_tokens": 45789
+ },
+ "layers": [
+  {
+   "file": "P03_layers_layer1.png",
+   "z_index": 1,
+   "name": "Background (walls, furniture)",
+   "description": "The full background layer including tiled bathroom walls, wall-mounted warm lamp, and the bathtub structure fully inpainted behind the person, no foreground elements included",
+   "bounding_box": {
+    "absolute": [
+     0,
+     436,
+     2048,
+     1152
+    ],
+    "normalized": [
+     0,
+     378,
+     1000,
+     999
+    ]
+   }
+  },
+  {
+   "file": "P03_layers_layer2.png",
+   "z_index": 2,
+   "name": "The person",
+   "description": "The whole girl character as a single layer, including her hair, glasses, orange braid, dice-shaped earring, clothing, bare feet, and her hand holding the spoon, no separate body parts split out",
+   "bounding_box": {
+    "absolute": [
+     89,
+     0,
+     1911,
+     1061
+    ],
+    "normalized": [
+     43,
+     0,
+     933,
+     920
+    ]
+   }
+  },
+  {
+   "file": "P03_layers_layer3.png",
+   "z_index": 3,
+   "name": "Foreground metal spoon",
+   "description": "The metal spoon placed on the bathtub edge, extracted as an independent foreground object",
+   "bounding_box": {
+    "absolute": [
+     440,
+     259,
+     918,
+     498
+    ],
+    "normalized": [
+     215,
+     225,
+     448,
+     431
+    ]
+   }
+  },
+  {
+   "file": "P03_layers_layer4.png",
+   "z_index": 4,
+   "name": "Foreground small dice",
+   "description": "The small white dice with black dots placed on the bathtub edge, extracted as an independent foreground object",
+   "bounding_box": {
+    "absolute": [
+     364,
+     446,
+     419,
+     507
+    ],
+    "normalized": [
+     178,
+     387,
+     204,
+     439
+    ]
+   }
+  }
+ ]
+}

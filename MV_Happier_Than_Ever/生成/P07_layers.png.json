@@ -1,0 +1,82 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Decompose this image into depth layers: background (walls, furniture, fully inpainted behind the person), the person as one layer, and foreground objects. Keep the image unchanged.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "layer_decomposition": true,
+ "output_format": "png",
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(384107 chars)",
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Happier_Than_Ever\\生成\\P07.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 4,
+  "output_tokens": 35655,
+  "total_tokens": 35655
+ },
+ "layers": [
+  {
+   "file": "P07_layers_layer1.png",
+   "z_index": 1,
+   "name": "Background (walls and furniture)",
+   "description": "The full background layer including walls, wooden cabinets, and all furniture elements behind the foreground objects and the person, fully inpainted to be a complete seamless background without any foreground elements",
+   "bounding_box": {
+    "absolute": [
+     0,
+     0,
+     2048,
+     1152
+    ],
+    "normalized": [
+     0,
+     0,
+     1000,
+     999
+    ]
+   }
+  },
+  {
+   "file": "P07_layers_layer2.png",
+   "z_index": 2,
+   "name": "Foreground objects",
+   "description": "All foreground objects including the vintage typewriter with typed paper, the lit gooseneck desk lamp, the worn desktop, and the wooden chair the girl sits on, no background elements included",
+   "bounding_box": {
+    "absolute": [
+     0,
+     0,
+     1402,
+     1152
+    ],
+    "normalized": [
+     0,
+     0,
+     684,
+     999
+    ]
+   }
+  },
+  {
+   "file": "P07_layers_layer3.png",
+   "z_index": 3,
+   "name": "The girl character",
+   "description": "The whole person as a single layer, including her short black hair with orange braid, round cracked glasses, dice-shaped earring, black turtleneck, light gray cardigan, and all visible body parts, no other unrelated elements included",
+   "bounding_box": {
+    "absolute": [
+     832,
+     0,
+     1917,
+     1152
+    ],
+    "normalized": [
+     406,
+     0,
+     936,
+     999
+    ]
+   }
+  }
+ ]
+}
