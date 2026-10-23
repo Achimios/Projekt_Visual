@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 0
+src: plate:P21|两镜：全幅 → 裁车灯
 t0: 147.447
 t1: 149.970
 track: 0

@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 15
+src: plate:P27|两镜：天际线 → 回到 P26
 t0: 178.408
 t1: 180.972
 track: 0

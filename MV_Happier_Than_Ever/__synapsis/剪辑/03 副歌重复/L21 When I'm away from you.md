@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 1
+src: plate:P01|= L01，更暗，横移反向
 t0: 108.507
 t1: 113.636
 track: 0

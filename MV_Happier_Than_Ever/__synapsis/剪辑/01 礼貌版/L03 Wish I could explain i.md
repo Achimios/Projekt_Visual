@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 2
+src: plate:P03|全幅
 t0: 14.443
 t1: 20.337
 track: 0

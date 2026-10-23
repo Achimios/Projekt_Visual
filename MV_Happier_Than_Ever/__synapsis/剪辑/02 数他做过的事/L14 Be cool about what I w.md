@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 5
+src: plate:P14|全幅
 t0: 76.119
 t1: 80.985
 track: 0

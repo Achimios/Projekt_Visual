@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Keep the same character as in the reference image (图1). SCENE: an empty chair beside a kitchen table at night, cold light, no person, teal.  STYLE: stylized CG illustration, matte shading, soft single-source lamp light, muted palette, film grain, 16:9 cinematic still, no text, no logos, no photoreal human faces. Not an anime style, not Pixar; closer to a painted maquette. PALETTE: deep teal night, car headlights, cold, everything desaturated except the orange braid.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(394051 chars)",
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Happier_Than_Ever/生成/P03.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 9216,
+  "total_tokens": 9216
+ }
+}

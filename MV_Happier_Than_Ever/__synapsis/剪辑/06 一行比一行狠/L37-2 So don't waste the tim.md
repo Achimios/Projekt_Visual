@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 12
+src: plate:P31|全幅横移
 t0: 200.954
 t1: 202.194
 track: 0

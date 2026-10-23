@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 13
+src: plate:P26|两镜：全幅 → 裁辫子
 t0: 173.772
 t1: 176.592
 track: 0

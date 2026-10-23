@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 11
+src: plate:P25|两镜：更近 → 更近
 t0: 170.326
 t1: 171.810
 track: 0

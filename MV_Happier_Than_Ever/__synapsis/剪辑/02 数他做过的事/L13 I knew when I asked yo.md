@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 4
+src: plate:P13|全幅缓慢环绕（视差）
 t0: 71.965
 t1: 76.119
 track: 0

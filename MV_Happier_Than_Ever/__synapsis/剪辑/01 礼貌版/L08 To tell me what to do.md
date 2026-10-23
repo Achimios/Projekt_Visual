@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 7
+src: plate:P08|全幅
 t0: 41.598
 t1: 52.610
 track: 0

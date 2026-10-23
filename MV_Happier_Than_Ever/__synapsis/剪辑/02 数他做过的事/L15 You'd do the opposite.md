@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 6
+src: plate:P13|裁上半 1/2 当俯拍，缓升
 t0: 80.985
 t1: 85.724
 track: 0

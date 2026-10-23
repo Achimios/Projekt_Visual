@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 7
+src: plate:P24|两镜：全幅 → 裁屏幕
 t0: 162.948
 t1: 164.751
 track: 0

@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 10
+src: plate:P16|压暗 60%，只留冰箱灯
 t0: 95.726
 t1: 104.109
 track: 0

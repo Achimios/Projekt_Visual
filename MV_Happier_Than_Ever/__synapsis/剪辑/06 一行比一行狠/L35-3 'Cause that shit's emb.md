@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 7
+src: plate:P30|全幅缓推
 t0: 192.371
 t1: 194.293
 track: 0

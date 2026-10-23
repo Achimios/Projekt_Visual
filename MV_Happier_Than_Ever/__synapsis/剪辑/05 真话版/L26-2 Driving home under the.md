@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 3
+src: plate:P22|两镜：全幅 → 裁雨窗
 t0: 154.087
 t1: 156.323
 track: 0

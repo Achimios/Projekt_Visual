@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 38
+src: plate:P01 P05 P11 P13 P26|每拍一切，最后 alone 单独一镜 = P26 裁辫子
 t0: 240.385
 t1: 241.122
 track: 0

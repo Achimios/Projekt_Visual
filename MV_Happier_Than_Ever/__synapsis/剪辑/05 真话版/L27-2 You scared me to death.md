@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 5
+src: plate:P23|两镜：全幅 → 裁影子
 t0: 158.509
 t1: 160.729
 track: 0

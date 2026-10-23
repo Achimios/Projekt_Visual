@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 4
+src: plate:P04|= L04，色温褪灰
 t0: 124.614
 t1: 133.090
 track: 0

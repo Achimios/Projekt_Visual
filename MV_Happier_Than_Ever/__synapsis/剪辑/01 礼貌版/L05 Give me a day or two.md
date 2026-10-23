@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 4
+src: plate:P05|全幅缓推
 t0: 25.467
 t1: 30.902
 track: 0

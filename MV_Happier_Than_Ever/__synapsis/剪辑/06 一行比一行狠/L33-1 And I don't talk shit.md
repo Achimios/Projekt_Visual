@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 0
+src: plate:P25|裁眼睛
 t0: 180.972
 t1: 182.102
 track: 0

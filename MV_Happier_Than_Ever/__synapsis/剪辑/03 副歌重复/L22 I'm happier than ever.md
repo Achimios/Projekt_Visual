@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 2
+src: plate:P02|= L02
 t0: 113.636
 t1: 118.767
 track: 0

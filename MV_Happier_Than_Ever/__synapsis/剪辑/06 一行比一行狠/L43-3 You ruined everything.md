@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 30
+src: plate:P01|被方块吃掉
 t0: 228.916
 t1: 230.756
 track: 0

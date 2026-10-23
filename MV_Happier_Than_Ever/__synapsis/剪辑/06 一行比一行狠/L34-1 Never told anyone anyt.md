@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 3
+src: plate:P14|青色重调 + 裁嘴
 t0: 185.747
 t1: 186.913
 track: 0

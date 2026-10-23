@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 21
+src: plate:P07|青色重调，裁空行
 t0: 215.187
 t1: 216.656
 track: 0

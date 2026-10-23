@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 0
+src: plate:P01|全幅，极慢横移
 t0: 4.195
 t1: 9.681
 track: 0

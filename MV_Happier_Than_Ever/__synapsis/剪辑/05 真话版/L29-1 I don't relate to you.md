@@ -1,6 +1,7 @@
 ---
 status: todo
 order: 8
+src: plate:P25|两镜：正面 → 镜像反打
 t0: 164.751
 t1: 165.905
 track: 0
