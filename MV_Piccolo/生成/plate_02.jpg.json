@@ -1,0 +1,15 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "16:9 cinematic still, backstage of an empty 1920s vaudeville theatre at night. A bare brick wall with peeling paint and old faded posters, wooden floorboards, hanging ropes and a sandbag, thick dust in the air. A single bare tungsten bulb on a wire casts warm amber light from the lower left, strong falloff into deep darkness, long soft shadows on the wall. Nobody in the frame. Film photography, Kodak Vision3 500T pushed, heavy grain, shallow depth of field, slight haze. Muted palette: amber, umber, near-black. No text, no signage, no people, no modern objects.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 9216,
+  "total_tokens": 9216
+ }
+}
