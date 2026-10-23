@@ -3,8 +3,6 @@ order: 1
 beats: 感官.json
 fps: 24
 lead: 1
-t0: 13.110
-t1: 38.710
 timeline: true
 ---
 
