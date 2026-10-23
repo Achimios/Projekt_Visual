@@ -1,0 +1,15 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "SCENE: a wall covered edge to edge with cut-out stylized magazine faces, cold light, teal, no person.  STYLE: stylized CG illustration, matte shading, soft single-source lamp light, muted palette, film grain, 16:9 cinematic still, no text, no logos, no photoreal human faces. Not an anime style, not Pixar; closer to a painted maquette. PALETTE: deep teal night, car headlights, cold, everything desaturated except the orange braid.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 9216,
+  "total_tokens": 9216
+ }
+}
