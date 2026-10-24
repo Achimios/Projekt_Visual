@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Keep the same character and coat as in the reference image (图1). SCENE: almost total darkness, night dunes barely visible as faint ridges, a single tiny figure with a staff, no light source except a faint horizon glow; very dark exposure. CHARACTER: a land surveyor, identity defined by her tools, not by a cloak: a wide flat-brimmed canvas hat (NO hood, NO face mask), a long dust-colored canvas work coat, a rolled map tube strapped across her back, and a graduated leveling staff taller than herself with black-and-white measurement marks, planted in the sand. Face in shadow under the brim, almost never visible. Heavy laced boots. A small matte-black handheld rangefinder with a blank dark display (no text, no digits). Stylized CG, not photoreal. STYLE: stylized CG illustration, matte shading, after-sunset light with a single warm horizon glow, very dark exposure, muted palette (ochre sand, slate blue night), film grain, 16:9 cinematic still, no text, no logos, no vehicles, no creatures, no symbols, nothing resembling any existing film. Enormous scale contrast: person tiny, dunes vast.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(225511 chars)",
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Dune/生成/P18.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 9216,
+  "total_tokens": 9216
+ }
+}
