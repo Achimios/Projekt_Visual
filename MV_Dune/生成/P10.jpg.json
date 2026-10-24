@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Keep the same character and coat as in the reference image (图1). SCENE: a huge dune face seen from below at dusk, wind pouring sand off the crest like a waterfall, no person.  STYLE: stylized CG illustration, matte shading, after-sunset light with a single warm horizon glow, very dark exposure, muted palette (ochre sand, slate blue night), film grain, 16:9 cinematic still, no text, no logos, no vehicles, no creatures, no symbols, nothing resembling any existing film. Enormous scale contrast: person tiny, dunes vast.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(387935 chars)",
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Dune/生成/P01.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 9216,
+  "total_tokens": 9216
+ }
+}
