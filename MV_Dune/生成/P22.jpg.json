@@ -1,0 +1,15 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "SCENE: extreme close-up: one gloved hand gripping a graduated surveying staff with black-and-white centimeter marks, the hand and staff fill the whole frame, blowing sand grains frozen in the air, dusk; no face, no body, no horizon.  STYLE: stylized CG illustration, matte shading, after-sunset light with a single warm horizon glow, very dark exposure, muted palette (ochre sand, slate blue night), film grain, 16:9 cinematic still, no text, no logos, no vehicles, no creatures, no symbols, nothing resembling any existing film. Enormous scale contrast: person tiny, dunes vast.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 9216,
+  "total_tokens": 9216
+ }
+}
