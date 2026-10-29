@@ -418,7 +418,7 @@ const SHOT = {
     mono('> boot clean_slate · audio: no signal', 70, H - 60, 18, C.bone, 0.5 * clamp(t / 2));
   },
   sea1(t, s) {
-    bgShot(has('shot6') ? 'shot6' : 'shot1', t, s, { z0: 1.15, z1: 1.05, pan: 0, dim: 0.3 });
+    bgShot(has('shot18') ? 'shot18' : 'shot6', t, s, { z0: 1.15, z1: 1.05, pan: 0, dim: 0.15 });
     rain(t, 120, 0.25);
     const th = wordAt('THEN', 10), fall = outExpo((t - th - 0.6) / 1.6), line = 'wake up and feel the music please';
     if (t > th) {
@@ -453,7 +453,7 @@ const SHOT = {
     lyricLine(t, s.t0, s.t1, { size: 60 });
   },
   // ===== 44–58 副歌 1 后半 =====
-  nothing(t, s) { bgShot('shot16', t, s, { z0: 1.0, z1: 1.12, pan: 0 }); rain(t, 120, 0.25); lyricLine(t, s.t0, s.t1, { size: 64 }); },
+  nothing(t, s) { bgShot(has('shot22') ? 'shot22' : 'shot16', t, s, { z0: 1.0, z1: 1.12, pan: 0 }); rain(t, 120, 0.25); lyricLine(t, s.t0, s.t1, { size: 64 }); },
   slate(t, s) {
     const w = wordsIn(s.t0, s.t1).find(x => x.w === 'CLEAN'), wipe = w ? outExpo((t - w.t0 + 0.1) / 0.4) : 0;
     bgShot('shot15', t, s, { z0: 1.0, z1: 1.06, pan: 0 });
@@ -463,7 +463,7 @@ const SHOT = {
       if (Math.floor(t * 2.6) % 2) { ctx.fillStyle = rgba(C.pink); ctx.fillRect(W / 2 + 560, H * 0.55 - 90, 18, 100); }
     } else lyricLine(t, s.t0, s.t1, { size: 64 });
   },
-  waiting(t, s) { bgShot('shot7', t, s, { z0: 1.0, z1: 1.08 }); rain(t, 90, 0.3); lyricLine(t, s.t0, s.t1, { size: 60 }); },
+  waiting(t, s) { bgShot(has('shot21') ? 'shot21' : 'shot7', t, s, { z0: 1.0, z1: 1.08 }); rain(t, 90, 0.3); lyricLine(t, s.t0, s.t1, { size: 60 }); },
   // ===== 59–80 主歌 2 =====
   giggle(t, s) {
     bg(C.night, C.indigo);
@@ -523,7 +523,8 @@ const SHOT = {
   // ===== 80–96 副歌 2 =====
   run(t, s) {
     const lt = t - s.t0;
-    if (has('shot14')) shot(ctx, 'shot14', { z: 1.08, cx: 960 + 60 - ((lt * 90) % 120) });
+    if (has('shot19') && t < wordAt('RUN', 80)) shot(ctx, 'shot19', { z: 1.05 + 0.03 * lt });
+    else if (has('shot14')) shot(ctx, 'shot14', { z: 1.08, cx: 960 + 60 - ((lt * 90) % 120) });
     else { ctx.fillStyle = 'rgb(10,10,40)'; ctx.fillRect(-W, -H, W * 3, H * 3); shotLayer(ctx, 'shot3', 1, { dx: -(lt * 400) % 600 }); shotLayer(ctx, 'shot3', 2, { dy: Math.sin(lt * 13) * 20 }); }
     rain(t, 100, 0.25);
     lyricLine(t, s.t0, s.t1, { size: 66 });
@@ -572,19 +573,21 @@ const SHOT = {
     lyricLine(t, s.t0, s.t1, { size: 62 });
   },
   code(t, s) {
-    bgShot('shot9', t, s, { z0: 1.1, z1: 1.02 });
+    bgShot(has('shot20') ? 'shot20' : 'shot9', t, s, { z0: 1.1, z1: 1.02 });
     const night = Math.floor((t - s.t0) / BEAT) % 2; ctx.fillStyle = night ? 'rgba(20,10,60,0.45)' : 'rgba(255,190,140,0.15)'; ctx.fillRect(-W, -H, W * 3, H * 3);
     lyricLine(t, s.t0, s.t1, { size: 62 });
   },
   rules(t, s) {
-    const ph = (Math.sin(t * 0.8) + 1) / 2, g = ctx.createLinearGradient(0, 0, 0, H * 0.55); g.addColorStop(0, `rgb(${mixc([40, 20, 110], [200, 40, 150], ph)})`); g.addColorStop(1, `rgb(${mixc([255, 61, 154], [61, 200, 255], ph)})`);
-    ctx.fillStyle = g; ctx.fillRect(-W, -H, W * 3, H * 1.55);
-    ctx.fillStyle = 'rgb(6,6,20)'; ctx.fillRect(-W, H * 0.55, W * 3, H * 2);
-    ctx.strokeStyle = rgba(C.cyan, 0.7); ctx.lineWidth = 2;
-    for (let k = -12; k <= 12; k++) { ctx.beginPath(); ctx.moveTo(W / 2 + k * 30, H * 0.55); ctx.lineTo(W / 2 + k * 260, H); ctx.stroke(); }
-    for (let k = 0; k < 9; k++) { const y = H * 0.55 + Math.pow((k + ((t * 2) % 1)) / 9, 2) * H * 0.45; ctx.beginPath(); ctx.moveTo(-W, y); ctx.lineTo(W * 2, y); ctx.stroke(); }
-    pxGirl(ctx, W / 2 - 63 * 1.8, H * 0.55 - 208 * 1.8 + 30, 1.8, { eyes: 'open', mouth: 'smile' });
-    lyricLine(t, s.t0, s.t1, { size: 66, y: H * 0.2 });
+    // 「Rules are the floor, but the vibe is the sky」：云海上的漂浮之塔（全片唯一的白天）；地板是透视网格
+    bgShot('shot23', t, s, { z0: 1.0, z1: 1.08, pan: -30 });
+    const fl = wordAt('FLOOR', 115);
+    if (t > fl - 0.3) {
+      const u = outExpo((t - fl + 0.3) / 0.4);
+      ctx.strokeStyle = rgba(C.cyan, 0.6 * u); ctx.lineWidth = 2;
+      for (let k = -12; k <= 12; k++) { ctx.beginPath(); ctx.moveTo(W / 2 + k * 30, H * 0.78); ctx.lineTo(W / 2 + k * 260, H); ctx.stroke(); }
+      for (let k = 0; k < 6; k++) { const y = H * 0.78 + Math.pow((k + ((t * 2) % 1)) / 6, 2) * H * 0.22; ctx.beginPath(); ctx.moveTo(-W, y); ctx.lineTo(W * 2, y); ctx.stroke(); }
+    }
+    lyricLine(t, s.t0, s.t1, { size: 66, y: H * 0.2, cool: C.ink });
   },
   // ===== 120–141 Bridge =====
   windows(t, s) {
