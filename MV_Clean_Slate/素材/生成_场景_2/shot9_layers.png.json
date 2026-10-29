@@ -1,0 +1,82 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Decompose this image into depth layers: the far background (fully inpainted behind the girl), the girl as one layer, and any foreground elements. Keep the image unchanged.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "layer_decomposition": true,
+ "output_format": "png",
+ "image": "data:image/png;base64,iVBORw0KGgoAAAANSU…(5062018 chars)",
+ "refs_src": [
+  "shot9.png"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 4,
+  "output_tokens": 36350,
+  "total_tokens": 36350
+ },
+ "layers": [
+  {
+   "file": "shot9_layers_layer1.png",
+   "z_index": 1,
+   "name": "Far background wall of glitch screens",
+   "description": "The full far background wall covered with dense glowing glitch-art TV screens, dark rainy night city backdrop behind the screens, no girl or foreground elements included",
+   "bounding_box": {
+    "absolute": [
+     191,
+     59,
+     1869,
+     845
+    ],
+    "normalized": [
+     93,
+     51,
+     912,
+     733
+    ]
+   }
+  },
+  {
+   "file": "shot9_layers_layer2.png",
+   "z_index": 2,
+   "name": "Blue-haired anime girl",
+   "description": "The full single layer of the blue short-haired anime girl in a dark hooded coat, with purple glowing eyes, standing in side profile, no background screens or foreground glitch strips included",
+   "bounding_box": {
+    "absolute": [
+     585,
+     290,
+     1124,
+     1152
+    ],
+    "normalized": [
+     286,
+     252,
+     548,
+     999
+    ]
+   }
+  },
+  {
+   "file": "shot9_layers_layer3.png",
+   "z_index": 3,
+   "name": "Foreground glitch strip elements",
+   "description": "All the small glowing blue pixelated glitch overlay strips that appear in front of the girl, no part of the girl or background screens included",
+   "bounding_box": {
+    "absolute": [
+     691,
+     809,
+     1093,
+     1055
+    ],
+    "normalized": [
+     337,
+     702,
+     533,
+     915
+    ]
+   }
+  }
+ ]
+}

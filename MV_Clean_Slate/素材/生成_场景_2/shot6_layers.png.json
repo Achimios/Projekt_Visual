@@ -1,0 +1,82 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Decompose this image into depth layers: the far background (fully inpainted behind the girl), the girl as one layer, and any foreground elements. Keep the image unchanged.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "layer_decomposition": true,
+ "output_format": "png",
+ "image": "data:image/png;base64,iVBORw0KGgoAAAANSU…(4230582 chars)",
+ "refs_src": [
+  "shot6.png"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 4,
+  "output_tokens": 36638,
+  "total_tokens": 36638
+ },
+ "layers": [
+  {
+   "file": "shot6_layers_layer1.png",
+   "z_index": 1,
+   "name": "Far Background",
+   "description": "The full far background behind the girl, including the glowing large screen, dark industrial ceiling, rusted side pillars, orange wall lamps, distant industrial pipes, and falling rain streaks, fully inpainted to be a complete seamless background without the girl and foreground elements.",
+   "bounding_box": {
+    "absolute": [
+     619,
+     306,
+     1445,
+     653
+    ],
+    "normalized": [
+     302,
+     266,
+     705,
+     566
+    ]
+   }
+  },
+  {
+   "file": "shot6_layers_layer2.png",
+   "z_index": 2,
+   "name": "Cyberpunk Girl",
+   "description": "The full cyberpunk girl as a single layer, including her short blue hair, glowing magenta eyes, dark hooded outfit, cybernetic accessories, and her crouched seated pose, no other elements included.",
+   "bounding_box": {
+    "absolute": [
+     830,
+     308,
+     1267,
+     967
+    ],
+    "normalized": [
+     405,
+     267,
+     618,
+     839
+    ]
+   }
+  },
+  {
+   "file": "shot6_layers_layer3.png",
+   "z_index": 3,
+   "name": "Foreground Elements",
+   "description": "All foreground elements, including tangled black cables spread across the wet reflective floor, low-lying blue-purple mist, the rain streaks in the foreground area, and the glossy wet ground with neon light reflections.",
+   "bounding_box": {
+    "absolute": [
+     2,
+     381,
+     1913,
+     1152
+    ],
+    "normalized": [
+     1,
+     331,
+     934,
+     999
+    ]
+   }
+  }
+ ]
+}

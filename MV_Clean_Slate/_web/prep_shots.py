@@ -35,19 +35,23 @@ def pix(img, w, h, pimg, alpha=False):
 def main():
     OUT.mkdir(exist_ok=True)
     man = {"grid": [GW, GH], "shots": {}}
-    for i in range(1, 6):
-        full = Image.open(SRC / f"shot{i}.png")
+    SRC2 = SRC.parent / "生成_场景_2"
+    for i in range(1, 18):
+        src = SRC if i <= 5 else SRC2
+        if not (src / f"shot{i}.png").exists():
+            continue
+        full = Image.open(src / f"shot{i}.png")
         pimg = palette_of(full)
         pix(full, GW, GH, pimg).save(OUT / f"shot{i}.png")
         entry = {"full": f"shot{i}.png", "layers": []}
-        side = SRC / f"shot{i}_layers.png.json"
+        side = src / f"shot{i}_layers.png.json"
         if side.exists():
             d = json.loads(side.read_text("utf-8"))
             for k, L in enumerate(d.get("layers", [])):
                 x0, y0, x1, y1 = L["bounding_box"]["normalized"]           # 0–1000
                 gx0, gy0 = round(x0 / 1000 * GW), round(y0 / 1000 * GH)
                 gw, gh = max(1, round((x1 - x0) / 1000 * GW)), max(1, round((y1 - y0) / 1000 * GH))
-                im = Image.open(SRC / L["file"])
+                im = Image.open(src / L["file"])
                 name = f"shot{i}_L{k + 1}.png"
                 pix(im, gw, gh, pimg, alpha=True).save(OUT / name)
                 entry["layers"].append({"file": name, "name": L.get("name"), "x": gx0, "y": gy0, "w": gw, "h": gh})

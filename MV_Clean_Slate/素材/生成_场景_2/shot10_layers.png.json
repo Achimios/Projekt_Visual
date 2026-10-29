@@ -1,0 +1,62 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Decompose this image into depth layers: the far background (fully inpainted behind the girl), the girl as one layer, and any foreground elements. Keep the image unchanged.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "layer_decomposition": true,
+ "output_format": "png",
+ "image": "data:image/png;base64,iVBORw0KGgoAAAANSU…(4505982 chars)",
+ "refs_src": [
+  "shot10.png"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 3,
+  "output_tokens": 26814,
+  "total_tokens": 26814
+ },
+ "layers": [
+  {
+   "file": "shot10_layers_layer1.png",
+   "z_index": 1,
+   "name": "far background",
+   "description": "The full far background behind the girl, including the glowing pixel portal, the glitch neon building facades on both sides, the dark rainy sky and distant city elements, fully inpainted to be a complete seamless background behind the girl",
+   "bounding_box": {
+    "absolute": [
+     543,
+     0,
+     2048,
+     1152
+    ],
+    "normalized": [
+     265,
+     0,
+     1000,
+     999
+    ]
+   }
+  },
+  {
+   "file": "shot10_layers_layer2.png",
+   "z_index": 2,
+   "name": "the girl",
+   "description": "The blue short-haired anime girl in a dark oversized hooded coat, standing as a single complete layer, no extra elements included",
+   "bounding_box": {
+    "absolute": [
+     1223,
+     412,
+     1488,
+     959
+    ],
+    "normalized": [
+     597,
+     358,
+     726,
+     832
+    ]
+   }
+  }
+ ]
+}

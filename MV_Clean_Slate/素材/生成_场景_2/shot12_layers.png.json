@@ -1,0 +1,82 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Decompose this image into depth layers: the far background (fully inpainted behind the girl), the girl as one layer, and any foreground elements. Keep the image unchanged.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "layer_decomposition": true,
+ "output_format": "png",
+ "image": "data:image/png;base64,iVBORw0KGgoAAAANSU…(4324926 chars)",
+ "refs_src": [
+  "shot12.png"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 4,
+  "output_tokens": 36873,
+  "total_tokens": 36873
+ },
+ "layers": [
+  {
+   "file": "shot12_layers_layer1.png",
+   "z_index": 1,
+   "name": "far background",
+   "description": "The full far background behind the girl, including distant arcade machines, neon lights, ceiling structure, rain streaks and misty atmosphere, fully inpainted to be complete behind the girl",
+   "bounding_box": {
+    "absolute": [
+     554,
+     453,
+     1373,
+     698
+    ],
+    "normalized": [
+     271,
+     393,
+     670,
+     605
+    ]
+   }
+  },
+  {
+   "file": "shot12_layers_layer2.png",
+   "z_index": 2,
+   "name": "the girl",
+   "description": "The blue short-haired girl in a dark oversized jacket, as a single complete layer, with closed eyes, one arm raised and the other extended, no extra elements included",
+   "bounding_box": {
+    "absolute": [
+     735,
+     11,
+     1473,
+     1152
+    ],
+    "normalized": [
+     359,
+     10,
+     719,
+     999
+    ]
+   }
+  },
+  {
+   "file": "shot12_layers_layer3.png",
+   "z_index": 3,
+   "name": "foreground glitch elements",
+   "description": "The small glowing blue pixelated glitch strips overlaying the girl's jacket, these are the only foreground elements above the girl layer",
+   "bounding_box": {
+    "absolute": [
+     956,
+     536,
+     1317,
+     700
+    ],
+    "normalized": [
+     467,
+     465,
+     643,
+     607
+    ]
+   }
+  }
+ ]
+}

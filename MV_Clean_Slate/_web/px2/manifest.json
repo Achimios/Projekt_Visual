@@ -65,6 +65,196 @@
   "shot5": {
    "full": "shot5.png",
    "layers": []
+  },
+  "shot6": {
+   "full": "shot6.png",
+   "layers": [
+    {
+     "file": "shot6_L1.png",
+     "name": "Far Background",
+     "x": 58,
+     "y": 29,
+     "w": 77,
+     "h": 32
+    },
+    {
+     "file": "shot6_L2.png",
+     "name": "Cyberpunk Girl",
+     "x": 78,
+     "y": 29,
+     "w": 41,
+     "h": 62
+    },
+    {
+     "file": "shot6_L3.png",
+     "name": "Foreground Elements",
+     "x": 0,
+     "y": 36,
+     "w": 179,
+     "h": 72
+    }
+   ]
+  },
+  "shot7": {
+   "full": "shot7.png",
+   "layers": [
+    {
+     "file": "shot7_L1.png",
+     "name": "Far Neon City Background",
+     "x": 13,
+     "y": 6,
+     "w": 167,
+     "h": 96
+    },
+    {
+     "file": "shot7_L2.png",
+     "name": "Anime Girl Character",
+     "x": 62,
+     "y": 0,
+     "w": 130,
+     "h": 108
+    },
+    {
+     "file": "shot7_L3.png",
+     "name": "Foreground Starry Decal Elements",
+     "x": 130,
+     "y": 89,
+     "w": 52,
+     "h": 6
+    }
+   ]
+  },
+  "shot8": {
+   "full": "shot8.png",
+   "layers": []
+  },
+  "shot9": {
+   "full": "shot9.png",
+   "layers": [
+    {
+     "file": "shot9_L1.png",
+     "name": "Far background wall of glitch screens",
+     "x": 18,
+     "y": 6,
+     "w": 157,
+     "h": 74
+    },
+    {
+     "file": "shot9_L2.png",
+     "name": "Blue-haired anime girl",
+     "x": 55,
+     "y": 27,
+     "w": 50,
+     "h": 81
+    },
+    {
+     "file": "shot9_L3.png",
+     "name": "Foreground glitch strip elements",
+     "x": 65,
+     "y": 76,
+     "w": 38,
+     "h": 23
+    }
+   ]
+  },
+  "shot10": {
+   "full": "shot10.png",
+   "layers": [
+    {
+     "file": "shot10_L1.png",
+     "name": "far background",
+     "x": 51,
+     "y": 0,
+     "w": 141,
+     "h": 108
+    },
+    {
+     "file": "shot10_L2.png",
+     "name": "the girl",
+     "x": 115,
+     "y": 39,
+     "w": 25,
+     "h": 51
+    }
+   ]
+  },
+  "shot11": {
+   "full": "shot11.png",
+   "layers": []
+  },
+  "shot12": {
+   "full": "shot12.png",
+   "layers": [
+    {
+     "file": "shot12_L1.png",
+     "name": "far background",
+     "x": 52,
+     "y": 42,
+     "w": 77,
+     "h": 23
+    },
+    {
+     "file": "shot12_L2.png",
+     "name": "the girl",
+     "x": 69,
+     "y": 1,
+     "w": 69,
+     "h": 107
+    },
+    {
+     "file": "shot12_L3.png",
+     "name": "foreground glitch elements",
+     "x": 90,
+     "y": 50,
+     "w": 34,
+     "h": 15
+    }
+   ]
+  },
+  "shot13": {
+   "full": "shot13.png",
+   "layers": [
+    {
+     "file": "shot13_L1.png",
+     "name": "Far Background",
+     "x": 0,
+     "y": 0,
+     "w": 192,
+     "h": 84
+    },
+    {
+     "file": "shot13_L2.png",
+     "name": "Foreground Glowing Monitor",
+     "x": 137,
+     "y": 61,
+     "w": 22,
+     "h": 21
+    },
+    {
+     "file": "shot13_L3.png",
+     "name": "Girl Character",
+     "x": 70,
+     "y": 30,
+     "w": 52,
+     "h": 66
+    }
+   ]
+  },
+  "shot14": {
+   "full": "shot14.png",
+   "layers": []
+  },
+  "shot15": {
+   "full": "shot15.png",
+   "layers": []
+  },
+  "shot16": {
+   "full": "shot16.png",
+   "layers": []
+  },
+  "shot17": {
+   "full": "shot17.png",
+   "layers": []
   }
  }
 }
