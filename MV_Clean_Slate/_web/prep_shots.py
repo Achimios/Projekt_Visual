@@ -36,7 +36,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     man = {"grid": [GW, GH], "shots": {}}
     SRC2 = SRC.parent / "生成_场景_2"
-    for i in range(1, 24):
+    for i in range(1, 30):
         src = SRC if i <= 5 else SRC2
         if not (src / f"shot{i}.png").exists():
             continue

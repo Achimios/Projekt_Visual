@@ -3,7 +3,7 @@
 // 每个词镜头 +3%；硬切 1 帧冲击帧；drop 不含蓄。每帧 = 歌曲时间 t 的纯函数。
 import { ditherScene } from './fx.js';
 import { loadPx, layer as pxLayer, girl as pxGirl, girlCanvas, PX } from './girl_px.js';
-import { glitchSlices, shatter, errorScreen, asciiImage } from './fx2.js';
+import { glitchSlices, shatter, errorScreen, asciiImage, unbuilt } from './fx2.js';
 import { loadShots, shot, shotLayer, layerInfo, layerImg, SH } from './shots_px.js';
 await loadPx(); await loadShots();
 
@@ -418,7 +418,8 @@ const SHOT = {
     mono('> boot clean_slate · audio: no signal', 70, H - 60, 18, C.bone, 0.5 * clamp(t / 2));
   },
   sea1(t, s) {
-    bgShot(has('shot18') ? 'shot18' : 'shot6', t, s, { z0: 1.15, z1: 1.05, pan: 0, dim: 0.15 });
+    const dust = wordAt('DUST', 8) - 0.05;
+    bgShot(t > dust && has('shot27') ? 'shot27' : has('shot18') ? 'shot18' : 'shot6', t, s, { z0: 1.15, z1: 1.05, pan: 0, dim: 0.1 });
     rain(t, 120, 0.25);
     const th = wordAt('THEN', 10), fall = outExpo((t - th - 0.6) / 1.6), line = 'wake up and feel the music please';
     if (t > th) {
@@ -463,7 +464,7 @@ const SHOT = {
       if (Math.floor(t * 2.6) % 2) { ctx.fillStyle = rgba(C.pink); ctx.fillRect(W / 2 + 560, H * 0.55 - 90, 18, 100); }
     } else lyricLine(t, s.t0, s.t1, { size: 64 });
   },
-  waiting(t, s) { bgShot(has('shot21') ? 'shot21' : 'shot7', t, s, { z0: 1.0, z1: 1.08 }); rain(t, 90, 0.3); lyricLine(t, s.t0, s.t1, { size: 60 }); },
+  waiting(t, s) { bgShot(has('shot24') ? 'shot24' : 'shot21', t, s, { z0: 1.0, z1: 1.08 }); rain(t, 90, 0.3); lyricLine(t, s.t0, s.t1, { size: 60 }); },
   // ===== 59–80 主歌 2 =====
   giggle(t, s) {
     bg(C.night, C.indigo);
@@ -530,6 +531,7 @@ const SHOT = {
     lyricLine(t, s.t0, s.t1, { size: 66 });
   },
   door(t, s) {
+    if (has('shot29')) { bgShot('shot29', t, s, { z0: 1.0, z1: 1.12, pan: 0 }); const m2 = wordAt('DOOR', 84); if (t > m2) { ctx.fillStyle = `rgba(255,245,255,${0.6 * outExpo((t - m2) / 0.5)})`; ctx.fillRect(W * 0.62, 0, W * 0.2, H); } lyricLine(t, s.t0, s.t1, { size: 66 }); return; }
     ctx.fillStyle = 'rgb(4,4,14)'; ctx.fillRect(-W, -H, W * 3, H * 3);
     const m = wordAt('DOOR', 84), dw = 380 * clamp(outBack((t - m) / 0.35, 1.3), 0, 1.2);
     const g = ctx.createLinearGradient(W / 2, 0, W / 2, H); g.addColorStop(0, 'rgba(255,240,255,0.95)'); g.addColorStop(1, 'rgba(255,61,154,0.6)');
@@ -539,9 +541,9 @@ const SHOT = {
     pxGirl(ctx, W / 2 - 63 * 2.2, fy, 2.2, { eyes: 'wide', mouth: 'oh' });
     lyricLine(t, s.t0, s.t1, { size: 66 });
   },
-  fall(t, s) { bgShot('shot8', t, s, { z0: 1.12, z1: 1.0, pan: 0 }); rain(t, 200, 0.35); lyricLine(t, s.t0, s.t1, { size: 66 }); },
+  fall(t, s) { bgShot(has('shot25') ? 'shot25' : 'shot8', t, s, { z0: 1.12, z1: 1.0, pan: 0 }); rain(t, 200, 0.35); lyricLine(t, s.t0, s.t1, { size: 66 }); },
   tobe(t, s) {
-    bgShot('shot9', t, s, { z0: 1.0, z1: 1.1, pan: 0 });
+    bgShot(has('shot28') ? 'shot28' : 'shot9', t, s, { z0: 1.0, z1: 1.1, pan: 0 });
     const d = wordAt('DANCING', 90); if (t > d && has('shot12')) shot(ctx, 'shot12', { alpha: outExpo((t - d) / 0.4), z: 1.05 });
     lyricLine(t, s.t0, s.t1, { size: 62 });
   },
@@ -592,7 +594,7 @@ const SHOT = {
   // ===== 120–141 Bridge =====
   windows(t, s) {
     const u = clamp((t - s.t0) / (s.t1 - s.t0));
-    bgShot('shot13', t, s, { z0: 1.0, z1: 1.08, pan: 0 });
+    bgShot(t < s.t0 + (s.t1 - s.t0) / 2 && has('shot26') ? 'shot26' : 'shot13', t, s, { z0: 1.0, z1: 1.08, pan: 0 });
     ctx.fillStyle = `rgba(2,2,8,${0.6 * u})`; ctx.fillRect(-W, -H, W * 3, H * 3);
     rain(t, 80, 0.2);
     lyricLine(t, s.t0, s.t1, { size: 56, alpha: 0.9 });
@@ -748,6 +750,9 @@ function draw(t) {
   const s = SHOTS.find(x => t >= x.t0 && t < x.t1) ?? SHOTS[SHOTS.length - 1];
   camera(t, s);
   SHOT[s.n](t, s);
+  const UNB = { sea1: 0.5, beads: 0.4, nothing: 0.35, waiting: 0.4, temp: 0.4, pre2: 0.5, run: 0.45, fall: 0.6, tobe: 0.5, dance: 0.3, palace: 0.55, code: 0.6,
+                rules: 0.35, windows: 0.5, meet: 0.35, smile: 0.25, final: 0.4, shore: 0.35, lights: 0.4, burst: 0.9, gate: 0.4, sea: 0.4 };
+  if (UNB[s.n]) unbuilt(ctx, cv, t, { bar: Math.floor((t - DB0) / (BEAT * 4)), amount: UNB[s.n], seed: SHOTS.indexOf(s), avoid: [W * 0.3, H * 0.15, W * 0.7, H * 0.95] });
   let gl = BIGCUT.has(s.n) ? pulse(t, s.t0, 0.05) : 0;
   if (s.n === 'never') { const lw = wordsIn(s.t0, t + 0.001).slice(-1)[0]; if (lw) gl = Math.max(gl, 0.6 * pulse(t, lw.t0, 0.04)); }
   if (t > 35.40 && t < 35.46 || t > 35.72 && t < 35.78) gl = 1;                 // 报错屏进出
@@ -759,7 +764,7 @@ function draw(t) {
 const ui = document.getElementById('ui');
 if (RENDER) {
   ui.remove();
-  const n = Math.round((T1 - T0) * FPS), out = Q.get('out') ?? '-5_Clean Slate/样片/全片_v1_main.mp4';
+  const n = Math.round((T1 - T0) * FPS), out = Q.get('out') ?? '-5_Clean Slate/样片/全片_v2_main.mp4';
   await fetch(`/start?w=${W}&h=${H}&fps=${FPS}&t0=${T0}&t1=${T1}&vflip=0&out=${encodeURIComponent(out)}`, { method: 'POST' });
   for (let i = 0; i < n; i++) {
     draw(T0 + i / FPS);

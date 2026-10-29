@@ -80,3 +80,39 @@ export function asciiImage(ctx, img, x, y, cell, t, t0, { step = 1, settle = 0.6
     ctx.fillText(ch, x + (c / step + 0.5) * cell, y + (r / step + 0.5) * cell);
   }
 }
+
+// ---------- 数据世界：「没构建完」的区域（👤：场景要像数据里的世界——有错乱、没加载完、破碎、简单结构） ----------
+// 在当前画面上挖几块矩形，每块换成一种「未完成」的状态；块的位置每小节换一次（纯函数：seed = 小节号）
+// kinds: 0 线框网格（白模没贴图）· 1 缺失黑块 + 边框 · 2 竖向像素拉丝 · 3 低分辨率马赛克 · 4 灰白白模
+export function unbuilt(ctx, cv, t, { bar = 0, amount = 0.5, seed = 0, avoid = null } = {}) {
+  if (amount <= 0.01) return;
+  const W = cv.width, H = cv.height, n = Math.round(2 + 6 * amount), q = bar * 97 + seed * 13;
+  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0);
+  for (let k = 0; k < n; k++) {
+    const w = Math.round((0.08 + 0.22 * hash(q + k * 7 + 1)) * W / 16) * 16, h = Math.round((0.06 + 0.2 * hash(q + k * 7 + 2)) * H / 16) * 16;
+    const x = Math.round(hash(q + k * 7 + 3) * (W - w) / 16) * 16, y = Math.round(hash(q + k * 7 + 4) * (H - h) / 16) * 16;
+    if (avoid && x < avoid[2] && x + w > avoid[0] && y < avoid[3] && y + h > avoid[1]) continue;   // 别挖到她身上
+    const kind = Math.floor(hash(q + k * 7 + 5) * 5), flick = hash(Math.floor(t * 8) + k * 31 + q) < 0.08;   // 偶尔闪一帧
+    if (flick) continue;
+    if (kind === 0) {
+      ctx.fillStyle = 'rgba(8,10,28,0.92)'; ctx.fillRect(x, y, w, h);
+      ctx.strokeStyle = 'rgba(120,225,255,0.55)'; ctx.lineWidth = 1; ctx.beginPath();
+      for (let gx = x; gx <= x + w; gx += 16) { ctx.moveTo(gx + 0.5, y); ctx.lineTo(gx + 0.5, y + h); }
+      for (let gy = y; gy <= y + h; gy += 16) { ctx.moveTo(x, gy + 0.5); ctx.lineTo(x + w, gy + 0.5); }
+      ctx.stroke();
+    } else if (kind === 1) {
+      ctx.fillStyle = 'rgb(2,2,6)'; ctx.fillRect(x, y, w, h);
+      ctx.strokeStyle = 'rgba(255,61,154,0.8)'; ctx.lineWidth = 2; ctx.strokeRect(x + 1, y + 1, w - 2, h - 2);
+      ctx.font = '13px Consolas, monospace'; ctx.fillStyle = 'rgba(255,61,154,0.9)'; ctx.fillText(`MISSING 0x${(q * 4099 + k * 257 >>> 0).toString(16).slice(-5)}`, x + 8, y + 18);
+    } else if (kind === 2) {
+      for (let cx = x; cx < x + w; cx += 4) ctx.drawImage(cv, cx, y, 4, 1, cx, y, 4, h * (0.4 + 0.6 * hash(cx + q)));
+    } else if (kind === 3) {
+      const b = 32; for (let by = y; by < y + h; by += b) for (let bx = x; bx < x + w; bx += b) ctx.drawImage(cv, bx + b / 2, by + b / 2, 1, 1, bx, by, b, b);
+    } else {
+      ctx.fillStyle = 'rgba(176,178,200,0.85)'; ctx.fillRect(x, y, w, h);
+      ctx.fillStyle = 'rgba(120,122,150,0.9)'; ctx.fillRect(x, y + h * 0.7, w, h * 0.3);
+      ctx.strokeStyle = 'rgba(60,60,90,0.8)'; ctx.lineWidth = 1; ctx.strokeRect(x + 0.5, y + 0.5, w - 1, h - 1);
+    }
+  }
+  ctx.restore();
+}
