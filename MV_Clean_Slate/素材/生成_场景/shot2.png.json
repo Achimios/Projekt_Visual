@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "图1、图2 是同一个角色的设定参考：只保留她的长相与造型——蓝色齐刘海短波波头、发光的品红色眼睛、黑色高领宽大外套、耳后的赛博耳机和线缆、外套上的星空故障切片。⚠️构图、姿势、表情、镜头、场景全部按下面的描述重新画，不要复制参考图的构图和姿势，不要再画那个站台和广告屏。\n画面：【睁眼特写】极近的面部特写，从眉毛到下巴占满画面；她的眼睛刚刚睁大，品红色的虹膜里有星形高光，瞳孔里映着粉色和青色的屏幕光；表情是惊讶又好奇，嘴唇微张；刘海的发丝在前景，脸被左侧品红光、右侧青色轮廓光照亮，背景是暗的。\n画风：像素风动漫插画（pixel art anime），干净的像素块，有限调色板，深靛蓝 / 紫色暗部，品红与青色霓虹光，高对比，赛博朋克、可爱又酷的气质。画面里不要任何文字、logo、水印。16:9 横构图。",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "output_format": "png",
+ "image": [
+  "data:image/webp;base64,UklGRuI6BQBXRUJQV…(457039 chars)",
+  "data:image/png;base64,iVBORw0KGgoAAAANSU…(1135634 chars)"
+ ],
+ "refs_src": [
+  "素材/她_原图_v1.webp",
+  "素材/图片_分图层_1/L-11（抠好的她）"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

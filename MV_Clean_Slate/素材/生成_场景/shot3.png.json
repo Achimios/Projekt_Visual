@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "图1、图2 是同一个角色的设定参考：只保留她的长相与造型——蓝色齐刘海短波波头、发光的品红色眼睛、黑色高领宽大外套、耳后的赛博耳机和线缆、外套上的星空故障切片。⚠️构图、姿势、表情、镜头、场景全部按下面的描述重新画，不要复制参考图的构图和姿势，不要再画那个站台和广告屏。\n画面：【起跳】她全身跃在半空中，一只拳头举过头顶，另一只手张开，双腿收起，外套被风吹得向后鼓起翻飞；表情是开心又坚定的大笑；她脚下是夜晚的像素霓虹城市天际线，楼顶有粉色和青色的灯；仰拍的动感角度，画面有向上的速度感。\n画风：像素风动漫插画（pixel art anime），干净的像素块，有限调色板，深靛蓝 / 紫色暗部，品红与青色霓虹光，高对比，赛博朋克、可爱又酷的气质。画面里不要任何文字、logo、水印。16:9 横构图。",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "output_format": "png",
+ "image": [
+  "data:image/webp;base64,UklGRuI6BQBXRUJQV…(457039 chars)",
+  "data:image/png;base64,iVBORw0KGgoAAAANSU…(1135634 chars)"
+ ],
+ "refs_src": [
+  "素材/她_原图_v1.webp",
+  "素材/图片_分图层_1/L-11（抠好的她）"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}
