@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>Clean Slate · 像素分层站台</title>
+<style>html, body { margin: 0; height: 100%; background: #07061a; overflow: hidden; } canvas { display: block; width: 100vw; height: 56.25vw; max-height: 100vh; max-width: 177.78vh; margin: auto; position: absolute; inset: 0; image-rendering: pixelated; }
+#ui { position: fixed; left: 12px; bottom: 10px; font: 12px Consolas, monospace; color: #8a8a90; z-index: 2; }</style>
+</head>
+<body>
+<div id="ui">?t= 看静帧 · 不带参数 = 循环演示表情 + 视差 + 故障切片</div>
+<script type="module">
+// 演示：Seedream 分图层像素化后，按层做视差、故障切片错位、屏幕闪、表情切换。16:9 画面里取原图的中段。
+import { loadPx, layer, girl, PX } from './girl_px.js';
+await loadPx();
+const cv = document.createElement('canvas'), W = 1920, H = 1080; cv.width = W; cv.height = H; document.body.appendChild(cv);
+const ctx = cv.getContext('2d');
+const S = 11;                                  // 一格 = 11 屏幕像素 → 176 格宽 = 1936，铺满 16:9；竖向取头到胸
+const hash = i => { const s = Math.sin(i * 12.9898 + 78.233) * 43758.5453; return s - Math.floor(s); };
+const Q = new URLSearchParams(location.search);
+const STATES = [['closed', 'flat'], ['slit', 'flat'], ['open', 'flat'], ['wide', 'oh'], ['open', 'smile'], ['blink', 'smile']];
+function draw(t) {
+  ctx.fillStyle = '#07061a'; ctx.fillRect(0, 0, W, H);
+  const camX = Math.sin(t * 0.4) * 18, camY = -60 + Math.sin(t * 0.3) * 10;     // 竖向偏移：头顶留一点
+  const ox = (W - PX.size[0] * S) / 2;
+  const P = (key, depth) => { const L = PX.layers[key]; return [ox + L.x * S + camX * depth, L.y * S + camY + camX * 0 + (depth - 1) * 0]; };
+  // 远景 → 近景，depth 越大视差越大
+  layer(ctx, 'bg', ...P('bg', 0.3), S);
+  layer(ctx, 'frame', ...P('frame', 0.5), S);
+  // 屏幕内容：偶尔整块横向错位 + 闪
+  const sc = P('screen', 0.5), jump = (Math.floor(t * 8) % 13 === 0) ? (hash(Math.floor(t * 8)) - 0.5) * 60 : 0;
+  layer(ctx, 'screen', sc[0] + jump, sc[1], S, { alpha: 0.85 + 0.15 * Math.sin(t * 9) });
+  layer(ctx, 'mini', ...P('mini', 0.5), S, { alpha: Math.floor(t * 3) % 4 ? 1 : 0.2 });
+  layer(ctx, 'rail', ...P('rail', 0.8), S);
+  // 她：表情每 1.2 s 换一个；呼吸 = 上下 1 格
+  const [eyes, mouth] = STATES[Math.floor(t / 1.2) % STATES.length];
+  const g = P('girl', 1), br = Math.round(Math.sin(t * 1.6)) * S * 0.5;
+  girl(ctx, g[0], g[1] + br, S, { eyes, mouth });
+  // 星空故障切片：按「拍子」横向错位（这里用 125 BPM 的 8 分音符）
+  for (let k = 1; k <= 5; k++) {
+    const p = P('strip' + k, 1), q = Math.floor(t / 0.24), off = hash(q * 7 + k) < 0.35 ? (hash(q * 13 + k) - 0.5) * 220 : 0;
+    layer(ctx, 'strip' + k, p[0] + off, p[1] + br, S);
+  }
+  ctx.fillStyle = 'rgba(246,242,252,0.6)'; ctx.font = '18px Consolas, monospace';
+  ctx.fillText(`eyes: ${eyes}  ·  mouth: ${mouth}`, 40, H - 40);
+}
+if (Q.has('t')) draw(+Q.get('t'));
+else { const t0 = performance.now(); const loop = () => { draw((performance.now() - t0) / 1000); requestAnimationFrame(loop); }; loop(); }
+</script>
+</body>
+</html>

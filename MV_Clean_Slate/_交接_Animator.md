@@ -17,7 +17,7 @@
 ## 规矩
 - 画面用 **JS / HTML**（Canvas 或 three.js，本地已有 three 在 `_web/vendor/`）；Python 只算数据。
 - 你的文件放 `MV_Clean_Slate/_web/animatorN/`（N = 你的编号），别动别人的文件。
-- 出片：本地服务 `_web/serve.py`（SimuWeb `.claude/launch.json` 的 `clean-slate`，端口 5430，已在跑就复用）；页面 `?render=1` 逐帧 POST 给 `/start` `/frame?i=` `/done`，用法照 `wake_v3.js` 末尾。headless Chrome 渲染时用**你自己的** `--user-data-dir`。
+- 出片：本地服务 `_web/serve.py`。⚠️它是全局单状态，几个会话同时往一个端口发帧会串 → **每个 Animator 用自己的端口**（`python -X utf8 _web/serve.py --port 543N`，N = 你的编号；5430 留给主会话）；页面 `?render=1` 逐帧 POST 给 `/start` `/frame?i=` `/done`，用法照 `wake_v3.js` 末尾。headless Chrome 渲染时用**你自己的** `--user-data-dir`。
 - 交付：`-5_Clean Slate/样片/风格小样_她睁眼_animatorN.mp4` + 一页 `animatorN/说明.md`（学到了什么、和 v3 哪里不一样、没做到 / 没验证的）。
 - 画风：开心、可爱但**酷**的赛博女孩；配色靛紫底 + 品红 / 青 / 酸性黄绿 / 一点橙；参考 `Projekt_Visual/_参考库/分析_Modular`、`分析_FITC2015_Titles`、`AshThorp_GitS_接触表`、`_参考_Short/_说明.md`。
 - 节奏规矩：**做完排队，不要主动推给 Leo**；告诉主会话（Leo 的 Clean Slate 会话）路径即可。
