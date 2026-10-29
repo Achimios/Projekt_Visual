@@ -15,6 +15,16 @@
 </head>
 <body>
 <div id="ui">点击播放 · 空格暂停 · ←/→ 跳 1 s · ?t=36.5 静帧 · ?sheet=28.3,43.8,16 接触表 · ?samples=8 看运动模糊</div>
+<script>
+  // 双击用 file:// 打开时，module 和 fetch 都会被浏览器拦掉 → 黑屏。这里给一句人话。
+  if (location.protocol === 'file:') {
+    document.getElementById('ui').innerHTML = '';
+    document.body.insertAdjacentHTML('beforeend', '<div style="position:fixed;inset:0;display:grid;place-items:center;color:#f6f2fc;font:20px/1.8 Consolas,monospace;text-align:center"><div>' +
+      '双击打开（file://）放不了：浏览器不让本地文件加载脚本和数据。<br>' +
+      '请先跑本地服务 <b>python _web/serve.py --port 5430</b>（或 SimuWeb 的 launch.json「clean-slate」），再打开<br>' +
+      '<b style="color:#3de0ff">http://localhost:5430/_web/animator1/index.html</b><br>点一下画面开始跟歌放，空格暂停</div></div>');
+  }
+</script>
 <script type="module" src="a1.js"></script>
 </body>
 </html>

@@ -486,7 +486,11 @@ if (RENDER) {
 } else if (STILL !== null) {
   draw(STILL); ui.textContent = `${STILL.toFixed(2)} s`; if (Q.has('clean')) ui.remove();
 } else {
-  const audio = new Audio('../../-5_Clean Slate/Clean Slate.wav'); let playing = false;
+  // serve.py 不支持 Range 请求 → 直接给 wav 的网址浏览器跳不了位置（currentTime 会回到 0）。整个读成 blob 就能跳。
+  ui.textContent = '载入音频…';
+  const wav = await (await fetch('../../-5_Clean Slate/Clean Slate.wav')).blob();
+  const audio = new Audio(URL.createObjectURL(wav)); let playing = false;
+  await new Promise(r => audio.readyState >= 1 ? r() : audio.addEventListener('loadedmetadata', r, { once: true }));
   addEventListener('click', () => { if (!playing) { audio.currentTime = T0; audio.play(); playing = true; } });
   addEventListener('keydown', e => { if (e.code === 'Space') audio.paused ? audio.play() : audio.pause(); if (e.code === 'ArrowRight') audio.currentTime += 1; if (e.code === 'ArrowLeft') audio.currentTime -= 1; });
   const loop = () => { let t = playing ? audio.currentTime : T0; if (playing && t > T1) { audio.currentTime = T0; t = T0; } draw(t, 1); ui.textContent = `${t.toFixed(2)} s · 空格暂停 · ←/→ 跳 1 s`; requestAnimationFrame(loop); };
