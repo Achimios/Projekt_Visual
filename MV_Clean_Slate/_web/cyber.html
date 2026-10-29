@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>Clean Slate · 她 v2（赛博）</title>
+<style>html, body { margin: 0; background: #0c0920; } canvas { display: block; width: 100vw; height: auto; }</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script type="module">
+import { drawCyberGirl, blitGirl, SIZE } from './cybergirl.js';
+const ctx = document.getElementById('c').getContext('2d'), W = 1920, H = 1080, MONO = '"Cascadia Mono", Consolas, monospace';
+const gr = ctx.createLinearGradient(0, 0, W, H); gr.addColorStop(0, '#120c34'); gr.addColorStop(1, '#2a1260'); ctx.fillStyle = gr; ctx.fillRect(0, 0, W, H);
+// 背后一块发光屏（参考图 1 的逆光）
+const sg = ctx.createRadialGradient(560, 480, 60, 560, 480, 520); sg.addColorStop(0, 'rgba(255,240,255,0.9)'); sg.addColorStop(0.5, 'rgba(255,120,220,0.35)'); sg.addColorStop(1, 'rgba(255,61,154,0)');
+ctx.fillStyle = sg; ctx.fillRect(0, 0, W, H);
+blitGirl(ctx, drawCyberGirl({ eyes: 'open', mouth: 'flat' }), 260, 60, 4);
+ctx.fillStyle = '#f6f2fc'; ctx.font = `bold 34px ${MONO}`; ctx.fillText('PLAYER 1', 1180, 170);
+ctx.font = `bold 92px ${MONO}`; ctx.fillText('NEW FILE', 1180, 270);
+ctx.fillStyle = '#3de0ff'; ctx.font = `22px ${MONO}`; ctx.fillText('ID 0001 · born 0:36.06 · AUDIO: NO SIGNAL', 1184, 318);
+[['还没醒', { eyes: 'closed', glow: 0, hud: 0 }], ['上线', { eyes: 'wide', mouth: 'oh' }], ['笑', { eyes: 'half', mouth: 'smile' }]].forEach(([name, st], i) => {
+  const x = 1180 + i * 230, y = 420;
+  blitGirl(ctx, drawCyberGirl(st), x, y, 1);
+  ctx.fillStyle = 'rgba(246,242,252,0.75)'; ctx.font = `18px ${MONO}`; ctx.fillText(name, x + 70, y + SIZE[1] + 30);
+});
+ctx.fillStyle = 'rgba(246,242,252,0.45)'; ctx.font = `16px ${MONO}`;
+ctx.fillText('200×250 矢量 → 16 色量化 · 蓝紫波波头 + 青色轮廓光 · 品红光打脸 · 赛博耳机（听不见）· 颈部接口和线缆 · 高领外套', 160, H - 50);
+</script>
+</body>
+</html>
