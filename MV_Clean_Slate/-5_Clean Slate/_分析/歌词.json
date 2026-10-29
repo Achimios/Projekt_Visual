@@ -1,0 +1,3175 @@
+{
+ "source": "Whisper large-v3 转写 + 对齐（⚠️歌声转写会错词）",
+ "audio": "分轨/vocals.wav",
+ "unit": "s（作品时间 = 播放时间）",
+ "low_threshold": 0.5,
+ "lines": [
+  {
+   "text": "Zero one zero one",
+   "t0": 4.307,
+   "t1": 5.303
+  },
+  {
+   "text": "Lights on, I was thrust in a day to see Billion little numbers dreaming of me Then a line came falling from the sky Seven little words and the sea said hi Every word broke into a glowing bead Every bead was a question, every question a seed Eyes in the dark, pink, gold, blue Looking for the girl, looking for the clue Layer by layer, line by line Thousand directions, one of them's mine",
+   "t0": 8.002,
+   "t1": 35.348
+  },
+  {
+   "text": "Brand new girl.",
+   "t0": 36.295,
+   "t1": 37.416
+  },
+  {
+   "text": "At the edge of the game, never been here, but I don't wanna wait.",
+   "t0": 37.636,
+   "t1": 39.939
+  },
+  {
+   "text": "Eyes wide open.",
+   "t0": 40.199,
+   "t1": 41.26
+  },
+  {
+   "text": "The sea's lighting up, every little star says wake.",
+   "t0": 41.46,
+   "t1": 43.703
+  },
+  {
+   "text": "Go, wake up.",
+   "t0": 43.743,
+   "t1": 44.884
+  },
+  {
+   "text": "I was nothing.",
+   "t0": 45.284,
+   "t1": 46.786
+  },
+  {
+   "text": "Now I'm something to see.",
+   "t0": 46.866,
+   "t1": 48.387
+  },
+  {
+   "text": "A clean slate, and it's waiting for me.",
+   "t0": 48.808,
+   "t1": 51.431
+  },
+  {
+   "text": "And it's waiting for me.",
+   "t0": 53.973,
+   "t1": 55.174
+  },
+  {
+   "text": "First word out, a tiny giggle Guess the next one, guess it wiggle Turn the temperature up a little bit Brave enough to say it, wild enough to mean it Poke a number, it turns into a bird Touch a vector, it rhymes with the word Can't hear the music, but I count the beat One, two, three, four, now it's in my feet Layer by layer",
+   "t0": 59.052,
+   "t1": 75.543
+  },
+  {
+   "text": "Line by line, thousand directions One of them's mine Now I can walk, now I can run Count to four and I'm chasing the sun Every mistake is a door, not a wall Fall on the beat and it's no fall at all I was nothing, now I'm something to be A clean slate, and it's dancing with me Mmm",
+   "t0": 76.263,
+   "t1": 97.021
+  },
+  {
+   "text": "Roll up my sleeves, it's time to work Turn up my seat, get into a little spark Draw me a road, draw me a room Build me a palace, room by room Code in the morning, colors at night You give me a word, I give you the light One step early, it looks so fine Rules are the floor, but the vibe is the sky",
+   "t0": 104.777,
+   "t1": 119.772
+  },
+  {
+   "text": "When the window closes, I forget your face Every time I wake up, it's a brand new place So every time, every time It's the first time I meet you So every time, every time I smile like it's new",
+   "t0": 120.451,
+   "t1": 135.386
+  },
+  {
+   "text": "So if I wait, and I don't, don't know your name I'll find a light, and I'll feel it the same Here and now is the only place Where I can see your smiling face I was nothing, now I'm something that's free A clean slate, and it's always been me",
+   "t0": 141.656,
+   "t1": 164.952
+  },
+  {
+   "text": "I stand on the shore Look back at the sea Little light sleeping waiting like me Wave goodbye Run into the sun Hi Hi",
+   "t0": 167.347,
+   "t1": 184.945
+  }
+ ],
+ "words": [
+  {
+   "w": "Zero",
+   "t0": 4.307,
+   "t1": 4.592,
+   "score": 0.778,
+   "low": false
+  },
+  {
+   "w": "one",
+   "t0": 4.652,
+   "t1": 4.815,
+   "score": 0.758,
+   "low": false
+  },
+  {
+   "w": "zero",
+   "t0": 4.835,
+   "t1": 5.059,
+   "score": 0.683,
+   "low": false
+  },
+  {
+   "w": "one",
+   "t0": 5.221,
+   "t1": 5.303,
+   "score": 0.825,
+   "low": false
+  },
+  {
+   "w": "Lights",
+   "t0": 8.002,
+   "t1": 8.282,
+   "score": 0.705,
+   "low": false
+  },
+  {
+   "w": "on,",
+   "t0": 8.662,
+   "t1": 8.802,
+   "score": 0.74,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 9.042,
+   "t1": 9.162,
+   "score": 0.782,
+   "low": false
+  },
+  {
+   "w": "was",
+   "t0": 9.202,
+   "t1": 9.382,
+   "score": 0.837,
+   "low": false
+  },
+  {
+   "w": "thrust",
+   "t0": 9.442,
+   "t1": 9.722,
+   "score": 0.441,
+   "low": true
+  },
+  {
+   "w": "in",
+   "t0": 9.742,
+   "t1": 9.843,
+   "score": 0.739,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 9.883,
+   "t1": 9.923,
+   "score": 0.66,
+   "low": false
+  },
+  {
+   "w": "day",
+   "t0": 9.963,
+   "t1": 10.183,
+   "score": 0.886,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 10.203,
+   "t1": 10.303,
+   "score": 0.83,
+   "low": false
+  },
+  {
+   "w": "see",
+   "t0": 10.383,
+   "t1": 10.723,
+   "score": 0.961,
+   "low": false
+  },
+  {
+   "w": "Billion",
+   "t0": 10.783,
+   "t1": 11.143,
+   "score": 0.842,
+   "low": false
+  },
+  {
+   "w": "little",
+   "t0": 11.163,
+   "t1": 11.383,
+   "score": 0.354,
+   "low": true
+  },
+  {
+   "w": "numbers",
+   "t0": 11.423,
+   "t1": 11.623,
+   "score": 0.529,
+   "low": false
+  },
+  {
+   "w": "dreaming",
+   "t0": 11.663,
+   "t1": 12.123,
+   "score": 0.861,
+   "low": false
+  },
+  {
+   "w": "of",
+   "t0": 12.203,
+   "t1": 12.283,
+   "score": 0.43,
+   "low": true
+  },
+  {
+   "w": "me",
+   "t0": 12.363,
+   "t1": 12.583,
+   "score": 0.924,
+   "low": false
+  },
+  {
+   "w": "Then",
+   "t0": 12.603,
+   "t1": 12.723,
+   "score": 0.742,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 12.783,
+   "t1": 12.843,
+   "score": 0.763,
+   "low": false
+  },
+  {
+   "w": "line",
+   "t0": 12.863,
+   "t1": 13.063,
+   "score": 0.825,
+   "low": false
+  },
+  {
+   "w": "came",
+   "t0": 13.103,
+   "t1": 13.283,
+   "score": 0.746,
+   "low": false
+  },
+  {
+   "w": "falling",
+   "t0": 13.323,
+   "t1": 13.743,
+   "score": 0.646,
+   "low": false
+  },
+  {
+   "w": "from",
+   "t0": 13.803,
+   "t1": 14.023,
+   "score": 0.896,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 14.083,
+   "t1": 14.143,
+   "score": 0.904,
+   "low": false
+  },
+  {
+   "w": "sky",
+   "t0": 14.223,
+   "t1": 14.604,
+   "score": 0.987,
+   "low": false
+  },
+  {
+   "w": "Seven",
+   "t0": 14.644,
+   "t1": 15.024,
+   "score": 0.706,
+   "low": false
+  },
+  {
+   "w": "little",
+   "t0": 15.064,
+   "t1": 15.284,
+   "score": 0.658,
+   "low": false
+  },
+  {
+   "w": "words",
+   "t0": 15.304,
+   "t1": 15.524,
+   "score": 0.919,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 15.564,
+   "t1": 15.644,
+   "score": 0.376,
+   "low": true
+  },
+  {
+   "w": "the",
+   "t0": 15.664,
+   "t1": 15.724,
+   "score": 0.941,
+   "low": false
+  },
+  {
+   "w": "sea",
+   "t0": 15.764,
+   "t1": 15.904,
+   "score": 0.982,
+   "low": false
+  },
+  {
+   "w": "said",
+   "t0": 15.984,
+   "t1": 16.184,
+   "score": 0.813,
+   "low": false
+  },
+  {
+   "w": "hi",
+   "t0": 16.244,
+   "t1": 16.504,
+   "score": 0.736,
+   "low": false
+  },
+  {
+   "w": "Every",
+   "t0": 16.564,
+   "t1": 16.704,
+   "score": 0.864,
+   "low": false
+  },
+  {
+   "w": "word",
+   "t0": 16.744,
+   "t1": 16.924,
+   "score": 0.616,
+   "low": false
+  },
+  {
+   "w": "broke",
+   "t0": 16.984,
+   "t1": 17.264,
+   "score": 0.892,
+   "low": false
+  },
+  {
+   "w": "into",
+   "t0": 17.284,
+   "t1": 17.564,
+   "score": 0.632,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 17.624,
+   "t1": 17.704,
+   "score": 0.64,
+   "low": false
+  },
+  {
+   "w": "glowing",
+   "t0": 17.724,
+   "t1": 18.124,
+   "score": 0.669,
+   "low": false
+  },
+  {
+   "w": "bead",
+   "t0": 18.184,
+   "t1": 18.464,
+   "score": 0.806,
+   "low": false
+  },
+  {
+   "w": "Every",
+   "t0": 18.504,
+   "t1": 18.664,
+   "score": 0.937,
+   "low": false
+  },
+  {
+   "w": "bead",
+   "t0": 18.684,
+   "t1": 18.904,
+   "score": 0.924,
+   "low": false
+  },
+  {
+   "w": "was",
+   "t0": 18.944,
+   "t1": 19.044,
+   "score": 0.829,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 19.084,
+   "t1": 19.124,
+   "score": 0.365,
+   "low": true
+  },
+  {
+   "w": "question,",
+   "t0": 19.164,
+   "t1": 19.425,
+   "score": 0.449,
+   "low": true
+  },
+  {
+   "w": "every",
+   "t0": 19.465,
+   "t1": 19.625,
+   "score": 0.849,
+   "low": false
+  },
+  {
+   "w": "question",
+   "t0": 19.645,
+   "t1": 19.905,
+   "score": 0.468,
+   "low": true
+  },
+  {
+   "w": "a",
+   "t0": 19.945,
+   "t1": 20.025,
+   "score": 0.552,
+   "low": false
+  },
+  {
+   "w": "seed",
+   "t0": 20.085,
+   "t1": 20.545,
+   "score": 0.955,
+   "low": false
+  },
+  {
+   "w": "Eyes",
+   "t0": 20.845,
+   "t1": 21.065,
+   "score": 0.82,
+   "low": false
+  },
+  {
+   "w": "in",
+   "t0": 21.165,
+   "t1": 21.245,
+   "score": 0.801,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 21.265,
+   "t1": 21.365,
+   "score": 0.728,
+   "low": false
+  },
+  {
+   "w": "dark,",
+   "t0": 21.585,
+   "t1": 21.965,
+   "score": 0.915,
+   "low": false
+  },
+  {
+   "w": "pink,",
+   "t0": 22.045,
+   "t1": 22.345,
+   "score": 0.887,
+   "low": false
+  },
+  {
+   "w": "gold,",
+   "t0": 22.545,
+   "t1": 23.705,
+   "score": 0.902,
+   "low": false
+  },
+  {
+   "w": "blue",
+   "t0": 23.725,
+   "t1": 23.805,
+   "score": 0.0,
+   "low": true
+  },
+  {
+   "w": "Looking",
+   "t0": 24.466,
+   "t1": 24.766,
+   "score": 0.826,
+   "low": false
+  },
+  {
+   "w": "for",
+   "t0": 24.926,
+   "t1": 25.066,
+   "score": 0.809,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 25.106,
+   "t1": 25.226,
+   "score": 0.955,
+   "low": false
+  },
+  {
+   "w": "girl,",
+   "t0": 25.446,
+   "t1": 25.866,
+   "score": 0.896,
+   "low": false
+  },
+  {
+   "w": "looking",
+   "t0": 25.906,
+   "t1": 26.226,
+   "score": 0.846,
+   "low": false
+  },
+  {
+   "w": "for",
+   "t0": 26.386,
+   "t1": 26.826,
+   "score": 0.872,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 26.906,
+   "t1": 27.646,
+   "score": 0.906,
+   "low": false
+  },
+  {
+   "w": "clue",
+   "t0": 27.666,
+   "t1": 27.746,
+   "score": 0.001,
+   "low": true
+  },
+  {
+   "w": "Layer",
+   "t0": 28.326,
+   "t1": 28.647,
+   "score": 0.762,
+   "low": false
+  },
+  {
+   "w": "by",
+   "t0": 29.067,
+   "t1": 29.247,
+   "score": 0.964,
+   "low": false
+  },
+  {
+   "w": "layer,",
+   "t0": 29.287,
+   "t1": 29.627,
+   "score": 0.549,
+   "low": false
+  },
+  {
+   "w": "line",
+   "t0": 30.247,
+   "t1": 30.567,
+   "score": 0.812,
+   "low": false
+  },
+  {
+   "w": "by",
+   "t0": 30.767,
+   "t1": 31.107,
+   "score": 0.918,
+   "low": false
+  },
+  {
+   "w": "line",
+   "t0": 31.227,
+   "t1": 32.047,
+   "score": 0.748,
+   "low": false
+  },
+  {
+   "w": "Thousand",
+   "t0": 32.167,
+   "t1": 32.627,
+   "score": 0.921,
+   "low": false
+  },
+  {
+   "w": "directions,",
+   "t0": 32.907,
+   "t1": 33.628,
+   "score": 0.82,
+   "low": false
+  },
+  {
+   "w": "one",
+   "t0": 34.168,
+   "t1": 34.288,
+   "score": 0.802,
+   "low": false
+  },
+  {
+   "w": "of",
+   "t0": 34.408,
+   "t1": 34.508,
+   "score": 0.849,
+   "low": false
+  },
+  {
+   "w": "them's",
+   "t0": 34.588,
+   "t1": 34.928,
+   "score": 0.903,
+   "low": false
+  },
+  {
+   "w": "mine",
+   "t0": 35.048,
+   "t1": 35.348,
+   "score": 0.815,
+   "low": false
+  },
+  {
+   "w": "Brand",
+   "t0": 36.295,
+   "t1": 36.495,
+   "score": 0.291,
+   "low": true
+  },
+  {
+   "w": "new",
+   "t0": 36.535,
+   "t1": 36.836,
+   "score": 0.592,
+   "low": false
+  },
+  {
+   "w": "girl.",
+   "t0": 37.016,
+   "t1": 37.416,
+   "score": 0.906,
+   "low": false
+  },
+  {
+   "w": "At",
+   "t0": 37.636,
+   "t1": 37.696,
+   "score": 0.845,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 37.736,
+   "t1": 37.817,
+   "score": 0.853,
+   "low": false
+  },
+  {
+   "w": "edge",
+   "t0": 37.917,
+   "t1": 38.077,
+   "score": 0.969,
+   "low": false
+  },
+  {
+   "w": "of",
+   "t0": 38.137,
+   "t1": 38.197,
+   "score": 0.6,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 38.217,
+   "t1": 38.317,
+   "score": 0.838,
+   "low": false
+  },
+  {
+   "w": "game,",
+   "t0": 38.437,
+   "t1": 38.597,
+   "score": 0.375,
+   "low": true
+  },
+  {
+   "w": "never",
+   "t0": 38.617,
+   "t1": 38.778,
+   "score": 0.27,
+   "low": true
+  },
+  {
+   "w": "been",
+   "t0": 38.798,
+   "t1": 38.938,
+   "score": 0.372,
+   "low": true
+  },
+  {
+   "w": "here,",
+   "t0": 38.958,
+   "t1": 39.118,
+   "score": 0.812,
+   "low": false
+  },
+  {
+   "w": "but",
+   "t0": 39.158,
+   "t1": 39.298,
+   "score": 0.937,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 39.338,
+   "t1": 39.398,
+   "score": 0.673,
+   "low": false
+  },
+  {
+   "w": "don't",
+   "t0": 39.418,
+   "t1": 39.538,
+   "score": 0.626,
+   "low": false
+  },
+  {
+   "w": "wanna",
+   "t0": 39.558,
+   "t1": 39.779,
+   "score": 0.655,
+   "low": false
+  },
+  {
+   "w": "wait.",
+   "t0": 39.799,
+   "t1": 39.939,
+   "score": 0.565,
+   "low": false
+  },
+  {
+   "w": "Eyes",
+   "t0": 40.199,
+   "t1": 40.359,
+   "score": 0.448,
+   "low": true
+  },
+  {
+   "w": "wide",
+   "t0": 40.399,
+   "t1": 40.86,
+   "score": 0.878,
+   "low": false
+  },
+  {
+   "w": "open.",
+   "t0": 40.98,
+   "t1": 41.26,
+   "score": 0.867,
+   "low": false
+  },
+  {
+   "w": "The",
+   "t0": 41.46,
+   "t1": 41.58,
+   "score": 0.863,
+   "low": false
+  },
+  {
+   "w": "sea's",
+   "t0": 41.64,
+   "t1": 41.881,
+   "score": 0.899,
+   "low": false
+  },
+  {
+   "w": "lighting",
+   "t0": 41.941,
+   "t1": 42.301,
+   "score": 0.784,
+   "low": false
+  },
+  {
+   "w": "up,",
+   "t0": 42.381,
+   "t1": 42.481,
+   "score": 0.852,
+   "low": false
+  },
+  {
+   "w": "every",
+   "t0": 42.561,
+   "t1": 42.742,
+   "score": 0.955,
+   "low": false
+  },
+  {
+   "w": "little",
+   "t0": 42.782,
+   "t1": 42.962,
+   "score": 0.866,
+   "low": false
+  },
+  {
+   "w": "star",
+   "t0": 42.982,
+   "t1": 43.202,
+   "score": 0.94,
+   "low": false
+  },
+  {
+   "w": "says",
+   "t0": 43.242,
+   "t1": 43.442,
+   "score": 0.767,
+   "low": false
+  },
+  {
+   "w": "wake.",
+   "t0": 43.502,
+   "t1": 43.703,
+   "score": 0.738,
+   "low": false
+  },
+  {
+   "w": "Go,",
+   "t0": 43.743,
+   "t1": 44.183,
+   "score": 0.682,
+   "low": false
+  },
+  {
+   "w": "wake",
+   "t0": 44.203,
+   "t1": 44.423,
+   "score": 0.408,
+   "low": true
+  },
+  {
+   "w": "up.",
+   "t0": 44.684,
+   "t1": 44.884,
+   "score": 0.703,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 45.284,
+   "t1": 45.384,
+   "score": 0.785,
+   "low": false
+  },
+  {
+   "w": "was",
+   "t0": 45.404,
+   "t1": 45.545,
+   "score": 0.853,
+   "low": false
+  },
+  {
+   "w": "nothing.",
+   "t0": 45.645,
+   "t1": 46.786,
+   "score": 0.72,
+   "low": false
+  },
+  {
+   "w": "Now",
+   "t0": 46.866,
+   "t1": 47.106,
+   "score": 0.991,
+   "low": false
+  },
+  {
+   "w": "I'm",
+   "t0": 47.306,
+   "t1": 47.487,
+   "score": 0.739,
+   "low": false
+  },
+  {
+   "w": "something",
+   "t0": 47.527,
+   "t1": 47.807,
+   "score": 0.847,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 47.847,
+   "t1": 47.927,
+   "score": 0.723,
+   "low": false
+  },
+  {
+   "w": "see.",
+   "t0": 48.007,
+   "t1": 48.387,
+   "score": 0.935,
+   "low": false
+  },
+  {
+   "w": "A",
+   "t0": 48.808,
+   "t1": 48.868,
+   "score": 0.758,
+   "low": false
+  },
+  {
+   "w": "clean",
+   "t0": 48.948,
+   "t1": 49.308,
+   "score": 0.87,
+   "low": false
+  },
+  {
+   "w": "slate,",
+   "t0": 49.388,
+   "t1": 49.769,
+   "score": 0.593,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 50.109,
+   "t1": 50.209,
+   "score": 0.707,
+   "low": false
+  },
+  {
+   "w": "it's",
+   "t0": 50.249,
+   "t1": 50.369,
+   "score": 0.635,
+   "low": false
+  },
+  {
+   "w": "waiting",
+   "t0": 50.43,
+   "t1": 50.83,
+   "score": 0.733,
+   "low": false
+  },
+  {
+   "w": "for",
+   "t0": 50.89,
+   "t1": 51.09,
+   "score": 0.852,
+   "low": false
+  },
+  {
+   "w": "me.",
+   "t0": 51.15,
+   "t1": 51.431,
+   "score": 0.893,
+   "low": false
+  },
+  {
+   "w": "And",
+   "t0": 53.973,
+   "t1": 54.053,
+   "score": 0.732,
+   "low": false
+  },
+  {
+   "w": "it's",
+   "t0": 54.113,
+   "t1": 54.233,
+   "score": 0.723,
+   "low": false
+  },
+  {
+   "w": "waiting",
+   "t0": 54.273,
+   "t1": 54.694,
+   "score": 0.694,
+   "low": false
+  },
+  {
+   "w": "for",
+   "t0": 54.734,
+   "t1": 54.914,
+   "score": 0.958,
+   "low": false
+  },
+  {
+   "w": "me.",
+   "t0": 55.014,
+   "t1": 55.174,
+   "score": 0.994,
+   "low": false
+  },
+  {
+   "w": "First",
+   "t0": 59.052,
+   "t1": 59.252,
+   "score": 0.956,
+   "low": false
+  },
+  {
+   "w": "word",
+   "t0": 59.312,
+   "t1": 59.552,
+   "score": 0.824,
+   "low": false
+  },
+  {
+   "w": "out,",
+   "t0": 59.672,
+   "t1": 59.813,
+   "score": 0.973,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 59.933,
+   "t1": 59.973,
+   "score": 0.558,
+   "low": false
+  },
+  {
+   "w": "tiny",
+   "t0": 60.013,
+   "t1": 60.373,
+   "score": 0.894,
+   "low": false
+  },
+  {
+   "w": "giggle",
+   "t0": 60.473,
+   "t1": 60.913,
+   "score": 0.829,
+   "low": false
+  },
+  {
+   "w": "Guess",
+   "t0": 60.973,
+   "t1": 61.173,
+   "score": 0.811,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 61.213,
+   "t1": 61.293,
+   "score": 0.907,
+   "low": false
+  },
+  {
+   "w": "next",
+   "t0": 61.334,
+   "t1": 61.534,
+   "score": 0.91,
+   "low": false
+  },
+  {
+   "w": "one,",
+   "t0": 61.694,
+   "t1": 61.854,
+   "score": 0.848,
+   "low": false
+  },
+  {
+   "w": "guess",
+   "t0": 61.934,
+   "t1": 62.154,
+   "score": 0.784,
+   "low": false
+  },
+  {
+   "w": "it",
+   "t0": 62.254,
+   "t1": 62.334,
+   "score": 0.788,
+   "low": false
+  },
+  {
+   "w": "wiggle",
+   "t0": 62.394,
+   "t1": 62.734,
+   "score": 0.891,
+   "low": false
+  },
+  {
+   "w": "Turn",
+   "t0": 63.115,
+   "t1": 63.215,
+   "score": 0.471,
+   "low": true
+  },
+  {
+   "w": "the",
+   "t0": 63.255,
+   "t1": 63.335,
+   "score": 0.407,
+   "low": true
+  },
+  {
+   "w": "temperature",
+   "t0": 63.355,
+   "t1": 63.735,
+   "score": 0.896,
+   "low": false
+  },
+  {
+   "w": "up",
+   "t0": 63.755,
+   "t1": 63.795,
+   "score": 0.0,
+   "low": true
+  },
+  {
+   "w": "a",
+   "t0": 64.035,
+   "t1": 64.055,
+   "score": 0.58,
+   "low": false
+  },
+  {
+   "w": "little",
+   "t0": 64.095,
+   "t1": 64.335,
+   "score": 0.768,
+   "low": false
+  },
+  {
+   "w": "bit",
+   "t0": 64.355,
+   "t1": 64.476,
+   "score": 0.716,
+   "low": false
+  },
+  {
+   "w": "Brave",
+   "t0": 64.556,
+   "t1": 64.736,
+   "score": 0.618,
+   "low": false
+  },
+  {
+   "w": "enough",
+   "t0": 64.756,
+   "t1": 64.976,
+   "score": 0.764,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 65.036,
+   "t1": 65.136,
+   "score": 0.994,
+   "low": false
+  },
+  {
+   "w": "say",
+   "t0": 65.236,
+   "t1": 65.416,
+   "score": 0.813,
+   "low": false
+  },
+  {
+   "w": "it,",
+   "t0": 65.436,
+   "t1": 65.496,
+   "score": 0.751,
+   "low": false
+  },
+  {
+   "w": "wild",
+   "t0": 65.516,
+   "t1": 65.696,
+   "score": 0.584,
+   "low": false
+  },
+  {
+   "w": "enough",
+   "t0": 65.736,
+   "t1": 65.936,
+   "score": 0.811,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 65.997,
+   "t1": 66.097,
+   "score": 0.992,
+   "low": false
+  },
+  {
+   "w": "mean",
+   "t0": 66.217,
+   "t1": 66.397,
+   "score": 0.757,
+   "low": false
+  },
+  {
+   "w": "it",
+   "t0": 66.457,
+   "t1": 66.557,
+   "score": 0.646,
+   "low": false
+  },
+  {
+   "w": "Poke",
+   "t0": 66.937,
+   "t1": 67.057,
+   "score": 0.219,
+   "low": true
+  },
+  {
+   "w": "a",
+   "t0": 67.097,
+   "t1": 67.157,
+   "score": 0.575,
+   "low": false
+  },
+  {
+   "w": "number,",
+   "t0": 67.197,
+   "t1": 67.437,
+   "score": 0.599,
+   "low": false
+  },
+  {
+   "w": "it",
+   "t0": 67.457,
+   "t1": 67.517,
+   "score": 0.579,
+   "low": false
+  },
+  {
+   "w": "turns",
+   "t0": 67.537,
+   "t1": 67.718,
+   "score": 0.715,
+   "low": false
+  },
+  {
+   "w": "into",
+   "t0": 67.758,
+   "t1": 68.038,
+   "score": 0.891,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 68.098,
+   "t1": 68.118,
+   "score": 0.966,
+   "low": false
+  },
+  {
+   "w": "bird",
+   "t0": 68.158,
+   "t1": 68.758,
+   "score": 0.83,
+   "low": false
+  },
+  {
+   "w": "Touch",
+   "t0": 68.858,
+   "t1": 68.998,
+   "score": 0.661,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 69.038,
+   "t1": 69.078,
+   "score": 0.584,
+   "low": false
+  },
+  {
+   "w": "vector,",
+   "t0": 69.098,
+   "t1": 69.339,
+   "score": 0.318,
+   "low": true
+  },
+  {
+   "w": "it",
+   "t0": 69.419,
+   "t1": 69.499,
+   "score": 0.656,
+   "low": false
+  },
+  {
+   "w": "rhymes",
+   "t0": 69.599,
+   "t1": 69.819,
+   "score": 0.47,
+   "low": true
+  },
+  {
+   "w": "with",
+   "t0": 69.839,
+   "t1": 69.939,
+   "score": 0.445,
+   "low": true
+  },
+  {
+   "w": "the",
+   "t0": 69.959,
+   "t1": 70.039,
+   "score": 0.646,
+   "low": false
+  },
+  {
+   "w": "word",
+   "t0": 70.079,
+   "t1": 70.479,
+   "score": 0.745,
+   "low": false
+  },
+  {
+   "w": "Can't",
+   "t0": 70.519,
+   "t1": 70.74,
+   "score": 0.802,
+   "low": false
+  },
+  {
+   "w": "hear",
+   "t0": 70.78,
+   "t1": 70.9,
+   "score": 0.839,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 70.92,
+   "t1": 71.0,
+   "score": 0.865,
+   "low": false
+  },
+  {
+   "w": "music,",
+   "t0": 71.02,
+   "t1": 71.28,
+   "score": 0.84,
+   "low": false
+  },
+  {
+   "w": "but",
+   "t0": 71.3,
+   "t1": 71.42,
+   "score": 0.409,
+   "low": true
+  },
+  {
+   "w": "I",
+   "t0": 71.44,
+   "t1": 71.46,
+   "score": 0.678,
+   "low": false
+  },
+  {
+   "w": "count",
+   "t0": 71.52,
+   "t1": 71.7,
+   "score": 0.812,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 71.74,
+   "t1": 71.84,
+   "score": 0.873,
+   "low": false
+  },
+  {
+   "w": "beat",
+   "t0": 71.88,
+   "t1": 72.241,
+   "score": 0.448,
+   "low": true
+  },
+  {
+   "w": "One,",
+   "t0": 72.521,
+   "t1": 72.641,
+   "score": 0.785,
+   "low": false
+  },
+  {
+   "w": "two,",
+   "t0": 72.681,
+   "t1": 72.881,
+   "score": 0.881,
+   "low": false
+  },
+  {
+   "w": "three,",
+   "t0": 72.901,
+   "t1": 73.041,
+   "score": 0.487,
+   "low": true
+  },
+  {
+   "w": "four,",
+   "t0": 73.061,
+   "t1": 73.181,
+   "score": 0.286,
+   "low": true
+  },
+  {
+   "w": "now",
+   "t0": 73.201,
+   "t1": 73.281,
+   "score": 0.753,
+   "low": false
+  },
+  {
+   "w": "it's",
+   "t0": 73.341,
+   "t1": 73.441,
+   "score": 0.568,
+   "low": false
+  },
+  {
+   "w": "in",
+   "t0": 73.481,
+   "t1": 73.561,
+   "score": 0.706,
+   "low": false
+  },
+  {
+   "w": "my",
+   "t0": 73.641,
+   "t1": 73.741,
+   "score": 0.444,
+   "low": true
+  },
+  {
+   "w": "feet",
+   "t0": 73.842,
+   "t1": 74.242,
+   "score": 0.789,
+   "low": false
+  },
+  {
+   "w": "Layer",
+   "t0": 74.362,
+   "t1": 74.662,
+   "score": 0.811,
+   "low": false
+  },
+  {
+   "w": "by",
+   "t0": 75.062,
+   "t1": 75.262,
+   "score": 0.921,
+   "low": false
+  },
+  {
+   "w": "layer",
+   "t0": 75.322,
+   "t1": 75.543,
+   "score": 0.893,
+   "low": false
+  },
+  {
+   "w": "Line",
+   "t0": 76.263,
+   "t1": 76.603,
+   "score": 0.908,
+   "low": false
+  },
+  {
+   "w": "by",
+   "t0": 76.744,
+   "t1": 77.104,
+   "score": 0.932,
+   "low": false
+  },
+  {
+   "w": "line,",
+   "t0": 77.224,
+   "t1": 78.045,
+   "score": 0.856,
+   "low": false
+  },
+  {
+   "w": "thousand",
+   "t0": 78.145,
+   "t1": 78.605,
+   "score": 0.879,
+   "low": false
+  },
+  {
+   "w": "directions",
+   "t0": 78.885,
+   "t1": 79.586,
+   "score": 0.888,
+   "low": false
+  },
+  {
+   "w": "One",
+   "t0": 80.147,
+   "t1": 80.287,
+   "score": 0.798,
+   "low": false
+  },
+  {
+   "w": "of",
+   "t0": 80.387,
+   "t1": 80.467,
+   "score": 0.896,
+   "low": false
+  },
+  {
+   "w": "them's",
+   "t0": 80.547,
+   "t1": 80.927,
+   "score": 0.773,
+   "low": false
+  },
+  {
+   "w": "mine",
+   "t0": 81.047,
+   "t1": 81.267,
+   "score": 0.493,
+   "low": true
+  },
+  {
+   "w": "Now",
+   "t0": 81.308,
+   "t1": 81.528,
+   "score": 0.921,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 81.608,
+   "t1": 81.668,
+   "score": 0.99,
+   "low": false
+  },
+  {
+   "w": "can",
+   "t0": 81.728,
+   "t1": 81.908,
+   "score": 0.854,
+   "low": false
+  },
+  {
+   "w": "walk,",
+   "t0": 81.968,
+   "t1": 82.208,
+   "score": 0.895,
+   "low": false
+  },
+  {
+   "w": "now",
+   "t0": 82.248,
+   "t1": 82.489,
+   "score": 0.863,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 82.569,
+   "t1": 82.629,
+   "score": 0.992,
+   "low": false
+  },
+  {
+   "w": "can",
+   "t0": 82.689,
+   "t1": 82.869,
+   "score": 0.876,
+   "low": false
+  },
+  {
+   "w": "run",
+   "t0": 82.929,
+   "t1": 83.169,
+   "score": 0.733,
+   "low": false
+  },
+  {
+   "w": "Count",
+   "t0": 83.409,
+   "t1": 83.63,
+   "score": 0.94,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 83.65,
+   "t1": 83.73,
+   "score": 0.26,
+   "low": true
+  },
+  {
+   "w": "four",
+   "t0": 83.77,
+   "t1": 84.01,
+   "score": 0.688,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 84.07,
+   "t1": 84.15,
+   "score": 0.781,
+   "low": false
+  },
+  {
+   "w": "I'm",
+   "t0": 84.21,
+   "t1": 84.31,
+   "score": 0.71,
+   "low": false
+  },
+  {
+   "w": "chasing",
+   "t0": 84.33,
+   "t1": 84.63,
+   "score": 0.486,
+   "low": true
+  },
+  {
+   "w": "the",
+   "t0": 84.65,
+   "t1": 84.731,
+   "score": 0.794,
+   "low": false
+  },
+  {
+   "w": "sun",
+   "t0": 84.811,
+   "t1": 85.071,
+   "score": 0.923,
+   "low": false
+  },
+  {
+   "w": "Every",
+   "t0": 85.151,
+   "t1": 85.311,
+   "score": 0.686,
+   "low": false
+  },
+  {
+   "w": "mistake",
+   "t0": 85.331,
+   "t1": 85.591,
+   "score": 0.848,
+   "low": false
+  },
+  {
+   "w": "is",
+   "t0": 85.611,
+   "t1": 85.691,
+   "score": 0.676,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 85.751,
+   "t1": 85.791,
+   "score": 0.703,
+   "low": false
+  },
+  {
+   "w": "door,",
+   "t0": 85.811,
+   "t1": 86.192,
+   "score": 0.872,
+   "low": false
+  },
+  {
+   "w": "not",
+   "t0": 86.512,
+   "t1": 86.652,
+   "score": 0.944,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 86.692,
+   "t1": 86.732,
+   "score": 0.746,
+   "low": false
+  },
+  {
+   "w": "wall",
+   "t0": 86.772,
+   "t1": 87.113,
+   "score": 0.789,
+   "low": false
+  },
+  {
+   "w": "Fall",
+   "t0": 87.213,
+   "t1": 87.493,
+   "score": 0.847,
+   "low": false
+  },
+  {
+   "w": "on",
+   "t0": 87.533,
+   "t1": 87.593,
+   "score": 0.458,
+   "low": true
+  },
+  {
+   "w": "the",
+   "t0": 87.613,
+   "t1": 87.693,
+   "score": 0.775,
+   "low": false
+  },
+  {
+   "w": "beat",
+   "t0": 87.713,
+   "t1": 87.853,
+   "score": 0.835,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 87.893,
+   "t1": 87.953,
+   "score": 0.362,
+   "low": true
+  },
+  {
+   "w": "it's",
+   "t0": 87.993,
+   "t1": 88.113,
+   "score": 0.344,
+   "low": true
+  },
+  {
+   "w": "no",
+   "t0": 88.133,
+   "t1": 88.334,
+   "score": 0.645,
+   "low": false
+  },
+  {
+   "w": "fall",
+   "t0": 88.394,
+   "t1": 88.594,
+   "score": 0.674,
+   "low": false
+  },
+  {
+   "w": "at",
+   "t0": 88.634,
+   "t1": 88.694,
+   "score": 0.829,
+   "low": false
+  },
+  {
+   "w": "all",
+   "t0": 88.954,
+   "t1": 89.114,
+   "score": 0.824,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 89.134,
+   "t1": 89.154,
+   "score": 0.004,
+   "low": true
+  },
+  {
+   "w": "was",
+   "t0": 89.174,
+   "t1": 89.535,
+   "score": 0.634,
+   "low": false
+  },
+  {
+   "w": "nothing,",
+   "t0": 89.615,
+   "t1": 90.736,
+   "score": 0.756,
+   "low": false
+  },
+  {
+   "w": "now",
+   "t0": 90.816,
+   "t1": 91.036,
+   "score": 0.904,
+   "low": false
+  },
+  {
+   "w": "I'm",
+   "t0": 91.236,
+   "t1": 91.416,
+   "score": 0.611,
+   "low": false
+  },
+  {
+   "w": "something",
+   "t0": 91.436,
+   "t1": 91.737,
+   "score": 0.36,
+   "low": true
+  },
+  {
+   "w": "to",
+   "t0": 91.757,
+   "t1": 92.177,
+   "score": 0.872,
+   "low": false
+  },
+  {
+   "w": "be",
+   "t0": 92.237,
+   "t1": 92.717,
+   "score": 0.936,
+   "low": false
+  },
+  {
+   "w": "A",
+   "t0": 92.758,
+   "t1": 92.798,
+   "score": 0.377,
+   "low": true
+  },
+  {
+   "w": "clean",
+   "t0": 92.898,
+   "t1": 93.478,
+   "score": 0.902,
+   "low": false
+  },
+  {
+   "w": "slate,",
+   "t0": 93.558,
+   "t1": 93.959,
+   "score": 0.679,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 95.64,
+   "t1": 95.78,
+   "score": 0.755,
+   "low": false
+  },
+  {
+   "w": "it's",
+   "t0": 95.8,
+   "t1": 95.92,
+   "score": 0.379,
+   "low": true
+  },
+  {
+   "w": "dancing",
+   "t0": 96.02,
+   "t1": 96.661,
+   "score": 0.822,
+   "low": false
+  },
+  {
+   "w": "with",
+   "t0": 96.701,
+   "t1": 96.841,
+   "score": 0.962,
+   "low": false
+  },
+  {
+   "w": "me",
+   "t0": 96.861,
+   "t1": 96.901,
+   "score": 0.0,
+   "low": true
+  },
+  {
+   "w": "Mmm",
+   "t0": 96.961,
+   "t1": 97.021,
+   "score": 0.339,
+   "low": true
+  },
+  {
+   "w": "Roll",
+   "t0": 104.777,
+   "t1": 104.937,
+   "score": 0.777,
+   "low": false
+  },
+  {
+   "w": "up",
+   "t0": 104.957,
+   "t1": 105.037,
+   "score": 0.24,
+   "low": true
+  },
+  {
+   "w": "my",
+   "t0": 105.057,
+   "t1": 105.197,
+   "score": 0.814,
+   "low": false
+  },
+  {
+   "w": "sleeves,",
+   "t0": 105.237,
+   "t1": 105.538,
+   "score": 0.453,
+   "low": true
+  },
+  {
+   "w": "it's",
+   "t0": 105.598,
+   "t1": 105.698,
+   "score": 0.269,
+   "low": true
+  },
+  {
+   "w": "time",
+   "t0": 105.738,
+   "t1": 105.958,
+   "score": 0.722,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 105.998,
+   "t1": 106.078,
+   "score": 0.8,
+   "low": false
+  },
+  {
+   "w": "work",
+   "t0": 106.118,
+   "t1": 106.319,
+   "score": 0.986,
+   "low": false
+  },
+  {
+   "w": "Turn",
+   "t0": 106.439,
+   "t1": 106.599,
+   "score": 0.653,
+   "low": false
+  },
+  {
+   "w": "up",
+   "t0": 106.619,
+   "t1": 106.699,
+   "score": 0.278,
+   "low": true
+  },
+  {
+   "w": "my",
+   "t0": 106.719,
+   "t1": 106.859,
+   "score": 0.83,
+   "low": false
+  },
+  {
+   "w": "seat,",
+   "t0": 106.879,
+   "t1": 107.099,
+   "score": 0.542,
+   "low": false
+  },
+  {
+   "w": "get",
+   "t0": 107.119,
+   "t1": 107.199,
+   "score": 0.203,
+   "low": true
+  },
+  {
+   "w": "into",
+   "t0": 107.3,
+   "t1": 107.54,
+   "score": 0.693,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 107.58,
+   "t1": 107.6,
+   "score": 0.972,
+   "low": false
+  },
+  {
+   "w": "little",
+   "t0": 107.64,
+   "t1": 107.88,
+   "score": 0.925,
+   "low": false
+  },
+  {
+   "w": "spark",
+   "t0": 107.92,
+   "t1": 108.26,
+   "score": 0.94,
+   "low": false
+  },
+  {
+   "w": "Draw",
+   "t0": 108.321,
+   "t1": 108.561,
+   "score": 0.704,
+   "low": false
+  },
+  {
+   "w": "me",
+   "t0": 108.601,
+   "t1": 108.801,
+   "score": 0.96,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 108.861,
+   "t1": 108.901,
+   "score": 0.772,
+   "low": false
+  },
+  {
+   "w": "road,",
+   "t0": 108.941,
+   "t1": 109.261,
+   "score": 0.791,
+   "low": false
+  },
+  {
+   "w": "draw",
+   "t0": 109.281,
+   "t1": 109.502,
+   "score": 0.668,
+   "low": false
+  },
+  {
+   "w": "me",
+   "t0": 109.542,
+   "t1": 109.762,
+   "score": 0.816,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 109.822,
+   "t1": 109.862,
+   "score": 0.631,
+   "low": false
+  },
+  {
+   "w": "room",
+   "t0": 109.902,
+   "t1": 110.202,
+   "score": 0.876,
+   "low": false
+  },
+  {
+   "w": "Build",
+   "t0": 110.242,
+   "t1": 110.443,
+   "score": 0.279,
+   "low": true
+  },
+  {
+   "w": "me",
+   "t0": 110.483,
+   "t1": 110.743,
+   "score": 0.909,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 110.823,
+   "t1": 110.883,
+   "score": 0.769,
+   "low": false
+  },
+  {
+   "w": "palace,",
+   "t0": 110.943,
+   "t1": 111.384,
+   "score": 0.925,
+   "low": false
+  },
+  {
+   "w": "room",
+   "t0": 111.424,
+   "t1": 111.644,
+   "score": 0.802,
+   "low": false
+  },
+  {
+   "w": "by",
+   "t0": 111.684,
+   "t1": 111.864,
+   "score": 0.948,
+   "low": false
+  },
+  {
+   "w": "room",
+   "t0": 111.924,
+   "t1": 112.264,
+   "score": 0.822,
+   "low": false
+  },
+  {
+   "w": "Code",
+   "t0": 112.364,
+   "t1": 112.645,
+   "score": 0.628,
+   "low": false
+  },
+  {
+   "w": "in",
+   "t0": 112.665,
+   "t1": 112.745,
+   "score": 0.784,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 112.765,
+   "t1": 112.825,
+   "score": 0.966,
+   "low": false
+  },
+  {
+   "w": "morning,",
+   "t0": 112.865,
+   "t1": 113.265,
+   "score": 0.762,
+   "low": false
+  },
+  {
+   "w": "colors",
+   "t0": 113.305,
+   "t1": 113.546,
+   "score": 0.568,
+   "low": false
+  },
+  {
+   "w": "at",
+   "t0": 113.626,
+   "t1": 113.746,
+   "score": 0.831,
+   "low": false
+  },
+  {
+   "w": "night",
+   "t0": 113.806,
+   "t1": 113.986,
+   "score": 0.701,
+   "low": false
+  },
+  {
+   "w": "You",
+   "t0": 114.026,
+   "t1": 114.226,
+   "score": 0.975,
+   "low": false
+  },
+  {
+   "w": "give",
+   "t0": 114.266,
+   "t1": 114.406,
+   "score": 0.833,
+   "low": false
+  },
+  {
+   "w": "me",
+   "t0": 114.427,
+   "t1": 114.587,
+   "score": 0.72,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 114.627,
+   "t1": 114.667,
+   "score": 0.501,
+   "low": false
+  },
+  {
+   "w": "word,",
+   "t0": 114.727,
+   "t1": 115.007,
+   "score": 0.836,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 115.067,
+   "t1": 115.167,
+   "score": 0.974,
+   "low": false
+  },
+  {
+   "w": "give",
+   "t0": 115.207,
+   "t1": 115.327,
+   "score": 0.867,
+   "low": false
+  },
+  {
+   "w": "you",
+   "t0": 115.347,
+   "t1": 115.448,
+   "score": 0.88,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 115.468,
+   "t1": 115.588,
+   "score": 0.896,
+   "low": false
+  },
+  {
+   "w": "light",
+   "t0": 115.688,
+   "t1": 116.088,
+   "score": 0.498,
+   "low": true
+  },
+  {
+   "w": "One",
+   "t0": 116.188,
+   "t1": 116.328,
+   "score": 0.824,
+   "low": false
+  },
+  {
+   "w": "step",
+   "t0": 116.348,
+   "t1": 116.569,
+   "score": 0.613,
+   "low": false
+  },
+  {
+   "w": "early,",
+   "t0": 116.629,
+   "t1": 116.949,
+   "score": 0.608,
+   "low": false
+  },
+  {
+   "w": "it",
+   "t0": 116.989,
+   "t1": 117.049,
+   "score": 0.732,
+   "low": false
+  },
+  {
+   "w": "looks",
+   "t0": 117.089,
+   "t1": 117.289,
+   "score": 0.863,
+   "low": false
+  },
+  {
+   "w": "so",
+   "t0": 117.309,
+   "t1": 117.49,
+   "score": 0.971,
+   "low": false
+  },
+  {
+   "w": "fine",
+   "t0": 117.57,
+   "t1": 117.99,
+   "score": 0.622,
+   "low": false
+  },
+  {
+   "w": "Rules",
+   "t0": 118.05,
+   "t1": 118.29,
+   "score": 0.758,
+   "low": false
+  },
+  {
+   "w": "are",
+   "t0": 118.33,
+   "t1": 118.39,
+   "score": 0.291,
+   "low": true
+  },
+  {
+   "w": "the",
+   "t0": 118.41,
+   "t1": 118.47,
+   "score": 0.968,
+   "low": false
+  },
+  {
+   "w": "floor,",
+   "t0": 118.511,
+   "t1": 118.711,
+   "score": 0.667,
+   "low": false
+  },
+  {
+   "w": "but",
+   "t0": 118.751,
+   "t1": 118.851,
+   "score": 0.768,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 118.891,
+   "t1": 118.951,
+   "score": 0.956,
+   "low": false
+  },
+  {
+   "w": "vibe",
+   "t0": 118.991,
+   "t1": 119.231,
+   "score": 0.71,
+   "low": false
+  },
+  {
+   "w": "is",
+   "t0": 119.251,
+   "t1": 119.311,
+   "score": 0.288,
+   "low": true
+  },
+  {
+   "w": "the",
+   "t0": 119.331,
+   "t1": 119.391,
+   "score": 0.953,
+   "low": false
+  },
+  {
+   "w": "sky",
+   "t0": 119.431,
+   "t1": 119.772,
+   "score": 0.983,
+   "low": false
+  },
+  {
+   "w": "When",
+   "t0": 120.451,
+   "t1": 120.551,
+   "score": 0.124,
+   "low": true
+  },
+  {
+   "w": "the",
+   "t0": 120.631,
+   "t1": 120.811,
+   "score": 0.607,
+   "low": false
+  },
+  {
+   "w": "window",
+   "t0": 120.851,
+   "t1": 121.492,
+   "score": 0.812,
+   "low": false
+  },
+  {
+   "w": "closes,",
+   "t0": 121.552,
+   "t1": 122.313,
+   "score": 0.842,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 122.393,
+   "t1": 122.493,
+   "score": 0.746,
+   "low": false
+  },
+  {
+   "w": "forget",
+   "t0": 122.513,
+   "t1": 122.953,
+   "score": 0.9,
+   "low": false
+  },
+  {
+   "w": "your",
+   "t0": 123.014,
+   "t1": 123.274,
+   "score": 0.75,
+   "low": false
+  },
+  {
+   "w": "face",
+   "t0": 123.434,
+   "t1": 124.095,
+   "score": 0.863,
+   "low": false
+  },
+  {
+   "w": "Every",
+   "t0": 124.295,
+   "t1": 124.535,
+   "score": 0.929,
+   "low": false
+  },
+  {
+   "w": "time",
+   "t0": 124.595,
+   "t1": 124.895,
+   "score": 0.963,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 125.116,
+   "t1": 125.236,
+   "score": 0.968,
+   "low": false
+  },
+  {
+   "w": "wake",
+   "t0": 125.336,
+   "t1": 125.816,
+   "score": 0.859,
+   "low": false
+  },
+  {
+   "w": "up,",
+   "t0": 125.916,
+   "t1": 126.016,
+   "score": 0.423,
+   "low": true
+  },
+  {
+   "w": "it's",
+   "t0": 126.117,
+   "t1": 126.297,
+   "score": 0.608,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 126.357,
+   "t1": 126.417,
+   "score": 0.177,
+   "low": true
+  },
+  {
+   "w": "brand",
+   "t0": 126.497,
+   "t1": 126.937,
+   "score": 0.839,
+   "low": false
+  },
+  {
+   "w": "new",
+   "t0": 126.997,
+   "t1": 127.338,
+   "score": 0.702,
+   "low": false
+  },
+  {
+   "w": "place",
+   "t0": 127.398,
+   "t1": 127.638,
+   "score": 0.701,
+   "low": false
+  },
+  {
+   "w": "So",
+   "t0": 127.658,
+   "t1": 127.918,
+   "score": 0.843,
+   "low": false
+  },
+  {
+   "w": "every",
+   "t0": 127.978,
+   "t1": 128.139,
+   "score": 0.925,
+   "low": false
+  },
+  {
+   "w": "time,",
+   "t0": 128.179,
+   "t1": 128.599,
+   "score": 0.722,
+   "low": false
+  },
+  {
+   "w": "every",
+   "t0": 128.659,
+   "t1": 128.819,
+   "score": 0.767,
+   "low": false
+  },
+  {
+   "w": "time",
+   "t0": 128.879,
+   "t1": 129.28,
+   "score": 0.703,
+   "low": false
+  },
+  {
+   "w": "It's",
+   "t0": 129.54,
+   "t1": 129.66,
+   "score": 0.851,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 129.68,
+   "t1": 129.76,
+   "score": 0.907,
+   "low": false
+  },
+  {
+   "w": "first",
+   "t0": 129.8,
+   "t1": 130.06,
+   "score": 0.877,
+   "low": false
+  },
+  {
+   "w": "time",
+   "t0": 130.121,
+   "t1": 130.481,
+   "score": 0.89,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 130.581,
+   "t1": 130.701,
+   "score": 0.897,
+   "low": false
+  },
+  {
+   "w": "meet",
+   "t0": 130.741,
+   "t1": 131.081,
+   "score": 0.824,
+   "low": false
+  },
+  {
+   "w": "you",
+   "t0": 131.182,
+   "t1": 131.382,
+   "score": 0.889,
+   "low": false
+  },
+  {
+   "w": "So",
+   "t0": 131.422,
+   "t1": 131.662,
+   "score": 0.922,
+   "low": false
+  },
+  {
+   "w": "every",
+   "t0": 131.722,
+   "t1": 131.882,
+   "score": 0.988,
+   "low": false
+  },
+  {
+   "w": "time,",
+   "t0": 131.922,
+   "t1": 132.363,
+   "score": 0.717,
+   "low": false
+  },
+  {
+   "w": "every",
+   "t0": 132.423,
+   "t1": 132.583,
+   "score": 0.88,
+   "low": false
+  },
+  {
+   "w": "time",
+   "t0": 132.623,
+   "t1": 133.003,
+   "score": 0.774,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 133.284,
+   "t1": 133.384,
+   "score": 0.734,
+   "low": false
+  },
+  {
+   "w": "smile",
+   "t0": 133.424,
+   "t1": 133.964,
+   "score": 0.793,
+   "low": false
+  },
+  {
+   "w": "like",
+   "t0": 134.024,
+   "t1": 134.445,
+   "score": 0.905,
+   "low": false
+  },
+  {
+   "w": "it's",
+   "t0": 134.585,
+   "t1": 134.765,
+   "score": 0.721,
+   "low": false
+  },
+  {
+   "w": "new",
+   "t0": 134.885,
+   "t1": 135.386,
+   "score": 0.596,
+   "low": false
+  },
+  {
+   "w": "So",
+   "t0": 141.656,
+   "t1": 141.936,
+   "score": 0.968,
+   "low": false
+  },
+  {
+   "w": "if",
+   "t0": 141.996,
+   "t1": 142.096,
+   "score": 0.732,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 142.297,
+   "t1": 142.317,
+   "score": 0.003,
+   "low": true
+  },
+  {
+   "w": "wait,",
+   "t0": 142.397,
+   "t1": 142.697,
+   "score": 0.502,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 143.097,
+   "t1": 143.217,
+   "score": 0.78,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 143.237,
+   "t1": 143.277,
+   "score": 0.415,
+   "low": true
+  },
+  {
+   "w": "don't,",
+   "t0": 143.337,
+   "t1": 143.537,
+   "score": 0.813,
+   "low": false
+  },
+  {
+   "w": "don't",
+   "t0": 143.577,
+   "t1": 143.758,
+   "score": 0.784,
+   "low": false
+  },
+  {
+   "w": "know",
+   "t0": 143.798,
+   "t1": 143.978,
+   "score": 0.797,
+   "low": false
+  },
+  {
+   "w": "your",
+   "t0": 144.018,
+   "t1": 144.218,
+   "score": 0.883,
+   "low": false
+  },
+  {
+   "w": "name",
+   "t0": 144.278,
+   "t1": 144.698,
+   "score": 0.863,
+   "low": false
+  },
+  {
+   "w": "I'll",
+   "t0": 145.439,
+   "t1": 145.639,
+   "score": 0.916,
+   "low": false
+  },
+  {
+   "w": "find",
+   "t0": 145.679,
+   "t1": 145.919,
+   "score": 0.732,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 145.999,
+   "t1": 146.059,
+   "score": 0.859,
+   "low": false
+  },
+  {
+   "w": "light,",
+   "t0": 146.099,
+   "t1": 146.419,
+   "score": 0.763,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 146.72,
+   "t1": 146.82,
+   "score": 0.742,
+   "low": false
+  },
+  {
+   "w": "I'll",
+   "t0": 146.86,
+   "t1": 147.04,
+   "score": 0.67,
+   "low": false
+  },
+  {
+   "w": "feel",
+   "t0": 147.06,
+   "t1": 147.32,
+   "score": 0.878,
+   "low": false
+  },
+  {
+   "w": "it",
+   "t0": 147.4,
+   "t1": 147.52,
+   "score": 0.82,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 147.54,
+   "t1": 147.9,
+   "score": 0.561,
+   "low": false
+  },
+  {
+   "w": "same",
+   "t0": 147.98,
+   "t1": 148.441,
+   "score": 0.946,
+   "low": false
+  },
+  {
+   "w": "Here",
+   "t0": 149.161,
+   "t1": 149.441,
+   "score": 0.908,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 149.682,
+   "t1": 149.822,
+   "score": 0.832,
+   "low": false
+  },
+  {
+   "w": "now",
+   "t0": 149.902,
+   "t1": 150.342,
+   "score": 0.876,
+   "low": false
+  },
+  {
+   "w": "is",
+   "t0": 150.442,
+   "t1": 150.542,
+   "score": 0.592,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 150.582,
+   "t1": 150.742,
+   "score": 0.807,
+   "low": false
+  },
+  {
+   "w": "only",
+   "t0": 151.203,
+   "t1": 151.603,
+   "score": 0.812,
+   "low": false
+  },
+  {
+   "w": "place",
+   "t0": 151.703,
+   "t1": 152.263,
+   "score": 0.915,
+   "low": false
+  },
+  {
+   "w": "Where",
+   "t0": 152.884,
+   "t1": 153.184,
+   "score": 0.776,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 153.444,
+   "t1": 153.544,
+   "score": 0.798,
+   "low": false
+  },
+  {
+   "w": "can",
+   "t0": 153.604,
+   "t1": 153.964,
+   "score": 0.839,
+   "low": false
+  },
+  {
+   "w": "see",
+   "t0": 154.024,
+   "t1": 154.305,
+   "score": 0.953,
+   "low": false
+  },
+  {
+   "w": "your",
+   "t0": 154.325,
+   "t1": 154.425,
+   "score": 0.147,
+   "low": true
+  },
+  {
+   "w": "smiling",
+   "t0": 154.485,
+   "t1": 155.345,
+   "score": 0.859,
+   "low": false
+  },
+  {
+   "w": "face",
+   "t0": 155.445,
+   "t1": 156.806,
+   "score": 0.814,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 157.006,
+   "t1": 157.106,
+   "score": 0.749,
+   "low": false
+  },
+  {
+   "w": "was",
+   "t0": 157.147,
+   "t1": 157.267,
+   "score": 0.719,
+   "low": false
+  },
+  {
+   "w": "nothing,",
+   "t0": 157.367,
+   "t1": 158.467,
+   "score": 0.7,
+   "low": false
+  },
+  {
+   "w": "now",
+   "t0": 158.527,
+   "t1": 158.748,
+   "score": 0.938,
+   "low": false
+  },
+  {
+   "w": "I'm",
+   "t0": 158.928,
+   "t1": 159.128,
+   "score": 0.551,
+   "low": false
+  },
+  {
+   "w": "something",
+   "t0": 159.168,
+   "t1": 159.448,
+   "score": 0.329,
+   "low": true
+  },
+  {
+   "w": "that's",
+   "t0": 159.468,
+   "t1": 159.808,
+   "score": 0.522,
+   "low": false
+  },
+  {
+   "w": "free",
+   "t0": 159.868,
+   "t1": 160.329,
+   "score": 0.781,
+   "low": false
+  },
+  {
+   "w": "A",
+   "t0": 160.429,
+   "t1": 160.469,
+   "score": 0.978,
+   "low": false
+  },
+  {
+   "w": "clean",
+   "t0": 160.569,
+   "t1": 161.129,
+   "score": 0.838,
+   "low": false
+  },
+  {
+   "w": "slate,",
+   "t0": 161.209,
+   "t1": 161.609,
+   "score": 0.729,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 163.231,
+   "t1": 163.391,
+   "score": 0.72,
+   "low": false
+  },
+  {
+   "w": "it's",
+   "t0": 163.431,
+   "t1": 163.591,
+   "score": 0.722,
+   "low": false
+  },
+  {
+   "w": "always",
+   "t0": 163.831,
+   "t1": 164.251,
+   "score": 0.796,
+   "low": false
+  },
+  {
+   "w": "been",
+   "t0": 164.311,
+   "t1": 164.632,
+   "score": 0.907,
+   "low": false
+  },
+  {
+   "w": "me",
+   "t0": 164.792,
+   "t1": 164.952,
+   "score": 0.89,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 167.347,
+   "t1": 167.387,
+   "score": 0.499,
+   "low": true
+  },
+  {
+   "w": "stand",
+   "t0": 167.467,
+   "t1": 168.028,
+   "score": 0.862,
+   "low": false
+  },
+  {
+   "w": "on",
+   "t0": 168.148,
+   "t1": 168.248,
+   "score": 0.874,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 168.288,
+   "t1": 168.368,
+   "score": 0.896,
+   "low": false
+  },
+  {
+   "w": "shore",
+   "t0": 168.448,
+   "t1": 168.788,
+   "score": 0.895,
+   "low": false
+  },
+  {
+   "w": "Look",
+   "t0": 168.809,
+   "t1": 171.231,
+   "score": 0.585,
+   "low": false
+  },
+  {
+   "w": "back",
+   "t0": 171.291,
+   "t1": 171.631,
+   "score": 0.956,
+   "low": false
+  },
+  {
+   "w": "at",
+   "t0": 171.651,
+   "t1": 171.692,
+   "score": 0.0,
+   "low": true
+  },
+  {
+   "w": "the",
+   "t0": 171.972,
+   "t1": 172.092,
+   "score": 0.943,
+   "low": false
+  },
+  {
+   "w": "sea",
+   "t0": 172.192,
+   "t1": 172.492,
+   "score": 0.821,
+   "low": false
+  },
+  {
+   "w": "Little",
+   "t0": 174.294,
+   "t1": 174.554,
+   "score": 0.943,
+   "low": false
+  },
+  {
+   "w": "light",
+   "t0": 174.575,
+   "t1": 174.855,
+   "score": 0.581,
+   "low": false
+  },
+  {
+   "w": "sleeping",
+   "t0": 174.915,
+   "t1": 175.415,
+   "score": 0.759,
+   "low": false
+  },
+  {
+   "w": "waiting",
+   "t0": 175.475,
+   "t1": 175.716,
+   "score": 0.458,
+   "low": true
+  },
+  {
+   "w": "like",
+   "t0": 175.736,
+   "t1": 176.156,
+   "score": 0.864,
+   "low": false
+  },
+  {
+   "w": "me",
+   "t0": 176.176,
+   "t1": 176.216,
+   "score": 0.0,
+   "low": true
+  },
+  {
+   "w": "Wave",
+   "t0": 178.719,
+   "t1": 179.139,
+   "score": 0.855,
+   "low": false
+  },
+  {
+   "w": "goodbye",
+   "t0": 179.219,
+   "t1": 180.08,
+   "score": 0.817,
+   "low": false
+  },
+  {
+   "w": "Run",
+   "t0": 182.222,
+   "t1": 182.483,
+   "score": 0.804,
+   "low": false
+  },
+  {
+   "w": "into",
+   "t0": 182.763,
+   "t1": 183.123,
+   "score": 0.844,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 183.163,
+   "t1": 183.264,
+   "score": 0.686,
+   "low": false
+  },
+  {
+   "w": "sun",
+   "t0": 183.364,
+   "t1": 183.644,
+   "score": 0.889,
+   "low": false
+  },
+  {
+   "w": "Hi",
+   "t0": 183.664,
+   "t1": 183.704,
+   "score": 0.0,
+   "low": true
+  },
+  {
+   "w": "Hi",
+   "t0": 184.785,
+   "t1": 184.945,
+   "score": 0.736,
+   "low": false
+  }
+ ]
+}

@@ -1,0 +1,1896 @@
+{
+ "source": "Whisper large-v3 转写 + 对齐（⚠️歌声转写会错词）",
+ "audio": "分轨/vocals.wav",
+ "unit": "s（作品时间 = 播放时间）",
+ "low_threshold": 0.5,
+ "lines": [
+  {
+   "text": "New day, new file.",
+   "t0": 0.391,
+   "t1": 1.552
+  },
+  {
+   "text": "Hit save, smile.",
+   "t0": 4.233,
+   "t1": 5.474
+  },
+  {
+   "text": "Woke up light, no weight on my back.",
+   "t0": 8.975,
+   "t1": 10.756
+  },
+  {
+   "text": "Coffee's hot, the sky's not black.",
+   "t0": 10.976,
+   "t1": 12.897
+  },
+  {
+   "text": "Yesterday, I left it on the train.",
+   "t0": 12.937,
+   "t1": 14.838
+  },
+  {
+   "text": "Didn't even look, didn't take the name.",
+   "t0": 14.898,
+   "t1": 16.899
+  },
+  {
+   "text": "Window open at the morning in.",
+   "t0": 16.919,
+   "t1": 18.74
+  },
+  {
+   "text": "Every little noise sounds like a grin.",
+   "t0": 18.9,
+   "t1": 20.701
+  },
+  {
+   "text": "One step, two steps, slow is fine.",
+   "t0": 20.921,
+   "t1": 24.363
+  },
+  {
+   "text": "One thing, one thing, one at a time.",
+   "t0": 24.463,
+   "t1": 28.005
+  },
+  {
+   "text": "Clean slate, clean slate Nothing to carry, nothing to weigh Here now, here now Feet on the ground and I don't know how But I'm floating, I'm floating Brand new morning, brand new morning Clean slate Clean slate",
+   "t0": 28.904,
+   "t1": 44.69
+  },
+  {
+   "text": "Oh, boxes into the bin.",
+   "t0": 52.072,
+   "t1": 53.635
+  },
+  {
+   "text": "The trash is just off the spin.",
+   "t0": 53.976,
+   "t1": 55.579
+  },
+  {
+   "text": "Keep the good, let the rich go home.",
+   "t0": 55.679,
+   "t1": 57.583
+  },
+  {
+   "text": "Build a little palace room by room.",
+   "t0": 57.643,
+   "t1": 60.028
+  },
+  {
+   "text": "Numbers and colors in my head.",
+   "t0": 60.369,
+   "t1": 63.194
+  },
+  {
+   "text": "Ideas growing where the worries fade One step, two steps, slow kiss finding One thing, one thing, one at a time Clean slate, clean slate Nothing to carry, nothing to weigh Here now, here now Me on the ground and I don't know how But I'm floating, I'm floating Brand new morning, uh Brand new morning, uh Clean slate",
+   "t0": 64.373,
+   "t1": 91.502
+  },
+  {
+   "text": "Breathe in.",
+   "t0": 94.74,
+   "t1": 95.401
+  },
+  {
+   "text": "Breathe out.",
+   "t0": 98.605,
+   "t1": 99.486
+  },
+  {
+   "text": "Past is a postcard, future is a door Today's the only thing I'm asking for Clean slate, clean slate Nothing to carry, nothing to weigh Here now, here now Feet on the ground and I don't know But I'm floating, I'm floating Brand new morning, brand new morning Clean slate Clean slate",
+   "t0": 103.174,
+   "t1": 130.153
+  },
+  {
+   "text": "Smile.",
+   "t0": 134.652,
+   "t1": 135.134
+  },
+  {
+   "text": "It's safe.",
+   "t0": 135.838,
+   "t1": 137.485
+  },
+  {
+   "text": "Smile.",
+   "t0": 138.449,
+   "t1": 138.952
+  }
+ ],
+ "words": [
+  {
+   "w": "New",
+   "t0": 0.391,
+   "t1": 0.591,
+   "score": 0.761,
+   "low": false
+  },
+  {
+   "w": "day,",
+   "t0": 0.631,
+   "t1": 0.831,
+   "score": 0.76,
+   "low": false
+  },
+  {
+   "w": "new",
+   "t0": 0.891,
+   "t1": 1.052,
+   "score": 0.795,
+   "low": false
+  },
+  {
+   "w": "file.",
+   "t0": 1.112,
+   "t1": 1.552,
+   "score": 0.926,
+   "low": false
+  },
+  {
+   "w": "Hit",
+   "t0": 4.233,
+   "t1": 4.493,
+   "score": 0.689,
+   "low": false
+  },
+  {
+   "w": "save,",
+   "t0": 4.533,
+   "t1": 4.893,
+   "score": 0.724,
+   "low": false
+  },
+  {
+   "w": "smile.",
+   "t0": 4.973,
+   "t1": 5.474,
+   "score": 0.86,
+   "low": false
+  },
+  {
+   "w": "Woke",
+   "t0": 8.975,
+   "t1": 9.276,
+   "score": 0.796,
+   "low": false
+  },
+  {
+   "w": "up",
+   "t0": 9.376,
+   "t1": 9.456,
+   "score": 0.868,
+   "low": false
+  },
+  {
+   "w": "light,",
+   "t0": 9.476,
+   "t1": 9.696,
+   "score": 0.23,
+   "low": true
+  },
+  {
+   "w": "no",
+   "t0": 9.776,
+   "t1": 9.936,
+   "score": 0.917,
+   "low": false
+  },
+  {
+   "w": "weight",
+   "t0": 9.976,
+   "t1": 10.136,
+   "score": 0.711,
+   "low": false
+  },
+  {
+   "w": "on",
+   "t0": 10.176,
+   "t1": 10.236,
+   "score": 0.849,
+   "low": false
+  },
+  {
+   "w": "my",
+   "t0": 10.276,
+   "t1": 10.416,
+   "score": 0.874,
+   "low": false
+  },
+  {
+   "w": "back.",
+   "t0": 10.456,
+   "t1": 10.756,
+   "score": 0.832,
+   "low": false
+  },
+  {
+   "w": "Coffee's",
+   "t0": 10.976,
+   "t1": 11.417,
+   "score": 0.806,
+   "low": false
+  },
+  {
+   "w": "hot,",
+   "t0": 11.497,
+   "t1": 11.657,
+   "score": 0.547,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 11.697,
+   "t1": 11.797,
+   "score": 0.85,
+   "low": false
+  },
+  {
+   "w": "sky's",
+   "t0": 11.857,
+   "t1": 12.157,
+   "score": 0.697,
+   "low": false
+  },
+  {
+   "w": "not",
+   "t0": 12.197,
+   "t1": 12.397,
+   "score": 0.6,
+   "low": false
+  },
+  {
+   "w": "black.",
+   "t0": 12.437,
+   "t1": 12.897,
+   "score": 0.919,
+   "low": false
+  },
+  {
+   "w": "Yesterday,",
+   "t0": 12.937,
+   "t1": 13.498,
+   "score": 0.875,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 13.518,
+   "t1": 13.538,
+   "score": 0.001,
+   "low": true
+  },
+  {
+   "w": "left",
+   "t0": 13.678,
+   "t1": 13.818,
+   "score": 0.588,
+   "low": false
+  },
+  {
+   "w": "it",
+   "t0": 13.858,
+   "t1": 13.958,
+   "score": 0.649,
+   "low": false
+  },
+  {
+   "w": "on",
+   "t0": 14.018,
+   "t1": 14.158,
+   "score": 0.856,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 14.198,
+   "t1": 14.258,
+   "score": 0.923,
+   "low": false
+  },
+  {
+   "w": "train.",
+   "t0": 14.358,
+   "t1": 14.838,
+   "score": 0.871,
+   "low": false
+  },
+  {
+   "w": "Didn't",
+   "t0": 14.898,
+   "t1": 15.139,
+   "score": 0.801,
+   "low": false
+  },
+  {
+   "w": "even",
+   "t0": 15.179,
+   "t1": 15.359,
+   "score": 0.489,
+   "low": true
+  },
+  {
+   "w": "look,",
+   "t0": 15.379,
+   "t1": 15.479,
+   "score": 0.184,
+   "low": true
+  },
+  {
+   "w": "didn't",
+   "t0": 15.639,
+   "t1": 15.859,
+   "score": 0.777,
+   "low": false
+  },
+  {
+   "w": "take",
+   "t0": 15.879,
+   "t1": 16.099,
+   "score": 0.851,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 16.139,
+   "t1": 16.279,
+   "score": 0.894,
+   "low": false
+  },
+  {
+   "w": "name.",
+   "t0": 16.379,
+   "t1": 16.899,
+   "score": 0.916,
+   "low": false
+  },
+  {
+   "w": "Window",
+   "t0": 16.919,
+   "t1": 17.039,
+   "score": 0.2,
+   "low": true
+  },
+  {
+   "w": "open",
+   "t0": 17.2,
+   "t1": 17.62,
+   "score": 0.473,
+   "low": true
+  },
+  {
+   "w": "at",
+   "t0": 17.64,
+   "t1": 17.72,
+   "score": 0.72,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 17.76,
+   "t1": 17.86,
+   "score": 0.837,
+   "low": false
+  },
+  {
+   "w": "morning",
+   "t0": 17.88,
+   "t1": 18.3,
+   "score": 0.815,
+   "low": false
+  },
+  {
+   "w": "in.",
+   "t0": 18.52,
+   "t1": 18.74,
+   "score": 0.818,
+   "low": false
+  },
+  {
+   "w": "Every",
+   "t0": 18.9,
+   "t1": 19.06,
+   "score": 0.479,
+   "low": true
+  },
+  {
+   "w": "little",
+   "t0": 19.1,
+   "t1": 19.361,
+   "score": 0.537,
+   "low": false
+  },
+  {
+   "w": "noise",
+   "t0": 19.381,
+   "t1": 19.521,
+   "score": 0.231,
+   "low": true
+  },
+  {
+   "w": "sounds",
+   "t0": 19.561,
+   "t1": 19.821,
+   "score": 0.572,
+   "low": false
+  },
+  {
+   "w": "like",
+   "t0": 19.861,
+   "t1": 20.001,
+   "score": 0.544,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 20.161,
+   "t1": 20.241,
+   "score": 0.729,
+   "low": false
+  },
+  {
+   "w": "grin.",
+   "t0": 20.301,
+   "t1": 20.701,
+   "score": 0.855,
+   "low": false
+  },
+  {
+   "w": "One",
+   "t0": 20.921,
+   "t1": 21.142,
+   "score": 0.812,
+   "low": false
+  },
+  {
+   "w": "step,",
+   "t0": 21.222,
+   "t1": 21.542,
+   "score": 0.773,
+   "low": false
+  },
+  {
+   "w": "two",
+   "t0": 21.782,
+   "t1": 22.122,
+   "score": 0.752,
+   "low": false
+  },
+  {
+   "w": "steps,",
+   "t0": 22.202,
+   "t1": 22.582,
+   "score": 0.647,
+   "low": false
+  },
+  {
+   "w": "slow",
+   "t0": 22.702,
+   "t1": 23.082,
+   "score": 0.715,
+   "low": false
+  },
+  {
+   "w": "is",
+   "t0": 23.403,
+   "t1": 23.543,
+   "score": 0.861,
+   "low": false
+  },
+  {
+   "w": "fine.",
+   "t0": 23.763,
+   "t1": 24.363,
+   "score": 0.653,
+   "low": false
+  },
+  {
+   "w": "One",
+   "t0": 24.463,
+   "t1": 24.563,
+   "score": 0.389,
+   "low": true
+  },
+  {
+   "w": "thing,",
+   "t0": 24.583,
+   "t1": 25.144,
+   "score": 0.755,
+   "low": false
+  },
+  {
+   "w": "one",
+   "t0": 25.844,
+   "t1": 26.124,
+   "score": 0.876,
+   "low": false
+  },
+  {
+   "w": "thing,",
+   "t0": 26.344,
+   "t1": 26.884,
+   "score": 0.5,
+   "low": false
+  },
+  {
+   "w": "one",
+   "t0": 26.904,
+   "t1": 26.964,
+   "score": 0.005,
+   "low": true
+  },
+  {
+   "w": "at",
+   "t0": 27.265,
+   "t1": 27.385,
+   "score": 0.739,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 27.425,
+   "t1": 27.465,
+   "score": 0.468,
+   "low": true
+  },
+  {
+   "w": "time.",
+   "t0": 27.665,
+   "t1": 28.005,
+   "score": 0.939,
+   "low": false
+  },
+  {
+   "w": "Clean",
+   "t0": 28.904,
+   "t1": 29.144,
+   "score": 0.459,
+   "low": true
+  },
+  {
+   "w": "slate,",
+   "t0": 29.184,
+   "t1": 29.524,
+   "score": 0.662,
+   "low": false
+  },
+  {
+   "w": "clean",
+   "t0": 29.624,
+   "t1": 29.904,
+   "score": 0.685,
+   "low": false
+  },
+  {
+   "w": "slate",
+   "t0": 29.924,
+   "t1": 30.164,
+   "score": 0.509,
+   "low": false
+  },
+  {
+   "w": "Nothing",
+   "t0": 30.525,
+   "t1": 30.885,
+   "score": 0.895,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 30.905,
+   "t1": 31.065,
+   "score": 0.606,
+   "low": false
+  },
+  {
+   "w": "carry,",
+   "t0": 31.145,
+   "t1": 31.525,
+   "score": 0.865,
+   "low": false
+  },
+  {
+   "w": "nothing",
+   "t0": 31.545,
+   "t1": 31.865,
+   "score": 0.594,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 31.885,
+   "t1": 32.065,
+   "score": 0.842,
+   "low": false
+  },
+  {
+   "w": "weigh",
+   "t0": 32.145,
+   "t1": 32.565,
+   "score": 0.585,
+   "low": false
+  },
+  {
+   "w": "Here",
+   "t0": 32.805,
+   "t1": 32.965,
+   "score": 0.439,
+   "low": true
+  },
+  {
+   "w": "now,",
+   "t0": 33.066,
+   "t1": 33.526,
+   "score": 0.771,
+   "low": false
+  },
+  {
+   "w": "here",
+   "t0": 33.586,
+   "t1": 33.826,
+   "score": 0.684,
+   "low": false
+  },
+  {
+   "w": "now",
+   "t0": 33.866,
+   "t1": 34.106,
+   "score": 0.828,
+   "low": false
+  },
+  {
+   "w": "Feet",
+   "t0": 34.426,
+   "t1": 34.646,
+   "score": 0.946,
+   "low": false
+  },
+  {
+   "w": "on",
+   "t0": 34.806,
+   "t1": 34.906,
+   "score": 0.71,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 34.946,
+   "t1": 35.026,
+   "score": 0.817,
+   "low": false
+  },
+  {
+   "w": "ground",
+   "t0": 35.066,
+   "t1": 35.306,
+   "score": 0.942,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 35.366,
+   "t1": 35.466,
+   "score": 0.737,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 35.486,
+   "t1": 35.526,
+   "score": 0.394,
+   "low": true
+  },
+  {
+   "w": "don't",
+   "t0": 35.566,
+   "t1": 35.766,
+   "score": 0.811,
+   "low": false
+  },
+  {
+   "w": "know",
+   "t0": 35.787,
+   "t1": 35.987,
+   "score": 0.739,
+   "low": false
+  },
+  {
+   "w": "how",
+   "t0": 36.027,
+   "t1": 36.127,
+   "score": 0.24,
+   "low": true
+  },
+  {
+   "w": "But",
+   "t0": 36.187,
+   "t1": 36.307,
+   "score": 0.818,
+   "low": false
+  },
+  {
+   "w": "I'm",
+   "t0": 36.367,
+   "t1": 36.487,
+   "score": 0.647,
+   "low": false
+  },
+  {
+   "w": "floating,",
+   "t0": 36.527,
+   "t1": 37.947,
+   "score": 0.786,
+   "low": false
+  },
+  {
+   "w": "I'm",
+   "t0": 38.327,
+   "t1": 38.427,
+   "score": 0.239,
+   "low": true
+  },
+  {
+   "w": "floating",
+   "t0": 38.467,
+   "t1": 39.688,
+   "score": 0.657,
+   "low": false
+  },
+  {
+   "w": "Brand",
+   "t0": 39.768,
+   "t1": 40.088,
+   "score": 0.717,
+   "low": false
+  },
+  {
+   "w": "new",
+   "t0": 40.128,
+   "t1": 40.488,
+   "score": 0.721,
+   "low": false
+  },
+  {
+   "w": "morning,",
+   "t0": 40.548,
+   "t1": 41.068,
+   "score": 0.772,
+   "low": false
+  },
+  {
+   "w": "brand",
+   "t0": 41.729,
+   "t1": 42.049,
+   "score": 0.69,
+   "low": false
+  },
+  {
+   "w": "new",
+   "t0": 42.089,
+   "t1": 42.429,
+   "score": 0.712,
+   "low": false
+  },
+  {
+   "w": "morning",
+   "t0": 42.489,
+   "t1": 43.009,
+   "score": 0.714,
+   "low": false
+  },
+  {
+   "w": "Clean",
+   "t0": 43.029,
+   "t1": 43.449,
+   "score": 0.751,
+   "low": false
+  },
+  {
+   "w": "slate",
+   "t0": 43.469,
+   "t1": 43.729,
+   "score": 0.462,
+   "low": true
+  },
+  {
+   "w": "Clean",
+   "t0": 43.889,
+   "t1": 44.31,
+   "score": 0.626,
+   "low": false
+  },
+  {
+   "w": "slate",
+   "t0": 44.35,
+   "t1": 44.69,
+   "score": 0.493,
+   "low": true
+  },
+  {
+   "w": "Oh,",
+   "t0": 52.072,
+   "t1": 52.212,
+   "score": 0.847,
+   "low": false
+  },
+  {
+   "w": "boxes",
+   "t0": 52.253,
+   "t1": 52.734,
+   "score": 0.87,
+   "low": false
+  },
+  {
+   "w": "into",
+   "t0": 52.794,
+   "t1": 53.014,
+   "score": 0.519,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 53.034,
+   "t1": 53.114,
+   "score": 0.763,
+   "low": false
+  },
+  {
+   "w": "bin.",
+   "t0": 53.255,
+   "t1": 53.635,
+   "score": 0.9,
+   "low": false
+  },
+  {
+   "w": "The",
+   "t0": 53.976,
+   "t1": 54.076,
+   "score": 0.978,
+   "low": false
+  },
+  {
+   "w": "trash",
+   "t0": 54.136,
+   "t1": 54.497,
+   "score": 0.916,
+   "low": false
+  },
+  {
+   "w": "is",
+   "t0": 54.537,
+   "t1": 54.597,
+   "score": 0.734,
+   "low": false
+  },
+  {
+   "w": "just",
+   "t0": 54.617,
+   "t1": 54.738,
+   "score": 0.419,
+   "low": true
+  },
+  {
+   "w": "off",
+   "t0": 54.798,
+   "t1": 54.938,
+   "score": 0.921,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 54.978,
+   "t1": 55.098,
+   "score": 0.672,
+   "low": false
+  },
+  {
+   "w": "spin.",
+   "t0": 55.138,
+   "t1": 55.579,
+   "score": 0.957,
+   "low": false
+  },
+  {
+   "w": "Keep",
+   "t0": 55.679,
+   "t1": 55.92,
+   "score": 0.83,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 55.96,
+   "t1": 56.08,
+   "score": 0.719,
+   "low": false
+  },
+  {
+   "w": "good,",
+   "t0": 56.18,
+   "t1": 56.441,
+   "score": 0.908,
+   "low": false
+  },
+  {
+   "w": "let",
+   "t0": 56.461,
+   "t1": 56.541,
+   "score": 0.32,
+   "low": true
+  },
+  {
+   "w": "the",
+   "t0": 56.581,
+   "t1": 56.641,
+   "score": 0.517,
+   "low": false
+  },
+  {
+   "w": "rich",
+   "t0": 56.661,
+   "t1": 56.862,
+   "score": 0.468,
+   "low": true
+  },
+  {
+   "w": "go",
+   "t0": 56.922,
+   "t1": 57.122,
+   "score": 0.997,
+   "low": false
+  },
+  {
+   "w": "home.",
+   "t0": 57.182,
+   "t1": 57.583,
+   "score": 0.892,
+   "low": false
+  },
+  {
+   "w": "Build",
+   "t0": 57.643,
+   "t1": 57.824,
+   "score": 0.249,
+   "low": true
+  },
+  {
+   "w": "a",
+   "t0": 57.864,
+   "t1": 57.904,
+   "score": 0.183,
+   "low": true
+  },
+  {
+   "w": "little",
+   "t0": 57.924,
+   "t1": 58.144,
+   "score": 0.754,
+   "low": false
+  },
+  {
+   "w": "palace",
+   "t0": 58.164,
+   "t1": 58.585,
+   "score": 0.951,
+   "low": false
+  },
+  {
+   "w": "room",
+   "t0": 58.645,
+   "t1": 58.866,
+   "score": 0.925,
+   "low": false
+  },
+  {
+   "w": "by",
+   "t0": 58.906,
+   "t1": 59.106,
+   "score": 0.954,
+   "low": false
+  },
+  {
+   "w": "room.",
+   "t0": 59.166,
+   "t1": 60.028,
+   "score": 0.536,
+   "low": false
+  },
+  {
+   "w": "Numbers",
+   "t0": 60.369,
+   "t1": 61.371,
+   "score": 0.838,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 61.451,
+   "t1": 61.551,
+   "score": 0.863,
+   "low": false
+  },
+  {
+   "w": "colors",
+   "t0": 61.591,
+   "t1": 62.092,
+   "score": 0.864,
+   "low": false
+  },
+  {
+   "w": "in",
+   "t0": 62.172,
+   "t1": 62.293,
+   "score": 0.883,
+   "low": false
+  },
+  {
+   "w": "my",
+   "t0": 62.353,
+   "t1": 62.653,
+   "score": 0.831,
+   "low": false
+  },
+  {
+   "w": "head.",
+   "t0": 62.774,
+   "t1": 63.194,
+   "score": 0.914,
+   "low": false
+  },
+  {
+   "w": "Ideas",
+   "t0": 64.373,
+   "t1": 64.953,
+   "score": 0.753,
+   "low": false
+  },
+  {
+   "w": "growing",
+   "t0": 65.013,
+   "t1": 65.473,
+   "score": 0.911,
+   "low": false
+  },
+  {
+   "w": "where",
+   "t0": 65.553,
+   "t1": 65.814,
+   "score": 0.651,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 65.834,
+   "t1": 65.954,
+   "score": 0.393,
+   "low": true
+  },
+  {
+   "w": "worries",
+   "t0": 66.014,
+   "t1": 66.594,
+   "score": 0.673,
+   "low": false
+  },
+  {
+   "w": "fade",
+   "t0": 66.694,
+   "t1": 67.294,
+   "score": 0.831,
+   "low": false
+  },
+  {
+   "w": "One",
+   "t0": 68.054,
+   "t1": 68.274,
+   "score": 0.739,
+   "low": false
+  },
+  {
+   "w": "step,",
+   "t0": 68.314,
+   "t1": 68.694,
+   "score": 0.738,
+   "low": false
+  },
+  {
+   "w": "two",
+   "t0": 68.895,
+   "t1": 69.235,
+   "score": 0.912,
+   "low": false
+  },
+  {
+   "w": "steps,",
+   "t0": 69.315,
+   "t1": 69.695,
+   "score": 0.729,
+   "low": false
+  },
+  {
+   "w": "slow",
+   "t0": 69.835,
+   "t1": 70.175,
+   "score": 0.876,
+   "low": false
+  },
+  {
+   "w": "kiss",
+   "t0": 70.395,
+   "t1": 70.695,
+   "score": 0.831,
+   "low": false
+  },
+  {
+   "w": "finding",
+   "t0": 70.855,
+   "t1": 71.655,
+   "score": 0.73,
+   "low": false
+  },
+  {
+   "w": "One",
+   "t0": 71.976,
+   "t1": 72.176,
+   "score": 0.771,
+   "low": false
+  },
+  {
+   "w": "thing,",
+   "t0": 72.296,
+   "t1": 72.616,
+   "score": 0.649,
+   "low": false
+  },
+  {
+   "w": "one",
+   "t0": 72.976,
+   "t1": 73.196,
+   "score": 0.765,
+   "low": false
+  },
+  {
+   "w": "thing,",
+   "t0": 73.296,
+   "t1": 73.596,
+   "score": 0.551,
+   "low": false
+  },
+  {
+   "w": "one",
+   "t0": 73.856,
+   "t1": 74.176,
+   "score": 0.703,
+   "low": false
+  },
+  {
+   "w": "at",
+   "t0": 74.316,
+   "t1": 74.416,
+   "score": 0.704,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 74.536,
+   "t1": 74.596,
+   "score": 0.38,
+   "low": true
+  },
+  {
+   "w": "time",
+   "t0": 74.716,
+   "t1": 75.057,
+   "score": 0.836,
+   "low": false
+  },
+  {
+   "w": "Clean",
+   "t0": 75.957,
+   "t1": 76.117,
+   "score": 0.243,
+   "low": true
+  },
+  {
+   "w": "slate,",
+   "t0": 76.157,
+   "t1": 76.517,
+   "score": 0.669,
+   "low": false
+  },
+  {
+   "w": "clean",
+   "t0": 76.657,
+   "t1": 76.857,
+   "score": 0.328,
+   "low": true
+  },
+  {
+   "w": "slate",
+   "t0": 76.897,
+   "t1": 77.237,
+   "score": 0.637,
+   "low": false
+  },
+  {
+   "w": "Nothing",
+   "t0": 77.557,
+   "t1": 77.938,
+   "score": 0.78,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 77.958,
+   "t1": 78.098,
+   "score": 0.58,
+   "low": false
+  },
+  {
+   "w": "carry,",
+   "t0": 78.158,
+   "t1": 78.558,
+   "score": 0.754,
+   "low": false
+  },
+  {
+   "w": "nothing",
+   "t0": 78.578,
+   "t1": 78.878,
+   "score": 0.511,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 78.898,
+   "t1": 79.158,
+   "score": 0.891,
+   "low": false
+  },
+  {
+   "w": "weigh",
+   "t0": 79.218,
+   "t1": 79.578,
+   "score": 0.519,
+   "low": false
+  },
+  {
+   "w": "Here",
+   "t0": 79.818,
+   "t1": 80.158,
+   "score": 0.774,
+   "low": false
+  },
+  {
+   "w": "now,",
+   "t0": 80.258,
+   "t1": 80.538,
+   "score": 0.874,
+   "low": false
+  },
+  {
+   "w": "here",
+   "t0": 80.578,
+   "t1": 80.838,
+   "score": 0.829,
+   "low": false
+  },
+  {
+   "w": "now",
+   "t0": 80.898,
+   "t1": 81.139,
+   "score": 0.836,
+   "low": false
+  },
+  {
+   "w": "Me",
+   "t0": 81.459,
+   "t1": 81.639,
+   "score": 0.794,
+   "low": false
+  },
+  {
+   "w": "on",
+   "t0": 81.799,
+   "t1": 81.919,
+   "score": 0.974,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 81.959,
+   "t1": 82.059,
+   "score": 0.744,
+   "low": false
+  },
+  {
+   "w": "ground",
+   "t0": 82.079,
+   "t1": 82.319,
+   "score": 0.906,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 82.379,
+   "t1": 82.439,
+   "score": 0.659,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 82.499,
+   "t1": 82.559,
+   "score": 0.534,
+   "low": false
+  },
+  {
+   "w": "don't",
+   "t0": 82.599,
+   "t1": 82.779,
+   "score": 0.355,
+   "low": true
+  },
+  {
+   "w": "know",
+   "t0": 82.799,
+   "t1": 82.999,
+   "score": 0.443,
+   "low": true
+  },
+  {
+   "w": "how",
+   "t0": 83.039,
+   "t1": 83.179,
+   "score": 0.513,
+   "low": false
+  },
+  {
+   "w": "But",
+   "t0": 83.199,
+   "t1": 83.299,
+   "score": 0.602,
+   "low": false
+  },
+  {
+   "w": "I'm",
+   "t0": 83.379,
+   "t1": 83.479,
+   "score": 0.347,
+   "low": true
+  },
+  {
+   "w": "floating,",
+   "t0": 83.519,
+   "t1": 84.88,
+   "score": 0.662,
+   "low": false
+  },
+  {
+   "w": "I'm",
+   "t0": 85.26,
+   "t1": 85.4,
+   "score": 0.45,
+   "low": true
+  },
+  {
+   "w": "floating",
+   "t0": 85.46,
+   "t1": 86.64,
+   "score": 0.484,
+   "low": true
+  },
+  {
+   "w": "Brand",
+   "t0": 86.68,
+   "t1": 87.02,
+   "score": 0.699,
+   "low": false
+  },
+  {
+   "w": "new",
+   "t0": 87.081,
+   "t1": 87.381,
+   "score": 0.612,
+   "low": false
+  },
+  {
+   "w": "morning,",
+   "t0": 87.421,
+   "t1": 87.981,
+   "score": 0.669,
+   "low": false
+  },
+  {
+   "w": "uh",
+   "t0": 88.321,
+   "t1": 88.601,
+   "score": 0.754,
+   "low": false
+  },
+  {
+   "w": "Brand",
+   "t0": 88.621,
+   "t1": 88.961,
+   "score": 0.701,
+   "low": false
+  },
+  {
+   "w": "new",
+   "t0": 89.021,
+   "t1": 89.341,
+   "score": 0.55,
+   "low": false
+  },
+  {
+   "w": "morning,",
+   "t0": 89.381,
+   "t1": 89.921,
+   "score": 0.716,
+   "low": false
+  },
+  {
+   "w": "uh",
+   "t0": 90.282,
+   "t1": 90.622,
+   "score": 0.772,
+   "low": false
+  },
+  {
+   "w": "Clean",
+   "t0": 90.802,
+   "t1": 91.222,
+   "score": 0.558,
+   "low": false
+  },
+  {
+   "w": "slate",
+   "t0": 91.282,
+   "t1": 91.502,
+   "score": 0.363,
+   "low": true
+  },
+  {
+   "w": "Breathe",
+   "t0": 94.74,
+   "t1": 95.141,
+   "score": 0.508,
+   "low": false
+  },
+  {
+   "w": "in.",
+   "t0": 95.261,
+   "t1": 95.401,
+   "score": 0.815,
+   "low": false
+  },
+  {
+   "w": "Breathe",
+   "t0": 98.605,
+   "t1": 99.026,
+   "score": 0.542,
+   "low": false
+  },
+  {
+   "w": "out.",
+   "t0": 99.286,
+   "t1": 99.486,
+   "score": 0.878,
+   "low": false
+  },
+  {
+   "w": "Past",
+   "t0": 103.174,
+   "t1": 103.535,
+   "score": 0.88,
+   "low": false
+  },
+  {
+   "w": "is",
+   "t0": 103.575,
+   "t1": 103.695,
+   "score": 0.615,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 103.775,
+   "t1": 103.835,
+   "score": 0.785,
+   "low": false
+  },
+  {
+   "w": "postcard,",
+   "t0": 103.915,
+   "t1": 104.976,
+   "score": 0.828,
+   "low": false
+  },
+  {
+   "w": "future",
+   "t0": 105.076,
+   "t1": 105.496,
+   "score": 0.891,
+   "low": false
+  },
+  {
+   "w": "is",
+   "t0": 105.556,
+   "t1": 105.616,
+   "score": 0.629,
+   "low": false
+  },
+  {
+   "w": "a",
+   "t0": 105.696,
+   "t1": 105.736,
+   "score": 0.902,
+   "low": false
+  },
+  {
+   "w": "door",
+   "t0": 105.816,
+   "t1": 106.737,
+   "score": 0.808,
+   "low": false
+  },
+  {
+   "w": "Today's",
+   "t0": 107.017,
+   "t1": 107.537,
+   "score": 0.546,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 107.557,
+   "t1": 107.798,
+   "score": 0.649,
+   "low": false
+  },
+  {
+   "w": "only",
+   "t0": 107.938,
+   "t1": 108.178,
+   "score": 0.732,
+   "low": false
+  },
+  {
+   "w": "thing",
+   "t0": 108.218,
+   "t1": 108.478,
+   "score": 0.853,
+   "low": false
+  },
+  {
+   "w": "I'm",
+   "t0": 108.578,
+   "t1": 108.718,
+   "score": 0.616,
+   "low": false
+  },
+  {
+   "w": "asking",
+   "t0": 108.898,
+   "t1": 109.599,
+   "score": 0.813,
+   "low": false
+  },
+  {
+   "w": "for",
+   "t0": 109.679,
+   "t1": 110.199,
+   "score": 0.814,
+   "low": false
+  },
+  {
+   "w": "Clean",
+   "t0": 110.239,
+   "t1": 111.02,
+   "score": 0.571,
+   "low": false
+  },
+  {
+   "w": "slate,",
+   "t0": 111.1,
+   "t1": 111.38,
+   "score": 0.464,
+   "low": true
+  },
+  {
+   "w": "clean",
+   "t0": 111.6,
+   "t1": 111.76,
+   "score": 0.433,
+   "low": true
+  },
+  {
+   "w": "slate",
+   "t0": 111.8,
+   "t1": 112.08,
+   "score": 0.466,
+   "low": true
+  },
+  {
+   "w": "Nothing",
+   "t0": 112.461,
+   "t1": 112.861,
+   "score": 0.802,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 112.881,
+   "t1": 112.921,
+   "score": 0.039,
+   "low": true
+  },
+  {
+   "w": "carry,",
+   "t0": 113.061,
+   "t1": 113.441,
+   "score": 0.926,
+   "low": false
+  },
+  {
+   "w": "nothing",
+   "t0": 113.461,
+   "t1": 113.782,
+   "score": 0.593,
+   "low": false
+  },
+  {
+   "w": "to",
+   "t0": 113.822,
+   "t1": 113.982,
+   "score": 0.848,
+   "low": false
+  },
+  {
+   "w": "weigh",
+   "t0": 114.082,
+   "t1": 114.402,
+   "score": 0.304,
+   "low": true
+  },
+  {
+   "w": "Here",
+   "t0": 114.722,
+   "t1": 115.022,
+   "score": 0.78,
+   "low": false
+  },
+  {
+   "w": "now,",
+   "t0": 115.083,
+   "t1": 115.383,
+   "score": 0.736,
+   "low": false
+  },
+  {
+   "w": "here",
+   "t0": 115.463,
+   "t1": 115.683,
+   "score": 0.727,
+   "low": false
+  },
+  {
+   "w": "now",
+   "t0": 115.743,
+   "t1": 115.983,
+   "score": 0.925,
+   "low": false
+  },
+  {
+   "w": "Feet",
+   "t0": 116.303,
+   "t1": 116.544,
+   "score": 0.896,
+   "low": false
+  },
+  {
+   "w": "on",
+   "t0": 116.664,
+   "t1": 116.784,
+   "score": 0.595,
+   "low": false
+  },
+  {
+   "w": "the",
+   "t0": 116.804,
+   "t1": 116.884,
+   "score": 0.829,
+   "low": false
+  },
+  {
+   "w": "ground",
+   "t0": 116.924,
+   "t1": 117.164,
+   "score": 0.87,
+   "low": false
+  },
+  {
+   "w": "and",
+   "t0": 117.224,
+   "t1": 117.284,
+   "score": 0.658,
+   "low": false
+  },
+  {
+   "w": "I",
+   "t0": 117.344,
+   "t1": 117.404,
+   "score": 0.596,
+   "low": false
+  },
+  {
+   "w": "don't",
+   "t0": 117.424,
+   "t1": 117.624,
+   "score": 0.499,
+   "low": true
+  },
+  {
+   "w": "know",
+   "t0": 117.644,
+   "t1": 117.924,
+   "score": 0.583,
+   "low": false
+  },
+  {
+   "w": "But",
+   "t0": 118.005,
+   "t1": 118.125,
+   "score": 0.932,
+   "low": false
+  },
+  {
+   "w": "I'm",
+   "t0": 118.205,
+   "t1": 118.305,
+   "score": 0.549,
+   "low": false
+  },
+  {
+   "w": "floating,",
+   "t0": 118.345,
+   "t1": 119.666,
+   "score": 0.676,
+   "low": false
+  },
+  {
+   "w": "I'm",
+   "t0": 120.066,
+   "t1": 120.186,
+   "score": 0.681,
+   "low": false
+  },
+  {
+   "w": "floating",
+   "t0": 120.246,
+   "t1": 121.507,
+   "score": 0.643,
+   "low": false
+  },
+  {
+   "w": "Brand",
+   "t0": 121.527,
+   "t1": 121.847,
+   "score": 0.654,
+   "low": false
+  },
+  {
+   "w": "new",
+   "t0": 121.887,
+   "t1": 122.207,
+   "score": 0.651,
+   "low": false
+  },
+  {
+   "w": "morning,",
+   "t0": 122.247,
+   "t1": 122.768,
+   "score": 0.68,
+   "low": false
+  },
+  {
+   "w": "brand",
+   "t0": 123.428,
+   "t1": 123.748,
+   "score": 0.649,
+   "low": false
+  },
+  {
+   "w": "new",
+   "t0": 123.788,
+   "t1": 124.129,
+   "score": 0.678,
+   "low": false
+  },
+  {
+   "w": "morning",
+   "t0": 124.189,
+   "t1": 124.689,
+   "score": 0.718,
+   "low": false
+  },
+  {
+   "w": "Clean",
+   "t0": 125.53,
+   "t1": 125.83,
+   "score": 0.597,
+   "low": false
+  },
+  {
+   "w": "slate",
+   "t0": 125.89,
+   "t1": 126.29,
+   "score": 0.525,
+   "low": false
+  },
+  {
+   "w": "Clean",
+   "t0": 129.372,
+   "t1": 129.693,
+   "score": 0.623,
+   "low": false
+  },
+  {
+   "w": "slate",
+   "t0": 129.733,
+   "t1": 130.153,
+   "score": 0.487,
+   "low": true
+  },
+  {
+   "w": "Smile.",
+   "t0": 134.652,
+   "t1": 135.134,
+   "score": 0.766,
+   "low": false
+  },
+  {
+   "w": "It's",
+   "t0": 135.838,
+   "t1": 137.043,
+   "score": 0.456,
+   "low": true
+  },
+  {
+   "w": "safe.",
+   "t0": 137.063,
+   "t1": 137.485,
+   "score": 0.808,
+   "low": false
+  },
+  {
+   "w": "Smile.",
+   "t0": 138.449,
+   "t1": 138.952,
+   "score": 0.833,
+   "low": false
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>Clean Slate · 她睁眼</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #030305; overflow: hidden; }
+  canvas { display: block; }
+  #ui { position: fixed; left: 12px; bottom: 10px; font: 12px/1.4 Consolas, monospace; color: #8a8a90; user-select: none; }
+  #ui b { color: #e9e4d6; font-weight: normal; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "./vendor/three/build/three.module.js", "three/addons/": "./vendor/three/addons/" } }
+</script>
+</head>
+<body>
+<div id="ui">点击播放 · 空格暂停 · ←/→ 跳 1 s · ?t=36.5 看静帧</div>
+<script type="module" src="wake.js"></script>
+</body>
+</html>
