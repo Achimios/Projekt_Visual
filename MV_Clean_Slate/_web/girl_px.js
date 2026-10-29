@@ -60,3 +60,6 @@ export function girl(ctx, x, y, s, st = {}) {
   ctx.save(); ctx.imageSmoothingEnabled = false; ctx.globalAlpha = st.alpha ?? 1;
   ctx.drawImage(c, Math.round(x), Math.round(y), c.width * s, c.height * s); ctx.restore();
 }
+
+// 拿到某个表情的小画布（像素级访问：拼装、ASCII、切片都从这里取）
+export function girlCanvas(st = {}) { return PX.img.girl ? variant({ eyes: 'open', mouth: 'flat', ...st }) : null; }
