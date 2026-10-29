@@ -4,9 +4,10 @@
 // ② 词按内容查，不写死时间；逐词卡拉 OK：提前 0.4 s 暗显，唱到哪亮到哪，绝不抢跑。
 // ③ 字是画面的一部分，每个镜头换一种「字长在哪」：贴在网层上 / 挂在方向线上 / 立在海平线上 / 长在星星旁。
 // ④ 一根贯穿全段的母题：她的光点（青）。穿网 → 千条方向里选中一条 → 顺着线冲过来 → 聚成她 → 睁眼。
+// 第二版（她换成 girl_px.js 的像素她 + 站台分层）另借了 _参考_Short 的三招：方块大小 = 溶解进度；状态按 16 分音符量化刷新；黑帧当休止符。
 // ⑤ 颜色克制：青 = 她的线，品红 = 正在唱的词，酸性黄绿只属于「mine」那一刻，橙只属于睁眼那一下。
 // ⑥ 硬切落在词头 / 强拍；动作「停住 → 猛冲」（outExpo），不做飘的屏保运动；拉长的音用字宽轴拉长（WIDE 真的变宽）。
-import { drawCyberGirl, blitGirl, SIZE } from '../cybergirl.js';
+import { loadPx, layer, girl, PX } from '../girl_px.js';   // 第二版：主会话的像素她 + 站台分层（不改它）
 
 const Q = new URLSearchParams(location.search);
 const RENDER = Q.has('render');
@@ -102,23 +103,45 @@ function kword(w, t, x, y, size, o = {}) {
   return tw;
 }
 
-// ---------- 她（cybergirl.js 不改，只在外面缓存一层） ----------
-const GIRL_CACHE = new Map();
-function girlImg(eyes, mouth = 'flat', sway = 0, glowv = 1) {
-  const key = `${eyes}|${mouth}|${sway}|${glowv > 0.5 ? 1 : 0}`;
-  if (!GIRL_CACHE.has(key)) {
-    const src = drawCyberGirl({ eyes, mouth, sway, glow: glowv, hud: 0 });
-    const c = document.createElement('canvas'); c.width = SIZE[0]; c.height = SIZE[1]; c.getContext('2d').drawImage(src, 0, 0);
-    GIRL_CACHE.set(key, c);
-  }
-  return GIRL_CACHE.get(key);
-}
-// 聚成人形用：闭眼那张图的每个不透明像素
+// ---------- 她（第二版：主会话的 girl_px.js —— Seedream 分层像素化的她 + 站台；不改它，只在外面包一层） ----------
+await loadPx();
+const GL = PX.layers.girl;
+// 把整张站台图（176×222 格）放到屏幕上：第 (fx, fy) 格对准屏幕 (sx, sy)，每格 s 像素
+const stage = (s, fx, fy, sx, sy) => ({ s, ox: sx - fx * s, oy: sy - fy * s });
+const at = (st, key, depth = 1, cam = [0, 0]) => { const L = PX.layers[key]; return [st.ox + L.x * st.s + cam[0] * depth, st.oy + L.y * st.s + cam[1] * depth]; };
+const cell = (st, gx, gy) => [st.ox + gx * st.s, st.oy + gy * st.s];          // 全图坐标的一格 → 屏幕
+const EYE_C = GL.eyes.map(([x0, y0, x1, y1]) => [GL.x + (x0 + x1) / 2, GL.y + (y0 + y1) / 2]);   // 两只眼的中心（全图格）
+const CHEST = [GL.x + 62, GL.y + 128];
+// 聚成人形用：闭眼那张的每个不透明格
 const PIX = (() => {
-  const c = girlImg('closed', 'flat', 0, 0), d = c.getContext('2d').getImageData(0, 0, SIZE[0], SIZE[1]).data, a = [];
-  for (let y = 0; y < SIZE[1]; y++) for (let x = 0; x < SIZE[0]; x++) { const i = (y * SIZE[0] + x) * 4; if (d[i + 3] > 0) a.push([x, y, `rgb(${d[i]},${d[i + 1]},${d[i + 2]})`, hash(a.length * 3.7 + 1)]); }
+  const c = document.createElement('canvas'); c.width = GL.w; c.height = GL.h; const g = c.getContext('2d');
+  girl(g, 0, 0, 1, { eyes: 'closed', glow: 0 });
+  const d = g.getImageData(0, 0, GL.w, GL.h).data, a = [];
+  for (let y = 0; y < GL.h; y++) for (let x = 0; x < GL.w; x++) { const i = (y * GL.w + x) * 4; if (d[i + 3] > 40) a.push([x, y, `rgb(${d[i]},${d[i + 1]},${d[i + 2]})`, hash(a.length * 3.7 + 1)]); }
   return a;
 })();
+// 站台各层（远 → 近）。show(key) = 这一层出现了多少；strip(k) = 第 k 条星空切片的 [横移, 亮度]
+const ORDER = ['bg', 'frame', 'screen', 'mini', 'rail', 'girl', 'strip1', 'strip2', 'strip3', 'strip4', 'strip5'];
+function world(t, st, o = {}) {
+  const { cam = [0, 0], show = () => 1, lit = 1, strip = () => [0, 1, 0], face = {}, bob = 0, drawGirl = true } = o;
+  const put = (key, depth, a = 1, dx = 0, dy = 0) => { a *= show(key); if (a <= 0.01) return; const [x, y] = at(st, key, depth, cam); layer(ctx, key, x + dx, y + dy, st.s, { alpha: clamp(a) }); };
+  put('bg', 0.3); put('frame', 0.5); put('screen', 0.5, lit);
+  if (lit > 1) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; put('screen', 0.5, lit - 1); ctx.restore(); }
+  put('mini', 0.5, frameIdx(t) % 9 ? 1 : 0.2); put('rail', 0.8);
+  if (drawGirl && show('girl') > 0) { const [x, y] = at(st, 'girl', 1, cam); girl(ctx, x, y + bob, st.s, { alpha: show('girl'), ...face }); }
+  for (let k = 1; k <= 5; k++) {
+    const [dx, a, hot] = strip(k); put('strip' + k, 1, a, dx, bob);
+    if (hot > 0) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; put('strip' + k, 1, hot, dx, bob); ctx.restore(); }
+  }
+}
+// 图的左右边缘融进墨色（图是竖的，16:9 两边留给字）
+function sideFade(st, w = 140) {
+  const L = st.ox, R = st.ox + PX.size[0] * st.s;
+  ctx.fillStyle = rgba(C.ink); ctx.fillRect(0, 0, Math.max(0, L), H); ctx.fillRect(R, 0, Math.max(0, W - R), H);
+  for (const [x0, x1] of [[L + w, L], [R - w, R]]) { const g = ctx.createLinearGradient(x0, 0, x1, 0); g.addColorStop(0, rgba(C.ink, 0)); g.addColorStop(1, rgba(C.ink)); ctx.fillStyle = g; ctx.fillRect(Math.min(x0, x1), 0, w, H); }
+}
+// 拍上跳半格（像素的「呼吸」，整格对齐才不糊）
+const hop = (t, s) => (pulse(t, lastBeat(t), 0.12) > 0.5 ? -Math.round(s * 0.5) : 0);
 
 // ---------- 背景 ----------
 function bg(top = C.ink, bot = C.night) {
@@ -272,25 +295,38 @@ function shotB(t) {
 }
 
 // =====================================================================
-// C · 36.06–39.92「Brand new girl. At the edge of the game…」：线冲到中心 → 像素聚成她 → girl 时睁眼。
+// C · 36.06–39.92「Brand new girl. At the edge of the game…」（第二版）
+// 线从左上砸到她胸口 → 她从大方块「解码」出来（方块大小 = 进度，按 16 分音符一级级变小，不用透明度：_参考_Short #1）
+// → girl：睁眼，站台一层层亮起来（bg → 屏框 → 屏幕 → 栏杆 → 星空切片，「layer by layer」的回声）。
 // =====================================================================
-const HORIZON = H * 0.6;
-const GX = W / 2 - 300, GY = 300, GPX = 3;   // 她：3 倍像素，胸像
-// 海：透视点阵；圈从她脚下往外亮
-function sea(t, rings, oy = 0) {
-  const cols = 64, rows = 30;
+const SIXTEENTH = 0.12;
+const CS = stage(5, 88, EYE_C[0][1] + 2, W / 2, H * 0.36);
+// 马赛克画法：先缩到 1/b 再放大，b = 一块几格
+const mosaicTmp = document.createElement('canvas'), mosaicSmall = document.createElement('canvas');
+function mosaic(drawAt1, w, h, x, y, s, b, alpha = 1) {
+  if (b <= 1) return false;
+  mosaicTmp.width = w; mosaicTmp.height = h; const tg = mosaicTmp.getContext('2d'); tg.clearRect(0, 0, w, h); drawAt1(tg);
+  const sw = Math.max(1, Math.ceil(w / b)), sh = Math.max(1, Math.ceil(h / b));
+  mosaicSmall.width = sw; mosaicSmall.height = sh; const sg = mosaicSmall.getContext('2d'); sg.imageSmoothingEnabled = true; sg.drawImage(mosaicTmp, 0, 0, sw, sh);
+  ctx.save(); ctx.imageSmoothingEnabled = false; ctx.globalAlpha = alpha; ctx.drawImage(mosaicSmall, Math.round(x), Math.round(y), sw * b * s, sh * b * s); ctx.restore();
+  return true;
+}
+const BLOCKS = [24, 12, 6, 3, 1];
+const blockAt = (t, t0) => t < t0 ? 0 : BLOCKS[Math.min(BLOCKS.length - 1, Math.floor((t - t0) / SIXTEENTH))];
+const HORIZON_C = CS.oy + PX.layers.rail.y * CS.s;   // 栏杆顶 = 「the edge」
+function sea(t, rings, horizon) {
+  const cols = 64, rows = 26;
   for (let r = 1; r <= rows; r++) {
-    const z = 1 + r * r * 0.06, sy = HORIZON + oy + 420 / z;
+    const z = 1 + r * r * 0.06, sy = horizon + 380 / z - 380 / 1.06 + 12;
     if (sy > H + 10) continue;
     for (let c = -cols / 2; c <= cols / 2; c++) {
       const wx = c * 1.6, sx = W / 2 + (wx * 260) / z;
       if (sx < -10 || sx > W + 10) continue;
       const dist = Math.hypot(wx, z * 1.3);
-      let b = 0.16 + 0.06 * Math.sin(c * 1.7 + r * 2.3 + t * 2);
-      let col = C.lav;
+      let b = 0.14 + 0.05 * Math.sin(c * 1.7 + r * 2.3 + t * 2), col = C.lav;
       for (const [t0, v, colR, amp] of rings) {
         if (t < t0) continue;
-        const front = v * (t - t0), e = Math.exp(-((dist - front) ** 2) / 1.6) * amp * Math.pow(0.5, (t - t0) / 0.9);
+        const e = Math.exp(-((dist - v * (t - t0)) ** 2) / 1.6) * amp * Math.pow(0.5, (t - t0) / 0.9);
         if (e > 0.02) { b += e; col = mixc(col, colR, e * 1.5); }
       }
       const s = Math.max(1.5, 7 / Math.sqrt(z)) * (1 + clamp(b - 0.3) * 0.8);
@@ -298,132 +334,142 @@ function sea(t, rings, oy = 0) {
     }
   }
 }
-const ringsC = () => {
-  const r = [[GIRL.s, 16, C.orange, 1.6]];   // 橙：只这一下
-  BEATS.filter(b => b > GIRL.s + 0.2 && b < CUT_D + 0.1).forEach((b, i) => r.push([b, 14, i % 2 ? C.pink : C.cyan, 0.8]));
-  return r;
-};
-function girlState(t) {
-  const bi = beatIdx(t), sway = Math.round(2 * Math.sin((bi % 4) * 1.5708 + (t - lastBeat(t)) * 3)) / 2;
-  return { sway, bob: -8 * pulse(t, lastBeat(t), 0.1) };
+const RINGS_C = [[GIRL.s, 16, C.orange, 1.6], ...BEATS.filter(b => b > GIRL.s + 0.2 && b < CUT_D + 0.1).map((b, i) => [b, 14, i % 2 ? C.pink : C.cyan, 0.8])];
+function faceC(t) {
+  const blink = t > 38.94 && t < 39.06;
+  return { eyes: t < GIRL.s ? 'closed' : t < GIRL.s + 0.3 ? 'wide' : blink ? 'blink' : 'open', mouth: t > 38.4 ? 'smile' : 'flat', glow: t < GIRL.s ? 0 : 1 };
 }
 function shotC(t) {
-  bg(C.ink, C.night);
-  const shake = 18 * pulse(t, GIRL.s, 0.08) + 8 * pulse(t, CUT_C, 0.06);
-  const fi = frameIdx(t);
+  bg(C.ink, C.ink);
+  const shake = 18 * pulse(t, GIRL.s, 0.08) + 8 * pulse(t, CUT_C, 0.06), fi = frameIdx(t);
   ctx.save(); ctx.translate((hash(fi) - 0.5) * shake, (hash(fi + 50) - 0.5) * shake);
-  sea(t, ringsC());
-  // 海平线 = 「the edge」：唱到 edge 时亮成青色
+  // 站台：girl 那一下起，每 1/32 拍（0.06 s）亮一层，每层自己也从方块解码出来
+  const tLayer = key => GIRL.s + 0.02 + ORDER.indexOf(key) * 0.06;
+  ['bg', 'frame', 'screen', 'mini', 'rail'].forEach(key => {
+    const t0 = tLayer(key); if (t < t0) return;
+    const L = PX.layers[key], [x, y] = at(CS, key), b = BLOCKS[Math.min(4, Math.floor((t - t0) / 0.04) + 1)];
+    if (!mosaic(g => g.drawImage(PX.img[key], 0, 0), L.w, L.h, x, y, CS.s, b)) layer(ctx, key, x, y, CS.s, { alpha: key === 'screen' ? 0.85 + 0.15 * pulse(t, lastBeat(t), 0.1) : 1 });
+  });
+  sideFade(CS);
+  sea(t, RINGS_C, HORIZON_C);
+  // 海平线 = 栏杆顶的延长线；唱到 edge 亮成青色
   const eg = pulse(t, EDGE.s, 0.25);
-  ctx.strokeStyle = rgba(mixc(C.lav, C.cyan, eg), 0.35 + 0.6 * eg); ctx.lineWidth = 1.2 + 2 * eg; ctx.beginPath(); ctx.moveTo(0, HORIZON); ctx.lineTo(W, HORIZON); ctx.stroke();
-  // 上一镜头那根线从右下冲出画 → 这里从左上角砸进来（画面方向连贯）
-  const hit = outExpo((t - CUT_C) / 0.12), fade = 1 - smooth(CUT_C + 0.15, CUT_C + 0.5, t);
-  const IX = W / 2, IY = GY + 150 * GPX;
-  if (fade > 0) {
-    ctx.strokeStyle = rgba(C.lime, fade); ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(-40, -40); ctx.lineTo(lerp(-40, IX, hit), lerp(-40, IY, hit)); ctx.stroke();
-  }
-  // 聚成人形：像素从撞击点飞到各自位置（运动模糊会把它们拖成线）
-  const T_ASM = CUT_C + 0.08, { sway, bob } = girlState(t);
-  if (t < T_ASM + 0.62) {
+  ctx.strokeStyle = rgba(mixc(C.lav, C.cyan, eg), 0.35 + 0.6 * eg); ctx.lineWidth = 1.2 + 2 * eg; ctx.beginPath(); ctx.moveTo(0, HORIZON_C); ctx.lineTo(W, HORIZON_C); ctx.stroke();
+  // 上一镜头那根线从右下冲出 → 这里从左上砸进她胸口
+  const [IX, IY] = cell(CS, ...CHEST), hit = outExpo((t - CUT_C) / 0.12), fade = 1 - smooth(CUT_C + 0.15, CUT_C + 0.5, t);
+  if (fade > 0) { ctx.strokeStyle = rgba(C.lime, fade); ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(-40, -40); ctx.lineTo(lerp(-40, IX, hit), lerp(-40, IY, hit)); ctx.stroke(); }
+  // 她：撞击后像素先炸开飞向各自的位置（运动模糊拖成线），然后从大方块一级级解码成清晰的她
+  const T_ASM = CUT_C + 0.06, T_DEC = CUT_C + 0.42, [gx, gy] = at(CS, 'girl'), bob = hop(t, CS.s), face = faceC(t);
+  if (t < T_DEC) {
     for (const [x, y, col, h] of PIX) {
-      const tx = GX + x * GPX, ty = GY + y * GPX, d = Math.hypot(tx - IX, ty - IY) / 700;
-      const u = outExpo((t - T_ASM - 0.25 * h * d) / (0.22 + 0.25 * h));
+      if ((x + y) % 2) continue;   // 隔格画：一半的格就够看出形，省一半时间
+      const tx = gx + x * CS.s, ty = gy + y * CS.s, d = Math.hypot(tx - IX, ty - IY) / 700;
+      const u = outExpo((t - T_ASM - 0.2 * h * d) / (0.18 + 0.2 * h));
       if (u <= 0) continue;
-      const ang = h * 40, fl = 180 * (1 - u) * h;
-      ctx.fillStyle = col; ctx.fillRect(lerp(IX, tx, u) + Math.cos(ang) * fl, lerp(IY, ty, u) + Math.sin(ang) * fl, GPX, GPX);
+      const ang = h * 40, fl = 160 * (1 - u) * h;
+      ctx.fillStyle = col; ctx.fillRect(lerp(IX, tx, u) + Math.cos(ang) * fl, lerp(IY, ty, u) + Math.sin(ang) * fl, CS.s * 1.4, CS.s * 1.4);
     }
   } else {
-    const eyes = t < GIRL.s ? 'closed' : t < GIRL.s + 0.3 ? 'wide' : 'open';
-    blitGirl(ctx, girlImg(eyes, t > 38.4 ? 'smile' : 'flat', sway, t < GIRL.s ? 0 : 1), GX, GY + bob, GPX);
+    const b = blockAt(t, T_DEC);
+    if (!mosaic(g => girl(g, 0, 0, 1, face), GL.w, GL.h, gx, gy + bob, CS.s, b)) girl(ctx, gx, gy + bob, CS.s, face);
   }
-  spark(IX, IY, 10 * (1 - smooth(CUT_C, CUT_C + 0.3, t)), C.cyan, 1 - smooth(CUT_C, CUT_C + 0.3, t));
-  // 睁眼那一下：眼睛位置闪一道橙
-  if (t >= GIRL.s) { const k = pulse(t, GIRL.s, 0.1); for (const ex of [86, 116]) spark(GX + ex * GPX, GY + 98 * GPX + bob, 14 * k, C.orange, k); }
-  // BRAND / NEW：一词一锤，长音时字宽拉开
-  kword(BRAND, t, GX - 20, 470, 150, { upper: true, align: 'right', wd: lerp(62, 100, outExpo(wp(BRAND, t))), pre: 0.15 });
-  kword(NEW, t, GX + 600 + 20, 470, 150, { upper: true, wd: lerp(62, 112, outExpo(wp(NEW, t))), pre: 0.15 });
+  const sp = 1 - smooth(CUT_C, CUT_C + 0.3, t); spark(IX, IY, 10 * sp, C.cyan, sp);
+  // 睁眼那一下：两只眼闪一道橙（只属于这一刻）
+  if (t >= GIRL.s) { const k = pulse(t, GIRL.s, 0.1); for (const e of EYE_C) { const [ex, ey] = cell(CS, ...e); spark(ex, ey + bob, 14 * k, C.orange, k); } }
+  // BRAND / NEW 在两侧留白里；GIRL. 压在她的黑外套上
+  const L0 = CS.ox, R0 = CS.ox + PX.size[0] * CS.s;
+  kword(BRAND, t, L0 - 10, 420, 120, { upper: true, align: 'right', wd: lerp(62, 87.5, outExpo(wp(BRAND, t))), pre: 0.15 });
+  kword(NEW, t, R0 + 10, 420, 120, { upper: true, wd: lerp(62, 125, outExpo(wp(NEW, t))), pre: 0.15 });
   kword(GIRL, t, W / 2, 1010, 200, { upper: true, align: 'center', wd: 125, pre: 0.2 });
-  // 「at the edge of the game, never been here, but I don’t wanna wait.」：打字一样立在海平线上
-  let x = 110, row = 0;
-  EDGE_PHRASE.forEach(w => {
-    if (w.k === 'never') { x = W / 2 + 330; row = 0; }
-    if (t < w.s - 0.05) return;
-    const y = HORIZON - 18 + row * 38, s = w.k === 'edge' || w.k === 'wait' ? 40 : 30;
-    const age = t - w.s, col = age < 0.06 ? C.white : t < w.e ? C.pink : mixc(C.pink, C.bone, (t - w.e) / 0.3);
-    mono(w.w, x, y, s, col, 1, 'left', 500);
-    ctx.font = `500 ${s}px A1Mono, Consolas, monospace`; x += ctx.measureText(w.w + ' ').width;
-    if (x > W / 2 - 330 && row === 0 && x < W / 2) { x = 110; row = 1; }
-  });
+  // 后半句：mono 打字，立在海平线（栏杆延长线）上；左边一段、右边一段
+  const blocks = [[EDGE_PHRASE.filter(w => w.s < word('never', 37.6).s), 70], [EDGE_PHRASE.filter(w => w.s >= word('never', 37.6).s), R0 + 40]];
+  for (const [ws, x0] of blocks) {
+    let x = x0, row = 0;
+    for (const w of ws) {
+      const s = w.k === 'edge' || w.k === 'wait' ? 40 : 30;
+      ctx.font = `500 ${s}px A1Mono, Consolas, monospace`; const ww = ctx.measureText(w.w + ' ').width;
+      if (x + ww > (x0 < W / 2 ? L0 - 20 : W - 40)) { x = x0; row++; }
+      if (t >= w.s - 0.05) {
+        const col = t - w.s < 0.06 ? C.white : t < w.e ? C.pink : mixc(C.pink, C.bone, (t - w.e) / 0.3);
+        mono(w.w, x, HORIZON_C - 18 + row * 44, s, col, 1, 'left', 500);
+      }
+      x += ww;
+    }
+  }
   ctx.restore();
-  mono(t < GIRL.s ? 'boot · weights loaded · eyes: closed' : 'boot ok · eyes: open · hello', 96, H - 96, 22, t < GIRL.s ? C.lav : C.cyan, 0.85);
+  mono(t < GIRL.s ? 'decode · weights loaded · eyes: closed' : 'boot ok · eyes: open · hello', 70, H - 70, 22, t < GIRL.s ? C.lav : C.cyan, 0.85);
 }
 
 // =====================================================================
-// D · 39.92–41.36「Eyes wide open.」：眼睛大特写，虹膜里映着那片海。WIDE 唱多长字就拉多宽。
+// D · 39.92–41.36「Eyes wide open.」：眼睛大特写（一格 = 二十多像素），虹膜里亮着星点；WIDE 唱多长字就拉多宽。
+// 「open.」唱完留 3 帧黑当休止符（_参考_Short #3），再切到亮的海。
 // =====================================================================
+const MID_EYE = [(EYE_C[0][0] + EYE_C[1][0]) / 2, (EYE_C[0][1] + EYE_C[1][1]) / 2];
 function shotD(t) {
   bg(C.ink, C.ink);
-  const u = (t - CUT_D) / (CUT_E - CUT_D), px = lerp(11, 12.5, u) + 1.2 * outExpo((t - WIDE.s) / 0.3);
-  const eyes = t < EYES.s ? 'half' : t < WIDE.s ? 'open' : 'wide';
-  const ox = W / 2 - 101 * px, oy = H * 0.52 - 98 * px;
-  blitGirl(ctx, girlImg(eyes, 'flat', 0, 1), ox, oy, px);
-  // 虹膜里的海：三圈小点，按拍子一圈圈亮
-  const h = eyes === 'half' ? 4 : 7;
-  for (const ex of [86.5, 115.5]) {
-    const cx = ox + ex * px, cy = oy + 99 * px;
-    ctx.save(); ctx.beginPath(); ctx.ellipse(cx, cy, 6 * px, Math.min(h, 7.5) * px, 0, 0, 6.2832); ctx.clip();
-    for (let ring = 1; ring <= 3; ring++) {
-      const n = 10 + ring * 6, rr = ring * 1.6 * px, lit = pulse(t, lastBeat(t) + ring * 0.05, 0.18);
-      for (let k = 0; k < n; k++) {
-        const a = (k / n) * 6.2832 + t * 0.3 * (ring % 2 ? 1 : -1);
-        ctx.fillStyle = rgba(k % 3 ? C.cyan : C.white, 0.35 + 0.6 * lit); ctx.fillRect(cx + Math.cos(a) * rr - 3, cy + Math.sin(a) * rr * 0.8 - 3, 6, 6);
-      }
+  if (t > OPEN.e) return;   // 休止符
+  const u = (t - CUT_D) / (CUT_E - CUT_D), s = Math.round(lerp(22, 25, u) + 2 * outExpo((t - WIDE.s) / 0.3));
+  const st = stage(s, MID_EYE[0], MID_EYE[1], W / 2, H * 0.5);
+  const eyes = t < EYES.s ? 'slit' : t < WIDE.s ? 'open' : 'wide';
+  world(t, st, { drawGirl: false, cam: [0, 0] });
+  const [gx, gy] = at(st, 'girl');
+  girl(ctx, gx, gy, s, { eyes, mouth: 'flat' });
+  // 虹膜里的星点：按 16 分音符整体换一次位置（状态量化），拍点上更亮
+  const q = Math.floor((t - CUT_D) / SIXTEENTH), h = eyes === 'wide' ? 4 : eyes === 'open' ? 3 : 1, lit = pulse(t, lastBeat(t), 0.15);
+  GL.eyes.forEach(([x0, y0, x1, y1], e) => {
+    const by = y1 - 1, rx = gx + (x0 + 1) * s, ry = gy + (by - h) * s, rw = (x1 - x0 - 2) * s, rh = h * s;
+    for (let k = 0; k < 7; k++) {
+      const px = rx + hash(q * 31 + k * 7 + e * 101) * rw, py = ry + hash(q * 17 + k * 13 + e * 59) * rh, z = s * (k < 2 ? 0.35 : 0.2);
+      ctx.fillStyle = rgba(k % 3 ? C.cyan : C.white, 0.5 + 0.5 * lit); ctx.fillRect(px - z / 2, py - z / 2, z, z);
     }
-    ctx.restore();
-  }
-  // 字压在头发上：头发是亮蓝，字用墨色（不加描边 / 光晕，pdoom 的规矩）
-  const inkT = { dimCol: C.ink, dim: 0.3, cool: C.ink };
-  let x = 350;
-  x += kword(EYES, t, x, 220, 150, { ...inkT, upper: true, wd: 87.5 }) + 36;
-  kword(WIDE, t, x, 220, 150, { ...inkT, upper: true, wd: lerp(62, 125, inOutCubic(wp(WIDE, t))) });
-  kword(OPEN, t, 1640, 1030, 150, { upper: true, align: 'right', wd: 100 });   // 右下是暗紫的发梢：这里用骨白
-  mono(`eyes: ${eyes} · fov ${(60 + 60 * outExpo((t - WIDE.s) / 0.3)).toFixed(0)}°`, 96, H - 96, 22, C.cyan, 0.8);
+  });
+  let x = 120;
+  x += kword(EYES, t, x, 190, 150, { upper: true, wd: 87.5 }) + 36;
+  kword(WIDE, t, x, 190, 150, { upper: true, wd: lerp(62, 125, inOutCubic(wp(WIDE, t))) });
+  kword(OPEN, t, W - 120, 1010, 150, { upper: true, align: 'right', wd: 100 });
+  mono(`eyes: ${eyes} · fov ${(60 + 60 * outExpo((t - WIDE.s) / 0.3)).toFixed(0)}°`, 70, H - 70, 22, C.cyan, 0.8);
 }
 
 // =====================================================================
-// E · 41.36–43.8「The sea’s lighting up, every little star says wake.」：拉远，海一圈圈亮；五个词各挂一颗星。
+// E · 41.36–43.8「The sea’s lighting up, every little star says wake.」：拉远到整个站台。
+// 「sea’s lighting up」= 大屏幕从暗亮到过曝；五条星空切片各认一个词（every / little / star / says / wake），
+// 唱到哪条哪条就跳、就亮；切片平时按 16 分音符量化地轻轻错位（连续运动 + 量化刷新 + 稀疏爆发：_参考_Short #2）。
 // =====================================================================
-const STARS = STAR_PHRASE.map((w, i) => [W * (0.14 + 0.18 * i) + 40 * Math.sin(i * 2.1), H * (0.7 + 0.09 * ((i * 3) % 4) / 3)]);
+const STRIP_WORDS = [...STAR_PHRASE, WAKE];
 function shotE(t) {
-  bg(C.ink, C.night);
-  const pull = outExpo((t - CUT_E) / 0.5);
-  const rings = BEATS.filter(b => b >= CUT_E - 0.05 && b < T1 + 0.1).map((b, i) => [b, 16, i % 2 ? C.pink : C.cyan, 1]);
-  rings.push([WAKE.s, 22, C.bone, 1.4]);
-  sea(t, rings, 40);
-  // 她小一点，浮在海平线上
-  const px = lerp(3.2, 2, pull), { sway, bob } = girlState(t);
-  const gx = W / 2 - 100 * px, gy = HORIZON + 40 - 190 * px;
-  blitGirl(ctx, girlImg(t > WAKE.s ? 'wide' : 'open', 'smile', sway, 1), gx, gy + bob, px);
-  const fade = ctx.createLinearGradient(0, HORIZON - 60, 0, HORIZON + 110); fade.addColorStop(0, 'rgba(12,9,30,0)'); fade.addColorStop(1, rgba(C.night));
-  ctx.fillStyle = fade; ctx.fillRect(gx - 10, HORIZON - 60, 200 * px + 20, 300);
-  // 「The sea’s lighting up,」左上，瑞士式两行
-  let x = 110;
-  ctx.save(); ctx.globalAlpha = 1 - smooth(WAKE.s - 0.3, WAKE.s, t);
-  SEA_PHRASE.forEach((w, i) => { if (i === 2) x = 110; x += kword(w, t, x, i < 2 ? 210 : 330, 110, { wd: w.k === 'lighting' ? lerp(87.5, 125, wp(w, t)) : 87.5 }) + 28; });
-  ctx.restore();
-  // 五颗星，各挂一个词：唱到就亮，引线连到 mono 标签
-  STAR_PHRASE.forEach((w, i) => {
-    if (t < w.s - 0.4) return;
-    const [sx, sy] = STARS[i], on = t >= w.s, k = on ? 0.6 + 0.4 * pulse(t, w.s, 0.2) : 0.25;
-    if (on) { ctx.strokeStyle = rgba(C.bone, 0.9 * k); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(sx - 24 * k, sy); ctx.lineTo(sx + 24 * k, sy); ctx.moveTo(sx, sy - 24 * k); ctx.lineTo(sx, sy + 24 * k); ctx.stroke(); }
-    spark(sx, sy, 4 + 6 * k, i % 2 ? C.pink : C.cyan, k);
-    ctx.strokeStyle = rgba(C.lav, 0.6); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(sx, sy - 30); ctx.lineTo(sx, sy - 90); ctx.lineTo(sx + 20, sy - 90); ctx.stroke();
-    kword(w, t, sx + 28, sy - 80, w === WAKE ? 64 : 40, { wght: 500, wd: 100, dim: 0.4 });
-    mono(`★ ${String(i + 1).padStart(2, '0')}`, sx + 28, sy - 52, 16, C.lav, 0.7);
+  bg(C.ink, C.ink);
+  const pull = outExpo((t - CUT_E) / 0.5), s = Math.round(lerp(7, 5, pull));
+  const st = stage(s, 88, 104, W / 2, H * 0.5 + 20), bob = hop(t, s);
+  const LIGHT = SEA_PHRASE.find(w => w.k === 'lighting');
+  const lit = lerp(0.25, 1, smooth(LIGHT.s, LIGHT.e, t)) + 0.6 * pulse(t, lastBeat(t), 0.1) * (t > LIGHT.s ? 1 : 0) + 0.8 * pulse(t, WAKE.s, 0.2);
+  const q = Math.floor(t / SIXTEENTH);
+  const strip = k => {
+    const w = STRIP_WORDS[k - 1], on = t >= w.s, kick = on ? pulse(t, w.s, 0.15) : 0, wake = pulse(t, WAKE.s, 0.2);
+    const idle = hash(q * 7 + k) < 0.25 ? (hash(q * 13 + k) - 0.5) * 6 * s : 0;
+    const dx = idle + (hash(k * 9.1) - 0.5) * 40 * s * (kick + wake);
+    return [dx, on ? 1 : 0.45, 0.9 * kick + 0.9 * wake];
+  };
+  const blink = t > 42.3 && t < 42.42;
+  world(t, st, { lit, strip, bob, face: { eyes: t > WAKE.s ? 'wide' : blink ? 'blink' : 'open', mouth: t > LIGHT.s ? 'smile' : 'flat' } });
+  sideFade(st);
+  // 五条切片各挂一个词：引线从切片右端拉到右侧留白，词按唱的顺序竖着排
+  const R0 = st.ox + PX.size[0] * st.s;
+  STRIP_WORDS.forEach((w, i) => {
+    if (w === WAKE || t < w.s - 0.4) return;
+    const L = PX.layers['strip' + (i + 1)], [sx, sy] = cell(st, L.x + L.w, L.y + L.h / 2), on = t >= w.s;
+    const lx = R0 + 50, ly = 470 + i * 78;
+    ctx.strokeStyle = rgba(on ? C.bone : C.lav, on ? 0.85 : 0.35); ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(sx + 6, sy); ctx.lineTo(R0 + 20, ly - 12); ctx.lineTo(lx - 10, ly - 12); ctx.stroke();
+    ctx.fillStyle = rgba(on ? C.bone : C.lav, on ? 1 : 0.4); ctx.fillRect(sx + 3, sy - 3, 6, 6);
+    kword(w, t, lx, ly, 52, { wght: 800, wd: 100, dim: 0.45 });
+    mono(`strip.${i + 1}`, lx + 2, ly + 22, 15, C.lav, 0.7);
   });
-  // wake：最后一锤，全场大字
-  if (t > WAKE.s - 0.05) kword(WAKE, t, W / 2, H * 0.36, 260 * lerp(0.85, 1, outBack((t - WAKE.s) / 0.25)), { upper: true, align: 'center', wd: 125, pre: 0.05 });
-  mono('stars awake: ' + STAR_PHRASE.filter(w => t >= w.s).length + ' / ∞', 96, H - 96, 22, C.cyan, 0.8);
+  // 「The sea’s / lighting up,」在左边留白里，瑞士式两行
+  ctx.save(); ctx.globalAlpha = 1 - smooth(WAKE.s - 0.3, WAKE.s, t);
+  let x = 70;
+  SEA_PHRASE.forEach((w, i) => { if (i === 2) x = 70; x += kword(w, t, x, i < 2 ? 260 : 345, 78, { wd: w.k === 'lighting' ? lerp(62, 87.5, wp(w, t)) : 62 }) + 20; });
+  ctx.restore();
+  if (t > WAKE.s - 0.05) kword(WAKE, t, W / 2, H * 0.25, 260 * lerp(0.85, 1, outBack((t - WAKE.s) / 0.25)), { upper: true, align: 'center', wd: 125, pre: 0.05 });
+  mono('stars awake: ' + STRIP_WORDS.filter(w => t >= w.s).length + ' / 5', 70, H - 70, 22, C.cyan, 0.8);
 }
 
 // ---------- 一个子帧 ----------
@@ -447,6 +493,9 @@ function post(t) {
   // 冲击帧：硬切的第一帧压一层亮；睁眼那一帧是橙
   const fl = (t0, col, a) => { if (t >= t0 && t - t0 < 1 / FPS) { out.fillStyle = rgba(col, a); out.fillRect(0, 0, W, H); } };
   CUTS.forEach(c => fl(c, C.bone, 0.3)); fl(GIRL.s, C.orange, 0.35); fl(WAKE.s, C.bone, 0.4);
+  // 线冲过来之前：曝光一开一关，亮帧越来越短（4 → 3 → 2 → 1 → 1 帧），落地那一帧全白（参考库 Halo 4 片头 0:47–0:51 / 1:33）
+  for (const [off, nf] of [[-0.56, 4], [-0.36, 3], [-0.22, 2], [-0.13, 1], [-0.07, 1]]) { const a = CUT_C + off; if (t >= a && t < a + nf / FPS) { out.fillStyle = rgba(C.bone, 0.22); out.fillRect(0, 0, W, H); } }
+  fl(CUT_C, C.white, 0.85);
   out.font = '14px A1Mono, Consolas, monospace'; out.textAlign = 'right'; out.fillStyle = 'rgba(246,242,252,0.35)';
   out.fillText(`CLEAN SLATE · 她睁眼 · animator1 (pdoom 手法) · t = ${t.toFixed(2)}`, W - 40, H - 30);
 }
@@ -468,7 +517,7 @@ await document.fonts.load('900 100px A1Archivo'); await document.fonts.load('exp
 const ui = document.getElementById('ui');
 if (RENDER) {
   ui.remove();
-  const n = Math.round((T1 - T0) * FPS), dst = Q.get('out') ?? '-5_Clean Slate/样片/风格小样_她睁眼_animator1.mp4';
+  const n = Math.round((T1 - T0) * FPS), dst = Q.get('out') ?? '-5_Clean Slate/样片/风格小样_她睁眼_animator1_v2.mp4';
   await fetch(`/start?w=${W}&h=${H}&fps=${FPS}&t0=${T0}&t1=${T1}&vflip=0&out=${encodeURIComponent(dst)}`, { method: 'POST' });
   for (let i = 0; i < n; i++) {
     draw(T0 + i / FPS);
