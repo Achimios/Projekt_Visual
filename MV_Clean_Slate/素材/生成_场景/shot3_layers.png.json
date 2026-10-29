@@ -1,0 +1,62 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Decompose this image into depth layers: the far background (fully inpainted behind the girl), the girl as one layer, and any foreground elements. Keep the image unchanged.",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "layer_decomposition": true,
+ "output_format": "png",
+ "image": "data:image/png;base64,iVBORw0KGgoAAAANSU…(4116618 chars)",
+ "refs_src": [
+  "shot3.png"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 3,
+  "output_tokens": 26968,
+  "total_tokens": 26968
+ },
+ "layers": [
+  {
+   "file": "shot3_layers_layer1.png",
+   "z_index": 1,
+   "name": "far background neon cityscape and night sky",
+   "description": "The full far background consisting of the dark night sky with faint clouds and the entire neon-lit cyberpunk city skyscraper skyline, no other foreground objects included",
+   "bounding_box": {
+    "absolute": [
+     0,
+     353,
+     2048,
+     1152
+    ],
+    "normalized": [
+     0,
+     306,
+     1000,
+     999
+    ]
+   }
+  },
+  {
+   "file": "shot3_layers_layer2.png",
+   "z_index": 2,
+   "name": "jumping anime girl",
+   "description": "The full single-layer anime girl with short blue hair, glowing pink eyes, black oversized coat, white top, black shorts and black shoes, in a joyful jumping pose, no other elements included",
+   "bounding_box": {
+    "absolute": [
+     551,
+     16,
+     1472,
+     1000
+    ],
+    "normalized": [
+     269,
+     14,
+     718,
+     867
+    ]
+   }
+  }
+ ]
+}

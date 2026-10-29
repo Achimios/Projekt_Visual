@@ -1,0 +1,70 @@
+{
+ "grid": [
+  192,
+  108
+ ],
+ "shots": {
+  "shot1": {
+   "full": "shot1.png",
+   "layers": [
+    {
+     "file": "shot1_L1.png",
+     "name": "Far starry digital background",
+     "x": 0,
+     "y": 6,
+     "w": 192,
+     "h": 102
+    },
+    {
+     "file": "shot1_L2.png",
+     "name": "Blue hair girl",
+     "x": 60,
+     "y": 7,
+     "w": 72,
+     "h": 94
+    },
+    {
+     "file": "shot1_L3.png",
+     "name": "Neon light ribbon foreground elements",
+     "x": 0,
+     "y": 22,
+     "w": 192,
+     "h": 67
+    }
+   ]
+  },
+  "shot2": {
+   "full": "shot2.png",
+   "layers": []
+  },
+  "shot3": {
+   "full": "shot3.png",
+   "layers": [
+    {
+     "file": "shot3_L1.png",
+     "name": "far background neon cityscape and night sky",
+     "x": 0,
+     "y": 33,
+     "w": 192,
+     "h": 75
+    },
+    {
+     "file": "shot3_L2.png",
+     "name": "jumping anime girl",
+     "x": 52,
+     "y": 2,
+     "w": 86,
+     "h": 92
+    }
+   ]
+  },
+  "shot4": {
+   "full": "shot4.png",
+   "layers": []
+  },
+  "shot5": {
+   "full": "shot5.png",
+   "layers": []
+  }
+ }
+}
