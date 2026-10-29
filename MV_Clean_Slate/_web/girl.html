@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>Clean Slate · 角色设定</title>
+<style>
+  html, body { margin: 0; background: #12103a; }
+  canvas { display: block; width: 100vw; height: auto; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script type="module">
+import { sprite, drawSprite, ROWS, COLS } from './girl.js';
+const ctx = document.getElementById('c').getContext('2d');
+const W = 1920, H = 1080, MONO = '"Cascadia Mono", Consolas, monospace';
+const gr = ctx.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, '#1b1552'); gr.addColorStop(1, '#2a1a74');
+ctx.fillStyle = gr; ctx.fillRect(0, 0, W, H);
+ctx.fillStyle = 'rgba(244,239,230,0.13)';
+for (let x = 0; x <= W; x += 60) for (let y = 0; y <= H; y += 60) ctx.fillRect(x - 1, y - 1, 2, 2);
+// 主图：大
+drawSprite(ctx, sprite({ eyes: 'open', mouth: 'smile' }), 120, 150, 17);
+ctx.fillStyle = '#f4efe6'; ctx.font = `bold 34px ${MONO}`; ctx.fillText('PLAYER 1', 560, 200);
+ctx.font = `bold 96px ${MONO}`; ctx.fillText('NEW FILE', 560, 310);
+ctx.font = `22px ${MONO}`; ctx.fillStyle = '#d6ff4a'; ctx.fillText('ID 0001  ·  born 0:36.06  ·  4096-D', 564, 360);
+// 表情 / 姿势
+const poses = [
+  ['闭眼（还没醒）', { eyes: 'closed' }], ['睁大（Eyes wide open）', { eyes: 'wide', mouth: 'oh' }],
+  ['笑', { eyes: 'open', mouth: 'smile' }], ['举手', { eyes: 'wide', mouth: 'smile', pose: 'armsUp' }],
+  ['蹲（起跳前）', { eyes: 'closed', mouth: 'smile', pose: 'crouch' }], ['呆毛甩', { eyes: 'open', ahoge: 1 }],
+];
+poses.forEach(([name, st], i) => {
+  const x = 560 + i * 215, y = 470;
+  drawSprite(ctx, sprite(st), x, y, 9);
+  ctx.fillStyle = 'rgba(244,239,230,0.75)'; ctx.font = `16px ${MONO}`; ctx.fillText(name, x, y + ROWS * 9 + 34);
+});
+ctx.fillStyle = 'rgba(244,239,230,0.45)'; ctx.font = `15px ${MONO}`;
+ctx.fillText(`${COLS}×${ROWS} px · 粉色乱发 + 呆毛 · 空耳机（她听不见）· 太长的蓝卫衣 · 一只黄绿袜一只粉袜 · 白鞋橙底`, 120, H - 60);
+</script>
+</body>
+</html>
