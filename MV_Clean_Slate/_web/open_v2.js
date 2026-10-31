@@ -53,7 +53,7 @@ const ctx = cv.getContext('2d', { willReadFrequently: RENDER });
 
 // ---------- 数据 ----------
 const AUD = await (await fetch('audio.json')).json();
-const RAW = await (await fetch('words.json')).json();
+const RAW = await (await fetch('words_snap.json')).json();
 const WORDS = RAW.map(([w, a, b]) => ({ w: w.replace(/[^A-Za-z']/g, '').toUpperCase(), t0: a, t1: b }));
 const LYFIX = [[8, 11, 'THRUST', 'DUST'], [8, 11, 'DAY', 'DATA'], [8, 11, 'TO', ''], [8, 11, 'SEE', 'SEA']];
 for (const [a, b, from, to] of LYFIX) for (const w of WORDS) if (w.t0 >= a && w.t0 < b && w.w === from) w.w = to;
@@ -99,22 +99,28 @@ async function sprite(src, rows, keyBlack) {
   return { img: c, sil, w, h };
 }
 const GIRL = await sprite(ASSET.girl, ASSET.rows, ASSET.keyBlack);
-// 九宫格低帧动画（Seedream flash 一张图出 9 帧同一动作）：等分切开，每帧照上面一样抠 + 像素化，再按剪影外框对齐（别让她在格子之间跳）
+// 序列帧精灵：每帧像素化后按剪影外框对齐（别让她在格子之间跳）
+function withBox(s) {
+  const d = s.img.getContext('2d').getImageData(0, 0, s.w, s.h).data; let x0 = s.w, y0 = s.h, x1 = 0, y1 = 0;
+  for (let y = 0; y < s.h; y++) for (let x = 0; x < s.w; x++) if (d[(y * s.w + x) * 4 + 3]) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
+  return { ...s, bx: (x0 + x1) / 2, by: (y0 + y1) / 2, bh: y1 - y0 + 1 };
+}
+// ① 已经抠好的透明 PNG 序列（首选：4_Eidolon/tools/matte.py = BiRefNet 抠的，光效不会被当成人）
+const spriteList = async (urls, pxRows) => Promise.all(urls.map(async u => withBox(await sprite(u, pxRows, false))));
+// ② 兜底：九宫格整张图等分切开，黑底洪泛抠（亮的光效会被当成人留下）
 async function spriteGrid(src, cols, rows, pxRows) {
   const im = await new Promise((ok, bad) => { const i = new Image(); i.onload = () => ok(i); i.onerror = bad; i.src = src; });
   const pw = im.width / cols, ph = im.height / rows, frames = [];
   for (let k = 0; k < cols * rows; k++) {
     const c = document.createElement('canvas'); c.width = Math.floor(pw) - 16; c.height = Math.floor(ph) - 16;
     c.getContext('2d').drawImage(im, (k % cols) * pw + 8, Math.floor(k / cols) * ph + 8, c.width, c.height, 0, 0, c.width, c.height);
-    const s = await sprite(c.toDataURL(), pxRows, true);
-    // 剪影外框
-    const d = s.img.getContext('2d').getImageData(0, 0, s.w, s.h).data; let x0 = s.w, y0 = s.h, x1 = 0, y1 = 0;
-    for (let y = 0; y < s.h; y++) for (let x = 0; x < s.w; x++) if (d[(y * s.w + x) * 4 + 3]) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
-    frames.push({ ...s, bx: (x0 + x1) / 2, by: (y0 + y1) / 2, bh: y1 - y0 + 1 });
+    frames.push(withBox(await sprite(c.toDataURL(), pxRows, true)));
   }
   return frames;
 }
-const WAKE = Q.has('girl') ? null : await spriteGrid('../素材/生成_九宫格/wake_a.png', 3, 3, 110);
+// 素材插槽：换更好的图 / 视频帧 / 3D 渲染，只要换这一行的路径（透明 PNG 序列，帧数随意）
+const WAKE_FRAMES = Array.from({ length: 9 }, (_, k) => `../素材/生成_九宫格/wake_a_帧_alpha/${String(k).padStart(6, '0')}_rgba.png`);
+const WAKE = Q.has('girl') ? null : Q.has('gridkey') ? await spriteGrid('../素材/生成_九宫格/wake_a.png', 3, 3, 110) : await spriteList(WAKE_FRAMES, 110);
 // 用哪一帧：平时 1–3 帧循环（头发在飘，一秒 4 张，日漫的「三拍一张」）；looking for the clue 时一格格走到第 9 帧，clue 上睁眼
 function wakeFrame(t) {
   if (t < T.looking2) return [0, 1, 2, 1][Math.floor(t * 4) % 4];
