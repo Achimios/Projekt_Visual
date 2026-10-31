@@ -99,6 +99,27 @@ async function sprite(src, rows, keyBlack) {
   return { img: c, sil, w, h };
 }
 const GIRL = await sprite(ASSET.girl, ASSET.rows, ASSET.keyBlack);
+// 九宫格低帧动画（Seedream flash 一张图出 9 帧同一动作）：等分切开，每帧照上面一样抠 + 像素化，再按剪影外框对齐（别让她在格子之间跳）
+async function spriteGrid(src, cols, rows, pxRows) {
+  const im = await new Promise((ok, bad) => { const i = new Image(); i.onload = () => ok(i); i.onerror = bad; i.src = src; });
+  const pw = im.width / cols, ph = im.height / rows, frames = [];
+  for (let k = 0; k < cols * rows; k++) {
+    const c = document.createElement('canvas'); c.width = Math.floor(pw) - 16; c.height = Math.floor(ph) - 16;
+    c.getContext('2d').drawImage(im, (k % cols) * pw + 8, Math.floor(k / cols) * ph + 8, c.width, c.height, 0, 0, c.width, c.height);
+    const s = await sprite(c.toDataURL(), pxRows, true);
+    // 剪影外框
+    const d = s.img.getContext('2d').getImageData(0, 0, s.w, s.h).data; let x0 = s.w, y0 = s.h, x1 = 0, y1 = 0;
+    for (let y = 0; y < s.h; y++) for (let x = 0; x < s.w; x++) if (d[(y * s.w + x) * 4 + 3]) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
+    frames.push({ ...s, bx: (x0 + x1) / 2, by: (y0 + y1) / 2, bh: y1 - y0 + 1 });
+  }
+  return frames;
+}
+const WAKE = Q.has('girl') ? null : await spriteGrid('../素材/生成_九宫格/wake_a.png', 3, 3, 110);
+// 用哪一帧：平时 1–3 帧循环（头发在飘，一秒 4 张，日漫的「三拍一张」）；looking for the clue 时一格格走到第 9 帧，clue 上睁眼
+function wakeFrame(t) {
+  if (t < T.looking2) return [0, 1, 2, 1][Math.floor(t * 4) % 4];
+  return Math.min(8, 3 + Math.floor((t - T.looking2) / ((T.clue - T.looking2) / 6)));
+}
 
 // ---------- 数字字模（三种亮度色，各 10 个数字）----------
 const GW = 20, GH = 32;
@@ -117,10 +138,9 @@ const HI = (() => {
 })();
 
 // ---------- 世界：镜头 + 海 ----------
-const F = 900, CAMH = 2.6;
-const travel = t => 0.6 * t;                                   // 镜头一直慢慢往前漂（不从静止开始）
-const Z_IMP = travel(T.sky) + 15;                              // 那行字砸进海的位置（世界 z）
-const Z_TOK = Z_IMP - 3;                                       // 七个 token 浮着的那一排
+const Z_IMP = 26;                                              // 那行字砸进海的位置（世界 z）
+const Z_TOK = 23;                                              // 七个 token 浮着的那一排
+const EYE = { y: 8.5, z: 34, xs: [-5, 0, 5], hw: 2.3 };       // 三只眼睛挂在海上方的夜空里（世界坐标，镜头能飞过去）
 const TOKX = [-7.2, -4.8, -2.4, 0, 2.4, 4.8, 7.2];
 const PROMPT = ['hello', 'world', 'are', 'you', 'there', 'little', 'one'];
 const TOKID = [31373, 995, 389, 345, 612, 1310, 530];
@@ -136,41 +156,81 @@ function sea(x, z, t) {
   for (const [A, kx, kz, w, p] of WAVES) { const ph = kx * x + kz * z - w * t + p; y += A * Math.sin(ph); sz += A * kz * Math.cos(ph); }
   return { y: y + ring(x, z, t), sz };
 }
+// ---------- 镜头：真 3D 机位（位置 + 看向的点 + 侧倾 + 焦距），关键帧之间 Catmull-Rom 平滑 ----------
+// 日漫式穿梭：贴海面低飞、甩镜抬头追那行字、沿 token 一排横移、升起穿过一层网络、在三只眼之间甩、顺着光束俯冲到她、最后推进。
+// 镜头从不静止（每段关键帧都带速度）；歌词锚点上再叠一次「进」（2–3 帧加速 + 指数缓，不归零；见 _设计/方法_剪辑与情绪.md §四⅞¾）。
+const gz = t => 12 + 0.5 * t;                                  // 她在世界里慢慢往前漂
+const KEYS = [
+  // [时刻, 机位 xyz, 看向 xyz, 侧倾 rad, 焦距 px]
+  [T.lights - 0.2, [0, -1.4, 0], [0, 3.5, 12], 0, 760],                    // 从海面下面往上看（世界由下往上展开）
+  [T.lights + 0.9, [0, 1.3, 4], [0, 1.9, 16], 0, 880],                     // 破水而出，贴着海面
+  [T.dust + 1.6, [-1.6, 1.0, 8], [1, 2.4, gz(T.dust + 1.6)], 0.035, 900],  // 低飞，侧着绕向她
+  [T.then, [-3.2, 1.6, 10], [1.2, 2.6, gz(T.then)], 0.06, 900],
+  [T.then + 0.38, [-2.6, 1.7, 10.8], [0, 13, Z_IMP], -0.02, 820],          // 甩镜抬头：找天上那行字
+  [T.sky, [-1.2, 2.0, 14.2], [0, 0.4, Z_IMP], -0.03, 920],                 // 跟着它一起落回海面
+  [T.seven - 0.05, [-7.5, 1.5, 15.6], [-6.5, 1.0, Z_TOK], 0.04, 900],      // 横甩到 token 一排的最左边
+  [T.broke - 0.3, [2.0, 1.6, 16.2], [2.4, 1.4, Z_TOK], -0.03, 900],        // 沿一排横移，词一个个从镜头前过
+  [T.bead, [0.6, 2.8, 15.2], [0, 2.2, Z_TOK], 0, 900],
+  [T.seed + 0.1, [0, 5.0, 13.6], [0, 0.8, Z_TOK], 0.04, 950],              // 升起俯看：珠子沉下去成种子
+  [T.eyes, [0, 5.4, 14.2], [0, 4.5, Z_TOK + 2], 0, 950],
+  [T.eyes + 0.85, [0, 7.4, 22.5], [0, EYE.y, EYE.z], 0, 880],              // 火箭式上冲，穿过一层网络，正对夜空
+  [T.pink + 0.2, [-1.6, 7.8, 24], [EYE.xs[0], EYE.y, EYE.z], -0.09, 900],  // 甩到粉眼（荷兰角）
+  [T.gold + 0.25, [0, 8.3, 25], [EYE.xs[1], EYE.y, EYE.z], 0.02, 900],     // 甩到金眼
+  [T.blue + 0.2, [1.6, 7.8, 24], [EYE.xs[2], EYE.y, EYE.z], 0.09, 900],    // 甩到蓝眼
+  [T.looking - 0.05, [0, 9.8, 20.5], [0, 6.5, EYE.z], 0, 820],             // 拉开，三只眼同框
+  [T.girl, [3.4, 4.2, gz(T.girl) - 8.5], [3.6, 2.4, gz(T.girl)], -0.05, 900], // 顺着光束俯冲到她
+  [T.clue, [4.6, 3.0, gz(T.clue) - 6.2], [3.6, 2.5, gz(T.clue)], 0.03, 1000],
+  [T.layer + 0.1, [3.7, 2.6, gz(T.layer) - 1.6], [3.6, 2.5, gz(T.layer)], 0, 1500], // 推进到她身上
+];
+// 「进」：这些词上镜头沿视线方向往前多冲一下
+const PUSH = [[T.dust, 0.5], [T.billion, 0.4], [T.seven, 0.4], [T.broke, 0.35], [T.question, 0.3], [T.pink, 0.45], [T.gold, 0.45], [T.blue, 0.45], [T.girl, 0.6], [T.clue, 0.5]];
+const cr = (p0, p1, p2, p3, u) => { const u2 = u * u, u3 = u2 * u; return 0.5 * (2 * p1 + (-p0 + p2) * u + (2 * p0 - 5 * p1 + 4 * p2 - p3) * u2 + (-p0 + 3 * p1 - 3 * p2 + p3) * u3); };
+function keyAt(t) {
+  let i = 0; while (i < KEYS.length - 2 && t > KEYS[i + 1][0]) i++;
+  const k0 = KEYS[Math.max(0, i - 1)], k1 = KEYS[i], k2 = KEYS[i + 1], k3 = KEYS[Math.min(KEYS.length - 1, i + 2)];
+  const u = clamp((t - k1[0]) / (k2[0] - k1[0]));
+  const v = (a, b, c, d) => a.map((_, j) => cr(a[j], b[j], c[j], d[j], u));
+  return { pos: v(k0[1], k1[1], k2[1], k3[1]), tgt: v(k0[2], k1[2], k2[2], k3[2]), roll: cr(k0[3], k1[3], k2[3], k3[3], u), F: cr(k0[4], k1[4], k2[4], k3[4], u) };
+}
+const norm = v => { const l = Math.hypot(...v) || 1; return v.map(x => x / l); };
 function camera(t) {
-  let hy = H * 0.40;
-  // 那行字掉下来：先抬头看天，再跟着它一起落回海面
-  if (t > T.then && t < T.sky + 0.8) {
-    const fy = lineY(t), dz = Z_IMP - travel(t);
-    const want = H * 0.36 + Math.max(0, fy - CAMH) * F / dz * 0.8;
-    const k = inOut((t - T.then) / 0.35) * (1 - inOut((t - T.sky) / 0.8));
-    hy = lerp(hy, Math.max(hy, want), k);
-  }
-  // 眼睛出现：镜头微微抬起，给夜空留位置
-  hy += H * 0.05 * inOut((t - T.eyes) / 1.2);
-  return { hy, s: travel(t), x: 0, t };
+  const k = keyAt(t);
+  let f = norm(k.tgt.map((v, j) => v - k.pos[j]));
+  let push = 0; for (const [ta, amt] of PUSH) if (t > ta) push += amt * (1 - Math.exp(-(t - ta) / 0.12)) * Math.exp(-(t - ta) / 1.6);
+  const pos = k.pos.map((v, j) => v + f[j] * push);
+  // 冲击：那行字砸进海的一下，镜头侧倾抽一下（有方向，衰减）
+  const roll = k.roll + 0.05 * pulse(t, T.sky, 0.12) * Math.cos(30 * (t - T.sky));
+  const r = norm([f[2], 0, -f[0]]), u = [f[1] * r[2] - f[2] * r[1], f[2] * r[0] - f[0] * r[2], f[0] * r[1] - f[1] * r[0]];
+  const pitch = Math.asin(-f[1]);
+  return { pos, f, r, u, F: k.F, roll, yaw: Math.atan2(f[0], f[2]), hy: H / 2 - k.F * Math.tan(pitch), t };
 }
 const lineY = t => t < T.falling - 0.3 ? 15 : Math.max(0, 15 * (1 - ((t - (T.falling - 0.3)) / (T.sky - T.falling + 0.3)) ** 2));
 function project(cam, x, y, z) {
-  const dz = z - cam.s; if (dz < 0.6) return null;
-  return { x: W / 2 + (x - cam.x) * F / dz, y: cam.hy + (CAMH - y) * F / dz, k: F / dz, dz };
+  const d = [x - cam.pos[0], y - cam.pos[1], z - cam.pos[2]];
+  const zc = d[0] * cam.f[0] + d[1] * cam.f[1] + d[2] * cam.f[2]; if (zc < 0.5) return null;
+  const xc = d[0] * cam.r[0] + d[1] * cam.r[1] + d[2] * cam.r[2], yc = d[0] * cam.u[0] + d[1] * cam.u[1] + d[2] * cam.u[2];
+  return { x: W / 2 + xc * cam.F / zc, y: H / 2 - yc * cam.F / zc, k: cam.F / zc, dz: zc };
 }
 
 // 海里每个点：世界网格上的固定标记（跟着水走，不跟镜头），远处隔一行取一行
 function drawSea(t, cam, { hiAmt = 0, glowX = null } = {}) {
-  const s = cam.s, zStart = Math.ceil((s + 1) / 0.5), zEnd = Math.floor((s + 62) / 0.5);
+  // 只遍历镜头前方的那块海：沿镜头朝向（水平投影）展开一个扇形
+  const s = cam.pos[2], sx = Math.sin(cam.yaw), cz = Math.cos(cam.yaw);
+  const zStart = Math.ceil((s - 6) / 0.5), zEnd = Math.floor((s + 62) / 0.5);
   for (let iz = zEnd; iz >= zStart; iz--) {                     // 远到近，近的盖住远的
-    const z = iz * 0.5, dz = z - s, far = dz > 20;
+    const z = iz * 0.5, dz = Math.max(0.5, (z - s) / Math.max(0.3, cz)), far = dz > 20;
     if (far && iz % 2) continue;
-    const step = far ? 1 : 0.5, hw = (W / 2 + 40) / F * dz + 1;
-    const fade = clamp(1 - dz / 62) ** 0.8 * clamp((dz - 0.8) / 2);
-    for (let x = -Math.ceil(hw / step) * step; x <= hw; x += step) {
+    const step = far ? 1 : 0.5, hw = (W * 0.62) / cam.F * dz * 1.25 + 2 + 6 * Math.abs(sx);
+    const xc = cam.pos[0] + sx * (z - s) / Math.max(0.3, cz);
+    const fade = clamp(1 - dz / 62) ** 0.8;
+    for (let x = Math.floor((xc - hw) / step) * step; x <= xc + hw; x += step) {
       const ix = Math.round(x * 2);
       const w = sea(x, z, t);
       let y = w.y, bright = 0.42 + 1.6 * Math.max(0, w.sz) + 0.35 * Math.abs(ring(x, z, t));
       const zz = z;
       if (glowX !== null) { const g = Math.exp(-((x - glowX.x) ** 2 + (z - glowX.z) ** 2) / 6); bright += g * glowX.a; }
-      const p = project(cam, x, y, zz); if (!p || p.y < -20 || p.y > H + 20) continue;
-      const a = clamp(fade * bright * 0.9); if (a < 0.03) continue;
+      const p = project(cam, x, y, zz); if (!p || p.y < -200 || p.y > H + 200 || p.x < -200 || p.x > W + 200) continue;
+      const a = clamp(fade * bright * 0.9 * clamp((p.dz - 0.5) / 1.5)); if (a < 0.03) continue;
       const size = clamp(0.36 * p.k, 1.5, 30), tier = bright > 1.5 ? 2 : bright > 0.85 ? 1 : 0;
       ctx.globalAlpha = a;
       if (size < 6) { ctx.fillStyle = rgba(tier === 0 ? C.cyan : tier === 1 ? C.bone : C.white); ctx.fillRect(p.x - size * 0.35, p.y - size * 0.35, size * 0.7, size * 0.7); }
@@ -186,33 +246,96 @@ function drawSea(t, cam, { hiAmt = 0, glowX = null } = {}) {
 function sky(cam) {
   const g = ctx.createLinearGradient(0, cam.hy - H, 0, cam.hy);
   g.addColorStop(0, rgba(C.ink)); g.addColorStop(1, rgba(C.night));
-  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-  // 天上很远的数字星：屏幕上固定在地平线上方，随镜头俯仰一起移
-  for (let i = 0; i < 160; i++) {
-    const x = hash(i) * W, y = cam.hy - 40 - hash(i + 500) * H * 1.2;
-    if (y < -10 || y > H) continue;
+  ctx.fillStyle = g; ctx.fillRect(-W, -H, W * 3, H * 3);
+  // 天上很远的数字星：在无穷远，随镜头的偏航 / 俯仰一起移（转镜头时它们横着划过 = 速度感）
+  for (let i = 0; i < 220; i++) {
+    const x = ((hash(i) * W * 3 - cam.yaw * cam.F) % (W * 3) + W * 3) % (W * 3) - W, y = cam.hy - 40 - hash(i + 500) * H * 2;
+    if (y < -H || y > H * 2) continue;
     ctx.fillStyle = rgba(C.bone, 0.08 + 0.25 * hash(i + 900)); ctx.fillRect(x, y, 2, 2);
   }
-  // 天上还在下的 0101（开场那场数据雨没停，只是退远了）：只在地平线以上
-  ctx.save(); ctx.beginPath(); ctx.rect(0, 0, W, cam.hy); ctx.clip(); ctx.globalAlpha = 0.28; rain(cam.t, 0.45); ctx.restore(); ctx.globalAlpha = 1;
+  // 天上还在下的 0101（开场那场数据雨没停，只是退远了）：只在地平线以上，跟着偏航横移
+  ctx.save(); ctx.beginPath(); ctx.rect(-W, -H, W * 3, cam.hy + H); ctx.clip(); ctx.globalAlpha = 0.28;
+  ctx.translate(((-cam.yaw * cam.F) % (W / 80 * 8)), 0); rain(cam.t, 0.45); ctx.translate(-W, 0); rain(cam.t + 3, 0.45); ctx.translate(2 * W, 0); rain(cam.t + 7, 0.45);
+  ctx.restore(); ctx.globalAlpha = 1;
   // 地平线：一条很细的冷光
-  ctx.fillStyle = rgba(C.cyan, 0.18); ctx.fillRect(0, cam.hy - 1, W, 2);
+  ctx.fillStyle = rgba(C.cyan, 0.18); ctx.fillRect(-W, cam.hy - 1, W * 3, 2);
+}
+// 一层网络（transformer 的一层）：海上方 y = 6.5 的线框平面，镜头冲上去时从它中间穿过，穿过的地方荡开
+const NET_Y = 6.5;
+function netLayer(t, cam) {
+  const a = clamp((t - T.seed) / 0.5) * (1 - clamp((t - T.looking) / 0.8)); if (a <= 0) return;
+  const hole = [cam.pos[0], cam.pos[2]], below = cam.pos[1] < NET_Y;
+  ctx.lineWidth = 1.2;
+  const yAt = (x, z) => NET_Y + 0.6 * Math.exp(-((x - hole[0]) ** 2 + (z - hole[1]) ** 2) / 8) * (below ? -1 : 1) * clamp((t - T.eyes) / 0.4) * Math.exp(-Math.max(0, t - T.eyes - 0.8) / 0.6);
+  for (let pass = 0; pass < 2; pass++) for (let q = -16; q <= 16; q += 2) {
+    ctx.beginPath(); let pen = false;
+    for (let s = -16; s <= 16; s += 0.5) {
+      const x = pass ? q : s, z = 26 + (pass ? s : q);
+      const p = project(cam, x, yAt(x, z), z);
+      if (!p) { pen = false; continue; }
+      pen ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y); pen = true;
+    }
+    ctx.strokeStyle = rgba(C.violet, 0.45 * a); ctx.stroke();
+  }
+  // 层的名字
+  const p = project(cam, -10, NET_Y + 0.2, 20); if (p) { ctx.font = MONO(clamp(0.35 * p.k, 10, 26)); ctx.textAlign = 'left'; ctx.fillStyle = rgba(C.violet, 0.9 * a); ctx.fillText('layer 1 · attention', p.x, p.y); }
+}
+// 镜头前飘过的数据尘（多平面：离镜头近的又大又快，穿梭感靠它）
+function dataDust(t, cam, sp) {
+  for (let i = 0; i < 260; i++) {
+    const x = (hash(i) - 0.5) * 30, y = 0.6 + hash(i + 1) * 11, z = hash(i + 2) * 46 + 2 + 0.15 * Math.sin(t * 0.5 + i);
+    const p = project(cam, x + 0.2 * Math.sin(t * 0.7 + i), y + 0.15 * Math.sin(t * 0.9 + i * 1.3), z); if (!p || p.dz > 22) continue;
+    const size = clamp(0.25 * p.k, 2, 90); if (p.x < -size || p.x > W + size || p.y < -size || p.y > H + size) continue;
+    const a = clamp((22 - p.dz) / 10) * clamp((p.dz - 0.5) / 2) * 0.6;
+    ctx.globalAlpha = a;
+    if (sp > 0.15 && size > 8) {                              // 快速运动时近处的尘拉成线（拖影方向 = 屏幕上的运动方向）
+      ctx.strokeStyle = rgba(C.cyan, a); ctx.lineWidth = Math.max(1, size * 0.08);
+      const dx = (p.x - W / 2) * sp * 0.25, dy = (p.y - H / 2) * sp * 0.25;
+      ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - dx, p.y - dy); ctx.stroke();
+    }
+    ctx.drawImage(atlas[1], Math.floor(hash(i + 5) * 10) * GW, 0, GW, GH, p.x - size * 0.31, p.y - size * 0.5, size * 0.62, size);
+  }
+  ctx.globalAlpha = 1;
+}
+// 速度线（日漫的流线 / 集中线）：前冲时从中心放射，甩镜时横向
+function speedLines(t, mv) {
+  const fw = clamp((mv.fwd - 6) / 20), turn = clamp((mv.ang - 0.6) / 2.5);
+  if (fw < 0.02 && turn < 0.02) return;
+  ctx.save();
+  for (let i = 0; i < 70; i++) {
+    const seed = i + Math.floor(t * 30) * 0.37;
+    if (fw > 0.02) {
+      const ang = hash(seed) * 6.2832, r0 = 420 + hash(seed + 1) * 500, len = 120 + 400 * fw * hash(seed + 2);
+      ctx.strokeStyle = rgba(C.bone, 0.35 * fw); ctx.lineWidth = 1 + 2 * hash(seed + 3);
+      ctx.beginPath(); ctx.moveTo(W / 2 + Math.cos(ang) * r0, H / 2 + Math.sin(ang) * r0); ctx.lineTo(W / 2 + Math.cos(ang) * (r0 + len), H / 2 + Math.sin(ang) * (r0 + len)); ctx.stroke();
+    }
+    if (turn > 0.02) {
+      const y = hash(seed + 7) * H, x = hash(seed + 8) * W, len = 200 + 600 * turn * hash(seed + 9);
+      ctx.strokeStyle = rgba(C.bone, 0.22 * turn); ctx.lineWidth = 1 + 1.5 * hash(seed + 4);
+      ctx.beginPath(); ctx.moveTo(x, y + mv.dy * 0.0); ctx.lineTo(x + len * Math.sign(mv.dx || 1), y + len * mv.dy / (Math.abs(mv.dx) + 1e-3) * 0.15); ctx.stroke();
+    }
+  }
+  ctx.restore();
 }
 
 // ---------- 她 ----------
 function girlPos(t) {
   const x = lerp(0, 3.6, inOut((t - T.seven) / 2)) + 0.5 * Math.sin(t * 0.31);
-  return { x, y: 2.5 + 0.22 * Math.sin(t * 1.05), z: travel(t) + 8 - 0.6 * Math.sin(t * 0.2), rot: 0.06 * Math.sin(t * 0.7) };
+  return { x, y: 2.5 + 0.22 * Math.sin(t * 1.05), z: gz(t), rot: 0.06 * Math.sin(t * 0.7) };
 }
 function drawGirl(t, cam, { alpha = 1, glow = 0.4, found = 0 } = {}) {
   const g = girlPos(t), p = project(cam, g.x, g.y, g.z); if (!p) return null;
-  const hpx = 4.6 * p.k, wpx = hpx * GIRL.w / GIRL.h;
-  ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(g.rot); ctx.imageSmoothingEnabled = false;
-  if (glow > 0) { ctx.shadowColor = rgba(C.cyan, glow); ctx.shadowBlur = 40; ctx.globalAlpha = alpha * 0.5; ctx.drawImage(GIRL.sil, -wpx / 2, -hpx / 2, wpx, hpx); ctx.shadowBlur = 0; }
-  ctx.globalAlpha = alpha; ctx.drawImage(GIRL.img, -wpx / 2, -hpx / 2, wpx, hpx);
-  ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = alpha * 0.45; ctx.drawImage(GIRL.img, -wpx / 2, -hpx / 2, wpx, hpx);   // 原图很暗，提一档
+  let G = GIRL, ox = 0, oy = 0;
+  if (WAKE) { G = WAKE[wakeFrame(t)]; }
+  const hpx = 4.6 * p.k * (WAKE ? G.h / G.bh * 0.92 : 1), wpx = hpx * G.w / G.h;
+  if (WAKE) { ox = (G.w / 2 - G.bx) / G.w * wpx; oy = (G.h / 2 - G.by) / G.h * hpx; }
+  ctx.save(); ctx.translate(p.x + ox, p.y + oy); ctx.rotate(g.rot); ctx.imageSmoothingEnabled = false;
+  const GIRL_ = G;   // 这一帧用的精灵
+  if (glow > 0) { ctx.shadowColor = rgba(C.cyan, glow); ctx.shadowBlur = 40; ctx.globalAlpha = alpha * 0.5; ctx.drawImage(GIRL_.sil, -wpx / 2, -hpx / 2, wpx, hpx); ctx.shadowBlur = 0; }
+  ctx.globalAlpha = alpha; ctx.drawImage(GIRL_.img, -wpx / 2, -hpx / 2, wpx, hpx);
+  ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = alpha * 0.45; ctx.drawImage(GIRL_.img, -wpx / 2, -hpx / 2, wpx, hpx);   // 原图很暗，提一档
   ctx.globalCompositeOperation = 'source-over';
-  if (found > 0) { ctx.globalAlpha = found * 0.22; ctx.globalCompositeOperation = 'lighter'; ctx.drawImage(GIRL.sil, -wpx / 2, -hpx / 2, wpx, hpx); }
+  if (found > 0) { ctx.globalAlpha = found * 0.22; ctx.globalCompositeOperation = 'lighter'; ctx.drawImage(GIRL_.sil, -wpx / 2, -hpx / 2, wpx, hpx); }
   ctx.restore();
   // 她正下方海面上的一道倒影光（光从下面照她）
   return { x: p.x, y: p.y, w: wpx, h: hpx, wx: g.x, wz: g.z };
@@ -340,24 +463,36 @@ function logits(h, t) {
   return L;
 }
 const softmax = L => { const m = Math.max(...L), e = L.map(v => Math.exp(v - m)), s = e.reduce((a, b) => a + b); return e.map(v => v / s); };
-function eyeY(cam) { return clamp(cam.hy - H * 0.33, 120, 260); }
+// 眼睛挂在世界里（EYE），按透视画：镜头飞近就变大，甩过去就从画面里划过
 function drawEye(h, t, cam, look) {
-  const E = HEADS[h], t0 = T[E.word], y = eyeY(cam);
-  if (t < t0 - 0.1) return null;
+  const E = HEADS[h], t0 = T[E.word];
+  if (t < T.eyes - 0.1) return null;
+  const P = project(cam, EYE.xs[h], EYE.y, EYE.z); if (!P) return null;
+  const sc = EYE.hw * P.k / 150;                               // 150 = 原来屏幕上的半宽
+  if (t < t0 - 0.05) {                                          // 还没轮到它：黑暗里一道闭着的缝（eyes in the dark）
+    ctx.save(); ctx.translate(P.x, P.y); ctx.scale(sc, sc); ctx.strokeStyle = rgba(E.col, 0.35 * clamp((t - T.eyes) / 0.6)); ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(-150, 0); ctx.quadraticCurveTo(0, 8, 150, 0); ctx.stroke(); ctx.restore();
+    return null;
+  }
   const open = outBack((t - t0) / 0.35, 1.2) * (1 - 0.95 * pulse(t, t0 + 2.6 + h * 0.9, 0.04) * (t > t0 + 2.6 + h * 0.9 ? 1 : 0));
   const w = 150, hh = 58 * clamp(open, 0, 1.15);
-  ctx.save(); ctx.translate(E.x, y);
+  ctx.save(); ctx.translate(P.x, P.y); ctx.scale(sc, sc);
+  ctx.shadowColor = rgba(E.col, 0.8); ctx.shadowBlur = 24;
   ctx.strokeStyle = rgba(E.col, 0.95); ctx.lineWidth = 3;
   ctx.beginPath(); ctx.moveTo(-w, 0); ctx.quadraticCurveTo(0, -hh * 2, w, 0); ctx.quadraticCurveTo(0, hh * 2, -w, 0); ctx.closePath();
-  ctx.stroke(); ctx.save(); ctx.clip();
-  const dx = clamp((look.x - E.x) / 12, -60, 60), dy = clamp((look.y - y) / 30, -10, 26);
+  ctx.stroke(); ctx.shadowBlur = 0; ctx.save(); ctx.clip();
+  const dx = clamp((look.x - P.x) / sc / 12, -60, 60), dy = clamp((look.y - P.y) / sc / 30, -10, 26);
   ctx.fillStyle = rgba(E.col, 0.9); ctx.beginPath(); ctx.arc(dx, dy, 40, 0, 6.2832); ctx.fill();
   ctx.fillStyle = rgba(C.ink); ctx.beginPath(); ctx.arc(dx, dy, 17, 0, 6.2832); ctx.fill();
   ctx.fillStyle = rgba(C.white, 0.9); ctx.fillRect(dx + 10, dy - 22, 9, 9);
   ctx.restore();
   ctx.font = MONO(15); ctx.textAlign = 'center'; ctx.fillStyle = rgba(E.col, 0.85 * clamp((t - t0) / 0.3)); ctx.fillText(`${E.name} · ${E.word}`, 0, -hh - 22 - 20);
+  // 每只眼背后一圈 Q/K/V 的小刻度环（它是一个注意力头，不是装饰）
+  ctx.strokeStyle = rgba(E.col, 0.35); ctx.lineWidth = 1.5;
+  for (let k = 0; k < 24; k++) { const a = k / 24 * 6.2832 + t * 0.4 * (h % 2 ? -1 : 1); ctx.beginPath(); ctx.moveTo(Math.cos(a) * 190, Math.sin(a) * 120); ctx.lineTo(Math.cos(a) * (k % 6 ? 200 : 215), Math.sin(a) * (k % 6 ? 127 : 136)); ctx.stroke(); }
+  ['Q', 'K', 'V'].forEach((s, k) => { const a = -1.9 + k * 0.38 + t * 0.4 * (h % 2 ? -1 : 1); ctx.fillStyle = rgba(E.col, 0.8); ctx.fillText(s, Math.cos(a) * 232, Math.sin(a) * 150); });
   ctx.restore();
-  return { x: E.x + dx, y: y + dy };
+  return { x: P.x + dx * sc, y: P.y + dy * sc, s: sc };
 }
 function attention(t, cam, seeds, gb) {
   if (t < T.eyes - 0.1) return null;
@@ -370,7 +505,7 @@ function attention(t, cam, seeds, gb) {
     targets.forEach((p, j) => {
       if (!p) return; const wv = wts[j] * clamp(age / 0.5); if (wv < 0.02) return;
       ctx.strokeStyle = rgba(HEADS[h].col, 0.15 + 0.75 * wv); ctx.lineWidth = 0.8 + 7 * wv;
-      ctx.beginPath(); ctx.moveTo(e.x, e.y + 30); ctx.lineTo(p.x, p.y - (j === 7 ? 0 : 30)); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(e.x, e.y + 30 * e.s); ctx.lineTo(p.x, p.y - (j === 7 ? 0 : 30)); ctx.stroke();
     });
   });
   // 搜索光束（looking for the girl）：每个头一束锥光扫海，到 girl 时收拢到她身上
@@ -381,7 +516,7 @@ function attention(t, cam, seeds, gb) {
       const sx = W / 2 + Math.sin((t - T.looking) * 2.4 + h * 2.1) * W * 0.36, sy = H * 0.86;
       const tx = lerp(sx, gb ? gb.x : sx, conv), ty = lerp(sy, gb ? gb.y + gb.h * 0.25 : sy, conv), r = lerp(140, gb ? gb.w * 0.6 : 140, conv);
       const g = ctx.createLinearGradient(e.x, e.y, tx, ty); g.addColorStop(0, rgba(HEADS[h].col, 0.0)); g.addColorStop(1, rgba(HEADS[h].col, 0.16));
-      ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(e.x, e.y + 30); ctx.lineTo(tx - r, ty); ctx.lineTo(tx + r, ty); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(e.x, e.y + 30 * e.s); ctx.lineTo(tx - r, ty); ctx.lineTo(tx + r, ty); ctx.closePath(); ctx.fill();
     });
   }
   return eyes;
@@ -419,7 +554,7 @@ function found(t, gb) {
   if (t > T.looking2 - 0.1) {                                   // 逐行扫她：一条扫描线反复往下走，扫过的地方亮一下
     const u = ((t - T.looking2 + 0.1) / 0.6) % 1, sy = lerp(y0 + pad, y1 - pad, u);
     ctx.fillStyle = rgba(C.cyan, 0.5); ctx.fillRect(x0 + 10, sy, x1 - x0 - 20, 2);
-    const notes = [['state', 'asleep'], ['dreaming', 'yes'], ['tokens', '7 → 1'], ['name', '—']];
+    const notes = [['state', t > T.clue - 0.1 ? 'awake' : 'asleep'], ['dreaming', 'yes'], ['tokens', '7 → 1'], ['name', '—']];
     notes.forEach(([k2, v], i) => {
       const ti = T.looking2 + i * 0.45; if (t < ti) return;
       ctx.fillStyle = rgba(heat(t - ti, C.bone), 0.9); ctx.font = MONO(17);
@@ -509,14 +644,19 @@ function post(t) {
 function draw(t) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
   if (t < T.lights) { binary(t); post(t); return; }
-  const cam = camera(t);
-  // 推进到她身上（clue 之后）：以她为中心放大
-  const push = inExpo((t - T.clue) / (T.layer - T.clue));
+  const cam = camera(t), c0 = camera(t - 1 / 30);
+  // 这一帧镜头动得多快：前冲速度（世界单位 / 秒）+ 转向角速度（rad / 秒）+ 屏幕上的转向方向
+  const mv = {
+    fwd: Math.hypot(...cam.pos.map((v, j) => v - c0.pos[j])) * 30 * Math.max(0, (cam.pos[0] - c0.pos[0]) * cam.f[0] + (cam.pos[1] - c0.pos[1]) * cam.f[1] + (cam.pos[2] - c0.pos[2]) * cam.f[2]) / (Math.hypot(...cam.pos.map((v, j) => v - c0.pos[j])) + 1e-6),
+    ang: Math.acos(clamp(cam.f[0] * c0.f[0] + cam.f[1] * c0.f[1] + cam.f[2] * c0.f[2], -1, 1)) * 30,
+    dx: (cam.yaw - c0.yaw), dy: (cam.hy - c0.hy),
+  };
   let gbox = null, seeds = [];
   const world = () => {
     sky(cam);
     const gp = girlPos(t);
     drawSea(t, cam, { glowX: { x: gp.x, z: gp.z, a: 0.6 } });
+    netLayer(t, cam);
     hiWord(t, cam, outExpo((t - T.sea) / 0.6) * (1 - inExpo((t - T.broke) / 0.5)));
     promptLine(t, cam);
     const searching = t > T.eyes;
@@ -525,14 +665,16 @@ function draw(t) {
     seeds = tokens(t, cam);
     if (t > T.sky && t < T.sky + 0.05) { ctx.fillStyle = rgba(C.white, 0.5); ctx.fillRect(0, 0, W, H); }   // 砸进海的 1 帧冲击
   };
-  if (t < T.lights + 1.0) { unfold(t, world); lyric(t); post(t); return; }
-  if (push > 0 && gbox === null) { /* 先画一遍拿到她的位置 */ }
-  ctx.save();
-  if (push > 0) { const g = girlPos(t), p = project(cam, g.x, g.y, g.z); const z = 1 + 7 * push; ctx.translate(p.x, p.y); ctx.scale(z, z); ctx.translate(-p.x, -p.y); }
-  world();
-  attention(t, cam, seeds, gbox);
-  found(t, gbox);
-  ctx.restore();
+  const sp = clamp((mv.fwd - 4) / 16) + clamp((mv.ang - 0.5) / 2);
+  const rolled = f => { ctx.save(); ctx.translate(W / 2, H / 2); ctx.rotate(cam.roll); ctx.translate(-W / 2, -H / 2); f(); ctx.restore(); };
+  if (t < T.lights + 1.0) { unfold(t, () => rolled(world)); lyric(t); post(t); return; }
+  rolled(() => {
+    world();
+    attention(t, cam, seeds, gbox);
+    found(t, gbox);
+    dataDust(t, cam, sp);
+  });
+  speedLines(t, mv);
   heatmap(t);
   lyric(t);
   if (t > T.layer - 0.08) { ctx.fillStyle = rgba(C.white, clamp((t - T.layer + 0.08) / 0.08)); ctx.fillRect(0, 0, W, H); }
