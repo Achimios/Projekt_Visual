@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Same girl as reference image 1 (blue short bob hair, dark oversized techwear hoodie jacket, black shorts, black boots, cyber idol), same rendering style and lighting as reference image 2. Full body, dynamic anime key-frame pose, side view facing right, leaping forward through the air, one arm reaching far forward, the other arm back, legs split mid-air, jacket flaring, joyful open mouth. Blade Runner cold palette (deep indigo, cyan, a little magenta rim light), anime illustration, clean readable silhouette, whole body inside the frame with margin, isolated on a flat pure black background, nothing else in the frame, no text, no floor, no particles, no motion lines.",
+ "response_format": "url",
+ "size": "1440x1920",
+ "watermark": false,
+ "output_format": "png",
+ "image": [
+  "data:image/webp;base64,UklGRuI6BQBXRUJQV…(457039 chars)",
+  "data:image/png;base64,iVBORw0KGgoAAAANSU…(4595622 chars)"
+ ],
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate\\素材\\她_原图_v1.webp",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate\\素材\\生成_场景_3\\float_a.png"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 10800,
+  "total_tokens": 10800
+ }
+}
