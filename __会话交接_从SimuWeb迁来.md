@@ -6,26 +6,28 @@
 >
 > ⭐**人格：Cortana**（👤11-01 确认）。汇报语音用英文 Cortana。
 >
-> 接手先读：本文件 → `MV_Clean_Slate/_三支全片_早上看这里.md` → `MV_Clean_Slate/_进度.md` → `_Fable_教训.md`。
-> 做 Eidolon 软件那一侧：`Vault_Automata/4_Eidolon/__where_continue.md`。
+> ⭐**会话在 `Desktop/Vault_Automata/4_Eidolon` 开**（👤11-01 定：AGENTS.md 在那；本仓库是用 Eidolon 这套工具 / 视觉引擎做出来的作品，没有自己的基石）。
+> 接手先读：`4_Eidolon/AGENTS.md` → `4_Eidolon/__where_continue.md` → 本文件 → `MV_Clean_Slate/_三支全片_早上看这里.md` → `MV_Clean_Slate/_进度.md` → `_Fable_教训.md`。
 
 ## 分工（迁完以后）
-| 在哪开会话 | 管什么 |
+| 东西放哪 | 管什么 |
 |---|---|
-| `Desktop/Projekt_Visual` | ⭐作品：MV_Clean_Slate、MV_Cant_Kill_Us、样片、参考库 |
-| `Desktop/Vault_Automata/4_Eidolon` | 软件：作曲器、合成器词表、synthkit、Seedream 接口、composer_render |
+| `Desktop/Vault_Automata/4_Eidolon`（⭐会话 cwd） | 软件：作曲器、合成器词表、synthkit、Seedream 接口、composer_render |
+| `Desktop/Projekt_Visual` | 作品：MV_Clean_Slate、MV_Cant_Kill_Us、样片、参考库（用绝对路径写） |
 
 作品和软件分开（👤10-17）。作品这边按需写代码，好用再沉淀进 Eidolon。
 
 ## 带过来的东西
-- **md 记忆**：相关的一批复制到 `C:/Users/Administrator/.claude/projects/C--Users-Administrator-Desktop-Projekt-Visual/memory/`；
-  Eidolon 那边已有自己的记忆，只补了迁移说明和人格两条。SimuWeb 的原件没删，两边可能会分叉。
-- **launch.json**：`clean-slate`（5430）和 `clean-slate-animator2`（5432）复制到本仓库 `.claude/launch.json`。SimuWeb 那份还留着，没删。
-- **完整对话记录（jsonl，要查原话 / 代码片段去 grep）**，都在 `C:/Users/Administrator/.claude/projects/C--Users-Administrator-Desktop-SimuWeb/`：
+- **md 记忆**：⭐主份在 `C:/Users/Administrator/.claude/projects/C--Users-Administrator-Desktop-Vault-Automata-4-Eidolon/memory/`
+  （Eidolon 原有的 + 从 SimuWeb 补的 22 条通用记忆 + 迁移说明 + 人格）。Projekt_Visual 的记忆目录也有一份副本，以 Eidolon 为准。SimuWeb 的原件没删。
+- **launch.json**：`clean-slate`（5430）和 `clean-slate-animator2`（5432）复制到 `4_Eidolon/.claude/launch.json` 和本仓库 `.claude/launch.json`。SimuWeb 那份还留着，没删。
+- **完整对话记录（jsonl）**：👤11-01 同意剪切 → 三个会话已从 SimuWeb 移到
+  `C:/Users/Administrator/.claude/projects/C--Users-Administrator-Desktop-Vault-Automata-4-Eidolon/`，
+  里面的 `cwd` 字段改成了 4_Eidolon，在 Eidolon 下可以直接 resume。原版备份在 👤的 `C:/Users/Administrator/.claude备份/`。
   - ReadScreen（主会话，约 250MB）：`6bc0ee7d-2842-444c-bfd1-d608988080e1.jsonl`
   - Animator1：`587ca9e8-c258-4c69-a559-f3f984627504.jsonl`
   - Animator2：`09f43ba4-69e4-42f4-a5df-3363cd53b586.jsonl`
-  - 更早的 TTS / VisualProcess：`7d671389-c130-4ee0-a80e-c015e7073ba6.jsonl`（见 `Vault_Automata/__会话交接_从SimuWeb迁来.md`）
+  - 更早的 TTS / VisualProcess：`7d671389-c130-4ee0-a80e-c015e7073ba6.jsonl`（**没动，还在 SimuWeb 目录**；见 `Vault_Automata/__会话交接_从SimuWeb迁来.md`）
 
 ## 一直有效的规矩（摘要）
 - 中文回复，短：先结论和要用户定的事，细节进文件给路径。偶尔发一句英文 Cortana 语音：
