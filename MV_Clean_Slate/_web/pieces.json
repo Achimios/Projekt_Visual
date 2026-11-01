@@ -1,0 +1,45 @@
+{
+  "note": "播放器的清单。page = 实时网页（相对 _web，要有 ?t= 和 window.DRAW）；mp4 = 样片（相对项目根）；t0 / t1 = 歌里的绝对秒。arg = 调 DRAW 时的第二个参数（animator1 的页面传 1，实时只采样一次）。cut = 当前剪辑，全片模式按它逐段切页面。",
+  "song": "-5_Clean Slate/Clean Slate.wav",
+  "duration": 189.48,
+  "cut": [
+    { "piece": "open-v6",  "t0": 0,     "t1": 28.4 },
+    { "piece": "wake-v5",  "t0": 28.4,  "t1": 43.8 },
+    { "piece": "full-main","t0": 43.8,  "t1": 80.9 },
+    { "piece": "run-a1",   "t0": 80.9,  "t1": 89.6 },
+    { "piece": "full-main","t0": 89.6,  "t1": 114 },
+    { "piece": "win-a2",   "t0": 114,   "t1": 124.4 },
+    { "piece": "full-main","t0": 124.4, "t1": 189.48 }
+  ],
+  "groups": [
+    { "name": "全片", "pieces": [
+      { "id": "full-main", "title": "全片 v2 · 主会话",     "page": "full_main.html",      "t0": 0, "t1": 189.48, "mp4": "-5_Clean Slate/样片/全片_v2_main.mp4" },
+      { "id": "full-a1",   "title": "全片 v1 · Animator1",  "page": "animator1/full.html", "t0": 0, "t1": 189.48, "arg": 1, "mp4": "-5_Clean Slate/样片/全片_v1_animator1.mp4" },
+      { "id": "full-a2",   "title": "全片 v1 · Animator2",  "page": "animator2/full.html", "t0": 0, "t1": 189.48, "mp4": "-5_Clean Slate/样片/全片_v1_animator2.mp4" }
+    ] },
+    { "name": "开场 0–28.4", "pieces": [
+      { "id": "open-v6", "title": "开场 v6", "page": "open_v2.html", "t0": 0, "t1": 28.4, "mp4": "-5_Clean Slate/样片/开场_v6.mp4" },
+      { "id": "open-v5", "title": "开场 v5", "t0": 0, "t1": 28.4, "mp4": "-5_Clean Slate/样片/开场_v5.mp4" },
+      { "id": "open-v4", "title": "开场 v4 · 对齐抠图", "t0": 0, "t1": 28.4, "mp4": "-5_Clean Slate/样片/开场_v4_对齐抠图.mp4" },
+      { "id": "open-v3", "title": "开场 v3 · 镜头穿梭", "t0": 0, "t1": 28.4, "mp4": "-5_Clean Slate/样片/开场_v3_镜头穿梭.mp4" },
+      { "id": "open-v2", "title": "开场 v2", "t0": 0, "t1": 28.4, "mp4": "-5_Clean Slate/样片/开场_v2.mp4" }
+    ] },
+    { "name": "她睁眼 28.3–43.8", "pieces": [
+      { "id": "wake-v5",   "title": "v5 · 主会话",  "page": "wake_v5.html", "t0": 28.3, "t1": 43.8, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_v5.mp4" },
+      { "id": "wake-v4",   "title": "v4 · 主会话",  "page": "wake_v4.html", "t0": 28.3, "t1": 43.8, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_v4.mp4" },
+      { "id": "wake-v3",   "title": "v3 · 主会话",  "page": "wake_v3.html", "t0": 28.3, "t1": 43.8, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_v3.mp4" },
+      { "id": "wake-mg",   "title": "MG v2 · 主会话", "t0": 28.3, "t1": 43.8, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_MG_v2.mp4" },
+      { "id": "wake-a1",   "title": "Animator1 v1", "t0": 28.3, "t1": 43.8, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_animator1.mp4" },
+      { "id": "wake-a1v2", "title": "Animator1 v2", "t0": 28.3, "t1": 43.8, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_animator1_v2.mp4" },
+      { "id": "wake-a2",   "title": "Animator2 v1", "t0": 28.3, "t1": 43.8, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_animator2.mp4" },
+      { "id": "wake-a2v2", "title": "Animator2 v2", "t0": 28.3, "t1": 43.8, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_animator2_v2.mp4" }
+    ] },
+    { "name": "片段", "pieces": [
+      { "id": "ws-v1",  "title": "工作空间 v1（DSH）",  "t0": 44, "t1": 58, "mp4": "-5_Clean Slate/样片/段_工作空间_v1.mp4" },
+      { "id": "ws-v2",  "title": "工作空间 v2（DSH）",  "t0": 44, "t1": 58, "mp4": "-5_Clean Slate/样片/段_工作空间_v2.mp4" },
+      { "id": "ws-v2b", "title": "工作空间 v2b（DSH）", "t0": 44, "t1": 58, "mp4": "-5_Clean Slate/样片/段_工作空间_v2b.mp4" },
+      { "id": "run-a1", "title": "now I can run · A1",  "page": "animator1/now_i_can_run.html", "t0": 80.9, "t1": 89.6, "arg": 1, "mp4": "-5_Clean Slate/样片/小样_now_i_can_run_animator1_v1.mp4" },
+      { "id": "win-a2", "title": "窗口关闭 · A2",       "page": "animator2/win_close.html", "t0": 114, "t1": 124.4, "mp4": "-5_Clean Slate/样片/段_窗口关闭_v1_animator2.mp4" }
+    ] }
+  ]
+}

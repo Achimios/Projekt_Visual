@@ -386,6 +386,7 @@ function post(t, s) {
   mono(`CLEAN SLATE  ·  ${s.n.toUpperCase()}  ·  t = ${t.toFixed(2)}`, 40, H - 30, 14, C.bone, 0.4);
 }
 
+window.DRAW = draw;
 function draw(t) {
   const s = SHOTS.find(x => t >= x.t0 && t < x.t1) ?? SHOTS[SHOTS.length - 1];
   camera(t, s);

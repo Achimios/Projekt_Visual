@@ -4,7 +4,7 @@
   python serve.py --port 5430
 页面加 ?render=1 时：POST /start?w&h&fps&t0&t1&out → 每帧 POST /frame（原始 RGBA，自下而上）→ POST /done。
 """
-import argparse, subprocess, sys, threading, time
+import argparse, json, subprocess, sys, threading, time
 from functools import partial
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
@@ -62,6 +62,12 @@ class H(SimpleHTTPRequestHandler):
         n = int(self.headers.get("Content-Length", 0)); body = self.rfile.read(n) if n else b""
         if u.path == "/log":
             print("[page]", body.decode("utf-8", "replace"), flush=True); return self._ok()
+        if u.path == "/notes":
+            notes = json.loads(body)
+            assert isinstance(notes, list)
+            f = ROOT / "_反馈" / "打点.json"; tmp = f.with_suffix(".tmp")
+            tmp.write_text(json.dumps(notes, ensure_ascii=False, indent=1), "utf-8"); tmp.replace(f)
+            return self._ok()
         if u.path == "/start":
             w, h, fps, t0, t1 = int(q["w"]), int(q["h"]), int(q["fps"]), float(q["t0"]), float(q["t1"])
             out = (ROOT / q["out"]).resolve()
@@ -107,7 +113,7 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--port", type=int, default=5430); a = ap.parse_args()
     # 多线程：浏览器会预开空连接，单线程 handle_request 会卡在上面
     srv = Srv(("127.0.0.1", a.port), partial(H, directory=str(ROOT)))
-    print(f"http://127.0.0.1:{a.port}/_web/wake.html", flush=True)
+    print(f"http://127.0.0.1:{a.port}/_web/player.html", flush=True)
     threading.Thread(target=srv.serve_forever, daemon=True).start()
     while not STATE["quit"]:
         time.sleep(0.5)

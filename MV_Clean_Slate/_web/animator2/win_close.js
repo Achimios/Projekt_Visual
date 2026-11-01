@@ -211,6 +211,7 @@ const TXW = mkTex(0), TXO = mkTex(1);
 gl.uniform1i(U('uW'), 0); gl.uniform1i(U('uO'), 1); gl.uniform2f(U('uOut'), OW, OH); gl.uniform2f(U('uS'), W, H);
 gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
 
+window.DRAW = draw;
 function draw(t) {
   compose(t);
   gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, TXW); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, W, H, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array(WB.d.buffer));

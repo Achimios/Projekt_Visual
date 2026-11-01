@@ -902,6 +902,7 @@ function crt(t, id) {
   return { on, onx, wh, gain, C };
 }
 
+window.DRAW = draw;
 function draw(t) {
   OB.fill(0);
   let tt = t, sc = sceneAt(t);

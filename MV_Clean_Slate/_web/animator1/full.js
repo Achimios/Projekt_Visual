@@ -1203,6 +1203,7 @@ function post(t) {
 }
 
 // 一帧 = 快门内 n 个子帧的平均（逐个按 1/(k+1) 叠，等价于算术平均）
+window.DRAW = draw;
 function draw(t, n = SAMPLES) {
   out.setTransform(1, 0, 0, 1, 0, 0); out.globalCompositeOperation = 'source-over';
   for (let k = 0; k < n; k++) {
