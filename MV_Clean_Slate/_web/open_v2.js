@@ -6,6 +6,7 @@
 //   搜索光束扫海 → 找到她 → 逐行扫描她（clue）→ 推进到她身上，接 28.3 s 的 Layer by layer。
 // 规则：每帧 = 歌曲时间 t 的纯函数；鼓点不推全局抖动，运动都有指向（镜头跟着下落的那行字、光束朝目标收拢）。
 // 素材是插槽：她 = ASSET.girl（任何图，加载时按 ROWS 行像素化；黑底自动抠），换图不改动画。
+import { makeLook } from './look.js';
 const Q = new URLSearchParams(location.search);
 const RENDER = Q.has('render');
 const T0 = +(Q.get('t0') ?? 0), T1 = +(Q.get('t1') ?? 28.4), FPS = +(Q.get('fps') ?? 30);
@@ -48,8 +49,11 @@ function heat(age, cool = C.bone) {
 }
 
 // ---------- 画布 ----------
-const cv = document.createElement('canvas'); cv.width = W; cv.height = H; document.body.appendChild(cv);
-const ctx = cv.getContext('2d', { willReadFrequently: RENDER });
+// 场景画在 LOOK.src 上，每帧过一遍 look.js（bloom / 颗粒 / 肩）再到屏幕；?nolook 关掉做对比
+const LOOK = makeLook(W, H, { render: RENDER, vignette: 0.12, grain: 0.04, bloom: Q.has('nolook') ? 0 : 0.5, halation: Q.has('nolook') ? 0 : 0.2 });
+const cv = LOOK.src, ctx = LOOK.sctx;
+const outCv = document.createElement('canvas'); outCv.width = W; outCv.height = H; document.body.appendChild(outCv);
+const oc = outCv.getContext('2d', { willReadFrequently: true });
 // v5：上一帧的备份（甩镜时拿来做一帧残影 smear）
 const prevCv = document.createElement('canvas'); prevCv.width = W; prevCv.height = H;
 const prevCtx = prevCv.getContext('2d');
@@ -642,23 +646,65 @@ function rain(t, dens) {
   }
   ctx.textBaseline = 'alphabetic';
 }
+// 0–8 s 的数据场：每个动作都有指向（审片.py 量出旧版这里有近 7 s 静止）——
+//   光标 → 数据流每拍向外扩一圈 → 每唱一个 0/1，从中央扫出一道波，波过处的数字真的翻转 →
+//   唱完后所有流汇向下方那条命令（镜头同时往里推），命令敲完 = Lights on。
+const BITS = () => [[T.z1, '0'], [T.o1, '1'], [T.z2, '0'], [T.o2, '1']];
+const CMD_Y = 230;                                             // 命令行相对画面中心的高度
+function field(t, fun) {
+  const bs = AUD.beats.filter(b => b < T.z1); let k = 0; while (k < bs.length && bs[k] <= t) k++;
+  const R = t >= T.z1 ? 1e9 : W * 0.72 * Math.max(0, k - 1 + outExpo((t - (bs[k - 1] ?? 0)) / 0.3)) / bs.length;
+  const zoom = 1 + 0.045 * t + 0.3 * inExpo((t - T.o2) / (T.lights - T.o2));
+  const ws = BITS().map(s => s[0]).filter(v => v < t);
+  ctx.save(); ctx.translate(W / 2, H / 2); ctx.rotate(0.012 * Math.sin(t * 0.4) + 0.05 * fun);
+  [[14, 0.6, 0.3], [20, 0.85, 0.55], [30, 1.25, 0.95]].forEach(([fs, d, a0], L) => {
+    const cw = fs * 1.25, n = Math.ceil(W * 0.75 / cw), zL = 1 + (zoom - 1) * d;
+    for (let c = -n; c <= n; c++) {
+      const id = c * 37 + L * 911 + 5000; if (hash(id) > 0.55) continue;
+      const x0 = (c + 0.5 * (L % 2)) * cw, ra = clamp((R - Math.abs(x0)) / 60); if (ra <= 0) continue;
+      const v = (90 + 260 * hash(id + 1)) * d, len = 6 + Math.floor(hash(id + 2) * 20), step = fs * 1.15, span = H * 1.5 + len * step;
+      const head = ((t * v + 700 * d * fun * fun + hash(id + 3) * span) % span) - H * 0.75;
+      for (let r = 0; r < len; r++) {
+        const y = head - r * step; let sx = x0 * zL; const sy = y * zL;
+        if (sy < -H * 0.75 || sy > H * 0.75) continue;
+        const yn = clamp((sy + H * 0.5) / (H * 0.5 + CMD_Y));
+        sx *= 1 - 0.97 * fun * (0.35 + 0.65 * yn * yn);            // 漏斗：越靠下越往命令行收
+        let w = 0, flips = 0;
+        for (const ti of ws) {                                     // 波：过处数字翻转
+          const dt = t - ti, rr = Math.hypot(sx, sy), q = (rr - 1700 * dt) / 110;
+          w += Math.exp(-q * q) * Math.exp(-dt * 0.9); if (q < 0) flips++;
+        }
+        const bit = (hash2(id, r) > 0.5 ? 1 : 0) ^ (flips & 1);
+        const a = (r === 0 ? 1 : 0.6 * (1 - r / len)) * a0 * ra * (1 - fun * clamp((sy - CMD_Y) / 120)) + 0.8 * w;
+        if (a < 0.02) continue;
+        const s = fs * zL * 1.1 * (1 + 0.5 * w), tier = w > 0.35 || r === 0 ? 2 : L === 2 ? 1 : 0;
+        ctx.globalAlpha = clamp(a); ctx.drawImage(atlas[tier], bit * GW, 0, GW, GH, sx - s * 0.31, sy - s * 0.5, s * 0.62, s);
+      }
+    }
+  });
+  ctx.restore(); ctx.globalAlpha = 1;
+}
 function binary(t) {
   ctx.fillStyle = rgba(C.ink); ctx.fillRect(0, 0, W, H);
-  rain(t, clamp(0.05 + t / 7, 0, 0.75));
-  // 大字：zero / one / zero / one 一个个砸到中央，后一个替换前一个
-  const seq = [[T.z1, '0'], [T.o1, '1'], [T.z2, '0'], [T.o2, '1']];
-  let cur = null; for (const s of seq) if (t >= s[0] - 0.02) cur = s;
+  const fun = inOut((t - T.o2 - 0.2) / (T.lights - T.o2 - 0.2));
+  field(t, fun);
+  // 大字：zero / one / zero / one 一个个砸到中央，后一个替换前一个；唱完后缩小、落向命令行
+  let cur = null; for (const s of BITS()) if (t >= s[0] - 0.02) cur = s;
   if (cur) {
-    const age = t - cur[0] + 0.02, s = lerp(1.5, 1, outExpo(age / 0.12));
-    ctx.save(); ctx.translate(W / 2, H / 2 + 120); ctx.scale(s, s);
-    ctx.fillStyle = rgba(C.ink, 0.85); ctx.fillRect(-150, -330, 300, 380);
+    const age = t - cur[0] + 0.02, s = lerp(1.5, 1, outExpo(age / 0.12)) * (1 - 0.92 * fun), a = 1 - clamp((fun - 0.75) / 0.25);
+    ctx.save(); ctx.translate(W / 2, H / 2 + 120 + (CMD_Y - 120) * fun); ctx.scale(s, s); ctx.globalAlpha = a;
+    ctx.fillStyle = rgba(C.ink, 0.7); ctx.fillRect(-150, -330, 300, 380);
     ctx.font = BIG(380); ctx.textAlign = 'center'; ctx.fillStyle = rgba(heat(age)); ctx.fillText(cur[1], 0, 0); ctx.restore();
-  } else {                                                    // 之前：中央一个闪烁的光标
-    if (Math.floor(t * 2) % 2 === 0) { ctx.fillStyle = rgba(C.bone, 0.9); ctx.fillRect(W / 2 - 14, H / 2 - 30, 28, 60); }
+  } else {                                                    // 之前：中央的光标，每拍闪一次
+    const b = AUD.beats.filter(v => v <= t).pop() ?? 0;
+    ctx.fillStyle = rgba(C.bone, 0.25 + 0.75 * pulse(t, b, 0.14)); ctx.fillRect(W / 2 - 14, H / 2 - 30, 28, 60);
   }
-  // 5.6 s 起敲一行命令：lights.on()
-  const cmd = '> lights.on()', n = Math.floor(clamp((t - (T.o2 + 0.7)) / 1.2) * cmd.length);
-  if (n > 0) { ctx.font = MONO(30); ctx.textAlign = 'center'; ctx.fillStyle = rgba(C.bone, 0.9); ctx.fillText(cmd.slice(0, n) + (Math.floor(t * 3) % 2 ? '_' : ' '), W / 2, H / 2 + 230); }
+  // 一行命令：正好在 Lights on 之前敲完，唱到时变热
+  const cmd = '> lights.on()', n = Math.floor(clamp((t - T.o2 - 0.5) / (T.lights - T.o2 - 0.62)) * cmd.length);
+  if (n > 0) {
+    ctx.font = MONO(34); ctx.textAlign = 'center'; ctx.shadowColor = rgba(C.cyan); ctx.shadowBlur = 16;
+    ctx.fillStyle = rgba(t >= T.lights ? heat(t - T.lights) : C.bone); ctx.fillText(cmd.slice(0, n) + (Math.floor(t * 4) % 2 ? '_' : ' '), W / 2, H / 2 + CMD_Y); ctx.shadowBlur = 0;
+  }
 }
 
 // ---------- Lights on：世界从下往上展开 ----------
@@ -702,8 +748,8 @@ function post(t) {
 }
 
 // ---------- 一帧 ----------
-function draw(t) {
-  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+function scene(t) {
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.imageSmoothingEnabled = true;
   if (t < T.lights) { binary(t); post(t); snapPrev(); return; }
   const cam = camera(t), c0 = camera(t - 1 / 30);
   // 这一帧镜头动得多快：前冲速度（世界单位 / 秒）+ 转向角速度（rad / 秒）+ 屏幕上的转向方向
@@ -744,6 +790,7 @@ function draw(t) {
   if (t > T.layer - 0.08) { ctx.fillStyle = rgba(C.white, clamp((t - T.layer + 0.08) / 0.08)); ctx.fillRect(0, 0, W, H); }
   post(t);
 }
+const draw = (t, fine = false) => { scene(t); return fine ? LOOK.pixels(oc, t) : LOOK.finish(oc, t); };   // fine = 像素级一遍（色散 / 肩 / 颗粒），渲染和静帧用
 window.DRAW = draw;
 
 // ---------- 启动 ----------
@@ -753,8 +800,7 @@ if (RENDER) {
   const n = Math.round((T1 - T0) * FPS), out = Q.get('out') ?? '-5_Clean Slate/样片/开场_v2.mp4';
   await fetch(`/start?w=${W}&h=${H}&fps=${FPS}&t0=${T0}&t1=${T1}&vflip=0&out=${encodeURIComponent(out)}`, { method: 'POST' });
   for (let i = 0; i < n; i++) {
-    draw(T0 + i / FPS);
-    const buf = ctx.getImageData(0, 0, W, H).data;
+    const buf = draw(T0 + i / FPS, true);
     for (let k = 0; ; k++) { try { await fetch('/frame?i=' + i, { method: 'POST', body: buf }); break; } catch (e) { if (k > 20) throw e; await new Promise(r => setTimeout(r, 300)); } }
   }
   await fetch('/done', { method: 'POST' }); log('render done', n);
@@ -764,10 +810,10 @@ if (RENDER) {
   const cols = 6, tw = 320, th = 180, rows = Math.ceil(ts.length / cols);
   const sh = document.createElement('canvas'); sh.width = cols * tw; sh.height = rows * (th + 16);
   const g = sh.getContext('2d'); g.fillStyle = '#111'; g.fillRect(0, 0, sh.width, sh.height);
-  ts.forEach((t, i) => { draw(t); g.drawImage(cv, (i % cols) * tw, Math.floor(i / cols) * (th + 16), tw, th); g.fillStyle = '#ff0'; g.font = '12px monospace'; g.fillText(t.toFixed(1), (i % cols) * tw + 4, Math.floor(i / cols) * (th + 16) + th + 12); });
-  cv.remove(); document.body.appendChild(sh); sh.style.cssText = 'width:100vw;height:auto;position:static'; document.body.style.overflow = 'auto'; ui.remove();
+  ts.forEach((t, i) => { draw(t); g.drawImage(outCv, (i % cols) * tw, Math.floor(i / cols) * (th + 16), tw, th); g.fillStyle = '#ff0'; g.font = '12px monospace'; g.fillText(t.toFixed(1), (i % cols) * tw + 4, Math.floor(i / cols) * (th + 16) + th + 12); });
+  outCv.remove(); document.body.appendChild(sh); sh.style.cssText = 'width:100vw;height:auto;position:static'; document.body.style.overflow = 'auto'; ui.remove();
 } else if (STILL !== null) {
-  draw(STILL); ui.textContent = `${STILL.toFixed(2)} s`;
+  oc.putImageData(new ImageData(draw(STILL, true), W, H), 0, 0); ui.textContent = `${STILL.toFixed(2)} s`;
 } else {
   const audio = new Audio('../-5_Clean Slate/Clean Slate.wav'); let playing = false;
   addEventListener('click', () => { if (!playing) { audio.currentTime = T0; audio.play(); playing = true; } });
