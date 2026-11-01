@@ -1,0 +1,25 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "图3 只是氛围参考（逆光、冷峻、忧郁），不要画图3里的人。图1、图2 是同一个角色的设定参考：只保留她的长相与造型——蓝色齐刘海短波波头、发光的品红色眼睛、黑色高领宽大外套、耳后的赛博耳机和线缆、外套上的星空故障切片。⚠️构图、姿势、表情、镜头、场景全部按下面的描述重新画，不要复制参考图的构图和姿势，不要再画那个站台和广告屏。\n画面：【数字世界·漂浮之塔】一座漂浮在云海上方的巨大石塔，塔身连着彩色管线和圆形舱门，远处有小飞船；她坐在塔身的一个小平台上晃着腿；平涂动漫风格转像素，天空青绿色，明亮一点（全片少有的白天）。\n画风：像素风动漫插画（pixel art anime），干净的像素块，有限调色板。Blade Runner 式的夜：雨、霓虹雾、湿漉漉的反光地面、强逆光剪影、体积光；冷蓝和品红为主，一点钠灯橙；忧郁、安静、电影感构图，大量暗部留白。画面里不要任何文字、logo、水印。16:9 横构图。",
+ "response_format": "url",
+ "size": "1920x1080",
+ "watermark": false,
+ "output_format": "png",
+ "image": [
+  "data:image/webp;base64,UklGRuI6BQBXRUJQV…(457039 chars)",
+  "data:image/png;base64,iVBORw0KGgoAAAANSU…(1135634 chars)",
+  "data:image/webp;base64,UklGRi4OAgBXRUJQV…(179639 chars)"
+ ],
+ "refs_src": [
+  "素材/她_原图_v1.webp",
+  "素材/图片_分图层_1/L-11（抠好的她）",
+  "_参考/赛博少女_逆光大屏_面罩线缆.webp"
+ ],
+ "usage": {
+  "input_images": 3,
+  "generated_images": 1,
+  "output_tokens": 8100,
+  "total_tokens": 8100
+ }
+}

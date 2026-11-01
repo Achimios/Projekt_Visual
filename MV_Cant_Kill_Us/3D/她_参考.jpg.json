@@ -1,0 +1,22 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "竖幅 3:4。图1 中的同一位女性（脸部参考图2），全身像从头到脚完整入画，双脚穿同款连体服的平底靴站立，A 字站姿（双臂自然下垂、离开身体约 20 度），正面。穿图1 那款贴身科幻连体服，保留胸前与肩部的分割线和面板接缝，接缝细节清晰精细。材质：不透明的浅灰色哑光雕塑质感（像灰模手办 / 白瓷雕像），整体单色，不要全息、不要透明、不要发光、不要扫描线噪点。短发造型清晰。纯净的浅灰色无缝背景，柔和均匀的影棚光，无投影杂物，无文字。高细节，锐利。",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "image": [
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(72691 chars)"
+ ],
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/生成/角色_她_正面_灰_pro.jpg",
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/cache/记忆帧/m31.jpg"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 9408,
+  "total_tokens": 9408
+ }
+}

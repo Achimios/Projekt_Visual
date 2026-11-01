@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "参考图1：镜头倾斜、玻璃钢格栅笼子、中央悬着的物体被光照着；我们把中央物体换成走廊尽头的人。参考图2：长走廊的纵深。画面中心是格栅笼子层层套叠成的走廊，远处一个高大士兵的剪影被一束冷白顶光切出轮廓，斜向的光影条纹扫过玻璃。片头字幕序列（main title sequence）质感：抽象、图形化、设计感，不是游戏场景；不要科幻管线、面板、铆钉等细节。冷灰白、低饱和、近黑背景，全画面只有一个很小的红色光点。不要文字、水印、UI。16:9 电影构图。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": [
+  "data:image/webp;base64,UklGRvjCAABXRUJQV…(66583 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(262691 chars)"
+ ],
+ "refs_src": [
+  "_参考库/原片_0-38_镜头后移_中央物体摆动_不安分.webp",
+  "情绪大图/02.jpg"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ }
+}

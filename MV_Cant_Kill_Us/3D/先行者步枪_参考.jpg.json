@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "横幅 16:9。CG 渲染，高细节硬表面科幻步枪，按图1 草图的造型与比例：流线型灰色与黑色合金装甲板，琥珀色发光灯条，枪口三根并列枪管，枪身中部环形能量核心，镂空枪托。完整正侧视图，整把枪完整入画、四周留白，影棚产品摄影布光，纯净浅灰白背景，面板分缝、螺丝、倒角等细节锐利清晰。无文字、无签名、无其他物体。",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "image": "data:image/png;base64,iVBORw0KGgoAAAANSU…(499746 chars)",
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/_参考库/2026-10-21_用户给的/先行者步枪_概念草图.png"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 9216,
+  "total_tokens": 9216
+ }
+}

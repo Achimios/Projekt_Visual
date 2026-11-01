@@ -1,0 +1,120 @@
+{
+ "source": "全息女性视频运镜描述_裁肩_v2.mp4",
+ "src_play": [
+  45.12,
+  51.52
+ ],
+ "crop": null,
+ "place_dx": 0,
+ "mask": "BiRefNet",
+ "hit": 51.52,
+ "pre_shock": 50.746,
+ "N": 300000,
+ "slab": 0.35,
+ "dir": -1,
+ "face_t": [
+  0.3,
+  1.25
+ ],
+ "seed": 23,
+ "face": {
+  "cx": 815.14,
+  "cy": 310.22,
+  "sx": 120.3,
+  "sy": 168.42,
+  "top": 12.0,
+  "chin": 493.0,
+  "head_w": 401.0
+ },
+ "T1": 0.20833333333333337,
+ "T2": 0.5952380952380957,
+ "TS": 0.375,
+ "src_map": "real",
+ "red_frac": 0.3,
+ "layout": "v5c",
+ "shots": [
+  {
+   "name": "冲击",
+   "t0": 51.52,
+   "t1": 53.12,
+   "tau0": 0.0,
+   "speed": 1.0,
+   "cam": "lock",
+   "events": "preflash",
+   "style": {
+    "red_sep": true,
+    "bp": 0.03
+   }
+  },
+  {
+   "name": "余波_1",
+   "t0": 53.12,
+   "t1": 53.52,
+   "tau0": 0.05,
+   "speed": 1.0,
+   "cam": "strips",
+   "hide_held": true,
+   "shutter_k": 0.6,
+   "style": {
+    "red_sep": true,
+    "bp": 0.06,
+    "dust_keep": 0.12,
+    "dust_gain": 0.7,
+    "slab_gain": 2.2,
+    "vfill": true,
+    "hblur": true,
+    "red_k": 0.5
+   }
+  },
+  {
+   "name": "余波_2",
+   "t0": 53.52,
+   "t1": 54.72,
+   "tau0": 0.1,
+   "speed": 1.0,
+   "cam": "pan",
+   "hide_held": true,
+   "style": {
+    "red_sep": true,
+    "bp": 0.04,
+    "dust_keep": 0.5,
+    "slab_gain": 1.5,
+    "hblur": true,
+    "red_k": 0.5
+   }
+  },
+  {
+   "name": "余波_3",
+   "t0": 54.72,
+   "t1": 56.32,
+   "tau0": 0.2,
+   "speed": 1.0,
+   "cam": "wide25d",
+   "hide_held": true,
+   "style": {
+    "red_sep": true,
+    "bp": 0.03,
+    "auto": [
+     0.85,
+     3.5
+    ],
+    "red_k": 0.5
+   }
+  },
+  {
+   "name": "余波_4",
+   "t0": 56.32,
+   "t1": 57.94,
+   "tau0": 0.28,
+   "speed": 0.66,
+   "cam": "face",
+   "style": {
+    "red_sep": true,
+    "bp": 0.03
+   }
+  }
+ ],
+ "motion": "x = x0 + dir*(v*T1*(1-exp(-u/T1)) + w*ramp(u-TS)), u = tau - t_release; ramp(q) = q - T2*(1-exp(-q/T2))",
+ "extend": null,
+ "retime": "余波_3:53.52:56.32"
+}

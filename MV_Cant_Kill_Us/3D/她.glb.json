@@ -1,0 +1,20 @@
+{
+ "api": "/generation/image-to-model",
+ "task_id": "c6725615-47fa-42ae-ac20-6add0904e89e",
+ "type": "image_to_model",
+ "input": "file_09353097-c798-441f-9902-21f6cccaf2ea",
+ "model": "v3.1-20260211",
+ "texture": true,
+ "pbr": true,
+ "texture_quality": "detailed",
+ "geometry_quality": "detailed",
+ "input_src": "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/3D/她_参考.jpg",
+ "credits_consumed": 60.0,
+ "created_at": "2026-10-21T09:21:58.514188Z",
+ "completed_at": "2026-10-21T09:23:37.745608Z",
+ "output_keys": [
+  "model_url",
+  "rendered_image_url"
+ ],
+ "preview": "她.glb.preview.webp"
+}

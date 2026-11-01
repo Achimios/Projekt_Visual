@@ -1,0 +1,1102 @@
+{
+ "source": "全息女性视频运镜描述_裁肩_v2.mp4",
+ "src_t0": 0.0,
+ "fit": null,
+ "extend_to": 6.4,
+ "live_frames": 121,
+ "held_frames": 33,
+ "retime": null,
+ "play_start": 45.12,
+ "dur": 6.4,
+ "sense_offset": 0.0,
+ "palettes": [
+  "ours"
+ ],
+ "waterfall": true,
+ "place_dx": 0,
+ "mapping": {
+  "threat": "n_bands = 4 + 22*threat; max_dx = 16 + 300*threat; p_shift = 0.25 + 0.5*threat",
+  "tension": "split d = 2 + 16*tension (R=+d, G=-d/2, B=-d, along normal)",
+  "hunger": "smear L = 40 + 520*hunger px",
+  "seed": "new seed every 4 frames (2 on held frames) and at onsets with threat >= p88 of the clip"
+ },
+ "frames": [
+  {
+   "i": 0,
+   "t_play": 45.12,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 1,
+   "t_play": 45.162,
+   "gate": 0.908,
+   "reused": true
+  },
+  {
+   "i": 2,
+   "t_play": 45.203,
+   "gate": 0.908,
+   "reused": true
+  },
+  {
+   "i": 3,
+   "t_play": 45.245,
+   "gate": 0.466,
+   "reused": true
+  },
+  {
+   "i": 4,
+   "t_play": 45.287,
+   "gate": 0.239,
+   "reused": true
+  },
+  {
+   "i": 5,
+   "t_play": 45.328,
+   "gate": 0.123,
+   "reused": true
+  },
+  {
+   "i": 6,
+   "t_play": 45.37,
+   "gate": 0.063,
+   "reused": true
+  },
+  {
+   "i": 7,
+   "t_play": 45.412,
+   "gate": 0.032,
+   "reused": true
+  },
+  {
+   "i": 8,
+   "t_play": 45.453,
+   "gate": 0.017,
+   "reused": true
+  },
+  {
+   "i": 9,
+   "t_play": 45.495,
+   "gate": 0.009,
+   "reused": true
+  },
+  {
+   "i": 10,
+   "t_play": 45.537,
+   "gate": 0.004,
+   "reused": true
+  },
+  {
+   "i": 11,
+   "t_play": 45.578,
+   "gate": 0.002,
+   "reused": true
+  },
+  {
+   "i": 12,
+   "t_play": 45.62,
+   "gate": 0.001,
+   "reused": true
+  },
+  {
+   "i": 13,
+   "t_play": 45.662,
+   "gate": 0.001,
+   "reused": true
+  },
+  {
+   "i": 14,
+   "t_play": 45.703,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 15,
+   "t_play": 45.745,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 16,
+   "t_play": 45.787,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 17,
+   "t_play": 45.828,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 18,
+   "t_play": 45.87,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 19,
+   "t_play": 45.912,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 20,
+   "t_play": 45.953,
+   "gate": 0.788,
+   "reused": true
+  },
+  {
+   "i": 21,
+   "t_play": 45.995,
+   "gate": 0.788,
+   "reused": true
+  },
+  {
+   "i": 22,
+   "t_play": 46.037,
+   "gate": 0.405,
+   "reused": true
+  },
+  {
+   "i": 23,
+   "t_play": 46.078,
+   "gate": 0.208,
+   "reused": true
+  },
+  {
+   "i": 24,
+   "t_play": 46.12,
+   "gate": 0.107,
+   "reused": true
+  },
+  {
+   "i": 25,
+   "t_play": 46.162,
+   "gate": 0.055,
+   "reused": true
+  },
+  {
+   "i": 26,
+   "t_play": 46.203,
+   "gate": 0.028,
+   "reused": true
+  },
+  {
+   "i": 27,
+   "t_play": 46.245,
+   "gate": 0.014,
+   "reused": true
+  },
+  {
+   "i": 28,
+   "t_play": 46.287,
+   "gate": 0.007,
+   "reused": true
+  },
+  {
+   "i": 29,
+   "t_play": 46.328,
+   "gate": 0.004,
+   "reused": true
+  },
+  {
+   "i": 30,
+   "t_play": 46.37,
+   "gate": 0.002,
+   "reused": true
+  },
+  {
+   "i": 31,
+   "t_play": 46.412,
+   "gate": 0.001,
+   "reused": true
+  },
+  {
+   "i": 32,
+   "t_play": 46.453,
+   "gate": 0.001,
+   "reused": true
+  },
+  {
+   "i": 33,
+   "t_play": 46.495,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 34,
+   "t_play": 46.537,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 35,
+   "t_play": 46.578,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 36,
+   "t_play": 46.62,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 37,
+   "t_play": 46.662,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 38,
+   "t_play": 46.703,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 39,
+   "t_play": 46.745,
+   "gate": 0.625,
+   "reused": true
+  },
+  {
+   "i": 40,
+   "t_play": 46.787,
+   "gate": 0.625,
+   "reused": true
+  },
+  {
+   "i": 41,
+   "t_play": 46.828,
+   "gate": 0.321,
+   "reused": true
+  },
+  {
+   "i": 42,
+   "t_play": 46.87,
+   "gate": 0.165,
+   "reused": true
+  },
+  {
+   "i": 43,
+   "t_play": 46.912,
+   "gate": 0.085,
+   "reused": true
+  },
+  {
+   "i": 44,
+   "t_play": 46.953,
+   "gate": 0.043,
+   "reused": true
+  },
+  {
+   "i": 45,
+   "t_play": 46.995,
+   "gate": 0.022,
+   "reused": true
+  },
+  {
+   "i": 46,
+   "t_play": 47.037,
+   "gate": 0.011,
+   "reused": true
+  },
+  {
+   "i": 47,
+   "t_play": 47.078,
+   "gate": 0.006,
+   "reused": true
+  },
+  {
+   "i": 48,
+   "t_play": 47.12,
+   "gate": 0.003,
+   "reused": true
+  },
+  {
+   "i": 49,
+   "t_play": 47.162,
+   "gate": 0.002,
+   "reused": true
+  },
+  {
+   "i": 50,
+   "t_play": 47.203,
+   "gate": 0.001,
+   "reused": true
+  },
+  {
+   "i": 51,
+   "t_play": 47.245,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 52,
+   "t_play": 47.287,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 53,
+   "t_play": 47.328,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 54,
+   "t_play": 47.37,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 55,
+   "t_play": 47.412,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 56,
+   "t_play": 47.453,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 57,
+   "t_play": 47.495,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 58,
+   "t_play": 47.537,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 59,
+   "t_play": 47.578,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 60,
+   "t_play": 47.62,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 61,
+   "t_play": 47.662,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 62,
+   "t_play": 47.703,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 63,
+   "t_play": 47.745,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 64,
+   "t_play": 47.787,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 65,
+   "t_play": 47.828,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 66,
+   "t_play": 47.87,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 67,
+   "t_play": 47.912,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 68,
+   "t_play": 47.953,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 69,
+   "t_play": 47.995,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 70,
+   "t_play": 48.037,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 71,
+   "t_play": 48.078,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 72,
+   "t_play": 48.12,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 73,
+   "t_play": 48.162,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 74,
+   "t_play": 48.203,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 75,
+   "t_play": 48.245,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 76,
+   "t_play": 48.287,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 77,
+   "t_play": 48.328,
+   "gate": 0.0,
+   "reused": true
+  },
+  {
+   "i": 78,
+   "t_play": 48.37,
+   "gate": 0.622,
+   "reused": true
+  },
+  {
+   "i": 79,
+   "t_play": 48.412,
+   "gate": 0.622,
+   "reused": true
+  },
+  {
+   "i": 80,
+   "t_play": 48.453,
+   "gate": 0.319,
+   "reused": true
+  },
+  {
+   "i": 81,
+   "t_play": 48.495,
+   "gate": 0.164,
+   "reused": true
+  },
+  {
+   "i": 82,
+   "t_play": 48.537,
+   "gate": 0.084,
+   "reused": true
+  },
+  {
+   "i": 83,
+   "t_play": 48.578,
+   "gate": 0.043,
+   "reused": true
+  },
+  {
+   "i": 84,
+   "t_play": 48.62,
+   "gate": 0.022,
+   "reused": true
+  },
+  {
+   "i": 85,
+   "t_play": 48.662,
+   "gate": 0.011,
+   "reused": true
+  },
+  {
+   "i": 86,
+   "t_play": 48.703,
+   "gate": 0.006,
+   "reused": true
+  },
+  {
+   "i": 87,
+   "t_play": 48.745,
+   "gate": 0.696,
+   "reused": true
+  },
+  {
+   "i": 88,
+   "t_play": 48.787,
+   "gate": 0.696,
+   "reused": true
+  },
+  {
+   "i": 89,
+   "t_play": 48.828,
+   "gate": 0.357,
+   "reused": true
+  },
+  {
+   "i": 90,
+   "t_play": 48.87,
+   "gate": 0.183,
+   "reused": true
+  },
+  {
+   "i": 91,
+   "t_play": 48.912,
+   "gate": 0.094,
+   "reused": true
+  },
+  {
+   "i": 92,
+   "t_play": 48.953,
+   "gate": 0.048,
+   "reused": true
+  },
+  {
+   "i": 93,
+   "t_play": 48.995,
+   "gate": 0.025,
+   "reused": true
+  },
+  {
+   "i": 94,
+   "t_play": 49.037,
+   "gate": 0.013,
+   "reused": true
+  },
+  {
+   "i": 95,
+   "t_play": 49.078,
+   "gate": 0.007,
+   "reused": true
+  },
+  {
+   "i": 96,
+   "t_play": 49.12,
+   "gate": 0.003,
+   "reused": true
+  },
+  {
+   "i": 97,
+   "t_play": 49.162,
+   "gate": 0.03,
+   "reused": true
+  },
+  {
+   "i": 98,
+   "t_play": 49.203,
+   "gate": 0.112,
+   "reused": true
+  },
+  {
+   "i": 99,
+   "t_play": 49.245,
+   "gate": 0.232,
+   "reused": true
+  },
+  {
+   "i": 100,
+   "t_play": 49.287,
+   "gate": 0.376,
+   "reused": true
+  },
+  {
+   "i": 101,
+   "t_play": 49.328,
+   "gate": 0.531,
+   "reused": true
+  },
+  {
+   "i": 102,
+   "t_play": 49.37,
+   "gate": 0.684,
+   "reused": true
+  },
+  {
+   "i": 103,
+   "t_play": 49.412,
+   "gate": 0.82,
+   "reused": true
+  },
+  {
+   "i": 104,
+   "t_play": 49.453,
+   "gate": 0.926,
+   "reused": true
+  },
+  {
+   "i": 105,
+   "t_play": 49.495,
+   "gate": 0.989,
+   "reused": true
+  },
+  {
+   "i": 106,
+   "t_play": 49.537,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 107,
+   "t_play": 49.578,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 108,
+   "t_play": 49.62,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 109,
+   "t_play": 49.662,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 110,
+   "t_play": 49.703,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 111,
+   "t_play": 49.745,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 112,
+   "t_play": 49.787,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 113,
+   "t_play": 49.828,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 114,
+   "t_play": 49.87,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 115,
+   "t_play": 49.912,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 116,
+   "t_play": 49.953,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 117,
+   "t_play": 49.995,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 118,
+   "t_play": 50.037,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 119,
+   "t_play": 50.078,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 120,
+   "t_play": 50.12,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 121,
+   "t_play": 50.162,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 122,
+   "t_play": 50.203,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 123,
+   "t_play": 50.245,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 124,
+   "t_play": 50.287,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 125,
+   "t_play": 50.328,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 126,
+   "t_play": 50.37,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 127,
+   "t_play": 50.412,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 128,
+   "t_play": 50.453,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 129,
+   "t_play": 50.495,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 130,
+   "t_play": 50.537,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 131,
+   "t_play": 50.578,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 132,
+   "t_play": 50.62,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 133,
+   "t_play": 50.662,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 134,
+   "t_play": 50.703,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 135,
+   "t_play": 50.745,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 136,
+   "t_play": 50.787,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 137,
+   "t_play": 50.828,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 138,
+   "t_play": 50.87,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 139,
+   "t_play": 50.912,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 140,
+   "t_play": 50.953,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 141,
+   "t_play": 50.995,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 142,
+   "t_play": 51.037,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 143,
+   "t_play": 51.078,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 144,
+   "t_play": 51.12,
+   "gate": 1.0,
+   "reused": true
+  },
+  {
+   "i": 145,
+   "t_play": 51.162,
+   "gate": 1.0,
+   "wipe_u": 0.0,
+   "threat": 0.044,
+   "tension": 0.866,
+   "hunger": 0.358,
+   "seed": 1049,
+   "n_bands": 5,
+   "max_dx": 29,
+   "split_d": [
+    16,
+    -8,
+    -16
+   ],
+   "smear_len": 226.2
+  },
+  {
+   "i": 146,
+   "t_play": 51.203,
+   "gate": 1.0,
+   "wipe_u": 0.125,
+   "threat": 0.035,
+   "tension": 0.838,
+   "hunger": 0.338,
+   "seed": 1050,
+   "n_bands": 5,
+   "max_dx": 26,
+   "split_d": [
+    15,
+    -8,
+    -15
+   ],
+   "smear_len": 215.8
+  },
+  {
+   "i": 147,
+   "t_play": 51.245,
+   "gate": 1.0,
+   "wipe_u": 0.25,
+   "threat": 0.028,
+   "tension": 0.811,
+   "hunger": 0.315,
+   "seed": 1050,
+   "n_bands": 5,
+   "max_dx": 24,
+   "split_d": [
+    15,
+    -7,
+    -15
+   ],
+   "smear_len": 203.8
+  },
+  {
+   "i": 148,
+   "t_play": 51.287,
+   "gate": 1.0,
+   "wipe_u": 0.375,
+   "threat": 0.022,
+   "tension": 0.783,
+   "hunger": 0.292,
+   "seed": 1051,
+   "n_bands": 4,
+   "max_dx": 23,
+   "split_d": [
+    15,
+    -7,
+    -15
+   ],
+   "smear_len": 191.8
+  },
+  {
+   "i": 149,
+   "t_play": 51.328,
+   "gate": 1.0,
+   "wipe_u": 0.5,
+   "threat": 0.017,
+   "tension": 0.764,
+   "hunger": 0.269,
+   "seed": 1051,
+   "n_bands": 4,
+   "max_dx": 21,
+   "split_d": [
+    14,
+    -7,
+    -14
+   ],
+   "smear_len": 179.9
+  },
+  {
+   "i": 150,
+   "t_play": 51.37,
+   "gate": 1.0,
+   "wipe_u": 0.625,
+   "threat": 0.014,
+   "tension": 0.743,
+   "hunger": 0.253,
+   "seed": 1052,
+   "n_bands": 4,
+   "max_dx": 20,
+   "split_d": [
+    14,
+    -7,
+    -14
+   ],
+   "smear_len": 171.6
+  },
+  {
+   "i": 151,
+   "t_play": 51.412,
+   "gate": 1.0,
+   "wipe_u": 0.75,
+   "threat": 0.011,
+   "tension": 0.716,
+   "hunger": 0.24,
+   "seed": 1052,
+   "n_bands": 4,
+   "max_dx": 19,
+   "split_d": [
+    13,
+    -7,
+    -13
+   ],
+   "smear_len": 164.8
+  },
+  {
+   "i": 152,
+   "t_play": 51.453,
+   "gate": 1.0,
+   "wipe_u": 0.875,
+   "threat": 0.009,
+   "tension": 0.693,
+   "hunger": 0.234,
+   "seed": 1053,
+   "n_bands": 4,
+   "max_dx": 19,
+   "split_d": [
+    13,
+    -7,
+    -13
+   ],
+   "smear_len": 161.7
+  },
+  {
+   "i": 153,
+   "t_play": 51.495,
+   "gate": 1.0,
+   "wipe_u": 1.0,
+   "threat": 0.007,
+   "tension": 0.679,
+   "hunger": 0.229,
+   "seed": 1053,
+   "n_bands": 4,
+   "max_dx": 18,
+   "split_d": [
+    13,
+    -6,
+    -13
+   ],
+   "smear_len": 159.1
+  }
+ ],
+ "envelope": {
+  "bursts": [
+   [
+    45.149,
+    0.885,
+    0.908
+   ],
+   [
+    45.947,
+    0.735,
+    0.788
+   ],
+   [
+    46.745,
+    0.531,
+    0.625
+   ],
+   [
+    48.352,
+    0.527,
+    0.622
+   ],
+   [
+    48.751,
+    0.62,
+    0.696
+   ]
+  ],
+  "ramp_start": 49.12,
+  "full_from": 49.52,
+  "law": "STRENGTH gate (no opacity blend). burst: onset threat peak >= 0.5, a = 0.6+0.4(s-thr)/(1-thr), hold 2 f, exp decay tau 1.5 f; final: smoothstep ramp 0.4s from 49.120 (snapped to downbeat within 0.2s), then 1 until 51.520; g = max"
+ },
+ "reused_from": "17_面部瓦解_全息女性_v4b_瀑布图行_本片_45.12-51.52_满2s_v2.mp4",
+ "wipe": {
+  "mode": "even",
+  "frames": 8,
+  "from_t": 51.203,
+  "to_t": 51.52,
+  "law": "even: per-row front x_r -> W-1 (stays in frame), row-group delay U(0,0.12), smoothstep; lead = brightest pixel passed (latched); left of front = max(img, lead*exp(-(c-x)/L(u))*(1-0.25 noise)), L(u) = 200*(30)^u; no global dim"
+ },
+ "reuse_check_frame": {
+  "i": 145,
+  "mean_abs_diff_255": 1.77
+ },
+ "palette": "ours"
+}

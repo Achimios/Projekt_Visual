@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "She floats at the center of an endless holographic workspace. Thirty translucent UI windows, code panes and terminal cards orbit her in a loose ring, thin cyan connector lines between them; three of the windows are dissolving into blank white. She is small in the frame, seen from far away, centered, everything made of light and glass over a black void. Same girl as reference image 1: blue short hair, dark oversized techwear jacket, cyber idol. Anime illustration, same line quality and shading as the references. Palette: deep indigo darkness, cold cyan light, a trace of magenta, no warm colors. Cinematic wide shot, 16:9, Blade Runner mood, restrained, empty space is allowed, no text, no watermark.",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "png",
+ "image": [
+  "data:image/webp;base64,UklGRuI6BQBXRUJQV…(457039 chars)",
+  "data:image/png;base64,iVBORw0KGgoAAAANSU…(3947398 chars)"
+ ],
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate_DSH\\素材\\她_原图_v1.webp",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate_DSH\\素材\\生成_场景\\shot1.png"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ }
+}

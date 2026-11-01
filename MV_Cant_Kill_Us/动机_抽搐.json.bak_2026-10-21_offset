@@ -1,0 +1,51 @@
+{
+ "name": "抽搐",
+ "template": [
+  62.625,
+  63.667
+ ],
+ "main_track": "other",
+ "track_energy": {
+  "bass": 284.3262163335784,
+  "drums": 441.54391517134593,
+  "other": 153.49989197733447,
+  "vocals": 0.15219052764379498
+ },
+ "hits": [
+  {
+   "t": 62.624,
+   "sim": 1.0,
+   "best_track": "other"
+  },
+  {
+   "t": 75.43,
+   "sim": 0.874,
+   "best_track": "other"
+  },
+  {
+   "t": 139.413,
+   "sim": 0.702,
+   "best_track": "other"
+  },
+  {
+   "t": 152.23,
+   "sim": 0.758,
+   "best_track": "other"
+  },
+  {
+   "t": 237.064,
+   "sim": 0.517,
+   "best_track": "other"
+  },
+  {
+   "t": 238.422,
+   "sim": 0.505,
+   "best_track": "other"
+  },
+  {
+   "t": 239.665,
+   "sim": 0.517,
+   "best_track": "other"
+  }
+ ]
+}

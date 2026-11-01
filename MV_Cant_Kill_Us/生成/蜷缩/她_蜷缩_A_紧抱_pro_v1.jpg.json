@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "图1 的女性（同一张脸、同样的短发和贴身连体服），做成一尊哑光灰色的雕塑质感 3D 角色渲染，身体完整在画面内、四肢不被裁切，均匀的柔和棚拍光，纯中灰色背景，无地面、无影子、无文字、无特效。解剖结构自然，手指清楚分开。用途：给图生 3D 当参考。姿势：攻壳机动队开头那种胎儿般蜷缩、漂浮在空中——膝盖收到胸前，双臂环抱小腿，额头贴在膝盖上，背部弓成圆弧，脚尖并拢。四分之三侧前方视角。",
+ "response_format": "url",
+ "size": "2K",
+ "watermark": false,
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)",
+ "refs_src": [
+  "生成/角色_她_正面_灰_pro.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 16384,
+  "total_tokens": 16384
+ }
+}

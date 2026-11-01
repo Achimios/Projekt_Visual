@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "A ring of eight dim window panels orbits slowly around her at shoulder height, seen edge-on, mostly dark with thin cyan edges; she stands still in the middle looking up at one of them. Very low key, only rim light. Consistent with reference image 2's composition and lighting: an infinite dark room, one huge slab of pale light lying on the floor like a pool, 90 percent darkness, volumetric haze, a single distant light source, symmetrical, still, monumental. Villeneuve mood: vast scale, minimal geometry, silence, cold teal and grey. The girl from reference image 1 appears SMALL in the frame (she is a scale reference, not a portrait); her face is not detailed, only silhouette and rim light. Anime-adjacent but restrained. Cinematic wide shot, 16:9, no text, no watermark, no logos.",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "png",
+ "image": [
+  "data:image/webp;base64,UklGRuI6BQBXRUJQV…(457039 chars)",
+  "data:image/png;base64,iVBORw0KGgoAAAANSU…(5467854 chars)"
+ ],
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate_DSH\\素材\\她_原图_v1.webp",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate_DSH\\素材\\生成_工作空间\\ws_d.png"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "api": "contents/generations/tasks",
+ "task_id": "cgt-20261021214118-9lnkz",
+ "model": "doubao-seedance-2-0-fast-260128",
+ "content": [
+  {
+   "type": "text",
+   "text": "以图片为首帧。镜头从第一帧起就在极慢地匀速漂移：轻微横向平移加极轻微的滚转，速度恒定，不推进、不拉远、不晃动、不抖。光影不安分：冷白的光带缓慢扫过玻璃和格栅的棱线，细小的高光沿着线条滑动，斜向的光影条纹和淡雾从画面一侧掠过，线条亮度此起彼伏地明暗变化。隧道深处的人形剪影几乎不动，只有极轻微的重心变化。那一点红光一直保留。纯黑背景，冷灰白，抽象几何，片头字幕质感。不出现任何新物体、人物、文字或特效。"
+  },
+  {
+   "type": "image_url",
+   "image_url": {
+    "url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(501315 chars)"
+   },
+   "role": "first_frame"
+  }
+ ],
+ "ratio": "16:9",
+ "duration": 7,
+ "watermark": false,
+ "generate_audio": false,
+ "resolution": "720p",
+ "usage": {
+  "completion_tokens": 152100,
+  "total_tokens": 152100
+ },
+ "seed": 99288,
+ "draft": false
+}

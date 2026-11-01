@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "图1 的女性（同一张脸、同样的短发和贴身连体服），做成一尊哑光灰色的雕塑质感 3D 角色渲染，身体完整在画面内、四肢不被裁切，均匀的柔和棚拍光，纯中灰色背景，无地面、无影子、无文字、无特效。解剖结构自然，手指清楚分开。用途：给图生 3D 当参考。姿势：侧身蜷缩漂浮——身体侧倾约三十度，一侧膝盖抬得更高，一只手护在胸前、另一只手搭在膝上，低头。四分之三俯视视角。",
+ "response_format": "url",
+ "size": "2K",
+ "watermark": false,
+ "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(398523 chars)",
+ "refs_src": [
+  "生成/角色_她_正面_灰_pro.jpg"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 16384,
+  "total_tokens": 16384
+ }
+}

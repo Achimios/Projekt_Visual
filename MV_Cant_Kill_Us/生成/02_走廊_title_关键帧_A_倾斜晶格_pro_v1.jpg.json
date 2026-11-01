@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "参考图1的气质：镜头倾斜约15度，身处玻璃与细钢格栅构成的笼状空间里，光影斜切、不安分。参考图2的布局：一条向远处收束的长廊，但长廊只由冷白细光线和半透明玻璃格栅暗示，结构几何化。走廊尽头很远处一个高大士兵，只是纯黑的平面剪影，看不清装甲细节。片头字幕序列（main title sequence）质感：抽象、图形化、设计感，不是游戏场景；不要科幻管线、面板、铆钉等细节。冷灰白、低饱和、近黑背景，全画面只有一个很小的红色光点。不要文字、水印、UI。16:9 电影构图。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": [
+  "data:image/webp;base64,UklGRvjCAABXRUJQV…(66583 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(262691 chars)"
+ ],
+ "refs_src": [
+  "_参考库/原片_0-38_镜头后移_中央物体摆动_不安分.webp",
+  "情绪大图/02.jpg"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ }
+}

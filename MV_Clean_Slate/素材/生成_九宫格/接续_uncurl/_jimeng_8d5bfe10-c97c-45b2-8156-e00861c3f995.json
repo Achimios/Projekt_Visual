@@ -1,0 +1,12 @@
+{
+ "cmd": "image2image",
+ "prompt": "3x3 grid of 9 equal panels, one animation sequence read left-to-right, top-to-bottom. Same girl as reference image 1, continuing directly from reference image 1 (her pose there is panel 1). Identical scale and camera in every panel, flat pure black background, thin black gutters, no text. Sequence: floating, eyes open; she slowly uncurls, her knees lower, her right arm rises, by panel 9 she reaches up toward the light above with an open hand, looking up, soft wonder. Anime illustration, cold indigo and cyan rim light.",
+ "images": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate\\素材\\生成_九宫格\\wake_a_帧\\08.png",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate\\素材\\生成_九宫格\\wake_a.png"
+ ],
+ "model_version": "5.0",
+ "resolution_type": "2k",
+ "ratio": "1:1",
+ "generate_num": 1
+}

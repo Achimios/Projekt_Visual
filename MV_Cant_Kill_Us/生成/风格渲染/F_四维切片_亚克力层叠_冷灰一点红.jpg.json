@@ -1,0 +1,22 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "沿用图1的多层亚克力板、钢夹具、线缆的材质语言，色彩为冷灰与黑加一点红：一个四维物体的一组三维切片（形态参考图2），每个切片是一件磨砂玻璃雕塑，依次嵌在前后排列的亚克力板之间，像同一个物体在不同时刻的横截面，层间冷白雾光，一根红色导线把所有切片串起来。实物摄影，竖幅。",
+ "response_format": "url",
+ "size": "1728x2160",
+ "watermark": false,
+ "image": [
+  "data:image/webp;base64,UklGRnQgAwBXRUJQV…(273255 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(714611 chars)"
+ ],
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/_参考库/2026-10-21_用户给的/风格1_亚克力层叠_霓虹绿红.webp",
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/静帧/20_四维切片_总览.jpg"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 14580,
+  "total_tokens": 14580
+ }
+}

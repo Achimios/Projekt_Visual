@@ -1,0 +1,22 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "按图1的材质语言与构图：一件放大成雕塑尺寸的硅基MEMS梳齿谐振器（结构取自图2的俯视线图：中央梭体、上下两排交错梳齿、左右折叠梁），被封在多层半透明亚克力板之后，板与板之间夹着荧光绿与霓虹红的光雾，红色细导线贯穿，散乱黑色线缆，四角钢制夹具与螺栓，深色背景，实物摄影质感，竖幅。",
+ "response_format": "url",
+ "size": "1728x2160",
+ "watermark": false,
+ "image": [
+  "data:image/webp;base64,UklGRnQgAwBXRUJQV…(273255 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(287359 chars)"
+ ],
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/_参考库/2026-10-21_用户给的/风格1_亚克力层叠_霓虹绿红.webp",
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/静帧/13_mems.jpg"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 14580,
+  "total_tokens": 14580
+ }
+}

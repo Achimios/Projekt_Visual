@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "参考图1的倾斜构图与格栅节奏；参考图2的走廊纵深。极简：纯黑空间里只有细如发丝的冷白光线勾出一条格栅隧道的棱，部分棱被玻璃反射成重影，镜头倾斜约12度。隧道深处一个很小的高大人形黑色剪影站在一道竖直光缝前。大量留白。片头字幕序列（main title sequence）质感：抽象、图形化、设计感，不是游戏场景；不要科幻管线、面板、铆钉等细节。冷灰白、低饱和、近黑背景，全画面只有一个很小的红色光点。不要文字、水印、UI。16:9 电影构图。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": [
+  "data:image/webp;base64,UklGRvjCAABXRUJQV…(66583 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(262691 chars)"
+ ],
+ "refs_src": [
+  "_参考库/原片_0-38_镜头后移_中央物体摆动_不安分.webp",
+  "情绪大图/02.jpg"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ }
+}

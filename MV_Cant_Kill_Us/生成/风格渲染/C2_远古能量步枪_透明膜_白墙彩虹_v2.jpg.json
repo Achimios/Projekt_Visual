@@ -1,0 +1,22 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "按图1的方式：一把远古外星文明的能量步枪，只借图2的大致轮廓（多根平行枪管、圆形能量环），整体重新设计得更古老：外壳带磨损、细密蚀刻纹与裂痕。步枪被透明塑料薄膜从头到尾紧紧包裹，薄膜贴合枪身起伏、在枪管处收紧成褶，用细钢丝和小钉固定在白墙上，膜上有高光与彩虹虹彩渐变光（青、黄、橙红）透过薄膜映在枪身上，工业静物摄影，竖幅，枪斜向放置。",
+ "response_format": "url",
+ "size": "1728x2160",
+ "watermark": false,
+ "image": [
+  "data:image/webp;base64,UklGRv78AwBXRUJQV…(348535 chars)",
+  "data:image/png;base64,iVBORw0KGgoAAAANSU…(499746 chars)"
+ ],
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/_参考库/2026-10-21_用户给的/风格3_透明膜包裹引擎.webp",
+  "C:/Users/Administrator/Desktop/Projekt_Visual/_参考库/2026-10-21_用户给的/先行者步枪_概念草图.png"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 14580,
+  "total_tokens": 14580
+ }
+}

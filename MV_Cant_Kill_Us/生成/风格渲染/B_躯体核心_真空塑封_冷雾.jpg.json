@@ -1,0 +1,22 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "按图1的方式：一件机械与有机结合的女性躯干晶格骨架（形态参考图2：镂空的胸廓网格、脊柱、颈部结构，半透明青灰材质），被真空热缩透明塑料膜整体包裹，塑料皱褶反光，贴着一张小小的绿色标本标签（印有细小编号与条码），悬浮在冷色雾气中，深青灰背景，安静、像实验室封存的样本，实物摄影，竖幅。",
+ "response_format": "url",
+ "size": "1728x2160",
+ "watermark": false,
+ "image": [
+  "data:image/webp;base64,UklGRmZ2AQBXRUJQV…(127831 chars)",
+  "data:image/webp;base64,UklGRjy7AgBXRUJQV…(238707 chars)"
+ ],
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/_参考库/2026-10-21_用户给的/风格2_塑料包裹_雾.webp",
+  "C:/Users/Administrator/Desktop/Projekt_Visual/_参考库/2026-10-21_用户给的/躯体核心结构_参考.webp"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 14580,
+  "total_tokens": 14580
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "Same room, same camera, same composition and same lighting as reference image 1: an infinite dark room, one huge slab of pale light lying on the floor like a pool, volumetric haze, a single distant light source, 90 percent darkness, cold teal and grey, Villeneuve mood. BUT: absolutely NO character, NO person, NO silhouette of a girl anywhere in the frame. The room is empty. Keep the soft ripple of erased darkness on the light slab. Cinematic wide shot, 16:9, no text, no watermark.",
+ "response_format": "url",
+ "size": "2K",
+ "watermark": false,
+ "output_format": "png",
+ "layer_decomposition": true,
+ "image": "data:image/png;base64,iVBORw0KGgoAAAANSU…(5932774 chars)",
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate_DSH\\素材\\生成_工作空间\\ws_d1.png"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 2,
+  "output_tokens": 35211,
+  "total_tokens": 35211
+ },
+ "layers": [
+  {
+   "file": "ws_d1_nogirl_layer1.png",
+   "z_index": 1,
+   "name": "蹲姿蓝发霓虹人物",
+   "description": "The crouching blue-haired character with neon pink outline, no extra annotations included",
+   "bounding_box": {
+    "absolute": [
+     1321,
+     930,
+     1545,
+     1232
+    ],
+    "normalized": [
+     469,
+     587,
+     548,
+     777
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "参考图1的玻璃层叠、反射和斜射光束；参考图2的纵深一点透视。画面是一层层半透明玻璃板沿纵深排列成走廊，每层边缘一道细冷白光线，层与层之间有雾和斜光。极远处玻璃后面一个高大人形剪影，被玻璃折射得略微模糊，只是形状。镜头轻微倾斜。片头字幕序列（main title sequence）质感：抽象、图形化、设计感，不是游戏场景；不要科幻管线、面板、铆钉等细节。冷灰白、低饱和、近黑背景，全画面只有一个很小的红色光点。不要文字、水印、UI。16:9 电影构图。",
+ "response_format": "url",
+ "size": "2560x1440",
+ "watermark": false,
+ "output_format": "jpeg",
+ "image": [
+  "data:image/webp;base64,UklGRvjCAABXRUJQV…(66583 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(262691 chars)"
+ ],
+ "refs_src": [
+  "_参考库/原片_0-38_镜头后移_中央物体摆动_不安分.webp",
+  "情绪大图/02.jpg"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 14400,
+  "total_tokens": 14400
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "沿用图1的亚克力层叠、钢夹具与线缆的材质语言，但色彩克制：整体冷灰与石墨黑，无绿色。一件放大成雕塑尺寸的硅基MEMS梳齿谐振器（结构取自图2：中央梭体、交错梳齿、折叠梁）封在多层磨砂与透明亚克力板之后，层间有冷白雾光，只有一条细细的红色导线和梳齿端一个红点发光。博物馆标本般的安静，实物摄影，竖幅。",
+ "response_format": "url",
+ "size": "1728x2160",
+ "watermark": false,
+ "image": [
+  "data:image/webp;base64,UklGRnQgAwBXRUJQV…(273255 chars)",
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABA…(287359 chars)"
+ ],
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/_参考库/2026-10-21_用户给的/风格1_亚克力层叠_霓虹绿红.webp",
+  "C:/Users/Administrator/Desktop/Projekt_Visual/MV_Cant_Kill_Us/静帧/13_mems.jpg"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 14580,
+  "total_tokens": 14580
+ }
+}

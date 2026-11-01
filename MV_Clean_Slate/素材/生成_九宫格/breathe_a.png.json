@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "A 3x3 grid of 9 equal panels, an animation sequence of the SAME girl (same character as reference image 1: blue short hair, dark oversized techwear hoodie, black boots), read left-to-right, top-to-bottom, each panel is the next frame. Identical framing, identical scale and identical camera in every panel, flat pure black background in every panel, thin black gutters between panels, no text, no numbers, no panel borders. Anime illustration, Blade Runner cold palette (deep indigo, cyan rim light from below, a little magenta). Sequence: a seamless loop of her floating curled up asleep, eyes closed; her hair and hoodie strings drift slowly in zero gravity, her shoulders rise and fall with breathing; panel 9 matches panel 1 for looping.",
+ "response_format": "url",
+ "size": "2048x2048",
+ "watermark": false,
+ "output_format": "png",
+ "image": [
+  "data:image/png;base64,iVBORw0KGgoAAAANSU…(4595622 chars)",
+  "data:image/webp;base64,UklGRuI6BQBXRUJQV…(457039 chars)"
+ ],
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate\\素材\\生成_场景_3\\float_a.png",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate\\素材\\她_原图_v1.webp"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 16384,
+  "total_tokens": 16384
+ }
+}

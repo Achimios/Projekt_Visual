@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "A 3x3 grid of 9 equal panels, an animation sequence of the SAME girl, read left-to-right, top-to-bottom, each panel is the next frame of one continuous action. Character: same as reference image 1 — blue short hair, dark oversized techwear jacket, black boots, cyber idol. Identical framing, identical scale, identical camera in every panel; her whole body visible in every panel; she is centred and always the same size. Flat pure BLACK background in every panel, thin black gutters between panels, no text, no numbers, no panel borders, no floor, no shadow. Anime illustration, cold palette (deep indigo, cyan rim light from the front), restrained. Sequence: panel 1 she stands upright, one hand slightly forward. panel 2 knees begin to bend, arms lowering. panel 3 she crouches halfway, back straight, right arm reaching down. panel 4 she is crouched low, both arms down. panel 5 her right hand reaches toward the floor in front of her. panel 6 hand near the floor, fingers spread open. panel 7 her palm is flat against the floor, right arm straight, head still up. panel 8 she presses down, shoulders drop, head bows. panel 9 she holds that pose, head down, palm still pressed. ",
+ "response_format": "url",
+ "size": "2048x2048",
+ "watermark": false,
+ "output_format": "png",
+ "image": [
+  "data:image/webp;base64,UklGRuI6BQBXRUJQV…(457039 chars)",
+  "data:image/png;base64,iVBORw0KGgoAAAANSU…(5932774 chars)"
+ ],
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate_DSH\\素材\\她_原图_v1.webp",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate_DSH\\素材\\生成_工作空间\\ws_d1.png"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 16384,
+  "total_tokens": 16384
+ }
+}

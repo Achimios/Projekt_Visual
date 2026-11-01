@@ -1,0 +1,15 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "微观科学影像，超高真空腔体内，几百个被激光冷却的离子悬浮在纯黑背景中，每个离子是一粒冷白发光的小点，带极细的光晕，离子彼此排斥，自组织成规整的晶格。冷灰白为主，克制、精密、安静，电影级，16:9，大量留黑。只有一颗离子是红色。不要文字，不要生物细胞质感，不要彩色星云。侧视角：离子沿一条细长的阱轴排成一列链和几条之字形，一束极细的冷蓝激光从左穿过。",
+ "response_format": "url",
+ "size": "2K",
+ "watermark": false,
+ "refs_src": [],
+ "usage": {
+  "input_images": 0,
+  "generated_images": 1,
+  "output_tokens": 17424,
+  "total_tokens": 17424
+ }
+}

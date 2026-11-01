@@ -1,0 +1,18 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-pro-260628",
+ "prompt": "竖幅 3:4。CG 渲染，高细节机械手臂：完整的前臂加手掌与五指，手指张开，设计语言参照图1：白色与暗红色装甲板覆盖在黑色机械内部结构（液压杆、线缆、关节轴承）之上。整只手臂完整入画、四周留白，3/4 侧视角，影棚产品布光，纯净浅灰色背景。不要任何文字、标注线、UI 图形、电路线条，背景干净。细节锐利。",
+ "response_format": "url",
+ "size": "1.5K",
+ "watermark": false,
+ "image": "data:image/webp;base64,UklGRmCeAQBXRUJQV…(141475 chars)",
+ "refs_src": [
+  "C:/Users/Administrator/Desktop/Projekt_Visual/_参考库/2026-10-21_用户给的/机械手_参考.webp"
+ ],
+ "usage": {
+  "input_images": 1,
+  "generated_images": 1,
+  "output_tokens": 9408,
+  "total_tokens": 9408
+ }
+}

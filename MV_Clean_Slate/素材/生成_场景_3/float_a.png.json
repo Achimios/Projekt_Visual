@@ -1,0 +1,23 @@
+{
+ "api": "images/generations",
+ "model": "doubao-seedream-5-0-flash-260915",
+ "prompt": "side view, body slightly tilted, Same girl as reference image 1 (blue short hair, dark oversized techwear jacket, cyber idol). Full body, she is curled up floating weightlessly in empty space, knees to chest, arms around knees, eyes closed, hair drifting upward slightly, peaceful sleeping expression, faint cyan rim light from below, Blade Runner cold palette (deep indigo, cyan, a little magenta), anime illustration, clean silhouette, isolated on a flat pure black background, nothing else in the frame, no text, no floor, no particles.",
+ "response_format": "url",
+ "size": "1440x1920",
+ "watermark": false,
+ "output_format": "png",
+ "image": [
+  "data:image/webp;base64,UklGRuI6BQBXRUJQV…(457039 chars)",
+  "data:image/png;base64,iVBORw0KGgoAAAANSU…(3947398 chars)"
+ ],
+ "refs_src": [
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate\\素材\\她_原图_v1.webp",
+  "C:\\Users\\Administrator\\Desktop\\Projekt_Visual\\MV_Clean_Slate\\素材\\生成_场景\\shot1.png"
+ ],
+ "usage": {
+  "input_images": 2,
+  "generated_images": 1,
+  "output_tokens": 10800,
+  "total_tokens": 10800
+ }
+}
