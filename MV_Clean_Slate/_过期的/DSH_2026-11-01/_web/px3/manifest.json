@@ -1,0 +1,37 @@
+{
+ "grid": [
+  192,
+  108
+ ],
+ "shots": {
+  "d3": {
+   "full": "d3.png",
+   "layers": []
+  },
+  "d2": {
+   "full": "d2.png",
+   "layers": []
+  },
+  "d4": {
+   "full": "d4.png",
+   "layers": []
+  },
+  "d1": {
+   "full": "d1.png",
+   "layers": [
+    {
+     "file": "d1_L1.png",
+     "name": "蹲姿蓝发霓虹人物",
+     "x": 90,
+     "y": 63,
+     "w": 15,
+     "h": 21
+    }
+   ]
+  },
+  "d1orig": {
+   "full": "d1orig.png",
+   "layers": []
+  }
+ }
+}

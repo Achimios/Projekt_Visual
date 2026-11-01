@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Clean Slate · 播放器</title>
+<style>
+  :root{ --bg:#07080c; --panel:#0b0e15; --line:#222a3a; --fg:#cfd7e4; --dim:#77839a;
+         --accent:#7fe3d4; --warm:#e8a06a; --hl:#151b27; }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{background:var(--bg);color:var(--fg);display:flex;flex-direction:column;
+       font:13px/1.5 "Cascadia Mono",Consolas,"Microsoft YaHei",monospace;overflow:hidden}
+  header{display:flex;align-items:baseline;gap:14px;padding:8px 14px;border-bottom:1px solid var(--line);flex:none}
+  header h1{font-size:13px;margin:0;letter-spacing:.14em;font-weight:500;color:var(--accent)}
+  header .meta{color:var(--dim);font-size:11px}
+  header .spacer{flex:1}
+  header a{color:var(--dim);font-size:11px;text-decoration:none;border-bottom:1px dotted var(--line)}
+  header a:hover{color:var(--accent)}
+  main{flex:1;display:flex;min-height:0}
+
+  aside{width:344px;flex:none;overflow:auto;border-right:1px solid var(--line);background:var(--panel);
+        padding-bottom:14px}
+  aside::-webkit-scrollbar{width:9px} aside::-webkit-scrollbar-thumb{background:#2b3448;border-radius:5px}
+  .grp{margin:14px 14px 6px;padding-bottom:5px;border-bottom:1px solid #1a2130;
+       display:flex;align-items:baseline;gap:8px}
+  .grp .gname{color:#9fb0c8;font-size:11.5px;letter-spacing:.06em}
+  .grp .gcount{color:#4d5a72;font-size:10.5px;margin-left:auto}
+  .item{position:relative;padding:8px 12px 8px 14px;cursor:pointer;border-left:3px solid transparent;
+        display:flex;gap:8px;align-items:flex-start}
+  .item:hover{background:var(--hl)}
+  .item.on{background:#111823;border-left-color:var(--accent)}
+  .item .t{flex:1;min-width:0}
+  .item .name{display:block;color:#dbe3ef;font-size:13px;line-height:1.35}
+  .item.on .name{color:#ffffff}
+  .item .sub{display:block;color:#66748c;font-size:10.8px;line-height:1.4;margin-top:2px;
+             white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .item .side{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex:none;padding-top:1px}
+  .item .who{font-size:9.5px;line-height:1;padding:2px 5px;border:1px solid #2a3446;border-radius:2px;color:#7d8aa2}
+  .item .who.main{color:#7fb6e3;border-color:#2b3d52}
+  .item .who.a1{color:#e8a06a;border-color:#4a3728}
+  .item .who.a2{color:#9ade7f;border-color:#2f4630}
+  .item .b{font-size:9.5px;line-height:1;padding:2px 6px;border:1px solid #2a3446;border-radius:2px;
+           color:#5a6680;cursor:pointer}
+  .item .b:hover{color:var(--warm);border-color:#5a4030}
+  .item .b.on{color:var(--warm);border-color:var(--warm);background:#2a1d12}
+
+  section{flex:1;display:flex;flex-direction:column;min-width:0}
+  .stage{flex:1;display:flex;gap:8px;padding:10px;min-height:0;align-items:center;justify-content:center}
+  .frame{position:relative;background:#000;border:1px solid var(--line);min-width:0;
+         aspect-ratio:16/9; max-height:100%; max-width:100%; width:auto; height:100%}
+  .stage.two .frame{width:50%; height:auto; max-height:100%}
+  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+  .tag{position:absolute;left:6px;top:4px;font-size:10px;color:#93a0b6;z-index:2;pointer-events:none;background:#000a;padding:1px 6px}
+  .empty{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--dim);line-height:2;font-size:12px}
+
+  .transport{flex:none;border-top:1px solid var(--line);padding:8px 14px 10px;display:flex;flex-direction:column;gap:7px;background:var(--panel)}
+  .row{display:flex;gap:8px;align-items:center}
+  button{background:#161c28;color:var(--fg);border:1px solid var(--line);font:inherit;padding:4px 10px;border-radius:2px;cursor:pointer}
+  button:hover{border-color:var(--accent);color:var(--accent)}
+  button.on{border-color:var(--accent);color:var(--accent);background:#12212a}
+  input{background:#161c28;color:var(--fg);border:1px solid var(--line);font:inherit;padding:3px 8px;border-radius:2px;width:84px;text-align:right}
+  .lbl{color:var(--dim);font-size:11px}
+  .time{font-variant-numeric:tabular-nums;color:var(--accent);font-size:13px}
+  .sect{color:var(--warm);font-size:11px}
+  .spacer{flex:1}
+  .note{color:var(--dim);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0;padding-left:10px}
+
+  /* ── 进度条：明显、可点、带段落刻度 ── */
+  .ruler{position:relative;height:38px;flex:1}
+  .track{position:absolute;left:0;right:0;top:0;height:22px;cursor:pointer;
+         background:#131a26;border:1px solid #2c3648;border-radius:2px;overflow:hidden}
+  .track:hover{border-color:#3d4a63}
+  .fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#173a46,#1d4d5c)}
+  .head{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--accent);pointer-events:none}
+  .knob{position:absolute;top:-3px;width:9px;height:28px;margin-left:-4px;background:var(--accent);opacity:.85;
+        border-radius:1px;pointer-events:none}
+  .tick{position:absolute;top:0;height:22px;width:1px;background:#3d4a63}
+  .tick.hot{background:var(--warm)}
+  .tlab{position:absolute;top:24px;font-size:9px;color:#5b687f;white-space:nowrap;
+        transform:translateX(-1px);pointer-events:none}
+  .tlab.on{color:var(--warm)}
+</style>
+</head>
+<body>
+<header>
+  <h1>CLEAN SLATE</h1>
+  <span class="meta" id="hdr">载入中…</span>
+  <span class="spacer"></span>
+  <a href="../_复现/README.md" target="_blank">复现</a>
+  <a href="../_复现/审美判据.md" target="_blank">审美判据</a>
+</header>
+
+<main>
+  <aside id="list"></aside>
+  <section>
+    <div class="stage" id="stage">
+      <div class="frame" id="frameA">
+        <span class="tag">A</span>
+        <div class="empty" id="empty">选左边一个版本<br><span style="font-size:11px">然后在画面里点一下（浏览器不许自动出声）</span></div>
+      </div>
+    </div>
+
+    <div class="transport">
+      <div class="row">
+        <button id="play" title="空格">▶ 播放</button>
+        <button id="back5">−5s</button>
+        <button id="go5">+5s</button>
+        <span class="time" id="clock">0.00 / 0.00</span>
+        <span class="sect" id="sect"></span>
+        <span class="spacer"></span>
+        <button id="ab" title="打开 A/B，再点某条右边的 B">A/B 对比</button>
+        <button id="reload" title="R">重载</button>
+        <a id="mp4" href="#" target="_blank" style="color:var(--dim);font-size:11px;text-decoration:none;border-bottom:1px dotted var(--line)">成片</a>
+      </div>
+
+      <div class="row">
+        <div class="ruler">
+          <div class="track" id="track">
+            <div class="fill" id="fill"></div>
+            <div class="head" id="head" style="left:0"></div>
+            <div class="knob" id="knob" style="left:0"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="lbl" id="status">—</span>
+        <span class="note" id="note"></span>
+        <span class="spacer"></span>
+        <button id="bSnd" style="display:none" title="打开后 B 也出声（默认静音，避免两路声音叠在一起）">B 出声</button>
+        <span class="lbl">跳到</span>
+        <input id="at" type="number" step="0.1" min="0">
+        <button id="jump">跳</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const SECTIONS = [
+  [0,'Zero one'],[8,'Lights on'],[28.3,'她睁眼'],[44,'nothing'],[59,'主歌2'],[80,'副歌2'],
+  [96,'哼唱'],[104,'主歌3'],[120,'Bridge'],[128,'窗开'],[141,'最后副歌'],[158.3,'全停'],[164,'尾声']
+];
+let DATA=null, A=null, B=null, compare=false;
+let initA=false, initB=false;
+
+function frameEl(w){ return w==='A' ? $('#frameA') : document.getElementById('frameB'); }
+function api(w){
+  const f=frameEl(w); if(!f) return null;
+  const ifr=f.querySelector('iframe'); if(!ifr) return null;
+  try{ return ifr.contentWindow.__piece || null; }catch(e){ return null; }
+}
+function usable(w){ const a=api(w); return (a && a.ready && a.duration) ? a : null; }
+
+async function boot(){
+  DATA = await (await fetch('pieces.json',{cache:'no-store'})).json();
+  const n = DATA.groups.reduce((s,g)=>s+g.pieces.length,0);
+  $('#hdr').textContent = `歌 ${DATA.duration} s · ${n} 个版本 · 空格 播放/暂停 · ←/→ 5 s · R 重载`;
+  renderList();
+  const h=location.hash.slice(1);
+  select((h && find(h)) || DATA.groups[0].pieces[0], 'A');
+  if(new URLSearchParams(location.search).get('ab')==='1'){
+    // 调试用：?ab=1 直接开 A/B，B 默认取同一组的下一版
+    const grp = DATA.groups.find(g=>g.pieces.some(p=>p===A)) || DATA.groups[0];
+    const i = grp.pieces.indexOf(A);
+    toggleCompare(true);
+    select(grp.pieces[(i+1) % grp.pieces.length], 'B');
+  }
+  setInterval(tick, 100);
+}
+function find(id){ for(const g of DATA.groups) for(const p of g.pieces) if(p.id===id) return p; return null; }
+
+function renderList(){
+  const root=$('#list'); root.innerHTML='';
+  for(const g of DATA.groups){
+    const h=document.createElement('div'); h.className='grp';
+    h.innerHTML=`<span class="gname">${g.name}</span><span class="gcount">${g.pieces.length}</span>`;
+    root.appendChild(h);
+    for(const p of g.pieces){
+      const d=document.createElement('div'); d.className='item'; d.dataset.id=p.id;
+      d.innerHTML=`<span class="t"><span class="name">${p.title}</span>${p.note?`<span class="sub">${p.note}</span>`:''}</span>
+                   <span class="side"><span class="who ${p.author}">${p.author}</span>
+                   <span class="b" data-b="${p.id}" title="设为 B（对比）">B</span></span>`;
+      d.onclick = e => {
+        if(e.target.dataset.b){ setB(p); e.stopPropagation(); return; }
+        select(p,'A');
+      };
+      root.appendChild(d);
+    }
+  }
+}
+
+function mount(w, piece){
+  const frame=frameEl(w); if(!frame) return;
+  frame.querySelectorAll('iframe').forEach(e=>e.remove());
+  frame.querySelector('.empty')?.remove();
+  const f=document.createElement('iframe');
+  // ⚠️ 页面的 ?t0 是「歌里的绝对秒」，不是段内偏移
+  f.src = `${piece.page}?t0=${piece.t0.toFixed(2)}`;
+  f.allow='autoplay; fullscreen';
+  frame.appendChild(f);
+  if(w==='A') initA=false; else initB=false;
+}
+
+function select(p,w){
+  if(w==='A'){ A=p; mount('A',p); history.replaceState(null,'','#'+p.id); }
+  else { B=p; mount('B',p); }
+  paint();
+}
+function setB(p){ if(!compare) toggleCompare(true); select(p,'B'); }
+
+function toggleCompare(on){
+  compare = (on===undefined) ? !compare : on;
+  const stage=$('#stage');
+  document.getElementById('frameB')?.remove();
+  stage.classList.toggle('two', compare);
+  if(compare){
+    const fb=document.createElement('div'); fb.className='frame'; fb.id='frameB';
+    fb.innerHTML='<span class="tag">B</span><div class="empty">点左边某条右边的 <b>B</b> 选对比版本</div>';
+    stage.appendChild(fb);
+    $('#bSnd').style.display='';
+    if(B) mount('B',B);
+  } else { B=null; $('#bSnd').style.display='none'; }
+  $('#ab').classList.toggle('on', compare);
+  $('#bSnd').classList.toggle('on', false);
+  paint();
+}
+
+function paint(){
+  document.querySelectorAll('.item').forEach(el=>{
+    el.classList.toggle('on', !!(A && el.dataset.id===A.id));
+    const b=el.querySelector('.b'); if(b) b.classList.toggle('on', !!(B && el.dataset.id===B.id));
+  });
+  const p=A; if(!p) return;
+  $('#note').textContent = p.note||'';
+  const a=$('#mp4');
+  if(p.mp4){ a.style.display=''; a.href=encodeURI('../'+p.mp4); a.title=p.mp4; } else a.style.display='none';
+  $('#at').value=p.t0.toFixed(2);
+  render(p.t0);
+  drawTicks(p);
+}
+
+function drawTicks(p){
+  const tr=$('#track');
+  tr.querySelectorAll('.tick').forEach(e=>e.remove());
+  tr.parentElement.querySelectorAll('.tlab').forEach(e=>e.remove());
+  const W = tr.clientWidth || 900;
+  let lastRight = -999;
+  for(const [t,name] of SECTIONS){
+    if(t < p.t0-0.01 || t > p.t0+p.dur) continue;
+    const x=((t-p.t0)/p.dur*100);
+    const d=document.createElement('div'); d.className='tick'; d.style.left=x.toFixed(3)+'%';
+    d.title=`${name} @ ${t}s`;
+    d.onclick=ev=>{ ev.stopPropagation(); seekAbs(t); };
+    tr.appendChild(d);
+    const px = x/100*W;
+    const w = name.length*6 + 8;                 // 粗估宽度，挤了就只画刻度不画字
+    if(px < lastRight + 6) continue;
+    if(px + w > W) continue;
+    lastRight = px + w;
+    const l=document.createElement('div'); l.className='tlab'; l.dataset.t=t;
+    l.style.left=x.toFixed(3)+'%'; l.textContent=name;
+    tr.parentElement.appendChild(l);
+  }
+}
+
+function seekAbs(t){
+  const p=A; if(!p) return;
+  t=Math.max(p.t0, Math.min(p.t0+p.dur-0.05, t));
+  const a=usable('A'); if(a) a.seek(t);
+  if(compare){ const b=usable('B'); if(b) b.seek(t); }
+  $('#at').value=t.toFixed(2);
+  render(t);
+}
+
+function render(t){
+  const p=A; if(!p) return;
+  const r=Math.max(0,Math.min(1,(t-p.t0)/p.dur));
+  const pct=(r*100).toFixed(2)+'%';
+  $('#fill').style.width=pct; $('#head').style.left=pct; $('#knob').style.left=pct;
+  $('#clock').textContent=`${t.toFixed(2)} / ${(p.t0+p.dur).toFixed(2)}`;
+  let name=''; for(const [s,n] of SECTIONS) if(t>=s-0.001) name=n;
+  $('#sect').textContent = name ? '· '+name : '';
+  document.querySelectorAll('.tlab').forEach(el=>{
+    el.classList.toggle('on', Math.abs(t-parseFloat(el.dataset.t)) < 3);
+  });
+}
+
+function tick(){
+  const p=A; if(!p) return;
+  const a=api('A');
+  if(!a || !a.ready){ $('#status').textContent='等页面里的音频…（在画面里点一下）'; return; }
+  if(!initA && a.duration){ a.seek(p.t0); initA=true; render(p.t0); return; }
+  if(!a.duration){ $('#status').textContent='音频载入中…'; return; }
+
+  render(a.time||p.t0);
+  $('#play').textContent = a.playing ? '❚❚ 暂停' : '▶ 播放';
+  $('#status').textContent = a.playing ? '播放中' : '暂停 —— 画面里点一下也能开始';
+
+  if(compare && B){
+    const b=usable('B');
+    if(b){
+      if(!initB){ b.seek(a.time||p.t0); initB=true; }
+      if(a.playing && !b.playing) b.play();
+      if(!a.playing && b.playing) b.pause();
+      if(Math.abs((b.time||0)-(a.time||0)) > 0.22) b.seek(a.time);
+      b.mute(!$('#bSnd').classList.contains('on'));
+    }
+  }
+}
+
+function hint(t){ $('#status').innerHTML='<span style="color:#c08a3a">'+t+'</span>'; }
+
+$('#play').onclick = () => {
+  const a=usable('A');
+  if(!a) return hint('先在画面里点一下 —— 浏览器不许网页自动出声');
+  if(a.playing){ a.pause(); const b=usable('B'); if(b) b.pause(); return; }
+  if(a.time < A.t0 || a.time > A.t0 + A.dur) a.seek(A.t0);
+  a.play();
+  if(compare){ const b=usable('B'); if(b){ b.seek(a.time); b.mute(!$('#bSnd').classList.contains('on')); b.play(); } }
+};
+$('#back5').onclick = () => { const a=usable('A'); seekAbs((a?a.time:A.t0)-5); };
+$('#go5').onclick   = () => { const a=usable('A'); seekAbs((a?a.time:A.t0)+5); };
+$('#reload').onclick = () => { mount('A',A); if(compare&&B) mount('B',B); };
+$('#ab').onclick = () => toggleCompare();
+$('#bSnd').onclick = () => {
+  const on=$('#bSnd').classList.toggle('on');
+  const b=usable('B'); if(b) b.mute(!on);
+};
+$('#jump').onclick = () => seekAbs(parseFloat($('#at').value));
+$('#at').onkeydown = e => { if(e.key==='Enter') seekAbs(parseFloat($('#at').value)); };
+
+function fromEvent(e){
+  const r=$('#track').getBoundingClientRect();
+  const x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));
+  return A.t0 + x*A.dur;
+}
+$('#track').onmousedown = e => {
+  seekAbs(fromEvent(e));
+  const mv=ev=>seekAbs(fromEvent(ev));
+  const up=()=>{ window.removeEventListener('mousemove',mv); window.removeEventListener('mouseup',up); };
+  window.addEventListener('mousemove',mv); window.addEventListener('mouseup',up);
+};
+
+document.addEventListener('keydown', e => {
+  if(e.target.tagName==='INPUT') return;
+  if(e.code==='Space'){ e.preventDefault(); $('#play').click(); }
+  if(e.key==='ArrowRight') $('#go5').click();
+  if(e.key==='ArrowLeft')  $('#back5').click();
+  if(e.key==='r'||e.key==='R') $('#reload').click();
+});
+
+boot();
+</script>
+</body>
+</html>

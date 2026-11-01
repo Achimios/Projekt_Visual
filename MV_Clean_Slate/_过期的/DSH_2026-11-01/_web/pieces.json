@@ -1,0 +1,44 @@
+{
+  "song": "-5_Clean Slate/Clean Slate.wav",
+  "duration": 189.48,
+  "note": "page = 能跟歌播放的网页（相对 _web）；mp4 = 对应的成片（相对项目根）。t0 = 这一段在歌里的起点（秒）。",
+  "groups": [
+    {
+      "name": "全片 189 s",
+      "pieces": [
+        { "id": "full-main",  "title": "全片 v2 · 主会话",   "author": "main", "page": "full_main.html",        "t0": 0, "dur": 189.48, "mp4": "-5_Clean Slate/样片/全片_v2_main.mp4",     "note": "歌词驱动，每句一镜，大字砸进来；整片叠「没构建完」区域" },
+        { "id": "full-a1",    "title": "全片 v1 · Animator1", "author": "a1",   "page": "animator1/full.html",   "t0": 0, "dur": 189.48, "mp4": "-5_Clean Slate/样片/全片_v1_animator1.mp4", "note": "纯代码数据海开场；编辑排版式小字歌词；橙从睁眼开始越来越多" },
+        { "id": "full-a2",    "title": "全片 v1 · Animator2", "author": "a2",   "page": "animator2/full.html",   "t0": 0, "dur": 189.48, "mp4": "-5_Clean Slate/样片/全片_v1_animator2.mp4", "note": "整片是一块 CRT 屏，她总从几何窗口里被看见；酸绿符号阵列底" }
+      ]
+    },
+    {
+      "name": "开场 0–28.4 s",
+      "pieces": [
+        { "id": "open-v5", "title": "开场 v5 · 三条新手法", "author": "main", "page": "open_v2.html", "t0": 0, "dur": 28.4, "mp4": "-5_Clean Slate/样片/开场_v5.mp4", "note": "dolly zoom（clue 那一拍）+ 一帧残影（甩镜最快的 3 帧）+ 手持呼吸（只在漂浮和搜索的静段落）" },
+        { "id": "open-v4", "title": "开场 v4 · 对齐抠图（上一版）", "author": "main", "page": "open_v2.html", "t0": 0, "dur": 28.4, "mp4": "-5_Clean Slate/样片/开场_v4_对齐抠图.mp4", "note": "BiRefNet 抠的 9 帧 + 词时间对齐到人声起音（words_snap）" },
+        { "id": "open-v3", "title": "开场 v3 · 镜头穿梭", "author": "main", "page": "open_v2.html", "t0": 0, "dur": 28.4, "mp4": "-5_Clean Slate/样片/开场_v3_镜头穿梭.mp4", "note": "真 3D 机位，九种运镜对应歌词（更早，对照用）" },
+        { "id": "open-v2", "title": "开场 v2",            "author": "main", "page": "open_v2.html", "t0": 0, "dur": 28.4, "mp4": "-5_Clean Slate/样片/开场_v2.mp4",         "note": "数据海 / 三个注意力头 / 找到她（最早的版本）" }
+      ]
+    },
+    {
+      "name": "她睁眼 28.3–43.8 s",
+      "pieces": [
+        { "id": "wake-v5",  "title": "v5 · 主会话",      "author": "main", "page": "wake_v5.html",        "t0": 28.3, "dur": 15.5, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_v5.mp4",             "note": "👤 说这一段动效尤其好" },
+        { "id": "wake-v4",  "title": "v4 · 主会话",      "author": "main", "page": "wake_v4.html",        "t0": 28.3, "dur": 15.5, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_v4.mp4",             "note": "" },
+        { "id": "wake-v3",  "title": "v3 · 主会话",      "author": "main", "page": "wake_v3.html",        "t0": 28.3, "dur": 15.5, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_v3.mp4",             "note": "one-prompt 手法" },
+        { "id": "wake-mg",  "title": "MG v2 · 主会话",   "author": "main", "page": "wake_mg.html",        "t0": 28.3, "dur": 15.5, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_MG_v2.mp4",          "note": "Canvas 2D 版" },
+        { "id": "wake-a1",  "title": "Animator1 v1",     "author": "a1",   "page": "animator1/index.html", "t0": 28.3, "dur": 15.5, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_animator1.mp4",      "note": "pdoom：真运动模糊（每帧取快门内 8 子帧求平均）、逐词擦亮" },
+        { "id": "wake-a1v2","title": "Animator1 v2",     "author": "a1",   "page": "animator1/index.html", "t0": 28.3, "dur": 15.5, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_animator1_v2.mp4",   "note": "方块按 16 分音符解码 24→12→6→3→1；站台每 0.06 s 亮一层" },
+        { "id": "wake-a2",  "title": "Animator2 v1",     "author": "a2",   "page": "animator2/index.html", "t0": 28.3, "dur": 15.5, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_animator2.mp4",      "note": "#13 像素风 + #08 HUD；CRT 开机 = 睁眼" },
+        { "id": "wake-a2v2","title": "Animator2 v2",     "author": "a2",   "page": "animator2/index_v2.html", "t0": 28.3, "dur": 15.5, "mp4": "-5_Clean Slate/样片/风格小样_她睁眼_animator2_v2.mp4", "note": "酸绿符号阵列底 + 形状窗口；品红只留给眼睛和太阳（参数名自定，播放器可能打不开）" }
+      ]
+    },
+    {
+      "name": "片段小样",
+      "pieces": [
+        { "id": "run-a1",  "title": "now I can walk/run 81.3–89.1", "author": "a1", "page": "animator1/now_i_can_run.html", "t0": 81.3, "dur": 8.3,  "mp4": "-5_Clean Slate/样片/小样_now_i_can_run_animator1_v1.mp4", "note": "穿过编辑器 / 音轨 / 节点图，摔穿两层数据落在节拍格上" },
+        { "id": "win-a2",  "title": "When the window closes 114–124.4", "author": "a2", "page": "animator2/win_close.html", "t0": 114.0, "dur": 10.4, "mp4": "-5_Clean Slate/样片/段_窗口关闭_v1_animator2.mp4", "note": "鼓停后真的在关机：网格熄灭、墙沉地、鸟飞走、15 扇窗落卷帘" }
+      ]
+    }
+  ]
+}
