@@ -90,10 +90,23 @@ class H(SimpleHTTPRequestHandler):
         self.send_error(404)
 
 
+class Srv(ThreadingHTTPServer):
+    """把「浏览器中途断开」这类噪声吞掉：拖音频进度条 / 关标签页时，Range 请求会被中止，
+    socketserver 默认会把整条 traceback 打到控制台，看起来像崩了，其实没事。"""
+    daemon_threads = True
+
+    def handle_error(self, request, client_address):
+        import sys
+        e = sys.exc_info()[1]
+        if isinstance(e, (ConnectionAbortedError, ConnectionResetError, BrokenPipeError)):
+            return
+        super().handle_error(request, client_address)
+
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--port", type=int, default=5430); a = ap.parse_args()
     # 多线程：浏览器会预开空连接，单线程 handle_request 会卡在上面
-    srv = ThreadingHTTPServer(("127.0.0.1", a.port), partial(H, directory=str(ROOT)))
+    srv = Srv(("127.0.0.1", a.port), partial(H, directory=str(ROOT)))
     print(f"http://127.0.0.1:{a.port}/_web/wake.html", flush=True)
     threading.Thread(target=srv.serve_forever, daemon=True).start()
     while not STATE["quit"]:

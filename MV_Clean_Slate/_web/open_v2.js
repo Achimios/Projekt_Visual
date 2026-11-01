@@ -50,6 +50,10 @@ function heat(age, cool = C.bone) {
 // ---------- 画布 ----------
 const cv = document.createElement('canvas'); cv.width = W; cv.height = H; document.body.appendChild(cv);
 const ctx = cv.getContext('2d', { willReadFrequently: RENDER });
+// v5：上一帧的备份（甩镜时拿来做一帧残影 smear）
+const prevCv = document.createElement('canvas'); prevCv.width = W; prevCv.height = H;
+const prevCtx = prevCv.getContext('2d');
+let prevReady = false;
 
 // ---------- 数据 ----------
 const AUD = await (await fetch('audio.json')).json();
@@ -203,13 +207,64 @@ function camera(t) {
   const k = keyAt(t);
   let f = norm(k.tgt.map((v, j) => v - k.pos[j]));
   let push = 0; for (const [ta, amt] of PUSH) if (t > ta) push += amt * (1 - Math.exp(-(t - ta) / 0.12)) * Math.exp(-(t - ta) / 1.6);
-  const pos = k.pos.map((v, j) => v + f[j] * push);
+  const br = breath(t);                                            // ① 手持呼吸（只在不动的段落）
+  let pos = k.pos.map((v, j) => v + f[j] * push + br[j]);
+  let F = k.F;
+  const dz = dollyAmt(t);                                          // ② dolly zoom
+  if (dz > 0.001) {
+    const zc = Math.hypot(k.tgt[0] - pos[0], k.tgt[1] - pos[1], k.tgt[2] - pos[2]);
+    const d = dz * 0.30 * zc;                                      // 往前推进 30% 的距离…
+    pos = pos.map((v, j) => v + f[j] * d);
+    F = F * (zc - d) / zc;                                         // …同时把焦距收掉，她大小不变、背景被拉开
+  }
   // 冲击：那行字砸进海的一下，镜头侧倾抽一下（有方向，衰减）
-  const roll = k.roll + 0.05 * pulse(t, T.sky, 0.12) * Math.cos(30 * (t - T.sky));
+  const roll = k.roll + 0.05 * pulse(t, T.sky, 0.12) * Math.cos(30 * (t - T.sky)) + br[2] * 0.06;
   const r = norm([f[2], 0, -f[0]]), u = [f[1] * r[2] - f[2] * r[1], f[2] * r[0] - f[0] * r[2], f[0] * r[1] - f[1] * r[0]];
   const pitch = Math.asin(-f[1]);
-  return { pos, f, r, u, F: k.F, roll, yaw: Math.atan2(f[0], f[2]), hy: H / 2 - k.F * Math.tan(pitch), t };
+  return { pos, f, r, u, F, roll, yaw: Math.atan2(f[0], f[2]), hy: H / 2 - F * Math.tan(pitch), t };
 }
+// ---------- v5 三条手法（👤2026-11-01「现在的镜头运动太棒了，还能再进步吗？」）----------
+// ① 手持呼吸：只在**静下来**的段落加极轻微的低频漂移；大动作段落一律 0（克制：不能所有地方都活着）
+function breathAmt(t) {
+  const a = clamp((t - T.dust) / 0.8) * (1 - clamp((t - T.then - 0.1) / 0.5));      // I was dust in a data sea —— 漂浮
+  const b = clamp((t - T.looking2) / 0.5) * (1 - clamp((t - T.clue) / 0.5)) * 0.8;  // looking for the girl —— 搜索的静
+  return Math.max(a, b);
+}
+function breath(t) {
+  const a = breathAmt(t) * 0.05;                       // 世界单位，很小
+  return [
+    a * (Math.sin(t * 1.13 + 1.7) * 0.6 + Math.sin(t * 0.47 + 4.1) * 0.4),
+    a * (Math.sin(t * 0.91 + 2.3) * 0.6 + Math.sin(t * 0.39 + 5.2) * 0.4),
+    a * 0.5 * Math.sin(t * 0.61 + 0.8),                // 侧倾也跟着呼吸一点
+  ];
+}
+// ② Dolly zoom（推拉反向 / 眩晕变焦）：镜头朝她推近的同时把焦距收掉，
+//    她的大小不变、背景被拉开 —— 用在「clue」这一拍（她意识到自己被找到了）。0.95 s 的窗，进出都是缓的。
+function dollyAmt(t) {
+  const u = (t - (T.clue - 0.18)) / 0.95;
+  if (u <= 0 || u >= 1) return 0;
+  return Math.sin(Math.PI * u) ** 0.85;
+}
+// ③ 一帧残影（smear）：甩镜/前冲最快的那几帧，把上一帧横向拉开叠上去。
+//    只在角速度真的很快时出现，所以平时看不见 —— 它是「加速的痕迹」，不是滤镜。
+function smearAmt(mv) {
+  // 实测（2026-10-31 探针）：这一段镜头的角速度峰值约 2.3–2.6 rad/s，前冲分量 1–2.4
+  const turn = clamp((mv.ang - 1.3) / 2.5);
+  const rush = clamp((mv.fwd - 1.5) / 6) * 0.35;
+  return clamp(turn * 0.85 + rush, 0, 1);
+}
+function applySmear(sm, dir) {
+  if (sm < 0.02 || !prevReady) return;
+  const k = 1 + 1.5 * sm;                                        // 横向拉开
+  const off = (dir >= 0 ? -1 : 1) * W * 0.07 * sm;               // 顺着甩的方向偏一点
+  ctx.save();
+  ctx.globalCompositeOperation = 'lighter';
+  ctx.globalAlpha = 0.26 * sm;
+  ctx.drawImage(prevCv, 0, 0, W, H, -W * (k - 1) / 2 + off, 0, W * k, H);
+  ctx.restore();
+}
+function snapPrev() { prevCtx.drawImage(cv, 0, 0); prevReady = true; }
+
 const lineY = t => t < T.falling - 0.3 ? 15 : Math.max(0, 15 * (1 - ((t - (T.falling - 0.3)) / (T.sky - T.falling + 0.3)) ** 2));
 function project(cam, x, y, z) {
   const d = [x - cam.pos[0], y - cam.pos[1], z - cam.pos[2]];
@@ -643,13 +698,13 @@ function post(t) {
   const g = ctx.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.95);
   g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,0.55)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
   ctx.fillStyle = 'rgba(0,0,0,0.08)'; for (let y = 0; y < H; y += 4) ctx.fillRect(0, y, W, 1);
-  ctx.font = MONO(13); ctx.textAlign = 'left'; ctx.fillStyle = rgba(C.bone, 0.35); ctx.fillText(`CLEAN SLATE · 开场 v2 · t = ${t.toFixed(2)}`, 40, H - 24);
+  ctx.font = MONO(13); ctx.textAlign = 'left'; ctx.fillStyle = rgba(C.bone, 0.35); ctx.fillText(`CLEAN SLATE · 开场 v5 · t = ${t.toFixed(2)}`, 40, H - 24);
 }
 
 // ---------- 一帧 ----------
 function draw(t) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
-  if (t < T.lights) { binary(t); post(t); return; }
+  if (t < T.lights) { binary(t); post(t); snapPrev(); return; }
   const cam = camera(t), c0 = camera(t - 1 / 30);
   // 这一帧镜头动得多快：前冲速度（世界单位 / 秒）+ 转向角速度（rad / 秒）+ 屏幕上的转向方向
   const mv = {
@@ -673,7 +728,7 @@ function draw(t) {
   };
   const sp = clamp((mv.fwd - 4) / 16) + clamp((mv.ang - 0.5) / 2);
   const rolled = f => { ctx.save(); ctx.translate(W / 2, H / 2); ctx.rotate(cam.roll); ctx.translate(-W / 2, -H / 2); f(); ctx.restore(); };
-  if (t < T.lights + 1.0) { unfold(t, () => rolled(world)); lyric(t); post(t); return; }
+  if (t < T.lights + 1.0) { unfold(t, () => rolled(world)); lyric(t); post(t); snapPrev(); return; }
   rolled(() => {
     world();
     attention(t, cam, seeds, gbox);
@@ -681,6 +736,9 @@ function draw(t) {
     dataDust(t, cam, sp);
   });
   speedLines(t, mv);
+  if (Q.has('dbg')) { ctx.font = MONO(28); ctx.fillStyle = '#ff0'; ctx.fillText(`sm=${smearAmt(mv).toFixed(2)} ang=${mv.ang.toFixed(1)} fwd=${mv.fwd.toFixed(1)} br=${breathAmt(t).toFixed(2)} dz=${dollyAmt(t).toFixed(2)}`, 40, 60); }
+  applySmear(smearAmt(mv), mv.dx);            // ③ 甩镜最快的那几帧：一帧残影
+  snapPrev();                                 // 只存「世界」，不吃字和 HUD（否则旧字幕会重影）
   heatmap(t);
   lyric(t);
   if (t > T.layer - 0.08) { ctx.fillStyle = rgba(C.white, clamp((t - T.layer + 0.08) / 0.08)); ctx.fillRect(0, 0, W, H); }
@@ -714,6 +772,6 @@ if (RENDER) {
   const audio = new Audio('../-5_Clean Slate/Clean Slate.wav'); let playing = false;
   addEventListener('click', () => { if (!playing) { audio.currentTime = T0; audio.play(); playing = true; } });
   addEventListener('keydown', e => { if (e.code === 'Space') audio.paused ? audio.play() : audio.pause(); if (e.code === 'ArrowRight') audio.currentTime += 1; if (e.code === 'ArrowLeft') audio.currentTime -= 1; });
-  const loop = () => { let t = playing ? audio.currentTime : T0; if (playing && t > T1) { audio.currentTime = T0; t = T0; } draw(t); ui.textContent = `${t.toFixed(2)} s · 空格暂停 · ←/→ 跳 1 s`; requestAnimationFrame(loop); };
+  const loop = () => { let t = (playing || !audio.paused) ? audio.currentTime : T0; if (!audio.paused && t > T1) { audio.currentTime = T0; t = T0; } draw(t); ui.textContent = `${t.toFixed(2)} s · 空格暂停 · ←/→ 跳 1 s`; requestAnimationFrame(loop); };
   loop();
 }

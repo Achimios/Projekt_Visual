@@ -23,3 +23,4 @@ _参考库/**/*.gif
 *接触表*.jpg
 *接触表*.png
 # 单张 > 2 MB 的图由 .githooks/pre-commit 拦下（gitignore 不能按大小）
+MV_Clean_Slate/_tmp/
